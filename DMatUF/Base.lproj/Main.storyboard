@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="-260" y="-30"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Events-->
         <scene sceneID="iYO-sm-EiD">
             <objects>
                 <tableViewController id="SdE-Rg-GnH" customClass="EventsViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,6 +124,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yLF-bz-4I0" kind="show" identifier="ShowSingleEvent" id="eQw-ga-fD1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -131,11 +134,31 @@
                             <outlet property="delegate" destination="SdE-Rg-GnH" id="wvh-9C-OPf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="d8O-dR-Tqx"/>
+                    <navigationItem key="navigationItem" title="Events" id="d8O-dR-Tqx">
+                        <barButtonItem key="backBarButtonItem" title="Events" id="5gz-i0-KEf"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D75-qd-UEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1222" y="-166"/>
+        </scene>
+        <!--Single Event View Controller-->
+        <scene sceneID="X9B-Na-6ym">
+            <objects>
+                <viewController id="yLF-bz-4I0" customClass="SingleEventViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pTY-Df-tjN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xxp-81-GEU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AIj-bW-PfC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voh-sm-dKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="-166"/>
         </scene>
         <!--Events-->
         <scene sceneID="546-9h-JcM">

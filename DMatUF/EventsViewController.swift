@@ -67,15 +67,6 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
         }.resume()
     }
     
-    // MARK: - Segues
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                // stuff
-            }
-        }
-    }
-    
     // MARK: - Table View
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count ?? 0
@@ -90,6 +81,16 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
         cell.detailTextLabel?.text = String(event.id ?? 0)
         
         return cell
+    }
+        
+    // MARK: - Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowSingleEvent" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let event = events[indexPath.row]
+                (segue.destinationViewController as? SingleEventViewController)?.event = event
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

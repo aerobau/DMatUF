@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0009D95119EC6D70004149D9 /* SingleEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0009D95019EC6D70004149D9 /* SingleEventViewController.swift */; };
 		EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */; };
 		EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549419E1915B00D8EB78 /* Main.storyboard */; };
 		EA2D549819E1915B00D8EB78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549719E1915B00D8EB78 /* Images.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0009D95019EC6D70004149D9 /* SingleEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleEventViewController.swift; sourceTree = "<group>"; };
 		EA2D548919E1915B00D8EB78 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2D548D19E1915B00D8EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */,
 				EA9557EA19EC4EF300EAAB8A /* Kids.plist */,
 				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
+				0009D95019EC6D70004149D9 /* SingleEventViewController.swift */,
 				EA8C674419E32697009BE138 /* Sandbox.swift */,
 				EA2D549719E1915B00D8EB78 /* Images.xcassets */,
 				EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */,
+				0009D95119EC6D70004149D9 /* SingleEventViewController.swift in Sources */,
 				EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */,
 				EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */,
 				EA8C674519E32697009BE138 /* Sandbox.swift in Sources */,
