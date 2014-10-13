@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 MacCDevTeam. All rights reserved.
 //
 
+/*
+
 import UIKit
 
 class EventsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
@@ -13,7 +15,7 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
     var array: Array<Dictionary<String, String>>?;
     let fileManager = (NSFileManager .defaultManager())
     let directorys : [String]? = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,12 +24,12 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
         self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refersh")
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl!)
-       
+        
         // Refresh and Fetch
         self.refreshControl?.beginRefreshing()
         request()
-
-
+        
+        
         
     }
     
@@ -41,7 +43,7 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-   
+    
     
     
     
@@ -101,7 +103,8 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
         
         let name = self.array?[indexPath.row]["name"]
         cell.textLabel?.text = name
-            
+        
         return cell
     }
 }
+*/

@@ -9,10 +9,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var pushButton: UIButton!
+    @IBOutlet weak var text: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    func updateLabel(){
+        
     }
     
     override func didReceiveMemoryWarning() {

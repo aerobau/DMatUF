@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 MacCDevTeam. All rights reserved.
 //
 
+
+
 import UIKit
 
 @UIApplicationMain
@@ -17,11 +19,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Set global tint
-        self.window!.tintColor = UIColor(red: 0, green: 64.0/255.0, blue: 131.0/255.0, alpha: 1.0)
+         self.window!.tintColor = UIColor(red: 0, green: 64.0/255.0, blue: 131.0/255.0, alpha: 1.0)
         
         return true
     }
+    
+    
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        application.registerForRemoteNotifications()
 
+    }
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+    }
+    
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: NSDictionary!){
+
+    }
+    
+    
+
+    
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

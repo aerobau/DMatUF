@@ -13,7 +13,10 @@
 		EA2D549B19E1915B00D8EB78 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */; };
 		EA2D54A719E1915B00D8EB78 /* DMatUFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */; };
 		EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */; };
-		EA8C674519E32697009BE138 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C674419E32697009BE138 /* Parse.swift */; };
+		EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */; };
+		EA8C674519E32697009BE138 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C674419E32697009BE138 /* Sandbox.swift */; };
+		EA9557EB19EC4EF300EAAB8A /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9557EA19EC4EF300EAAB8A /* Kids.plist */; };
+		EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */; };
 		EABA2B5019E1AEC60075F10E /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +41,11 @@
 		EA2D54A519E1915B00D8EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMatUFTests.swift; sourceTree = "<group>"; };
 		EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		EA8C674419E32697009BE138 /* Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		EA62885C19E34FB300A6CC34 /* DMatUF-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMatUF-Bridging-Header.h"; sourceTree = "<group>"; };
+		EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
+		EA8C674419E32697009BE138 /* Sandbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandbox.swift; sourceTree = "<group>"; };
+		EA9557EA19EC4EF300EAAB8A /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
+		EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,10 +91,15 @@
 				EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */,
 				EA2D549419E1915B00D8EB78 /* Main.storyboard */,
 				EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */,
+				EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */,
+				EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */,
+				EA9557EA19EC4EF300EAAB8A /* Kids.plist */,
 				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
-				EA8C674419E32697009BE138 /* Parse.swift */,
+				EA8C674419E32697009BE138 /* Sandbox.swift */,
 				EA2D549719E1915B00D8EB78 /* Images.xcassets */,
 				EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */,
+				EAE4193419EB36BE00438698 /* APIs */,
+				EA62884419E338D200A6CC34 /* Frameworks */,
 				EA2D548C19E1915B00D8EB78 /* Supporting Files */,
 			);
 			path = DMatUF;
@@ -96,6 +108,7 @@
 		EA2D548C19E1915B00D8EB78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA62885C19E34FB300A6CC34 /* DMatUF-Bridging-Header.h */,
 				EA2D548D19E1915B00D8EB78 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -116,6 +129,20 @@
 				EA2D54A519E1915B00D8EB78 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA62884419E338D200A6CC34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAE4193419EB36BE00438698 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +229,7 @@
 				EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */,
 				EA2D549B19E1915B00D8EB78 /* LaunchScreen.xib in Resources */,
 				EA2D549819E1915B00D8EB78 /* Images.xcassets in Resources */,
+				EA9557EB19EC4EF300EAAB8A /* Kids.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */,
 				EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */,
-				EA8C674519E32697009BE138 /* Parse.swift in Sources */,
+				EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */,
+				EA8C674519E32697009BE138 /* Sandbox.swift in Sources */,
 				EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */,
 				EABA2B5019E1AEC60075F10E /* EventsViewController.swift in Sources */,
 			);
@@ -281,7 +311,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -300,8 +331,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "f7473487-7359-4afb-8a35-a174badeb0a0";
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -324,7 +358,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -337,7 +372,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "f7473487-7359-4afb-8a35-a174badeb0a0";
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -347,9 +386,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DMatUF",
+				);
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -357,9 +407,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DMatUF",
+				);
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -370,6 +430,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -389,6 +450,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DMatUFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

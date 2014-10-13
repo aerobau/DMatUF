@@ -47,6 +47,12 @@
                                     <constraint firstAttribute="width" secondItem="Wes-vs-y1W" secondAttribute="height" multiplier="2:1" id="Trq-if-WAc"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkC-ey-jrI">
+                                <rect key="frame" x="197" y="345" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -60,6 +66,10 @@
                         <barButtonItem key="leftBarButtonItem" title="Login" id="uyx-FT-9js"/>
                         <barButtonItem key="rightBarButtonItem" title="Donate!" id="pRv-87-YH3"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pushButton" destination="lOX-TH-Y8x" id="tbx-hU-c8Y"/>
+                        <outlet property="text" destination="tkC-ey-jrI" id="v56-yp-wiV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAX-Hg-Gdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,65 +181,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="C6b-mu-kI2" kind="relationship" relationship="rootViewController" id="zak-kB-MfQ"/>
+                        <segue destination="7TP-r7-XvJ" kind="relationship" relationship="rootViewController" id="tbw-fZ-CSD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drb-2I-Ucb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="540" y="1156"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Y8c-xq-Q8m">
-            <objects>
-                <viewController id="C6b-mu-kI2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="e77-Db-Y9V"/>
-                        <viewControllerLayoutGuide type="bottom" id="IL0-hc-ccm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="P16-Yv-ScC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="aYx-qX-uOg">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="hlO-da-IgF">
-                            <rect key="frame" x="225.5" y="7.5" width="149" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Instagram"/>
-                                <segment title="Twitter"/>
-                            </segments>
-                        </segmentedControl>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SDy-mI-YbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1169" y="1156"/>
-        </scene>
-        <!--Collection View Controller-->
+        <!--Kids View Controller-->
         <scene sceneID="uL0-OF-7GI">
             <objects>
-                <collectionViewController id="dcJ-Gl-8RP" sceneMemberID="viewController">
+                <collectionViewController id="dcJ-Gl-8RP" customClass="KidsViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QFj-Kd-lqt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JqC-gN-DRf">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mXq-xe-2Dz">
+                            <size key="itemSize" width="64" height="64"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="qii-ne-N5S">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KidsCellID" id="qii-ne-N5S" customClass="KidsCell" customModule="DMatUF" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzC-17-wlt">
+                                            <rect key="frame" x="11" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
+                                    <outlet property="cellLabel" destination="ZzC-17-wlt" id="ZMi-cw-qqY"/>
                                     <segue destination="yxH-aF-xMd" kind="show" id="hrP-I7-MJX"/>
                                 </connections>
                             </collectionViewCell>
@@ -239,11 +229,66 @@
                             <outlet property="delegate" destination="dcJ-Gl-8RP" id="cil-I6-EIp"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Jxd-HI-Tkz"/>
+                    <navigationItem key="navigationItem" id="Jxd-HI-Tkz">
+                        <nil key="title"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dA-Dp-0rP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1162" y="506"/>
+        </scene>
+        <!--Social View Controller-->
+        <scene sceneID="omJ-MI-ygn">
+            <objects>
+                <collectionViewController id="7TP-r7-XvJ" customClass="SocialViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="0Mj-3d-OvW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZBF-5j-kg6">
+                            <size key="itemSize" width="270" height="243"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SocialCellID" id="Fkl-wj-FBt" customClass="SocialCell" customModule="DMatUF" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="243"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7TP-r7-XvJ" id="tKT-d3-Vmn"/>
+                            <outlet property="delegate" destination="7TP-r7-XvJ" id="am4-pg-hLf"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="LP7-h0-Lxg">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="g4b-dP-srx">
+                            <rect key="frame" x="127.5" y="5" width="345" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Instagram"/>
+                                <segment title="Twitter"/>
+                                <segment title="Facebook"/>
+                                <segment title="YouTube"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentChangedValue:" destination="7TP-r7-XvJ" eventType="valueChanged" id="Jvw-sn-Cmx"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="g4b-dP-srx" id="HJm-8u-H7a"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njz-Al-91j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="1214"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tHB-Ot-7Vh">
@@ -261,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joh-08-hz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="514"/>
+            <point key="canvasLocation" x="1895" y="506"/>
         </scene>
     </scenes>
     <resources>
