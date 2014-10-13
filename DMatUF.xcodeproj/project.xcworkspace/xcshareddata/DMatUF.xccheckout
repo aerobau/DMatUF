@@ -10,14 +10,14 @@
 	<string>DMatUF</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CF840B80F7B7E57C7963CE541C38DE57F11454D7</key>
+		<key>90F3A4885C3D2ACDAE919DCF47886F1C862307D9</key>
 		<string>https://github.com/0x7fffffff/DMatUF.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DMatUF.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CF840B80F7B7E57C7963CE541C38DE57F11454D7</key>
+		<key>90F3A4885C3D2ACDAE919DCF47886F1C862307D9</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CF840B80F7B7E57C7963CE541C38DE57F11454D7</string>
+	<string>90F3A4885C3D2ACDAE919DCF47886F1C862307D9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CF840B80F7B7E57C7963CE541C38DE57F11454D7</string>
+			<string>90F3A4885C3D2ACDAE919DCF47886F1C862307D9</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DMatUF</string>
 		</dict>
