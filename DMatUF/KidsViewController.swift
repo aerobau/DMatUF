@@ -9,45 +9,63 @@
 import UIKit
 import Foundation
 
+// Cell
 class KidsCell: UICollectionViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
-    // stuff
 }
 
+
+
+// Kid Class: so attributes can be easily accessed
 class Kid {
-    
     var name: String?
     var age: NSDate?
     var story: String?
     var image: UIImage?
     
-    convenience init(array: NSArray, index: Int) {
+    convenience init(dict: NSDictionary) {
         self.init()
-        
-        name = Optional(array[index].objectForKey("name")! as? String)!
-        age = Optional(array[index].objectForKey("age")! as? NSDate)!
-        story = Optional(array[index].objectForKey("story")! as? String)!
-        image = Optional(UIImage(named: Optional(array[index].objectForKey("image")! as String)!))
+        name = Optional(dict.objectForKey("name")! as? String)!
+        age = Optional(dict.objectForKey("age")! as? NSDate)!
+        story = Optional(dict.objectForKey("story")! as? String)!
+        image = Optional(UIImage(named: Optional(dict.objectForKey("image")! as String)!))
+    
     }
 }
 
+
+
 class KidsViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    // Get array of kids from plist file
     var array = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Kids", ofType: "plist")!)
+    
+    var namesArray: Array<String> = []
+    var thumbsArray: Array<String> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateArrays()
+    }
+    
+    func generateArrays(){
+        for dict in self.array{
+            if let name: String? = dict["name"] as String?{
+                self.namesArray.append(name!)
+            }
+            if let thumb: String? = dict["thumb"] as String?{
+                self.thumbsArray.append(thumb!)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.array.count
-        // Needs to be number of items in plist array
     }
     
 
@@ -57,12 +75,11 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("KidsCellID", forIndexPath: indexPath) as KidsCell
             
-            cell.backgroundColor = UIColor(hue: CGFloat(indexPath.row) / 4.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+            // Set cell background color
+            cell.backgroundColor = UIColor(hue: CGFloat(CGFloat(indexPath.row) / CGFloat(self.array.count)), saturation: 1.0, brightness: 1.0, alpha: 1.0)
             
-            let kid = Kid(array: self.array, index: indexPath.row)
-            cell.cellLabel.text = kid.name
-            cell.cellImage.image = kid.image
-            
+            cell.cellLabel.text = self.namesArray[indexPath.row]
+            cell.cellImage.image = UIImage(named: self.thumbsArray[indexPath.row])
             return cell
     }
     
@@ -86,18 +103,13 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
             if let index = self.collectionView?.indexPathForCell(cell)!.row{
                 destination.index = index
                 
-                let kid = Kid(array: self.array, index: index)
-                
+                let kid = Kid(dict: self.array[index] as NSDictionary)
                 if let name = kid.name { destination.name = name }
                 if let age = kid.age { destination.age = age }
                 if let story = kid.story { destination.story = story }
                 if let image = kid.image { destination.image = image }
-                
-                
-
-                
+          
             }
         }
     }
-    
 }
