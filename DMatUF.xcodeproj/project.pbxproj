@@ -69,6 +69,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA0B38CF19EDB9E90018DE67 /* Kids Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */,
+				EA31259219ECDAA800844EEA /* KidStoryViewController.swift */,
+				EA9557EA19EC4EF300EAAB8A /* Kids.plist */,
+			);
+			name = "Kids Tab";
+			sourceTree = "<group>";
+		};
+		EA0B38D019EDBA070018DE67 /* Home Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */,
+			);
+			name = "Home Tab";
+			sourceTree = "<group>";
+		};
+		EA0B38D119EDBA160018DE67 /* Social Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */,
+			);
+			name = "Social Tab";
+			sourceTree = "<group>";
+		};
+		EA0B38D219EDBA200018DE67 /* Timeline Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
+			);
+			name = "Timeline Tab";
+			sourceTree = "<group>";
+		};
 		EA2D548019E1915B00D8EB78 = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +126,10 @@
 			children = (
 				EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */,
 				EA2D549419E1915B00D8EB78 /* Main.storyboard */,
-				EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */,
-				EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */,
-				EA31259219ECDAA800844EEA /* KidStoryViewController.swift */,
-				EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */,
-				EA9557EA19EC4EF300EAAB8A /* Kids.plist */,
-				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
+				EA0B38D019EDBA070018DE67 /* Home Tab */,
+				EA0B38CF19EDB9E90018DE67 /* Kids Tab */,
+				EA0B38D119EDBA160018DE67 /* Social Tab */,
+				EA0B38D219EDBA200018DE67 /* Timeline Tab */,
 				EA8C674419E32697009BE138 /* Sandbox.swift */,
 				EA2D549719E1915B00D8EB78 /* Images.xcassets */,
 				EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */,
