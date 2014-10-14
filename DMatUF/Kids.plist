@@ -18,7 +18,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>John</string>
+		<string>Mike</string>
 		<key>age</key>
 		<string>10</string>
 		<key>story</key>
@@ -32,7 +32,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>John</string>
+		<string>Susie</string>
 		<key>age</key>
 		<string>10</string>
 		<key>story</key>
@@ -46,7 +46,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>John</string>
+		<string>Paul</string>
 		<key>age</key>
 		<string>10</string>
 		<key>story</key>
@@ -60,7 +60,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>John</string>
+		<string>Ryan</string>
 		<key>age</key>
 		<string>10</string>
 		<key>story</key>
@@ -74,7 +74,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>John</string>
+		<string>Chris</string>
 		<key>age</key>
 		<string>10</string>
 		<key>story</key>
@@ -88,7 +88,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>John</string>
+		<string>Sara</string>
 		<key>age</key>
 		<string>10</string>
 		<key>story</key>

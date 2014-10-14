@@ -26,6 +26,7 @@ class Event {
     }
 }
 
+
 class EventsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
     var events: [Event] = [Event]() {
@@ -47,7 +48,7 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
     }
     
     func requestEvents() {
-        let url = NSURL(string: "http://mickmaccallum.com/ian/events.php")!
+        let url = NSURL(string: "http://mickmaccallum.com/ian/events.php")
         let session = NSURLSession.sharedSession()
         
         session.dataTaskWithURL(url) { data, response, error in

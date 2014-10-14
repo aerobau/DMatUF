@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -220,7 +220,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="cellLabel" destination="ZzC-17-wlt" id="ZMi-cw-qqY"/>
-                                    <segue destination="yxH-aF-xMd" kind="show" id="hrP-I7-MJX"/>
+                                    <segue destination="yxH-aF-xMd" kind="show" identifier="KidStorySegue" id="hrP-I7-MJX"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="1222" y="1214"/>
         </scene>
-        <!--View Controller-->
+        <!--Kid Story View Controller-->
         <scene sceneID="tHB-Ot-7Vh">
             <objects>
-                <viewController id="yxH-aF-xMd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KidStoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yxH-aF-xMd" customClass="KidStoryViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sDc-JD-j4c"/>
                         <viewControllerLayoutGuide type="bottom" id="DlI-44-l0p"/>
@@ -301,8 +301,45 @@
                     <view key="view" contentMode="scaleToFill" id="IQc-tM-mz5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM1-R8-o7g">
+                                <rect key="frame" x="280" y="72" width="304" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-FB-Lyv">
+                                <rect key="frame" x="16" y="72" width="128" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-WN-M9I">
+                                <rect key="frame" x="280" y="101" width="304" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-Ac-NjI">
+                                <rect key="frame" x="16" y="208" width="568" height="335"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Index" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLJ-q8-TMT">
+                                <rect key="frame" x="152" y="72" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="GQL-WN-M9I" id="syW-UU-ybF"/>
+                        <outlet property="imageView" destination="eTh-FB-Lyv" id="sSo-yC-os6"/>
+                        <outlet property="indexLabel" destination="yLJ-q8-TMT" id="Alm-zl-qHE"/>
+                        <outlet property="nameLabel" destination="hM1-R8-o7g" id="rBs-81-uM6"/>
+                        <outlet property="textView" destination="qUG-Ac-NjI" id="pJB-U1-UlZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joh-08-hz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
