@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>0</integer>
+		<key>title</key>
+		<string>Event title</string>
+		<key>start</key>
+		<date>2014-10-30T11:36:57Z</date>
+		<key>finish</key>
+		<date>2014-10-31T23:38:27Z</date>
+		<key>finished</key>
+		<false/>
+	</dict>
+</array>
+</plist>
