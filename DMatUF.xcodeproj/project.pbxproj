@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0009D95119EC6D70004149D9 /* SingleEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0009D95019EC6D70004149D9 /* SingleEventViewController.swift */; };
 		EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */; };
 		EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549419E1915B00D8EB78 /* Main.storyboard */; };
 		EA2D549819E1915B00D8EB78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549719E1915B00D8EB78 /* Images.xcassets */; };
 		EA2D549B19E1915B00D8EB78 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */; };
 		EA2D54A719E1915B00D8EB78 /* DMatUFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */; };
 		EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */; };
+		EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31259219ECDAA800844EEA /* KidStoryViewController.swift */; };
+		EA5D9D2219EDEAED00205CC6 /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA5D9D2119EDEAED00205CC6 /* Events.plist */; };
+		EA5D9D5619EDEFD800205CC6 /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5419EDEFD800205CC6 /* Events.xcdatamodeld */; };
+		EA5D9D5819EDF2B600205CC6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5719EDF2B600205CC6 /* Event.swift */; };
 		EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */; };
 		EA8C674519E32697009BE138 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C674419E32697009BE138 /* Sandbox.swift */; };
 		EA9557EB19EC4EF300EAAB8A /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9557EA19EC4EF300EAAB8A /* Kids.plist */; };
@@ -32,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0009D95019EC6D70004149D9 /* SingleEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleEventViewController.swift; sourceTree = "<group>"; };
 		EA2D548919E1915B00D8EB78 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2D548D19E1915B00D8EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,10 @@
 		EA2D54A519E1915B00D8EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMatUFTests.swift; sourceTree = "<group>"; };
 		EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EA31259219ECDAA800844EEA /* KidStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidStoryViewController.swift; sourceTree = "<group>"; };
+		EA5D9D2119EDEAED00205CC6 /* Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Events.plist; path = ../Events.plist; sourceTree = "<group>"; };
+		EA5D9D5519EDEFD800205CC6 /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
+		EA5D9D5719EDF2B600205CC6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EA62885C19E34FB300A6CC34 /* DMatUF-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMatUF-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA8C674419E32697009BE138 /* Sandbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandbox.swift; sourceTree = "<group>"; };
@@ -69,6 +75,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA0B38CF19EDB9E90018DE67 /* Kids Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */,
+				EA31259219ECDAA800844EEA /* KidStoryViewController.swift */,
+				EA9557EA19EC4EF300EAAB8A /* Kids.plist */,
+			);
+			name = "Kids Tab";
+			sourceTree = "<group>";
+		};
+		EA0B38D019EDBA070018DE67 /* Home Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */,
+			);
+			name = "Home Tab";
+			sourceTree = "<group>";
+		};
+		EA0B38D119EDBA160018DE67 /* Social Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */,
+			);
+			name = "Social Tab";
+			sourceTree = "<group>";
+		};
+		EA0B38D219EDBA200018DE67 /* Timeline Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA5D9D2119EDEAED00205CC6 /* Events.plist */,
+				EA5D9D5419EDEFD800205CC6 /* Events.xcdatamodeld */,
+				EA5D9D5719EDF2B600205CC6 /* Event.swift */,
+				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
+			);
+			name = "Timeline Tab";
+			sourceTree = "<group>";
+		};
 		EA2D548019E1915B00D8EB78 = {
 			isa = PBXGroup;
 			children = (
@@ -92,12 +135,10 @@
 			children = (
 				EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */,
 				EA2D549419E1915B00D8EB78 /* Main.storyboard */,
-				EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */,
-				EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */,
-				EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */,
-				EA9557EA19EC4EF300EAAB8A /* Kids.plist */,
-				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
-				0009D95019EC6D70004149D9 /* SingleEventViewController.swift */,
+				EA0B38D019EDBA070018DE67 /* Home Tab */,
+				EA0B38CF19EDB9E90018DE67 /* Kids Tab */,
+				EA0B38D119EDBA160018DE67 /* Social Tab */,
+				EA0B38D219EDBA200018DE67 /* Timeline Tab */,
 				EA8C674419E32697009BE138 /* Sandbox.swift */,
 				EA2D549719E1915B00D8EB78 /* Images.xcassets */,
 				EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */,
@@ -229,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5D9D2219EDEAED00205CC6 /* Events.plist in Resources */,
 				EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */,
 				EA2D549B19E1915B00D8EB78 /* LaunchScreen.xib in Resources */,
 				EA2D549819E1915B00D8EB78 /* Images.xcassets in Resources */,
@@ -250,9 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5D9D5619EDEFD800205CC6 /* Events.xcdatamodeld in Sources */,
+				EA5D9D5819EDF2B600205CC6 /* Event.swift in Sources */,
 				EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */,
-				0009D95119EC6D70004149D9 /* SingleEventViewController.swift in Sources */,
 				EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */,
+				EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */,
 				EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */,
 				EA8C674519E32697009BE138 /* Sandbox.swift in Sources */,
 				EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */,
@@ -494,6 +538,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EA5D9D5419EDEFD800205CC6 /* Events.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EA5D9D5519EDEFD800205CC6 /* Events.xcdatamodel */,
+			);
+			currentVersion = EA5D9D5519EDEFD800205CC6 /* Events.xcdatamodel */;
+			path = Events.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EA2D548119E1915B00D8EB78 /* Project object */;
 }

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 // Made to fit temp data. Will need to be reworked when web service changes
-class Event {
+class Event2 {
     
     var id: Int?
     var name: String?
@@ -26,15 +27,65 @@ class Event {
     }
 }
 
+
 class EventsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var events: [Event] = [Event]() {
+    var events: [Event2] = [Event2]() {
         didSet {
             dispatch_async(dispatch_get_main_queue()) { [ unowned self] in
                 self.tableView.reloadData()
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    // Core Data stuff DO NOT DELETE
+    func save(){
+        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var context: NSManagedObjectContext = appDel.managedObjectContext!
+        var newEvent: Event! = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: context) as Event
+        newEvent.id = 0
+        newEvent.title = "My new event"
+        newEvent.startDate = NSDate()
+        newEvent.stopDate = NSDate()
+        newEvent.complete = false
+        
+        context.save(nil)
+        
+        
+        
+    }
+    
+    // Core Data stuff DO NOT DELETE
+    func load(){
+        var appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var context: NSManagedObjectContext = appDel.managedObjectContext!
+
+        var request = NSFetchRequest(entityName: "Event")
+        request.returnsObjectsAsFaults = false
+        var results: NSArray = context.executeFetchRequest(request, error: nil)!
+        
+        if results.count > 0 {
+            for result in results {
+                println(result)
+            }
+        }else{
+            println("0 results returned")
+        }
+    }
+    // Core Data stuff DO NOT DELETE
+
+    
+    
+    
+    
+    
+    
     
     override func loadView() {
         super.loadView()
@@ -47,7 +98,7 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
     }
     
     func requestEvents() {
-        let url = NSURL(string: "http://mickmaccallum.com/ian/events.php")!
+        let url = NSURL(string: "http://mickmaccallum.com/ian/events.php")
         let session = NSURLSession.sharedSession()
         
         session.dataTaskWithURL(url) { data, response, error in
@@ -58,13 +109,22 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
             if jsonError == nil {
                 if let JSON = rawJSON as? [[String : String]] {
                     for dict in JSON {
-                        self.events.append(Event(data: dict))
+                        self.events.append(Event2(data: dict))
                     }
                 }
             } else {
                 // determine and handle error
             }
         }.resume()
+    }
+    
+    // MARK: - Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                // stuff
+            }
+        }
     }
     
     // MARK: - Table View
@@ -81,16 +141,6 @@ class EventsViewController: UITableViewController, UITableViewDelegate, UITableV
         cell.detailTextLabel?.text = String(event.id ?? 0)
         
         return cell
-    }
-        
-    // MARK: - Segues
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowSingleEvent" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let event = events[indexPath.row]
-                (segue.destinationViewController as? SingleEventViewController)?.event = event
-            }
-        }
     }
     
     override func didReceiveMemoryWarning() {
