@@ -17,11 +17,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+            }
     
     func generateArray(){
-        let path = NSBundle.mainBundle().pathForResource("Kids", ofType:"plist")
-        
     }
     
     override func didReceiveMemoryWarning() {
