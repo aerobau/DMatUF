@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event" representedClassName="Event" syncable="YES">
-        <attribute name="complete" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+    <entity name="Event" syncable="YES">
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" spotlightIndexingEnabled="YES" syncable="YES"/>
-        <attribute name="startDate" attributeType="Date" syncable="YES"/>
-        <attribute name="stopDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA232AAC19EF8ECF003CC9AF /* SponsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AAB19EF8ECF003CC9AF /* SponsersViewController.swift */; };
+		EA232AAE19EF91BA003CC9AF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AAD19EF91BA003CC9AF /* TabBarController.swift */; };
+		EA232AB719EFB1E2003CC9AF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AB619EFB1E2003CC9AF /* Event.swift */; };
+		EA232AB919EFB286003CC9AF /* SelectedEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AB819EFB286003CC9AF /* SelectedEventViewController.swift */; };
 		EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */; };
 		EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549419E1915B00D8EB78 /* Main.storyboard */; };
 		EA2D549819E1915B00D8EB78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549719E1915B00D8EB78 /* Images.xcassets */; };
@@ -14,9 +18,7 @@
 		EA2D54A719E1915B00D8EB78 /* DMatUFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */; };
 		EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */; };
 		EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31259219ECDAA800844EEA /* KidStoryViewController.swift */; };
-		EA5D9D2219EDEAED00205CC6 /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA5D9D2119EDEAED00205CC6 /* Events.plist */; };
-		EA5D9D5619EDEFD800205CC6 /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5419EDEFD800205CC6 /* Events.xcdatamodeld */; };
-		EA5D9D5819EDF2B600205CC6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5719EDF2B600205CC6 /* Event.swift */; };
+		EA5D9D5619EDEFD800205CC6 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5419EDEFD800205CC6 /* Data.xcdatamodeld */; };
 		EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */; };
 		EA8C674519E32697009BE138 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C674419E32697009BE138 /* Sandbox.swift */; };
 		EA9557EB19EC4EF300EAAB8A /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9557EA19EC4EF300EAAB8A /* Kids.plist */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA232AAB19EF8ECF003CC9AF /* SponsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsersViewController.swift; sourceTree = "<group>"; };
+		EA232AAD19EF91BA003CC9AF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EA232AB619EFB1E2003CC9AF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = SOURCE_ROOT; };
+		EA232AB819EFB286003CC9AF /* SelectedEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedEventViewController.swift; sourceTree = "<group>"; };
 		EA2D548919E1915B00D8EB78 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2D548D19E1915B00D8EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,9 +52,7 @@
 		EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMatUFTests.swift; sourceTree = "<group>"; };
 		EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA31259219ECDAA800844EEA /* KidStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidStoryViewController.swift; sourceTree = "<group>"; };
-		EA5D9D2119EDEAED00205CC6 /* Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Events.plist; path = ../Events.plist; sourceTree = "<group>"; };
-		EA5D9D5519EDEFD800205CC6 /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
-		EA5D9D5719EDF2B600205CC6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		EA5D9D5519EDEFD800205CC6 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		EA62885C19E34FB300A6CC34 /* DMatUF-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMatUF-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA8C674419E32697009BE138 /* Sandbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandbox.swift; sourceTree = "<group>"; };
@@ -104,12 +108,20 @@
 		EA0B38D219EDBA200018DE67 /* Timeline Tab */ = {
 			isa = PBXGroup;
 			children = (
-				EA5D9D2119EDEAED00205CC6 /* Events.plist */,
-				EA5D9D5419EDEFD800205CC6 /* Events.xcdatamodeld */,
-				EA5D9D5719EDF2B600205CC6 /* Event.swift */,
+				EA5D9D5419EDEFD800205CC6 /* Data.xcdatamodeld */,
+				EA232AB619EFB1E2003CC9AF /* Event.swift */,
 				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
+				EA232AB819EFB286003CC9AF /* SelectedEventViewController.swift */,
 			);
 			name = "Timeline Tab";
+			sourceTree = "<group>";
+		};
+		EA232AAA19EF8EA5003CC9AF /* Sponsers Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA232AAB19EF8ECF003CC9AF /* SponsersViewController.swift */,
+			);
+			name = "Sponsers Tab";
 			sourceTree = "<group>";
 		};
 		EA2D548019E1915B00D8EB78 = {
@@ -135,10 +147,12 @@
 			children = (
 				EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */,
 				EA2D549419E1915B00D8EB78 /* Main.storyboard */,
+				EA232AAD19EF91BA003CC9AF /* TabBarController.swift */,
 				EA0B38D019EDBA070018DE67 /* Home Tab */,
 				EA0B38CF19EDB9E90018DE67 /* Kids Tab */,
 				EA0B38D119EDBA160018DE67 /* Social Tab */,
 				EA0B38D219EDBA200018DE67 /* Timeline Tab */,
+				EA232AAA19EF8EA5003CC9AF /* Sponsers Tab */,
 				EA8C674419E32697009BE138 /* Sandbox.swift */,
 				EA2D549719E1915B00D8EB78 /* Images.xcassets */,
 				EA2D549919E1915B00D8EB78 /* LaunchScreen.xib */,
@@ -270,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5D9D2219EDEAED00205CC6 /* Events.plist in Resources */,
 				EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */,
 				EA2D549B19E1915B00D8EB78 /* LaunchScreen.xib in Resources */,
 				EA2D549819E1915B00D8EB78 /* Images.xcassets in Resources */,
@@ -292,13 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5D9D5619EDEFD800205CC6 /* Events.xcdatamodeld in Sources */,
-				EA5D9D5819EDF2B600205CC6 /* Event.swift in Sources */,
+				EA232AB919EFB286003CC9AF /* SelectedEventViewController.swift in Sources */,
+				EA5D9D5619EDEFD800205CC6 /* Data.xcdatamodeld in Sources */,
 				EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */,
 				EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */,
+				EA232AAC19EF8ECF003CC9AF /* SponsersViewController.swift in Sources */,
+				EA232AB719EFB1E2003CC9AF /* Event.swift in Sources */,
 				EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */,
 				EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */,
 				EA8C674519E32697009BE138 /* Sandbox.swift in Sources */,
+				EA232AAE19EF91BA003CC9AF /* TabBarController.swift in Sources */,
 				EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */,
 				EABA2B5019E1AEC60075F10E /* EventsViewController.swift in Sources */,
 			);
@@ -540,13 +556,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EA5D9D5419EDEFD800205CC6 /* Events.xcdatamodeld */ = {
+		EA5D9D5419EDEFD800205CC6 /* Data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EA5D9D5519EDEFD800205CC6 /* Events.xcdatamodel */,
+				EA5D9D5519EDEFD800205CC6 /* Data.xcdatamodel */,
 			);
-			currentVersion = EA5D9D5519EDEFD800205CC6 /* Events.xcdatamodel */;
-			path = Events.xcdatamodeld;
+			currentVersion = EA5D9D5519EDEFD800205CC6 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
