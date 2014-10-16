@@ -18,6 +18,7 @@
 		EA2D54A719E1915B00D8EB78 /* DMatUFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */; };
 		EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */; };
 		EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA31259219ECDAA800844EEA /* KidStoryViewController.swift */; };
+		EA418AB819F0345F000B007C /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA418AB619F0345F000B007C /* json.swift */; };
 		EA5D9D5619EDEFD800205CC6 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5419EDEFD800205CC6 /* Data.xcdatamodeld */; };
 		EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */; };
 		EA8C674519E32697009BE138 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C674419E32697009BE138 /* Sandbox.swift */; };
@@ -52,6 +53,7 @@
 		EA2D54A619E1915B00D8EB78 /* DMatUFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMatUFTests.swift; sourceTree = "<group>"; };
 		EA2D54B019E1A8C000D8EB78 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA31259219ECDAA800844EEA /* KidStoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidStoryViewController.swift; sourceTree = "<group>"; };
+		EA418AB619F0345F000B007C /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		EA5D9D5519EDEFD800205CC6 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		EA62885C19E34FB300A6CC34 /* DMatUF-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMatUF-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		EAE4193419EB36BE00438698 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				EA418AB619F0345F000B007C /* json.swift */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				EA232AB719EFB1E2003CC9AF /* Event.swift in Sources */,
 				EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */,
 				EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */,
+				EA418AB819F0345F000B007C /* json.swift in Sources */,
 				EA8C674519E32697009BE138 /* Sandbox.swift in Sources */,
 				EA232AAE19EF91BA003CC9AF /* TabBarController.swift in Sources */,
 				EA2D54B119E1A8C000D8EB78 /* HomeViewController.swift in Sources */,
