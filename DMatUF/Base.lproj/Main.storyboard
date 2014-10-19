@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -112,21 +112,29 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bUf-1A-fOm" id="Mqs-bu-UQ6">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNH-LI-gQ8">
-                                            <rect key="frame" x="8" y="8" width="584" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNH-LI-gQ8">
+                                            <rect key="frame" x="8" y="8" width="151" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlj-Jv-e2W">
+                                            <rect key="frame" x="91" y="11" width="137" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-hE-VXE">
+                                            <rect key="frame" x="159" y="11" width="108" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="sNH-LI-gQ8" firstAttribute="top" secondItem="Mqs-bu-UQ6" secondAttribute="topMargin" id="2hT-c8-tM0"/>
-                                        <constraint firstItem="sNH-LI-gQ8" firstAttribute="trailing" secondItem="Mqs-bu-UQ6" secondAttribute="trailingMargin" id="OT7-Gw-K1t"/>
-                                        <constraint firstItem="sNH-LI-gQ8" firstAttribute="bottom" secondItem="Mqs-bu-UQ6" secondAttribute="bottomMargin" id="h0T-KD-3mn"/>
-                                        <constraint firstItem="sNH-LI-gQ8" firstAttribute="leading" secondItem="Mqs-bu-UQ6" secondAttribute="leadingMargin" id="nsk-aw-leR"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="idLabel" destination="Rlj-Jv-e2W" id="5Za-60-Arh"/>
+                                    <outlet property="lastUpdatedLabel" destination="Y72-hE-VXE" id="2OQ-G6-8RC"/>
                                     <outlet property="titleLabel" destination="sNH-LI-gQ8" id="E9V-3s-XaS"/>
                                     <segue destination="19o-lL-Ctc" kind="show" identifier="EventSegue" id="zBO-j6-gZI"/>
                                 </connections>
@@ -143,9 +151,15 @@
                                 <action selector="addButtonPressed:" destination="SdE-Rg-GnH" id="A0Z-fS-F9D"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="wIc-ru-pV9">
+                            <connections>
+                                <action selector="updateButtonPressed:" destination="SdE-Rg-GnH" id="eW9-wi-cfn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="Pd6-EE-OFy" id="DCE-Jw-GTj"/>
+                        <outlet property="updateButton" destination="wIc-ru-pV9" id="pre-dU-fUm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D75-qd-UEb" userLabel="First Responder" sceneMemberID="firstResponder"/>

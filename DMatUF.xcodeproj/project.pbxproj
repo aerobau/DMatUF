@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EA232AAC19EF8ECF003CC9AF /* SponsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AAB19EF8ECF003CC9AF /* SponsersViewController.swift */; };
 		EA232AAE19EF91BA003CC9AF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AAD19EF91BA003CC9AF /* TabBarController.swift */; };
-		EA232AB719EFB1E2003CC9AF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AB619EFB1E2003CC9AF /* Event.swift */; };
 		EA232AB919EFB286003CC9AF /* SelectedEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA232AB819EFB286003CC9AF /* SelectedEventViewController.swift */; };
 		EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2D548E19E1915B00D8EB78 /* AppDelegate.swift */; };
 		EA2D549619E1915B00D8EB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2D549419E1915B00D8EB78 /* Main.storyboard */; };
@@ -21,6 +20,8 @@
 		EA418AB819F0345F000B007C /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA418AB619F0345F000B007C /* json.swift */; };
 		EA5D9D5619EDEFD800205CC6 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA5D9D5419EDEFD800205CC6 /* Data.xcdatamodeld */; };
 		EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */; };
+		EA83E53F19F1EDD600B243B4 /* EventExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83E53E19F1EDD600B243B4 /* EventExt.swift */; };
+		EA83E54719F43D1C00B243B4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA83E54619F43D1C00B243B4 /* Event.swift */; };
 		EA8C674519E32697009BE138 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C674419E32697009BE138 /* Sandbox.swift */; };
 		EA9557EB19EC4EF300EAAB8A /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9557EA19EC4EF300EAAB8A /* Kids.plist */; };
 		EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */; };
@@ -40,7 +41,6 @@
 /* Begin PBXFileReference section */
 		EA232AAB19EF8ECF003CC9AF /* SponsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsersViewController.swift; sourceTree = "<group>"; };
 		EA232AAD19EF91BA003CC9AF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		EA232AB619EFB1E2003CC9AF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = SOURCE_ROOT; };
 		EA232AB819EFB286003CC9AF /* SelectedEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedEventViewController.swift; sourceTree = "<group>"; };
 		EA2D548919E1915B00D8EB78 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2D548D19E1915B00D8EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		EA5D9D5519EDEFD800205CC6 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		EA62885C19E34FB300A6CC34 /* DMatUF-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMatUF-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA76FD9E19EC3EB6002C0B1F /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
+		EA83E53E19F1EDD600B243B4 /* EventExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExt.swift; sourceTree = "<group>"; };
+		EA83E54619F43D1C00B243B4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EA8C674419E32697009BE138 /* Sandbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandbox.swift; sourceTree = "<group>"; };
 		EA9557EA19EC4EF300EAAB8A /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
 		EA9557EC19EC538D00EAAB8A /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				EA5D9D5419EDEFD800205CC6 /* Data.xcdatamodeld */,
-				EA232AB619EFB1E2003CC9AF /* Event.swift */,
+				EA83E54619F43D1C00B243B4 /* Event.swift */,
+				EA83E53E19F1EDD600B243B4 /* EventExt.swift */,
 				EABA2B4F19E1AEC60075F10E /* EventsViewController.swift */,
 				EA232AB819EFB286003CC9AF /* SelectedEventViewController.swift */,
 			);
@@ -256,6 +259,11 @@
 					EA2D548819E1915B00D8EB78 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 43225XRA2T;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
 					};
 					EA2D549F19E1915B00D8EB78 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -309,11 +317,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA232AB919EFB286003CC9AF /* SelectedEventViewController.swift in Sources */,
+				EA83E54719F43D1C00B243B4 /* Event.swift in Sources */,
 				EA5D9D5619EDEFD800205CC6 /* Data.xcdatamodeld in Sources */,
 				EA76FD9F19EC3EB6002C0B1F /* KidsViewController.swift in Sources */,
 				EA2D548F19E1915B00D8EB78 /* AppDelegate.swift in Sources */,
 				EA232AAC19EF8ECF003CC9AF /* SponsersViewController.swift in Sources */,
-				EA232AB719EFB1E2003CC9AF /* Event.swift in Sources */,
+				EA83E53F19F1EDD600B243B4 /* EventExt.swift in Sources */,
 				EA31259319ECDAA800844EEA /* KidStoryViewController.swift in Sources */,
 				EA9557ED19EC538D00EAAB8A /* SocialViewController.swift in Sources */,
 				EA418AB819F0345F000B007C /* json.swift in Sources */,
@@ -379,8 +388,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos8.0]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -400,7 +409,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "f7473487-7359-4afb-8a35-a174badeb0a0";
+				PROVISIONING_PROFILE = "21854d42-777a-41bf-a798-b24bf74b0580";
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -426,8 +435,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos8.0]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -441,7 +450,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "f7473487-7359-4afb-8a35-a174badeb0a0";
+				PROVISIONING_PROFILE = "21854d42-777a-41bf-a798-b24bf74b0580";
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -455,7 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MacCallum (75FJ2SL2VA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +474,7 @@
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "21854d42-777a-41bf-a798-b24bf74b0580";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -476,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Michael MacCallum (75FJ2SL2VA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -486,7 +495,7 @@
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "21854d42-777a-41bf-a798-b24bf74b0580";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
