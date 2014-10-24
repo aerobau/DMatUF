@@ -32,12 +32,13 @@ class EventsViewController: UITableViewController, NSFetchedResultsControllerDel
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        fetchJSON()
         
         fetchedResultController = getFetchedResultController()
         fetchedResultController.delegate = self
         fetchedResultController.performFetch(nil)
         
-        fetchJSON()
+        
     }
     
     func fetchJSON(){
@@ -51,48 +52,43 @@ class EventsViewController: UITableViewController, NSFetchedResultsControllerDel
             var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: &jsonError)
             
             if jsonError == nil {
+                println("raw JSON success")
                 if let arrayJSON = rawJSON as? [[String : AnyObject]] {
                     // JSON fetched and converted to array
-                    for objDict in arrayJSON {
+                    println("Convert to JSON success")
+                    
+                    for var i = 0; i < arrayJSON.count; ++i{
                         
-                        if let objID: Int64? = objDict["id"]?.longLongValue {
-                            
-                            if let event: Event = self.fetchObject(NSNumber(longLong: objID!)) {
-                                event.id = NSNumber(longLong: objID!)
-                                println("OBJECT FOUND: UPDATING OBJECT")
-                                if let objTitle: String = objDict["title"]! as? String{
-                                    event.title = objTitle
-                                }
+                        if let objID: NSNumber = arrayJSON[i]["id"] as? NSNumber{
+                            println("objID recovered")
+                           
+                            println(objID)
+                            if let event: Event = self.fetchObject(objID){
+                                println("Event found in Core Data stack with id = \(objID)")
                             } else {
-                                println("OBJECT NOT FOUND: CREATING OBJECT")
-                                self.createObject(objDict)
+                                println("Event NOT found in Core Data stack with id = \(objID)")
                             }
+
+                            
                         } else {
-                            self.errorAlert("Unable to cast id to int")
+                            println("objID not recovered")
                         }
                     }
+                    
+                    
+//                    for obj in JSON{
+//                        println("obj in JSON")
+//                    }
+                    
+                }else{
+                    println("Convert to JSON failed")
                 }
             } else {
-                self.errorAlert("Unable to parse JSON")
+                println("raw JSON error")
             }
         }.resume()
-        saveContext()
     }
     
-    func createObject(objDict: Dictionary<String, AnyObject>){
-        var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
-        
-        if let id: Int64? = objDict["id"]?.longLongValue {
-            newEvent.id = NSNumber(longLong: id!)
-        }
-        if let objTitle: String = objDict["title"]! as? String{
-            newEvent.title = objTitle
-        }
-        newEvent.lastUpdated = NSDate()
-
-        self.managedObjectContext!.save(nil)
-    }
-
     func fetchObject(objID: Int) -> Event?{
         var fetchRequest = NSFetchRequest(entityName: "Event")
         let sortDescriptor = NSSortDescriptor(key: "lastUpdated", ascending: true)
@@ -103,36 +99,16 @@ class EventsViewController: UITableViewController, NSFetchedResultsControllerDel
         fetchRequest.fetchBatchSize = 1
         var error = NSErrorPointer()
         let fetchedObject = self.managedObjectContext?.executeFetchRequest(fetchRequest, error: error)
-        if fetchedObject?.count != 0 {
-            if let fetchedObj: Event = fetchedObject![0] as? Event {
-                println("Fetched object with ID = \(objID). The title of this object is '\(fetchedObj.title)'")
-                return fetchedObj
-            }else {
-                return nil
-            }
-        } else {
+        if let fetchedObj: Event = fetchedObject![0] as? Event {
+            println("Fetched object with ID = \(objID). The title of this object is '\(fetchedObj.title)'")
+            return fetchedObj
+        }else {
             return nil
         }
     }
     
     func compareFetchedEvent(fetchedEvent: [String: AnyObject]){
         let id: Int? = JSON(fetchedEvent["id"]!).asInt
-    }
-    
-    func saveContext(){
-        if self.managedObjectContext!.hasChanges {
-            var saveError = NSErrorPointer()
-            self.managedObjectContext!.save(saveError)
-            
-            if saveError == nil {
-                self.tableView.reloadData()
-                println("Save error = nil")
-            }else {
-                self.tableView.reloadData()
-                println("Save error != nil")
-                errorAlert("Oops! Something went wrong saving the context!")
-            }
-        }
     }
     
     func getFetchedResultController() -> NSFetchedResultsController {
@@ -179,7 +155,7 @@ class EventsViewController: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         let managedObject:Event = fetchedResultController.objectAtIndexPath(indexPath) as Event
         managedObjectContext?.deleteObject(managedObject)
-        saveContext()
+        managedObjectContext?.save(nil)
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
@@ -198,13 +174,12 @@ class EventsViewController: UITableViewController, NSFetchedResultsControllerDel
     }
    
     @IBAction func updateButtonPressed(sender: UIBarButtonItem) {
-        fetchJSON()
-    }
-    
-    func errorAlert(message: String) {
-        var alert = UIAlertController(title: "Error!", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        if let object: Event = fetchedResultController.objectAtIndexPath(NSIndexPath(forRow: 2, inSection: 0)) as? Event{
+            object.updateFromDictionary(["title": "UPDATED TITLE"])
+            println("Object updated + \(object.id)")
+            self.managedObjectContext!.save(nil)
+
+        }
     }
     
     
