@@ -64,9 +64,19 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         println("section = \(section)")
-//        return fetchedResultController.sectionIndexTitles[section] as? String
+        
+        
+       let sectionInfo = fetchedResultController.sections![section] as? NSFetchedResultsSectionInfo
+        return sectionInfo?.name
+        
+        
+//            return "header"
+//        return fetchedResultController
+        
+//        return fetchedResultController
+//            as? String
 //        fetchedResultController.sectionNameKeyPath
-        return "Header"
+//        return "Header"
     }
     
     
@@ -76,7 +86,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         
         cell.titleLabel.text = cellEvent.eTitle
         cell.idLabel.text = "\(cellEvent.eID)"
-//        cell.secLabel.text = cellEvent.eSecID ?? "nil"
+        cell.secLabel.text = cellEvent.eSecID ?? "nil"
         
         return cell
     }

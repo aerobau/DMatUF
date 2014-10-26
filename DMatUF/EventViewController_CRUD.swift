@@ -48,7 +48,7 @@ extension EventViewController {
     func eventsFetchRequest() -> NSFetchRequest {
         
         var fetchRequest = NSFetchRequest(entityName: "Event")
-        let sortDescriptor1 = NSSortDescriptor(key: "eSecID", ascending: true)
+        let sortDescriptor1 = NSSortDescriptor(key: "eSecID", ascending: false)
         let sortDescriptor = NSSortDescriptor(key: "eID", ascending: true)
 
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor]
