@@ -8,19 +8,24 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
-    @IBOutlet weak var pushButton: UIButton!
-    @IBOutlet weak var text: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    func updateLabel(){
+        let date = NSDate(fromString: "2008-08-15 07:30:00")
+        println(date)
+        println(NSDate())
         
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let s = formatter.stringFromDate(date)
+        println(s)
+        
+            
     }
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

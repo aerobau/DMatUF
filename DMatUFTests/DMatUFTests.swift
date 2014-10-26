@@ -2,7 +2,7 @@
 //  DMatUFTests.swift
 //  DMatUFTests
 //
-//  Created by Ian MacCallum on 10/5/14.
+//  Created by Ian MacCallum on 10/24/14.
 //  Copyright (c) 2014 MacCDevTeam. All rights reserved.
 //
 

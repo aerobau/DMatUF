@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Event" representedClassName="DMatUF.Event" syncable="YES">
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" spotlightIndexingEnabled="YES" syncable="YES"/>
-        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="eDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eEnd" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eID" optional="YES" attributeType="Integer 64" defaultValueString="-1" syncable="YES"/>
+        <attribute name="eLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eMod" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eSecID" optional="YES" attributeType="String" defaultValueString="Upcoming" syncable="YES"/>
+        <attribute name="eStart" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sectionIdentifier" optional="YES" transient="YES" attributeType="String" defaultValueString="Upcoming" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
