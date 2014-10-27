@@ -38,15 +38,17 @@ extension EventViewController {
                             if let d: String = eventDict["lastModified"] as? String {
                                 
                                 if let event: Event = self.fetchEvent(i) {
-                                    let a: NSTimeInterval = event.eMod.timeIntervalSince1970
-                                    let b: NSTimeInterval = NSDate(fromString: d).timeIntervalSince1970
-                                    
-                                    if a < b {
-                                        println("ID = \(i) needs Update")
-                                        self.updateEvent(eventDict, id: i)
-                                    } else {
-                                        println("ID = \(i) is up to date!")
-                                    }
+                                    println("ID = \(i) needs Update")
+                                    self.updateEvent(eventDict, id: i)
+
+                                    // let a: NSTimeInterval = event.eMod.timeIntervalSince1970
+                                    // let b: NSTimeInterval = NSDate(fromString: d).timeIntervalSince1970
+                                    // if a < b {
+                                        // println("ID = \(i) needs Update")
+                                        // self.updateEvent(eventDict, id: i)
+                                    // } else {
+                                        // println("ID = \(i) is up to date!")
+                                    // }
                                 } else {
                                     println("ID = \(i) needs Creation")
                                     self.createEvent(eventDict)

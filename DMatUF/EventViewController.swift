@@ -86,8 +86,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         
         cell.titleLabel.text = cellEvent.eTitle
         cell.idLabel.text = "\(cellEvent.eID)"
-        cell.secLabel.text = cellEvent.eSecID ?? "nil"
-        
         return cell
     }
     

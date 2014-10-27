@@ -53,6 +53,32 @@
                     <view key="view" contentMode="scaleToFill" id="wtU-5p-9G4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="SsO-cn-fT0">
+                                <rect key="frame" x="16" y="72" width="568" height="284"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNQ-fh-FEx">
+                                <rect key="frame" x="249" y="465" width="92" height="30"/>
+                                <state key="normal" title="floridadm.org">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-n8-Tfw">
+                                <rect key="frame" x="128" y="417" width="46" height="30"/>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterButtonPressed:" destination="enI-aY-D12" eventType="touchUpInside" id="YvL-bd-4qm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfK-PL-dOp">
+                                <rect key="frame" x="128" y="471" width="68" height="30"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Zc-0K-LSZ"/>
@@ -75,64 +101,30 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Hj-vp-ixO" id="jiB-H7-3SD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewi-az-JFk">
-                                            <rect key="frame" x="8" y="21" width="309" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Au-QDP">
+                                            <rect key="frame" x="8" y="21" width="186" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xB-mf-6IO">
-                                            <rect key="frame" x="325" y="21" width="64" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="64" id="hQE-OQ-7TP"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK4-2e-4gM">
+                                            <rect key="frame" x="202" y="21" width="40" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhw-iN-Lhn">
-                                            <rect key="frame" x="397" y="21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBX-PE-kf2">
-                                            <rect key="frame" x="447" y="21" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXo-Mf-xfl">
+                                            <rect key="frame" x="250" y="21" width="82" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="xBX-PE-kf2" secondAttribute="bottom" constant="14" id="4Wa-AI-0ma"/>
-                                        <constraint firstItem="zhw-iN-Lhn" firstAttribute="leading" secondItem="9xB-mf-6IO" secondAttribute="trailing" constant="8" id="IX5-H0-PQg"/>
-                                        <constraint firstItem="xBX-PE-kf2" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" constant="13" id="Msz-2U-yjE"/>
-                                        <constraint firstItem="xBX-PE-kf2" firstAttribute="leading" secondItem="zhw-iN-Lhn" secondAttribute="trailing" constant="8" id="Ufa-Xc-GmK"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="9xB-mf-6IO" secondAttribute="bottom" constant="14" id="VdR-jP-62w"/>
-                                        <constraint firstItem="zhw-iN-Lhn" firstAttribute="leading" secondItem="9xB-mf-6IO" secondAttribute="trailing" constant="8" id="VuG-uE-8YP"/>
-                                        <constraint firstItem="9xB-mf-6IO" firstAttribute="leading" secondItem="ewi-az-JFk" secondAttribute="trailing" constant="8" id="ahE-b3-0Yp"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zhw-iN-Lhn" secondAttribute="bottom" constant="14" id="bJK-yi-Hy4"/>
-                                        <constraint firstItem="zhw-iN-Lhn" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" constant="13" id="cKZ-fH-prM"/>
-                                        <constraint firstItem="xBX-PE-kf2" firstAttribute="leading" secondItem="zhw-iN-Lhn" secondAttribute="trailing" constant="8" id="fKR-y0-7wM"/>
-                                        <constraint firstItem="9xB-mf-6IO" firstAttribute="trailing" secondItem="jiB-H7-3SD" secondAttribute="trailingMargin" constant="-203" id="gcG-MT-vGP"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ewi-az-JFk" secondAttribute="bottom" constant="14" id="hLE-lB-Gew"/>
-                                        <constraint firstItem="9xB-mf-6IO" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" constant="13" id="iRe-jd-mTY"/>
-                                        <constraint firstItem="ewi-az-JFk" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="jxp-72-36w"/>
-                                        <constraint firstItem="ewi-az-JFk" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" constant="13" id="oNl-0s-wqm"/>
-                                        <constraint firstItem="xBX-PE-kf2" firstAttribute="trailing" secondItem="jiB-H7-3SD" secondAttribute="trailingMargin" id="rdk-5V-jWl"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="Ufa-Xc-GmK"/>
-                                            <exclude reference="rdk-5V-jWl"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="idLabel" destination="9xB-mf-6IO" id="T9F-a2-Ib5"/>
-                                    <outlet property="otherLabel" destination="xBX-PE-kf2" id="HCs-fP-qKC"/>
-                                    <outlet property="secLabel" destination="zhw-iN-Lhn" id="TYT-vr-jmm"/>
-                                    <outlet property="titleLabel" destination="ewi-az-JFk" id="RFb-Td-YIE"/>
+                                    <outlet property="idLabel" destination="eK4-2e-4gM" id="aN1-uR-2cu"/>
+                                    <outlet property="otherLabel" destination="kXo-Mf-xfl" id="3vv-la-eY0"/>
+                                    <outlet property="titleLabel" destination="seJ-Au-QDP" id="1Zz-db-adc"/>
                                     <segue destination="7UV-Yy-BPB" kind="show" identifier="EventDetailSegue" id="Z83-AO-dmM"/>
                                 </connections>
                             </tableViewCell>
@@ -373,4 +365,7 @@
             <point key="canvasLocation" x="640" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="400" height="200"/>
+    </resources>
 </document>
