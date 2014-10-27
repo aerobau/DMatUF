@@ -10,6 +10,9 @@
 		EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */; };
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
 		EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAC19FAC72C000C5685 /* Header.swift */; };
+		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
+		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
+		EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */; };
 		EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6401FA19FBF3F400C7167C /* Kids.plist */; };
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
@@ -47,6 +50,9 @@
 		EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_CRUD.swift; sourceTree = "<group>"; };
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
 		EA2F1FAC19FAC72C000C5685 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
+		EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramView.xib; sourceTree = "<group>"; };
 		EA6401FA19FBF3F400C7167C /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
 		EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,48 @@
 			name = "Event Subclasses";
 			sourceTree = "<group>";
 		};
+		EA5DBD9419FE7DBC0085DC14 /* Social Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */,
+				EA5DBD9519FE9F5B0085DC14 /* Instagram */,
+				EA5DBD9619FE9F6A0085DC14 /* Twitter */,
+				EA5DBD9719FE9F700085DC14 /* Facebook */,
+				EA5DBD9819FE9F780085DC14 /* YouTube */,
+			);
+			name = "Social Tab";
+			sourceTree = "<group>";
+		};
+		EA5DBD9519FE9F5B0085DC14 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */,
+				EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */,
+			);
+			name = Instagram;
+			sourceTree = "<group>";
+		};
+		EA5DBD9619FE9F6A0085DC14 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		EA5DBD9719FE9F700085DC14 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		EA5DBD9819FE9F780085DC14 /* YouTube */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = YouTube;
+			sourceTree = "<group>";
+		};
 		EA6B0E1219FBE995006CC2F2 /* Kids Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +218,7 @@
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
 				EAC85D8919FA9432006840A0 /* Events Tab */,
 				EA6B0E1219FBE995006CC2F2 /* Kids Tab */,
+				EA5DBD9419FE7DBC0085DC14 /* Social Tab */,
 				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 			);
 			path = DMatUF;
@@ -305,6 +354,7 @@
 				EAC85D6819FA92BC006840A0 /* LaunchScreen.xib in Resources */,
 				EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */,
 				EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */,
+				EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
@@ -336,6 +387,7 @@
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
+				EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
