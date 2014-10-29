@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1970F61A0005BC0097245E /* EventViewController_Format.swift */; };
 		EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */; };
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
 		EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAC19FAC72C000C5685 /* Header.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA1970F61A0005BC0097245E /* EventViewController_Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Format.swift; sourceTree = "<group>"; };
 		EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_CRUD.swift; sourceTree = "<group>"; };
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
 		EA2F1FAC19FAC72C000C5685 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC85D9619FAA78F006840A0 /* EventViewController_Context.swift */,
+				EA1970F61A0005BC0097245E /* EventViewController_Format.swift */,
 				EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */,
 				EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */,
 			);
@@ -210,6 +213,7 @@
 		EAC85D5819FA92BC006840A0 /* DMatUF */ = {
 			isa = PBXGroup;
 			children = (
+				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 				EAC85D9519FAA766006840A0 /* Extensions */,
 				EAC85D6419FA92BC006840A0 /* Images.xcassets */,
 				EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */,
@@ -219,7 +223,6 @@
 				EAC85D8919FA9432006840A0 /* Events Tab */,
 				EA6B0E1219FBE995006CC2F2 /* Kids Tab */,
 				EA5DBD9419FE7DBC0085DC14 /* Social Tab */,
-				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 			);
 			path = DMatUF;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
 				EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */,
+				EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

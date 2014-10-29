@@ -24,7 +24,7 @@ extension EventViewController {
     func createEvent(eventDict: Dictionary<String, AnyObject>) {
 
         var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
-        
+        println(eventDict)
         newEvent.eID = getInt(eventDict["id"])
         newEvent.eTitle = getString(eventDict["title"])
         newEvent.eLocation = getString(eventDict["location"])
@@ -49,10 +49,11 @@ extension EventViewController {
     func eventsFetchRequest() -> NSFetchRequest {
         
         var fetchRequest = NSFetchRequest(entityName: "Event")
-        let sortDescriptor1 = NSSortDescriptor(key: "eSecID", ascending: false)
-        let sortDescriptor = NSSortDescriptor(key: "eID", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "eSecID", ascending: false)
+        let sortDescriptor1 = NSSortDescriptor(key: "eStart", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "eEnd", ascending: true)
 
-        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor]
+        fetchRequest.sortDescriptors = [sortDescriptor, sortDescriptor1, sortDescriptor2]
         fetchRequest.fetchBatchSize = 20
         fetchRequest.fetchLimit = 1000
         return fetchRequest
@@ -91,8 +92,7 @@ extension EventViewController {
     // Update
     func updateEvent(eventDict: Dictionary<String, AnyObject>, id: Int) {
         if let event: Event = fetchEvent(id) {
-            println(eventDict)
-            
+            println(event)
             event.eID = id
             event.eTitle = getString(eventDict["title"])
             event.eLocation = getString(eventDict["location"])
@@ -144,11 +144,29 @@ extension EventViewController {
 
     func getDate(obj: AnyObject?) -> NSDate {
         if let object: String = obj as? String {
+            println(object)
             let date = NSDate(fromString: object)
+            println(date)
             return date
-        } else {
-            return NSDate(timeIntervalSince1970: 0)
         }
+        return NSDate(timeIntervalSince1970: 0)
+    }
+    
+    func dateEST(dateGMT: NSDate) -> NSDate {
+        let formatterGMT = NSDateFormatter()
+        formatterGMT.timeZone = NSTimeZone.systemTimeZone()
+        formatterGMT.dateFormat = ""
+        let stringGMT = formatterGMT.stringFromDate(dateGMT)
+        
+        let formatterEST = NSDateFormatter()
+        formatterEST.timeZone = NSTimeZone.systemTimeZone()
+        formatterEST.dateFormat = ""
+        let dateEST = formatterEST.dateFromString(stringGMT)
+        
+        if let date = dateEST {
+            return date
+        }
+        return dateGMT
     }
 
 }

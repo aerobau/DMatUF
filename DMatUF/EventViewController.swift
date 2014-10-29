@@ -35,11 +35,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         var error: NSErrorPointer = nil
         if !self.fetchedResultController.performFetch(error)
         {
-            /*
-            Replace this implementation with code to handle the error appropriately.
-            
-            abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-            */
             println("Unresolved error: \(error), \(error.debugDescription)")
         }
         
@@ -52,8 +47,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     /* Table View Data Source & Delegate */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         let numberOfSections = fetchedResultController.sections?.count
-        println("Sections: \(fetchedResultController.sections?)")
-        println("IndexTitles: \(fetchedResultController.sectionIndexTitles)")
         return numberOfSections ?? 0
     }
     
@@ -63,20 +56,8 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        println("section = \(section)")
-        
-        
-       let sectionInfo = fetchedResultController.sections![section] as? NSFetchedResultsSectionInfo
+        let sectionInfo = fetchedResultController.sections![section] as? NSFetchedResultsSectionInfo
         return sectionInfo?.name
-        
-        
-//            return "header"
-//        return fetchedResultController
-        
-//        return fetchedResultController
-//            as? String
-//        fetchedResultController.sectionNameKeyPath
-//        return "Header"
     }
     
     
@@ -86,6 +67,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         
         cell.titleLabel.text = cellEvent.eTitle
         cell.idLabel.text = "\(cellEvent.eID)"
+        cell.otherLabel.text = formatDateForCell(cellEvent.eStart, end: cellEvent.eEnd)
         return cell
     }
     
@@ -128,8 +110,4 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             }
         }
     }
-    
-    
-    
-    
 }

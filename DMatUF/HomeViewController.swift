@@ -23,12 +23,42 @@ class HomeViewController: UIViewController {
         let s = formatter.stringFromDate(date)
         println(s)
         
-            
+        
+    }
+    
+    @IBAction func loginButtonPressed(sender: UIBarButtonItem) {
+        openURL(["https://www.kintera.org/faf/login/loginParticipant.asp?login=lmenu&ievent=1114670"])
+    }
+    
+    @IBAction func donateButtonPressed(sender: UIBarButtonItem) {
+        openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
+
+    }
+    
+    @IBAction func websiteButtonPressed(sender: UIButton) {
+        openURL(["http://www.floridadm.org"])
+    }
+    
+    @IBAction func instagramButtonPressed(sender: UIButton) {
+        openURL([
+            "instagram://user?username=DMatUF", // App
+            "https://instagram.com/DMatUF" // Website
+        ])
+
+    }
+    @IBAction func facebookButtonPressed(sender: UIButton) {
+        openURL([
+            "fb://profile/floridaDM", // App
+            "https://www.facebook.com/floridaDM" // Website
+        ])
+      
+
     }
     
     @IBAction func twitterButtonPressed(sender: UIButton) {
-        var handle: String = "floridadm"
-        var urls = ["twitter://user?screen_name=\(handle)", // Twitter
+        let handle: String = "floridadm"
+        
+        openURL(["twitter://user?screen_name=\(handle)", // Twitter
             "tweetbot:///user_profile/\(handle)", // TweetBot
             "echofon:///user_timeline?\(handle)", // Echofon
             "twit:///user?screen_name=\(handle)", // Twittelator Pro
@@ -38,17 +68,21 @@ class HomeViewController: UIViewController {
             "simplytweet:?link=http://twitter.com/\(handle)", // SimplyTweet
             "icebird://user?screen_name=\(handle)", // IceBird
             "fluttr://user/\(handle)", // Fluttr
-            "http://twitter.com/\(handle)"]
+            "http://twitter.com/\(handle)"])
+      
+
+    }
+    
+    func openURL(dict: [String]) {
         
         let application: UIApplication = UIApplication.sharedApplication()
         
-        for url in urls {
+        for url in dict {
             if application.canOpenURL(NSURL(string: url)!) {
                 application.openURL(NSURL(string: url)!)
                 return
             }
         }
-
     }
     
     override func didReceiveMemoryWarning() {

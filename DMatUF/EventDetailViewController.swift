@@ -47,6 +47,14 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         return store.defaultCalendarForNewEvents
     }
     
+//    func convertDate(date: NSDate) -> NSDate {
+//        let formatter = NSDateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        formatter.timeZone = NSTimeZone.systemTimeZone()
+//        
+//        return NSDate()
+//    }
+    
     
     @IBAction func addEvent(sender: UIBarButtonItem) {
         
@@ -55,11 +63,12 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         addEventController.editViewDelegate = self
         
         var event = EKEvent(eventStore: store)
+        
+        println("\(startDate)")
         event.title = eventTitle
         event.location = "Turlington"
         event.calendar = store.defaultCalendarForNewEvents
         event.startDate = startDate
-        
         if let d = endDate {
             event.endDate = d
         } else {

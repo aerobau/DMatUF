@@ -18,7 +18,7 @@ class SocialViewController: UICollectionViewController, UICollectionViewDelegate
     @IBOutlet var segment: UISegmentedControl!
 
     
-//    let page: Array<UIView> = [InstagramView(frame: CGRectMake(0, 0, 100, 100))]
+//    let page: Array<UIView> = [InstagramView()]
 
     
     
@@ -49,7 +49,7 @@ class SocialViewController: UICollectionViewController, UICollectionViewDelegate
 
         cell.backgroundColor = UIColor(hue: CGFloat(indexPath.row) / 4.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)
             
-//        cell.addSubview(page[0])
+        cell.addSubview(InstagramView())
         // Need to make the cell filled with the view
         return cell
     }
