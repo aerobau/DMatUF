@@ -35,6 +35,10 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
     func setInfo(){
         idLabel.text = "\(id)"
         titleLabel.text = eventTitle
+        locationLabel.text = location
+        dateLabel.text = NSDateFormatter().stringFromDate(startDate!)
+        descriptionTextView.text = eventDescription
+        
         
     }
     
@@ -69,11 +73,12 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         event.location = "Turlington"
         event.calendar = store.defaultCalendarForNewEvents
         event.startDate = startDate
-        if let d = endDate {
-            event.endDate = d
-        } else {
-            event.endDate = self.startDate?.dateByAddingTimeInterval(60*60)
-        }
+        event.endDate = endDate
+//        if let d = endDate {
+//            event.endDate = d
+//        } else {
+//            event.endDate = self.startDate?.dateByAddingTimeInterval(60*60)
+//        }
         
         event.notes = eventDescription
         addEventController.event = event

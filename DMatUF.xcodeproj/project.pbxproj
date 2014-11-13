@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0A20731A01416300A1E00A /* KinteraLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A20721A01416300A1E00A /* KinteraLoginViewController.swift */; };
+		EA0A20751A0214C300A1E00A /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */; };
 		EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1970F61A0005BC0097245E /* EventViewController_Format.swift */; };
 		EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */; };
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
 		EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAC19FAC72C000C5685 /* Header.swift */; };
+		EA3CBCA11A14350F002EC704 /* KinteraAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */; };
 		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
 		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
 		EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */; };
@@ -18,6 +21,9 @@
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
 		EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D02B819FAAC9A005406E4 /* Date.swift */; };
+		EA814B561A1084CB00569306 /* UniversalTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814B551A1084CB00569306 /* UniversalTheme.swift */; };
+		EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814B571A11596A00569306 /* EventsNavigationController.swift */; };
+		EA9B6A5D1A11F35300F9785D /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B6A5C1A11F35300F9785D /* UserInfoViewController.swift */; };
 		EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */; };
 		EAC85D6319FA92BC006840A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6119FA92BC006840A0 /* Main.storyboard */; };
 		EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6419FA92BC006840A0 /* Images.xcassets */; };
@@ -48,10 +54,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA0A20721A01416300A1E00A /* KinteraLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraLoginViewController.swift; sourceTree = "<group>"; };
+		EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 		EA1970F61A0005BC0097245E /* EventViewController_Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Format.swift; sourceTree = "<group>"; };
 		EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_CRUD.swift; sourceTree = "<group>"; };
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
 		EA2F1FAC19FAC72C000C5685 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraAccountViewController.swift; sourceTree = "<group>"; };
 		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramView.xib; sourceTree = "<group>"; };
@@ -60,6 +69,9 @@
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
 		EA7D02B819FAAC9A005406E4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
+		EA814B551A1084CB00569306 /* UniversalTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTheme.swift; sourceTree = "<group>"; };
+		EA814B571A11596A00569306 /* EventsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsNavigationController.swift; sourceTree = "<group>"; };
+		EA9B6A5C1A11F35300F9785D /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		EAC85D5619FA92BC006840A0 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC85D5A19FA92BC006840A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +118,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA0A20711A01414D00A1E00A /* Kintera Login */ = {
+			isa = PBXGroup;
+			children = (
+				EA0A20721A01416300A1E00A /* KinteraLoginViewController.swift */,
+				EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */,
+				EA9B6A5C1A11F35300F9785D /* UserInfoViewController.swift */,
+			);
+			name = "Kintera Login";
+			sourceTree = "<group>";
+		};
 		EA2F1FA619FAC581000C5685 /* Event Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC85D8719FA93D6006840A0 /* HomeViewController.swift */,
+				EA0A20711A01414D00A1E00A /* Kintera Login */,
 			);
 			name = "Home Tab";
 			sourceTree = "<group>";
@@ -257,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC85D8A19FA9446006840A0 /* EventViewController.swift */,
+				EA814B571A11596A00569306 /* EventsNavigationController.swift */,
 				EA2F1FAE19FAD80D000C5685 /* Event Subclasses */,
 				EA2F1FA619FAC581000C5685 /* Event Extensions */,
 				EAC85D8C19FA945C006840A0 /* EventDetailViewController.swift */,
@@ -267,6 +291,8 @@
 		EAC85D9519FAA766006840A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */,
+				EA814B551A1084CB00569306 /* UniversalTheme.swift */,
 				EA7D02B819FAAC9A005406E4 /* Date.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
@@ -322,6 +348,7 @@
 				TargetAttributes = {
 					EAC85D5519FA92BC006840A0 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 43225XRA2T;
 					};
 					EAC85D6C19FA92BC006840A0 = {
 						CreatedOnToolsVersion = 6.1;
@@ -375,14 +402,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0A20731A01416300A1E00A /* KinteraLoginViewController.swift in Sources */,
 				EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */,
+				EA814B561A1084CB00569306 /* UniversalTheme.swift in Sources */,
+				EA9B6A5D1A11F35300F9785D /* UserInfoViewController.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
+				EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
@@ -391,6 +422,8 @@
 				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
 				EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */,
+				EA3CBCA11A14350F002EC704 /* KinteraAccountViewController.swift in Sources */,
+				EA0A20751A0214C300A1E00A /* AF+Date+Extension.swift in Sources */,
 				EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,9 +549,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DMatUF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -526,9 +563,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DMatUF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -13,10 +13,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    let primaryColor = UIColor(hue: 211.0 / 360.0, saturation: 1.0, brightness: 0.51, alpha: 1.0)
+    let secondaryColor = UIColor(hue: 23.0 / 360.0, saturation: 0.86, brightness: 0.95, alpha: 1.0)
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        UniversalTheme().setupTheme(primary: primaryColor, secondary: secondaryColor, font: "HelveticaNeue-Light", statusBarLight: true)
         return true
     }
     

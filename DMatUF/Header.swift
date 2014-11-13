@@ -9,6 +9,19 @@
 import UIKit
 
 class Header: UITableViewHeaderFooterView {
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+    }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init() {
+        super.init()
+    }
 }

@@ -29,6 +29,11 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         tableView.estimatedSectionFooterHeight = 0.0
         tableView.sectionFooterHeight = UITableViewAutomaticDimension
         
+        // TableView Separators
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor = UIColor(patternImage: UIImage(named: "separator")!)
+        tableView.separatorInset = UIEdgeInsetsZero
+        
         fetchedResultController = getFetchedResultController()
         fetchedResultController.delegate = self
 
@@ -38,9 +43,9 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             println("Unresolved error: \(error), \(error.debugDescription)")
         }
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh!")
-        self.refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh!")
+        refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
         fetchJSON(tableView)
     }
     
@@ -65,9 +70,13 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         var cell = tableView.dequeueReusableCellWithIdentifier("EventCellID", forIndexPath: indexPath) as EventCell
         let cellEvent = fetchedResultController.objectAtIndexPath(indexPath) as Event
         
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(hue: 40.0/255.0, saturation: 0.01, brightness: 0.97, alpha: 1.0)
+        } else {
+            cell.backgroundColor = UIColor(hue: 70.0/255.0, saturation: 0.03, brightness: 0.93, alpha: 1.0)
+        }
+        
         cell.titleLabel.text = cellEvent.eTitle
-        cell.idLabel.text = "\(cellEvent.eID)"
-        cell.otherLabel.text = formatDateForCell(cellEvent.eStart, end: cellEvent.eEnd)
         return cell
     }
     
@@ -82,9 +91,28 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("SectionHeader") as Header
+//        var label = UILabel(frame: CGRectMake(20, 0, header.frame.width - 40, header.frame.height))
+//        header.addSubview(label)
+//        label.text = "tyujh67890"
+//        label.backgroundColor = UIColor.yellowColor()
+        
+        
+        
+        header.contentView.backgroundColor = UIColor(hue: 60.0/255.0, saturation: 0.03, brightness: 0.91, alpha: 1.0)
+//        header.textLabel.backgroundColor = UIColor.greenColor()
+//        header.textLabel.frame = CGRectMake(20, 0, header.contentView.frame.width, header.contentView.frame.height)
+//        header.textLabel.text = fetchedResultController.sectionNameKeyPath
+        
+//        let header = UIView(frame: CGRectMake(0, 0, tableView.frame.width, 28))
+//        let label = UILabel(frame: CGRectMake(6, 2, header.contentView.frame.width - 12, header.contentView.frame.height - 4))
+//        header.contentView.addSubview(label)
+//        header.contentView.backgroundColor = UIColor(hue: 60.0/255.0, saturation: 0.03, brightness: 0.91, alpha: 1.0)
+//        label.text = fetchedResultController.sectionNameKeyPath
+//        label.font = UIFont(name: "HelveticaNeue", size: 13)
+//        label.backgroundColor = UIColor.greenColor()
+        
         
         header.textLabel.text = fetchedResultController.sectionNameKeyPath
-        
         return header
         
     }
@@ -107,6 +135,9 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
                 destination.id = event.eID.integerValue
                 destination.eventTitle = event.eTitle
                 destination.startDate = event.eStart
+                destination.endDate = event.eEnd
+                destination.eventDescription = event.eDescription
+                destination.location = event.eLocation
             }
         }
     }

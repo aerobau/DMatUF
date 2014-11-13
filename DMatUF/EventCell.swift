@@ -10,7 +10,8 @@ import UIKit
 
 class EventCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var secLabel: UILabel!
-    @IBOutlet weak var otherLabel: UILabel!   
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    
+    
 }

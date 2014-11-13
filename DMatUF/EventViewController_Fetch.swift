@@ -23,9 +23,9 @@ extension EventViewController {
         session.dataTaskWithURL(url) { (data, response, error)  in
             
             var jsonError: NSError?
-            
             var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: &jsonError)
-            
+            println(rawJSON)
+
             if jsonError == nil {
                 
                 if let result = rawJSON as? [[String: AnyObject]] {
