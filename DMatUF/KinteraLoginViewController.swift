@@ -9,10 +9,14 @@
 import UIKit
 
 class KinteraLoginViewController: UIViewController, UITextFieldDelegate {
-    
     var username: String = ""
     var password: String = ""
     var dictTemp: [String: AnyObject]?
+    
+    // Handle Connection
+    var urlTemp: NSURL?
+    var connectionTemp: NSURLConnection?
+
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -54,13 +58,17 @@ class KinteraLoginViewController: UIViewController, UITextFieldDelegate {
     func requestData() {
         
         let session = NSURLSession.sharedSession()
+
+        urlTemp = NSURL(string: "http://mickmaccallum.com/ian/kintera.php?&username=\(username)&password=\(password)")
         
-        if let url = NSURL(string: "http://mickmaccallum.com/ian/kintera.php?&username=\(username)&password=\(password)") {
+        if let url = urlTemp {
             
             var request = NSMutableURLRequest(URL: url)
             let queue: NSOperationQueue = NSOperationQueue.mainQueue()
 
-            if let connection = NSURLConnection(request: request, delegate: self, startImmediately: true) {
+            connectionTemp = NSURLConnection(request: request, delegate: self, startImmediately: true)
+
+            if let connection = connectionTemp {
             
                 NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: { (response: NSURLResponse!, data: NSData!, error: NSError!) in
                     
@@ -87,7 +95,7 @@ class KinteraLoginViewController: UIViewController, UITextFieldDelegate {
                 println("CONNECTION FAILED")
             }
         } else {
-            println("no url")
+            println("INVALID URL")
         }
     }
     

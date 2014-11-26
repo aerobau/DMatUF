@@ -14,12 +14,16 @@
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
 		EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAC19FAC72C000C5685 /* Header.swift */; };
 		EA3CBCA11A14350F002EC704 /* KinteraAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */; };
+		EA3CBCA31A152B74002EC704 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA21A152B74002EC704 /* Reachability.swift */; };
+		EA3CBCA91A1D4B32002EC704 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */; };
 		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
 		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
 		EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */; };
 		EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6401FA19FBF3F400C7167C /* Kids.plist */; };
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
+		EA74B8FF1A1E583E00B883BF /* FundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B8FE1A1E583E00B883BF /* FundCell.swift */; };
+		EA74B9011A1E599700B883BF /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9001A1E599700B883BF /* HomeCell.swift */; };
 		EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D02B819FAAC9A005406E4 /* Date.swift */; };
 		EA814B561A1084CB00569306 /* UniversalTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814B551A1084CB00569306 /* UniversalTheme.swift */; };
 		EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814B571A11596A00569306 /* EventsNavigationController.swift */; };
@@ -53,6 +57,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EA3CBCCB1A1D53CF002EC704 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EA0A20721A01416300A1E00A /* KinteraLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraLoginViewController.swift; sourceTree = "<group>"; };
 		EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
@@ -61,12 +78,16 @@
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
 		EA2F1FAC19FAC72C000C5685 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraAccountViewController.swift; sourceTree = "<group>"; };
+		EA3CBCA21A152B74002EC704 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramView.xib; sourceTree = "<group>"; };
 		EA6401FA19FBF3F400C7167C /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
 		EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
+		EA74B8FE1A1E583E00B883BF /* FundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundCell.swift; sourceTree = "<group>"; };
+		EA74B9001A1E599700B883BF /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		EA7D02B819FAAC9A005406E4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
 		EA814B551A1084CB00569306 /* UniversalTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTheme.swift; sourceTree = "<group>"; };
@@ -143,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				EAC85D8719FA93D6006840A0 /* HomeViewController.swift */,
+				EA74B8FE1A1E583E00B883BF /* FundCell.swift */,
+				EA74B9001A1E599700B883BF /* HomeCell.swift */,
 				EA0A20711A01414D00A1E00A /* Kintera Login */,
 			);
 			name = "Home Tab";
@@ -293,7 +316,9 @@
 			children = (
 				EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */,
 				EA814B551A1084CB00569306 /* UniversalTheme.swift */,
+				EA3CBCA21A152B74002EC704 /* Reachability.swift */,
 				EA7D02B819FAAC9A005406E4 /* Date.swift */,
+				EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
 			name = Extensions;
@@ -309,6 +334,7 @@
 				EAC85D5219FA92BC006840A0 /* Sources */,
 				EAC85D5319FA92BC006840A0 /* Frameworks */,
 				EAC85D5419FA92BC006840A0 /* Resources */,
+				EA3CBCCB1A1D53CF002EC704 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,17 +437,21 @@
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */,
+				EA74B8FF1A1E583E00B883BF /* FundCell.swift in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
 				EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */,
+				EA3CBCA31A152B74002EC704 /* Reachability.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
 				EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
+				EA3CBCA91A1D4B32002EC704 /* ProgressBar.swift in Sources */,
 				EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */,
+				EA74B9011A1E599700B883BF /* HomeCell.swift in Sources */,
 				EA3CBCA11A14350F002EC704 /* KinteraAccountViewController.swift in Sources */,
 				EA0A20751A0214C300A1E00A /* AF+Date+Extension.swift in Sources */,
 				EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */,
@@ -466,7 +496,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EAC85D7519FA92BC006840A0 /* Debug */ = {
+		EA74B8FB1A1D648500B883BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -484,16 +514,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -501,11 +525,39 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		EA74B8FC1A1D648500B883BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = DMatUF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		EA74B8FD1A1D648500B883BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DMatUFTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMatUF.app/DMatUF";
 			};
 			name = Debug;
 		};
@@ -545,20 +597,6 @@
 			};
 			name = Release;
 		};
-		EAC85D7819FA92BC006840A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = DMatUF/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-			};
-			name = Debug;
-		};
 		EAC85D7919FA92BC006840A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -572,25 +610,6 @@
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
-		};
-		EAC85D7B19FA92BC006840A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DMatUFTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMatUF.app/DMatUF";
-			};
-			name = Debug;
 		};
 		EAC85D7C19FA92BC006840A0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -613,29 +632,29 @@
 		EAC85D5119FA92BC006840A0 /* Build configuration list for PBXProject "DMatUF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAC85D7519FA92BC006840A0 /* Debug */,
 				EAC85D7619FA92BC006840A0 /* Release */,
+				EA74B8FB1A1D648500B883BF /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		EAC85D7719FA92BC006840A0 /* Build configuration list for PBXNativeTarget "DMatUF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAC85D7819FA92BC006840A0 /* Debug */,
 				EAC85D7919FA92BC006840A0 /* Release */,
+				EA74B8FC1A1D648500B883BF /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		EAC85D7A19FA92BC006840A0 /* Build configuration list for PBXNativeTarget "DMatUFTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAC85D7B19FA92BC006840A0 /* Debug */,
 				EAC85D7C19FA92BC006840A0 /* Release */,
+				EA74B8FD1A1D648500B883BF /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
