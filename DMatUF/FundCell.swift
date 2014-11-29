@@ -11,8 +11,9 @@ import UIKit
 
 class FundCell: UICollectionViewCell {
     
-    @IBOutlet weak var progressBar: ProgressBar!
     
+    @IBOutlet weak var partProgressBar: ProgressBar!
+    @IBOutlet weak var teamProgressBar: ProgressBar!
     @IBOutlet weak var participantNameLabel: UILabel!
     @IBOutlet weak var participantGoalLabel: UILabel!
     @IBOutlet weak var participantRaisedLabel: UILabel!
@@ -21,8 +22,12 @@ class FundCell: UICollectionViewCell {
     @IBOutlet weak var teamGoalLabel: UILabel!
     @IBOutlet weak var teamRaisedLabel: UILabel!
     
-    
-    
+    override var bounds : CGRect {
+        didSet {
+            contentView.frame = bounds
+        }
+    }
+
     override func layoutSubviews() {
         println("LAYOUT SUBVIEWS")
         
@@ -39,13 +44,13 @@ class FundCell: UICollectionViewCell {
             if let partGoal = dict["PersonalGoal"] as? NSString {
                 let partGoalInt = partGoal.integerValue
                 participantGoalLabel.text = "$\(partGoalInt)"
-                progressBar.max = partGoalInt
+                partProgressBar.max = partGoalInt
             }
             // Participant Raised
             if let partRaised = dict["PersonalRaised"] as? NSString {
                 let partRaisedInt = partRaised.integerValue
                 participantRaisedLabel.text = "$\(partRaisedInt)"
-                progressBar.updateProgress(toValue: partRaisedInt, isAnimated: true)
+                partProgressBar.updateProgress(toValue: partRaisedInt, isAnimated: true)
             }
             
             // Team Name
@@ -56,11 +61,13 @@ class FundCell: UICollectionViewCell {
             if let teamGoal = dict["TeamGoal"] as? NSString {
                 let teamGoalInt = teamGoal.integerValue
                 teamGoalLabel.text = "$\(teamGoalInt)"
+                teamProgressBar.max = teamGoalInt
             }
             // Team Raised
             if let teamRaised = dict["TeamRaised"] as? NSString {
                 let teamRaisedInt = teamRaised.integerValue
                 teamRaisedLabel.text = "$\(teamRaisedInt)"
+                teamProgressBar.updateProgress(toValue: teamRaisedInt, isAnimated: true)
             }
         }
     }

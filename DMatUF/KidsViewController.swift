@@ -83,7 +83,7 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
-            return CGSize(width: 128, height: 128)
+            return CGSize(width: 96, height: 96)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

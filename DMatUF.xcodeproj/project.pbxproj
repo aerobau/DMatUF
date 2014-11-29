@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA07FD5F1A2931F4000F2957 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07FD5E1A2931F4000F2957 /* Reachability.swift */; };
 		EA0A20731A01416300A1E00A /* KinteraLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A20721A01416300A1E00A /* KinteraLoginViewController.swift */; };
 		EA0A20751A0214C300A1E00A /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */; };
 		EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1970F61A0005BC0097245E /* EventViewController_Format.swift */; };
@@ -14,7 +15,6 @@
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
 		EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAC19FAC72C000C5685 /* Header.swift */; };
 		EA3CBCA11A14350F002EC704 /* KinteraAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */; };
-		EA3CBCA31A152B74002EC704 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA21A152B74002EC704 /* Reachability.swift */; };
 		EA3CBCA91A1D4B32002EC704 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */; };
 		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
 		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
@@ -71,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA07FD5E1A2931F4000F2957 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA0A20721A01416300A1E00A /* KinteraLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraLoginViewController.swift; sourceTree = "<group>"; };
 		EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 		EA1970F61A0005BC0097245E /* EventViewController_Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Format.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
 		EA2F1FAC19FAC72C000C5685 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		EA3CBCA01A14350F002EC704 /* KinteraAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraAccountViewController.swift; sourceTree = "<group>"; };
-		EA3CBCA21A152B74002EC704 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 			children = (
 				EA0A20741A0214C300A1E00A /* AF+Date+Extension.swift */,
 				EA814B551A1084CB00569306 /* UniversalTheme.swift */,
-				EA3CBCA21A152B74002EC704 /* Reachability.swift */,
+				EA07FD5E1A2931F4000F2957 /* Reachability.swift */,
 				EA7D02B819FAAC9A005406E4 /* Date.swift */,
 				EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
@@ -433,6 +433,7 @@
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */,
 				EA814B561A1084CB00569306 /* UniversalTheme.swift in Sources */,
+				EA07FD5F1A2931F4000F2957 /* Reachability.swift in Sources */,
 				EA9B6A5D1A11F35300F9785D /* UserInfoViewController.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
@@ -443,7 +444,6 @@
 				EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */,
-				EA3CBCA31A152B74002EC704 /* Reachability.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
 				EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
@@ -538,6 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

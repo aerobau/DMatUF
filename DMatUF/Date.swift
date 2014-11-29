@@ -18,8 +18,8 @@ extension NSDate {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
         formatter.timeZone = NSTimeZone.systemTimeZone()
         let formattedDate = formatter.dateFromString("\(dateString) GMT")
-        
-        if let date = formattedDate {
+
+        if let date = formattedDate?.dateByAddingHours(4) {
             self.init(timeIntervalSince1970: date.timeIntervalSince1970)
         } else {
             println("Unable to format date from '\(dateString)'")

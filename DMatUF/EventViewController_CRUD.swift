@@ -144,9 +144,7 @@ extension EventViewController {
 
     func getDate(obj: AnyObject?) -> NSDate {
         if let object: String = obj as? String {
-            println(object)
             let date = NSDate(fromString: object)
-            println(date)
             return date
         }
         return NSDate(timeIntervalSince1970: 0)

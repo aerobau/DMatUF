@@ -40,14 +40,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeCellID", forIndexPath: indexPath) as HomeCell
+            cell.updateConstraints()
+            
             return cell
         } else {
                         
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FundCellID", forIndexPath: indexPath) as FundCell
             cell.layoutSubviews()
+            cell.updateConstraints()
+
             return cell
         }
     }
+    
+
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let defaults = NSUserDefaults.standardUserDefaults()

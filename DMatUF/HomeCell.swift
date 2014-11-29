@@ -10,5 +10,9 @@ import Foundation
 import UIKit
 
 class HomeCell: UICollectionViewCell {
-    
+    override var bounds : CGRect {
+        didSet {
+            contentView.frame = bounds
+        }
+    }
 }

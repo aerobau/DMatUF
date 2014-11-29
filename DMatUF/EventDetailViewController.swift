@@ -51,14 +51,6 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         return store.defaultCalendarForNewEvents
     }
     
-//    func convertDate(date: NSDate) -> NSDate {
-//        let formatter = NSDateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//        formatter.timeZone = NSTimeZone.systemTimeZone()
-//        
-//        return NSDate()
-//    }
-    
     
     @IBAction func addEvent(sender: UIBarButtonItem) {
         

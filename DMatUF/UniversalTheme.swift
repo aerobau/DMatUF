@@ -15,15 +15,15 @@ class UniversalTheme {
             UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         }
     
-        customizeNavBarButton(color: primaryColor)
+//        customizeNavBarButton(color: primaryColor)
         customizeTabBar(color: secondaryColor)
-        customizeSwitch(color: primaryColor)
-        customizeSearchBar(bar: primaryColor, tint: secondaryColor)
+//        customizeSwitch(color: primaryColor)
+//        customizeSearchBar(bar: primaryColor, tint: secondaryColor)
         customizeActivityIndicator(color: primaryColor)
-        customizeButton(color: primaryColor)
+//        customizeButton(color: primaryColor)
         customizePageControl(color: primaryColor)
-        customizeSegmentControl(main: primaryColor, secondary: secondaryColor)
-        customizeSlider(color: primaryColor)
+//        customizeSegmentControl(main: primaryColor, secondary: secondaryColor)
+//        customizeSlider(color: primaryColor)
     }
     
     
