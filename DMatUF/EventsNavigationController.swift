@@ -11,6 +11,5 @@ import UIKit
 
 class EventsNavigationController: UINavigationController {
     override func viewDidLoad() {
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.redColor()
     }
 }

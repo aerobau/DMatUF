@@ -30,8 +30,7 @@ class SocialViewController: UICollectionViewController, UICollectionViewDelegate
     }
 
     @IBAction func segmentChangedValue(sender: UISegmentedControl) {
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: sender.selectedSegmentIndex, inSection: 0),
-            atScrollPosition: .CenteredHorizontally, animated: true)
+        collectionView?.scrollToItemAtIndexPath(NSIndexPath(forItem: sender.selectedSegmentIndex, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
     
     }
     
@@ -75,7 +74,7 @@ class SocialViewController: UICollectionViewController, UICollectionViewDelegate
         let offsetCenter = CGPoint(x: targetContentOffset.memory.x - scrollView.contentInset.left + scrollView.center.x,
             y: scrollView.center.y)
         
-        if let row = self.collectionView.indexPathForItemAtPoint(offsetCenter)?.item {
+        if let row = self.collectionView?.indexPathForItemAtPoint(offsetCenter)?.item {
             segment.selectedSegmentIndex = row
         }
     }

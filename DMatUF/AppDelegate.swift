@@ -12,14 +12,42 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    // Colors
     let primaryColor = UIColor(hue: 211.0 / 360.0, saturation: 1.0, brightness: 0.51, alpha: 1.0)
     let secondaryColor = UIColor(hue: 23.0 / 360.0, saturation: 0.86, brightness: 0.95, alpha: 1.0)
     
+    // Other Variables
+    var window: UIWindow?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        UniversalTheme().setupTheme(primary: primaryColor, secondary: secondaryColor, font: "HelveticaNeue-Light", statusBarLight: true)
+        // Implement Google Analytics
+        GA.initialize(trackingId: "UA-57298911-1", dispatchInterval: 5)
+        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "App_Launch", value: nil)
+
+        // Implement Theme
+        IMTheme().setupTheme(primary: primaryColor, secondary: secondaryColor)
+        
+        // Check to see if this is an iOS 8 device.
+        var systemVersion = UIDevice.currentDevice().systemVersion as NSString
+        println("Sysem version: \(systemVersion)")
+        if systemVersion.floatValue >= 8.0 {
+            // Register for push in iOS 8
+            let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        } else {
+            // Register for push in iOS 7
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound | UIRemoteNotificationType.Alert)
+        }
+        
         return true
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+    }
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -34,16 +62,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
-        
-    }
-    
     func applicationWillTerminate(application: UIApplication) {
         saveContext()
     }
     
-    // MARK: - Core Data stack
     
+    // MARK: - Push Notifications
+//    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+//        println("Got token data! \(deviceToken)")
+//    }
+//    
+//    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+//        println("Couldn't register: \(error)")
+//    }
+//    
+//    func application(application: UIApplication!, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings!) {
+//
+//    }
+//    
+//    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+//        if let payload: AnyObject = userInfo["aps"] {
+//            if let message = payload["alert"] as? String {
+//                println(message)
+//            }
+//        }
+//    }
+//    
+//    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+//        
+//    }
+    
+    
+    
+    
+    // MARK: - Core Data Stack
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.MacCDevTeam.cd" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
@@ -92,7 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }()
     
     // MARK: - Core Data Saving support
-    
     func saveContext() {
         if let moc = self.managedObjectContext {
             var error: NSError? = nil

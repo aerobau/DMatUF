@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DM Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>DM_Extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>DMatUF.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>EA3CBCB81A1D53CE002EC704</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA41E7051A313F5800903926</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA41E71B1A313FA100903926</key>
 		<dict>
 			<key>primary</key>
 			<true/>

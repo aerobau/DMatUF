@@ -12,9 +12,6 @@ import CoreData
 
 extension EventViewController {
     
-//    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-//    }
-    
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         println("Content Changed")
         tableView.reloadData()

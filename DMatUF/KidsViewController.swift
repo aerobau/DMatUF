@@ -82,8 +82,13 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            var size = CGFloat(96.0)
             
-            return CGSize(width: 96, height: 96)
+            if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone {
+                size = (view.frame.width - 12.0) / 3.0
+            }
+            
+            return CGSize(width: size, height: size)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -92,7 +97,7 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
             var destination = segue.destinationViewController as KidDetailViewController
             
             
-            if let index = collectionView.indexPathForCell(cell) {
+            if let index = collectionView?.indexPathForCell(cell) {
                 println(index.row)
                 
                 if let dict = array.objectAtIndex(index.row) as? Dictionary<String, AnyObject> {

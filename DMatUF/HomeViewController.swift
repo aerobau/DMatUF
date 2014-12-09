@@ -8,15 +8,21 @@
 
 import UIKit
 
-class test: UICollectionViewCell {
-    
+class BlueBar: UIView {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        backgroundColor = UIColor(hue: 211.0 / 360.0, saturation: 1.0, brightness: 0.51, alpha: 1.0)
+
+    }
 }
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIAlertViewDelegate, UIScrollViewDelegate {
+
+
+
+class HomeViewController: UIViewController, UIAlertViewDelegate  {
     
     // Create Outles
     @IBOutlet weak var loginBarButton: UIBarButtonItem!
-    @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var homePageControl: UIPageControl!
     
     var loginTask: NSURLSessionDataTask?
@@ -25,10 +31,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var loggedIn: Bool = false
     var loadingAlert: UIAlertView?
 
+    @IBOutlet weak var fundsButton: UIButton!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        homeCollectionView.reloadData()
+        
+        // Google Analytics
+        GA.sendScreenView(name: "HomeViewTest")
     }
 
     override func viewDidLoad() {
@@ -36,79 +45,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         setupLoadingAlert()
     }
     
-    // Handle UICollectionView
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeCellID", forIndexPath: indexPath) as HomeCell
-            cell.updateConstraints()
-            
-            return cell
-        } else {
-                        
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FundCellID", forIndexPath: indexPath) as FundCell
-            cell.layoutSubviews()
-            cell.updateConstraints()
-
-            return cell
-        }
-    }
     
 
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let defaults = NSUserDefaults.standardUserDefaults()
 
-        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
-            loggedIn = true
-            loginBarButton.title = "Logout"
-            homePageControl.numberOfPages = 2
-            return 2
-        } else {
-            loggedIn = false
-            loginBarButton.title = "Login"
-            homePageControl.numberOfPages = 1
-            return 1
-        }
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            
-            return CGSize(width: homeCollectionView.bounds.size.width -
-                homeCollectionView.contentInset.left -
-                homeCollectionView.contentInset.right,
-                height: homeCollectionView.bounds.size.height -
-                    homeCollectionView.contentInset.top -
-                    homeCollectionView.contentInset.bottom)
-    }
-    
-    // Handle UIScrollView and UIPageControl
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offsetCenter = CGPoint(x: scrollView.contentOffset.x - scrollView.contentInset.left + scrollView.center.x,
-            y: scrollView.center.y)
-        if let row = self.homeCollectionView.indexPathForItemAtPoint(offsetCenter)?.item {
-            homePageControl.currentPage = row
-        }
-    }
-    
-    func scrollToFunds() {
-        let offset = homeCollectionView.frame.size.width * CGFloat(1)
-        let scrollTo = CGPointMake(offset, 0)
-        homeCollectionView.setContentOffset(scrollTo, animated: true)
-    }
-    
-    @IBAction func pageControlChanged(sender: UIPageControl) {
-        let pc = sender
-        let offset = homeCollectionView.frame.size.width * CGFloat(pc.currentPage)
-        let scrollTo = CGPointMake(offset, 0)
-        homeCollectionView.setContentOffset(scrollTo, animated: true)
-    }
+
     
     
     func login(username: String, password: String) {
         startLoading()
-        
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "login", value: nil)
+    
         if let url = NSURL(string: "http://mickmaccallum.com/ian/kintera.php?&username=\(username)&password=\(password)") {
         
             let session = NSURLSession.sharedSession()
@@ -130,9 +76,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                             defaults.setObject(result, forKey: "userInfo")
                             
                             // Update Components
-                            self.homeCollectionView.reloadData()
                             self.stopLoading()
-                            self.scrollToFunds()
+                            
+                            self.performSegueWithIdentifier("FundSegue", sender: self)
+                            
                         } else {
                             self.stopLoading()
                         }
@@ -156,29 +103,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
-    func logout() {
-        let offset = homeCollectionView.frame.size.width * CGFloat(0)
-        let scrollTo = CGPointMake(offset, 0)
-        homeCollectionView.setContentOffset(scrollTo, animated: true)
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(nil, forKey: "username")
-        defaults.setObject(nil, forKey: "password")
-        defaults.setObject(nil, forKey: "userInfo")
-        
-        loggedIn = false
-        
-        delay(0.25, closure: {
-            self.homeCollectionView.reloadData()
-        })
-    }
+
     
     
     
     // Handle UIAlerts
     func loginAlert() {
         
-        let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Kintera Login", message: "Enter your username and password:", preferredStyle: .Alert)
         
         // Login Button
         let loginAction = UIAlertAction(title: "Login", style: .Default) { (_) in
@@ -191,7 +123,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // Forgot Button
         let forgotPasswordAction = UIAlertAction(title: "Forgot Password", style: .Destructive) { (_) in
-            self.openURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
+            CAF.openURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
         }
         
         // Cancel Button
@@ -255,10 +187,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
-    // Handle UIButtons
-    @IBAction func loginButtonPressed(sender: UIBarButtonItem) {
-        if loggedIn {
-            logout()
+    // MARK: Button Actions
+    @IBAction func fundsButtonPressed(sender: UIButton) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+            performSegueWithIdentifier("FundSegue", sender: self)
         } else {
             if Reachability.isConnectedToNetwork() {
                 loginAlert()
@@ -269,30 +202,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func donateButtonPressed(sender: UIBarButtonItem) {
-        openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
+
+        CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
     }
     
     @IBAction func websiteButtonPressed(sender: UIButton) {
-        openURL(["http://www.floridadm.org"])
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "website", value: nil)
+
+        CAF.openURL(["http://www.floridadm.org"])
     }
     
     @IBAction func instagramButtonPressed(sender: UIButton) {
-        openURL([
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "instagram", value: nil)
+
+        CAF.openURL([
             "instagram://user?username=DMatUF", // App
             "https://instagram.com/DMatUF" // Website
         ])
     }
     
     @IBAction func facebookButtonPressed(sender: UIButton) {
-        openURL([
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "facebook", value: nil)
+
+        CAF.openURL([
             "fb://profile/floridaDM", // App
             "https://www.facebook.com/floridaDM" // Website
         ])
     }
     
     @IBAction func twitterButtonPressed(sender: UIButton) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "twitter", value: nil)
+
         let handle: String = "floridadm"
-        openURL(["twitter://user?screen_name=\(handle)", // Twitter
+        CAF.openURL(["twitter://user?screen_name=\(handle)", // Twitter
             "tweetbot:///user_profile/\(handle)", // TweetBot
             "echofon:///user_timeline?\(handle)", // Echofon
             "twit:///user?screen_name=\(handle)", // Twittelator Pro
@@ -306,38 +249,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func gameButtonPressed(sender: UIButton) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "game", value: nil)
+    }
+    
+    
+    // MARK: Other Functions
         
-    }
-    
-    
-    
-    // Handle Links
-    func openURL(dict: [String]) {
-        let application: UIApplication = UIApplication.sharedApplication()
-        for url in dict {
-            if application.canOpenURL(NSURL(string: url)!) {
-                application.openURL(NSURL(string: url)!)
-                return
-            }
-        }
-    }
-    
-    // Other
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
-    
     func setupLoadingAlert() {
         loadingAlert  = UIAlertView(title: "Loading...", message: nil, delegate: self, cancelButtonTitle: "Cancel")
         var indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
         loadingAlert?.setValue(indicator, forKey: "accessoryView")
         indicator.startAnimating()
     }
-    
-
 }
