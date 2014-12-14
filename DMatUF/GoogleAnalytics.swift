@@ -72,27 +72,3 @@ class GA: UIAlertView, UIAlertViewDelegate {
     }
 
 }
-
-//class OptOutAlert: UIAlertView, UIAlertViewDelegate {
-//    
-//    required init(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-//    
-//    
-//    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-//        let defaults = NSUserDefaults.standardUserDefaults()
-//        
-//        switch buttonIndex {
-//        case 0:
-//            defaults.setObject(true, forKey: "optOut")
-//            defaults.setObject(false, forKey: "newUser")
-//            break
-//        case 1:
-//            break
-//        default:
-//            break
-//        }
-//    }
-//    
-//}

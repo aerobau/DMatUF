@@ -14,24 +14,24 @@
 		EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1970F61A0005BC0097245E /* EventViewController_Format.swift */; };
 		EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */; };
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
-		EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAC19FAC72C000C5685 /* Header.swift */; };
 		EA318D7C1A2ED71D00F89F3B /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */; };
 		EA318D7D1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D7B1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a */; };
 		EA318D891A2ED7A800F89F3B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D881A2ED7A800F89F3B /* libz.dylib */; };
 		EA318D8B1A2ED95800F89F3B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */; };
 		EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */; };
 		EA3CBCA91A1D4B32002EC704 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */; };
-		EA41E71D1A313FA100903926 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA41E7081A313F5800903926 /* NotificationCenter.framework */; };
-		EA41E7221A313FA100903926 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E7211A313FA100903926 /* TodayViewController.swift */; };
-		EA41E7241A313FA100903926 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA41E7231A313FA100903926 /* MainInterface.storyboard */; };
-		EA41E7271A313FA100903926 /* DM Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA41E71C1A313FA100903926 /* DM Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */; };
-		EA41E72F1A3144B400903926 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */; };
+		EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */ = {isa = PBXBuildFile; fileRef = EA4294F41A3AF59B0056A3D7 /* Bugs */; };
 		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
 		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
 		EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */; };
 		EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6401FA19FBF3F400C7167C /* Kids.plist */; };
-		EA6917331A325FF40024E35C /* IMTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6917321A325FF40024E35C /* IMTheme.swift */; };
+		EA68B12E1A396E8A0084271D /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */; };
+		EA68B12F1A396E8A0084271D /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */; };
+		EA68B1301A396E8A0084271D /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12C1A396E8A0084271D /* Pacifico.ttf */; };
+		EA68B1321A396FCF0084271D /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B1311A396FCF0084271D /* AvenirLTStd-Black.otf */; };
+		EA68B1371A3AAB1C0084271D /* agbookrounded-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B1361A3AAB1C0084271D /* agbookrounded-medium.otf */; };
+		EA6917331A325FF40024E35C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6917321A325FF40024E35C /* Theme.swift */; };
 		EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6917341A32DBC50024E35C /* CAFunctions.swift */; };
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
@@ -60,13 +60,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EA41E7251A313FA100903926 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAC85D4E19FA92BC006840A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EA41E71B1A313FA100903926;
-			remoteInfo = "DM Widget";
-		};
 		EAC85D6E19FA92BC006840A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAC85D4E19FA92BC006840A0 /* Project object */;
@@ -83,7 +76,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				EA41E7271A313FA100903926 /* DM Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +100,6 @@
 		EA1970F61A0005BC0097245E /* EventViewController_Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Format.swift; sourceTree = "<group>"; };
 		EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_CRUD.swift; sourceTree = "<group>"; };
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
-		EA2F1FAC19FAC72C000C5685 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
 		EA318D7B1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		EA318D7E1A2ED74100F89F3B /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -127,16 +118,18 @@
 		EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
 		EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		EA41E7081A313F5800903926 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		EA41E71C1A313FA100903926 /* DM Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DM Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA41E7201A313FA100903926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA41E7211A313FA100903926 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		EA41E7231A313FA100903926 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
+		EA4294F41A3AF59B0056A3D7 /* Bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bugs; sourceTree = "<group>"; };
 		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramView.xib; sourceTree = "<group>"; };
 		EA6401FA19FBF3F400C7167C /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
-		EA6917321A325FF40024E35C /* IMTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTheme.swift; sourceTree = "<group>"; };
+		EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
+		EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
+		EA68B12C1A396E8A0084271D /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		EA68B1311A396FCF0084271D /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		EA68B1361A3AAB1C0084271D /* agbookrounded-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "agbookrounded-medium.otf"; sourceTree = "<group>"; };
+		EA6917321A325FF40024E35C /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		EA6917341A32DBC50024E35C /* CAFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAFunctions.swift; sourceTree = "<group>"; };
 		EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
@@ -170,14 +163,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EA41E7191A313FA100903926 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA41E71D1A313FA100903926 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EAC85D5319FA92BC006840A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +217,6 @@
 			children = (
 				EAC85D9119FA96E4006840A0 /* Event.swift */,
 				EAC85D9319FA9DC8006840A0 /* EventCell.swift */,
-				EA2F1FAC19FAC72C000C5685 /* Header.swift */,
 			);
 			name = "Event Subclasses";
 			sourceTree = "<group>";
@@ -259,29 +243,18 @@
 		EA41E7071A313F5800903926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA318D881A2ED7A800F89F3B /* libz.dylib */,
+				EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */,
+				EAC85D8519FA92E3006840A0 /* UIKit.framework */,
+				EAC85D8319FA92DC006840A0 /* Foundation.framework */,
+				EAC85D7F19FA92D3006840A0 /* EventKit.framework */,
+				EAC85D8019FA92D3006840A0 /* EventKitUI.framework */,
+				EAC85D7D19FA92CC006840A0 /* CoreData.framework */,
 				EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */,
 				EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */,
 				EA41E7081A313F5800903926 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EA41E71E1A313FA100903926 /* DM Widget */ = {
-			isa = PBXGroup;
-			children = (
-				EA41E7211A313FA100903926 /* TodayViewController.swift */,
-				EA41E7231A313FA100903926 /* MainInterface.storyboard */,
-				EA41E71F1A313FA100903926 /* Supporting Files */,
-			);
-			path = "DM Widget";
-			sourceTree = "<group>";
-		};
-		EA41E71F1A313FA100903926 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EA41E7201A313FA100903926 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EA5DBD9419FE7DBC0085DC14 /* Social Tab */ = {
@@ -326,6 +299,18 @@
 			name = YouTube;
 			sourceTree = "<group>";
 		};
+		EA68B1331A39705A0084271D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EA68B12C1A396E8A0084271D /* Pacifico.ttf */,
+				EA68B1361A3AAB1C0084271D /* agbookrounded-medium.otf */,
+				EA68B1311A396FCF0084271D /* AvenirLTStd-Black.otf */,
+				EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */,
+				EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		EA6B0E1219FBE995006CC2F2 /* Kids Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,16 +324,8 @@
 		EAC85D4D19FA92BC006840A0 = {
 			isa = PBXGroup;
 			children = (
-				EA318D881A2ED7A800F89F3B /* libz.dylib */,
-				EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */,
-				EAC85D8519FA92E3006840A0 /* UIKit.framework */,
-				EAC85D8319FA92DC006840A0 /* Foundation.framework */,
-				EAC85D7F19FA92D3006840A0 /* EventKit.framework */,
-				EAC85D8019FA92D3006840A0 /* EventKitUI.framework */,
-				EAC85D7D19FA92CC006840A0 /* CoreData.framework */,
 				EAC85D5819FA92BC006840A0 /* DMatUF */,
 				EAC85D7019FA92BC006840A0 /* DMatUFTests */,
-				EA41E71E1A313FA100903926 /* DM Widget */,
 				EA41E7071A313F5800903926 /* Frameworks */,
 				EAC85D5719FA92BC006840A0 /* Products */,
 			);
@@ -359,7 +336,6 @@
 			children = (
 				EAC85D5619FA92BC006840A0 /* DMatUF.app */,
 				EAC85D6D19FA92BC006840A0 /* DMatUFTests.xctest */,
-				EA41E71C1A313FA100903926 /* DM Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -370,8 +346,9 @@
 				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 				EAC85D9519FAA766006840A0 /* Extensions */,
 				EAC85D6419FA92BC006840A0 /* Images.xcassets */,
-				EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */,
+				EA4294F41A3AF59B0056A3D7 /* Bugs */,
 				EAC85D6119FA92BC006840A0 /* Main.storyboard */,
+				EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */,
 				EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */,
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
@@ -385,6 +362,7 @@
 		EAC85D5919FA92BC006840A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA68B1331A39705A0084271D /* Fonts */,
 				EAC85D6619FA92BC006840A0 /* LaunchScreen.xib */,
 				EA318D8C1A2ED9C500F89F3B /* Bridge.h */,
 				EAC85D5A19FA92BC006840A0 /* Info.plist */,
@@ -426,7 +404,7 @@
 			children = (
 				EA318D6F1A2ED68E00F89F3B /* Google Analytics */,
 				EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */,
-				EA6917321A325FF40024E35C /* IMTheme.swift */,
+				EA6917321A325FF40024E35C /* Theme.swift */,
 				EA07FD5E1A2931F4000F2957 /* Reachability.swift */,
 				EA7D02B819FAAC9A005406E4 /* Date.swift */,
 				EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */,
@@ -441,23 +419,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EA41E71B1A313FA100903926 /* DM Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EA41E7281A313FA100903926 /* Build configuration list for PBXNativeTarget "DM Widget" */;
-			buildPhases = (
-				EA41E7181A313FA100903926 /* Sources */,
-				EA41E7191A313FA100903926 /* Frameworks */,
-				EA41E71A1A313FA100903926 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "DM Widget";
-			productName = "DM Widget";
-			productReference = EA41E71C1A313FA100903926 /* DM Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		EAC85D5519FA92BC006840A0 /* DMatUF */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAC85D7719FA92BC006840A0 /* Build configuration list for PBXNativeTarget "DMatUF" */;
@@ -471,7 +432,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				EA41E7261A313FA100903926 /* PBXTargetDependency */,
 			);
 			name = DMatUF;
 			productName = DMatUF;
@@ -505,13 +465,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = MacCDevTeam;
 				TargetAttributes = {
-					EA41E71B1A313FA100903926 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 43225XRA2T;
-					};
 					EAC85D5519FA92BC006840A0 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 43225XRA2T;
+						DevelopmentTeam = H5HQ99Y6FU;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -539,27 +495,24 @@
 			targets = (
 				EAC85D5519FA92BC006840A0 /* DMatUF */,
 				EAC85D6C19FA92BC006840A0 /* DMatUFTests */,
-				EA41E71B1A313FA100903926 /* DM Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EA41E71A1A313FA100903926 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA41E7241A313FA100903926 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EAC85D5419FA92BC006840A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EAC85D6319FA92BC006840A0 /* Main.storyboard in Resources */,
+				EA68B1371A3AAB1C0084271D /* agbookrounded-medium.otf in Resources */,
+				EA68B12E1A396E8A0084271D /* AvenirLTStd-Light.otf in Resources */,
+				EA68B12F1A396E8A0084271D /* AvenirLTStd-Roman.otf in Resources */,
+				EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */,
 				EAC85D6819FA92BC006840A0 /* LaunchScreen.xib in Resources */,
+				EA68B1321A396FCF0084271D /* AvenirLTStd-Black.otf in Resources */,
 				EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */,
+				EA68B1301A396E8A0084271D /* Pacifico.ttf in Resources */,
 				EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */,
 				EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */,
 			);
@@ -575,15 +528,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EA41E7181A313FA100903926 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA41E72F1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
-				EA41E7221A313FA100903926 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EAC85D5219FA92BC006840A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,7 +548,6 @@
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
-				EA2F1FAD19FAC72C000C5685 /* Header.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
@@ -615,7 +558,7 @@
 				EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */,
 				EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */,
 				EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
-				EA6917331A325FF40024E35C /* IMTheme.swift in Sources */,
+				EA6917331A325FF40024E35C /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,11 +573,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EA41E7261A313FA100903926 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EA41E71B1A313FA100903926 /* DM Widget */;
-			targetProxy = EA41E7251A313FA100903926 /* PBXContainerItemProxy */;
-		};
 		EAC85D6F19FA92BC006840A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EAC85D5519FA92BC006840A0 /* DMatUF */;
@@ -662,41 +600,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EA41E7291A313FA100903926 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "DM Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		EA41E72A1A313FA100903926 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INFOPLIST_FILE = "DM Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
 		EA74B8FB1A1D648500B883BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -739,7 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos8.1]" = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = DMatUF/Info.plist;
@@ -750,8 +653,8 @@
 					"$(PROJECT_DIR)/DMatUF",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/iancmaccallum/Desktop/Resources/Completed Demos/DMatUF/DMatUF/Bridge.h";
+				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
 			};
 			name = Debug;
 		};
@@ -759,6 +662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -766,6 +670,7 @@
 				INFOPLIST_FILE = DMatUFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMatUF.app/DMatUF";
 			};
 			name = Debug;
@@ -822,8 +727,8 @@
 					"$(PROJECT_DIR)/DMatUF",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/iancmaccallum/Desktop/Resources/Completed Demos/DMatUF/DMatUF/Bridge.h";
+				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
 			};
 			name = Release;
 		};
@@ -831,6 +736,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -838,6 +744,7 @@
 				INFOPLIST_FILE = DMatUFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMatUF.app/DMatUF";
 			};
 			name = Release;
@@ -845,15 +752,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EA41E7281A313FA100903926 /* Build configuration list for PBXNativeTarget "DM Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EA41E7291A313FA100903926 /* Release */,
-				EA41E72A1A313FA100903926 /* Debug */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		EAC85D5119FA92BC006840A0 /* Build configuration list for PBXProject "DMatUF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

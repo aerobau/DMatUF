@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.MacCDevTeam.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>com.dancemarathon.$(PRODUCT_NAME)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -22,6 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Pacifico.ttf</string>
+		<string>AvenirLTStd-Roman.otf</string>
+		<string>AvenirLTStd-Light.otf</string>
+		<string>AvenirLTStd-Black.otf</string>
+		<string>agbookrounded-medium.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

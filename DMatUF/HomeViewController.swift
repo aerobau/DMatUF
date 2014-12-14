@@ -11,8 +11,7 @@ import UIKit
 class BlueBar: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = UIColor(hue: 211.0 / 360.0, saturation: 1.0, brightness: 0.51, alpha: 1.0)
-
+        backgroundColor = Color.primary2
     }
 }
 
@@ -43,6 +42,8 @@ class HomeViewController: UIViewController, UIAlertViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLoadingAlert()
+    
+        
     }
     
     

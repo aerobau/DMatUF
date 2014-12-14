@@ -12,32 +12,26 @@ import EventKitUI
 
 class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
     var store : EKEventStore = EKEventStore()
-    var id: Int! = 0
-    var eventTitle: String! = ""
-    var startDate: NSDate? = NSDate(timeIntervalSince1970: 0)
-    var endDate: NSDate! = NSDate(timeIntervalSince1970: 0)
-    var lastModified: NSDate! = NSDate(timeIntervalSince1970: 0)
-    var location: String! = ""
-    var eventDescription: String! = ""
+    var event: Event?
     
-    
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+//    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setInfo()
+        
+        view.backgroundColor = Color.tvcEven
+        titleLabel.textColor = Color.primary2
     }
     
     func setInfo(){
-        idLabel.text = "\(id)"
-        titleLabel.text = eventTitle
-        locationLabel.text = location
-        dateLabel.text = NSDateFormatter().stringFromDate(startDate!)
-        descriptionTextView.text = eventDescription
+        titleLabel.text = event?.eTitle ?? ""
+        locationLabel.text = event?.eLocation ?? ""
+//        dateLabel.text = NSDate.relativeDateString(start: event?.eStart, end: event?.eEnd) ?? ""
+        descriptionTextView.text = event?.eDescription ?? ""
         
         
     }
@@ -60,19 +54,13 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         
         var event = EKEvent(eventStore: store)
         
-        println("\(startDate)")
-        event.title = eventTitle
-        event.location = "Turlington"
+        event.title = self.event?.eTitle
+        event.location = self.event?.eLocation
         event.calendar = store.defaultCalendarForNewEvents
-        event.startDate = startDate
-        event.endDate = endDate
-//        if let d = endDate {
-//            event.endDate = d
-//        } else {
-//            event.endDate = self.startDate?.dateByAddingTimeInterval(60*60)
-//        }
+        event.startDate = self.event?.eStart
+        event.endDate = self.event?.eEnd
+        event.notes = self.event?.eDescription
         
-        event.notes = eventDescription
         addEventController.event = event
         
         store.requestAccessToEntityType(EKEntityType(), completion: {granted, error in

@@ -26,7 +26,29 @@ extension NSDate {
             self.init(timeIntervalSince1970: 0)
         }
     }
+    
+    class func relativeDateString(#start: NSDate?, end: NSDate?) -> String? {
+        
+        var time: String?
+        
+        if let startTemp = start {
+            time = startTemp.toString(format: .Custom("h:mm a"))
+            
+            if let endTemp = end {
+                time = (time ?? "") + " to "
+                time = (time ?? "") + endTemp.toString(format: .Custom("h:mm a"))
+                
+                if startTemp.day() != endTemp.day() {
+                    time = (time ?? "") + " on "
+                    time = (time ?? "") + endTemp.toString(format: .Custom("M/dd"))
+                }
+            }
+        }
+
+        return time
+    }
 }
+
 
 extension NSDateFormatter {
     func adjustedString(fromDate date: NSDate) -> String {

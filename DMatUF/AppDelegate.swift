@@ -1,4 +1,4 @@
-//
+
 //  AppDelegate.swift
 //  DM
 //
@@ -12,21 +12,20 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    // Colors
-    let primaryColor = UIColor(hue: 211.0 / 360.0, saturation: 1.0, brightness: 0.51, alpha: 1.0)
-    let secondaryColor = UIColor(hue: 23.0 / 360.0, saturation: 0.86, brightness: 0.95, alpha: 1.0)
-    
     // Other Variables
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        
         // Implement Google Analytics
         GA.initialize(trackingId: "UA-57298911-1", dispatchInterval: 5)
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "App_Launch", value: nil)
 
         // Implement Theme
-        IMTheme().setupTheme(primary: primaryColor, secondary: secondaryColor)
+        
+        Theme()
+
         
         // Check to see if this is an iOS 8 device.
         var systemVersion = UIDevice.currentDevice().systemVersion as NSString
@@ -125,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog("Unresolved error \(error), \(error!.userInfo)")
+            println("Unresolved error \(error), \(error!.userInfo)")
             abort()
         }
         

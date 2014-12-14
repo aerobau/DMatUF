@@ -62,7 +62,7 @@ extension EventViewController {
         var fetchRequest = NSFetchRequest(entityName: "Event")
         let sortSections = NSSortDescriptor(key: "eTitle", ascending: true)
         let sortDescriptor = NSSortDescriptor(key: "eID", ascending: true)
-        let predicate = NSPredicate(format: "eID == \(eventID)", argumentArray: nil)
+        let predicate = NSPredicate(format: "eID == \(eventID)")
         var error = NSErrorPointer()
         
         // Assign fetch request properties

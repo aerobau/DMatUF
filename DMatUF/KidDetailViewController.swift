@@ -29,7 +29,6 @@ class KidDetailViewController: UIViewController {
     var kid: Kid?
     
 
-    @IBOutlet weak var indexLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -53,7 +52,17 @@ class KidDetailViewController: UIViewController {
             }
         }
         
-        
+//        CGRect aRect = CGRectMake(156, 8, 16, 16);
+//        [imageView setFrame:aRect];
+//        UIBezierPath *exclusionPath = [UIBezierPath bezierPathWithRect:CGRectMake(CGRectGetMinX(imageView.frame), CGRectGetMinY(imageView.frame), CGRectGetWidth(yourTextView.frame), CGRectGetHeight(imageView.frame))];
+//        yourTextView.textContainer.exclusionPaths = @[exclusionPath];
+//        [yourTextView addSubview:imageView];
+//        let image = UIImageView(image: UIImage(named: "Clock"))
+//        let path = UIBezierPath(rect: CGRectMake(0, 0, image.frame.width, image.frame.height))
+//        textView.textContainer.exclusionPaths = [path]
+//        textView.addSubview(image)
+        textView.editable = false
+        textView.selectable = false
 
         
     }

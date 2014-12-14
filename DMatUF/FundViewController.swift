@@ -13,13 +13,17 @@ class FundViewController: UIViewController {
     var personalURL: String = ""
     var teamURL: String = ""
     
-    @IBOutlet weak var partProgressBar: ProgressBar!
-    @IBOutlet weak var teamProgressBar: ProgressBar!
+    @IBOutlet weak var thermometer: CAThermometer!
+    @IBOutlet weak var table: CATable!
     
-    override func viewDidLayoutSubviews() {
-        println("LAYOUT SUBVIEWS")
-        partProgressBar.fillColor = AppDelegate().primaryColor
-        teamProgressBar.fillColor = AppDelegate().secondaryColor
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateFundraisingGraphics()
+        view.backgroundColor = Color.tvcOdd
+    }
+    
+    
+    func updateFundraisingGraphics() {
         
         
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -31,44 +35,33 @@ class FundViewController: UIViewController {
             // Participant Name
             if let partName = dict["ParticipantName"] as? String {
             }
+            
             // Participant Goal
             if let partGoal = dict["PersonalGoal"] as? NSString {
                 let partGoalInt = partGoal.integerValue
-                partProgressBar.max = partGoalInt
+                thermometer.goal = partGoalInt
+                table.goal = partGoalInt
+                
             }
+            
             // Participant Raised
             if let partRaised = dict["PersonalRaised"] as? NSString {
                 let partRaisedInt = partRaised.integerValue
-                partProgressBar.currentValue = partRaisedInt
+                thermometer.value = partRaisedInt
+                table.value = partRaisedInt
             }
+            
             // Personal URL
             if let personalPageURL = dict["PersonalPageUrl"] as? NSString {
                 personalURL = personalPageURL
             }
             
-            // Team Name
-            if let teamName = dict["TeamName"] as? String {
-            }
-            // Team Goal
-            if let teamGoal = dict["TeamGoal"] as? NSString {
-                let teamGoalInt = teamGoal.integerValue
-                teamProgressBar.max = teamGoalInt
-            }
-            // Team Raised
-            if let teamRaised = dict["TeamRaised"] as? NSString {
-                let teamRaisedInt = teamRaised.integerValue
-                teamProgressBar.currentValue = teamRaisedInt
-            }
-            // Team URL
-            if let teamPageURL = dict["TeamPageUrl"] as? NSString {
-                teamURL = teamPageURL
-            }
-            
             // Last Updated
             if let lastUpdated = dict["PersonalRaisedToDate"] as? NSString {
             }
-            
         }
+        thermometer.setup()
+        table.reloadData()
     }
     
     @IBAction func logoutButtonPressed(sender: UIBarButtonItem) {

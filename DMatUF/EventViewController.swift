@@ -7,6 +7,7 @@
 //
 import UIKit
 import CoreData
+import QuartzCore
 
 private let sectionHeaders = ["Upcoming Events", "Past Events"]
 
@@ -17,24 +18,19 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
         
-        
-        
-        tableView.registerClass(Header.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
-        
-        tableView.estimatedRowHeight = 64.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.estimatedSectionHeaderHeight = 22.0
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 64.0
+
+        tableView.estimatedSectionHeaderHeight = 26.0
+        tableView.sectionHeaderHeight = 26.0
         
         tableView.estimatedSectionFooterHeight = 0.0
-        tableView.sectionFooterHeight = UITableViewAutomaticDimension
+        tableView.sectionFooterHeight = 0.0
         
         // TableView Separators
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        tableView.separatorColor = UIColor(patternImage: UIImage(named: "Separator")!)
-        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.separatorColor = Color.tvcSeparator
         
         
         fetchedResultController = getFetchedResultController()
@@ -46,9 +42,10 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             println("Unresolved error: \(error), \(error.debugDescription)")
         }
         
-        refreshControl = UIRefreshControl()
-        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh!")
-        refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
+        
+//        refreshControl = UIRefreshControl()
+//        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh!")
+//        refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
         fetchJSON(tableView)
     }
     
@@ -72,38 +69,24 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         let cellEvent = fetchedResultController.objectAtIndexPath(indexPath) as Event
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(hue: 40.0/255.0, saturation: 0.01, brightness: 0.97, alpha: 1.0)
+            cell.backgroundColor = Color.tvcEven
         } else {
-            cell.backgroundColor = UIColor(hue: 70.0/255.0, saturation: 0.03, brightness: 0.93, alpha: 1.0)
+            cell.backgroundColor = Color.tvcOdd
         }
         
+
+  
         cell.titleLabel.text = cellEvent.eTitle
         cell.dayLabel.text = "\(cellEvent.eStart.day())"
         cell.monthLabel.text = cellEvent.eStart.shortMonthToString()
         
-        
-        var time = cellEvent.eStart.toString(format: .Custom("h:mm a"))
-        time += " to "
-        time += cellEvent.eEnd.toString(format: .Custom("h:mm a"))
-
-        if cellEvent.eStart.day() != cellEvent.eEnd.day() {
-            time += " on "
-            time += cellEvent.eEnd.toString(format: .Custom("M/dd"))
-        }
-        cell.timeLabel.text = time
-//        cell.timeLabel.backgroundColor = UIColor.magentaColor()
-//        let width =  NSString(string: time).sizeWithAttributes([NSFontAttributeName: cell.timeLabel.font.fontName]).width
-//        cell.timeLabel.frame = CGRectMake(cell.timeLabel.frame.origin.x, cell.timeLabel.frame.origin.y, width, cell.timeLabel.frame.size.height)
+        cell.timeLabel.text = NSDate.relativeDateString(start: cellEvent.eStart, end: cellEvent.eEnd)
 //        cell.locationLabel.text = cellEvent.eLocation
-        cell.locationLabel.text = "This is a very long location"
-
         return cell
     }
     
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        let managedObject:Event = fetchedResultController.objectAtIndexPath(indexPath) as Event
-//        managedObjectContext?.deleteObject(managedObject)
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
@@ -113,39 +96,24 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         tableView.setEditing(false, animated: true)
         
-        var facebookAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Facebook", handler: {
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Share", handler: {
             (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
             println("Triggered share action \(action) atIndexPath: \(indexPath)")
             return
         })
-        facebookAction.backgroundColor = UIColor(hue: 223.0/360.0, saturation: 0.62, brightness: 0.62, alpha: 1.0)
         
-        var twitterAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Twitter", handler: {
-            (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
-            println("Triggered share action \(action) atIndexPath: \(indexPath)")
-            return
-        })
-        twitterAction.backgroundColor = UIColor(hue: 206.0/360.0, saturation: 0.64, brightness: 0.93, alpha: 1.0)
-
-        var emailAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Email", handler: {
-            (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
-            println("Triggered share action \(action) atIndexPath: \(indexPath)")
-            return
-        })
-
-        
-        return [facebookAction, twitterAction, emailAction]
+        shareAction.backgroundColor = UIColor.whiteColor()
+        return [shareAction]
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("SectionHeader") as Header
-        header.contentView.backgroundColor = UIColor(hue: 60.0/255.0, saturation: 0.03, brightness: 0.91, alpha: 1.0)
+        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("SectionHeader") as UITableViewHeaderFooterView
         
         let sectionInfo = fetchedResultController.sections![section] as? NSFetchedResultsSectionInfo
-        
-        let label = UILabel(frame: CGRectMake(8, 2, 200, 24))
-        label.text = sectionInfo?.name
-        header.addSubview(label)
+
+        header.contentView.backgroundColor = Color.tvHeader
+        header.textLabel.text = sectionInfo?.name
+        header.textLabel.textColor = UIColor.blackColor()
         
         return header
         
@@ -165,12 +133,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
                 
                 println(event.eStart)
                 
-                destination.id = event.eID.integerValue
-                destination.eventTitle = event.eTitle
-                destination.startDate = event.eStart
-                destination.endDate = event.eEnd
-                destination.eventDescription = event.eDescription
-                destination.location = event.eLocation
+                destination.event = event
             }
         }
     }
