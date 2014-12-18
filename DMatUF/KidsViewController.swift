@@ -23,12 +23,6 @@ class KidsCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
 }
 
-
-
-
-
-
-
 class KidsViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // Get array of kids from plist file
@@ -80,7 +74,6 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
     }
     
     
-    
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -94,7 +87,7 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "KidDetailSegue"){
+        if (segue.identifier == "KidDetailSegue") {
             let cell = sender as KidsCell
             var destination = segue.destinationViewController as KidDetailViewController
             

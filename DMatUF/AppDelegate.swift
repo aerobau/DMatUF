@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         // Implement Google Analytics
-        GA.initialize(trackingId: "UA-57298911-1", dispatchInterval: 5)
+        GA.initialize(trackingId: "UA-31255631-3", dispatchInterval: 5)
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "App_Launch", value: nil)
 
         // Implement Theme

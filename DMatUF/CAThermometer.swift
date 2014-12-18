@@ -71,9 +71,7 @@ class CAThermometer: UIView {
             fillColor: UIColor.clearColor().CGColor,
             stroked: true,
             strokeColor: Color.tvcSeparator.CGColor,
-            strokeWidth: strokeWidth + 2.0))
-        
-        
+            strokeWidth: strokeWidth + 4.0))
     }
     
     func drawThermometer(#frame: CGRect, filled: Bool, fillColor: CGColorRef?, stroked: Bool, strokeColor: CGColorRef?, strokeWidth: CGFloat) -> CAShapeLayer {
@@ -125,6 +123,8 @@ class CAThermometer: UIView {
 class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
     var goal: Int = 100
     var value: Int = 0
+    var name: String = ""
+    var url: String = ""
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -143,8 +143,6 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
         layer.borderColor = Color.tvcSeparator.CGColor
         layer.borderWidth = 2.0
         
-        
-        
     }
     
     
@@ -160,55 +158,91 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let n = frame.height / 3.0
+        let n = frame.height / 5.0
         return CGFloat(n)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = dequeueReusableCellWithIdentifier("TableCellID", forIndexPath: indexPath) as UITableViewCell
 
-        cell.textLabel?.font = UIFont(name: Font.body1.fontName, size: 12.0)
+        cell.textLabel?.font = UIFont(name: Font.body1.fontName, size: cell.contentView.frame.width / 16.0)
         cell.textLabel?.textColor = UIColor.grayColor()
-        cell.detailTextLabel?.font = UIFont(name: Font.body1.fontName, size: 30.0)
-            
+        
+        let font = UIFont(name: Font.body1.fontName, size: cell.contentView.frame.width / 8.0)!
+        cell.detailTextLabel?.attributedText = NSAttributedString(string: "", attributes: [NSForegroundColorAttributeName: Color.primary1, NSFontAttributeName: font])
+        
+        
         cell.backgroundColor = Color.tvcEven
         
         if indexPath.row == 0 {
+            let titleFont = UIFont(name: Font.header.fontName, size: cell.contentView.frame.width / 12.0)!
+            cell.textLabel?.attributedText = NSAttributedString(string: name, attributes: [NSForegroundColorAttributeName: Color.primary2, NSFontAttributeName: titleFont])
+
+            cell.detailTextLabel?.text = nil
+        } else if indexPath.row == 1 {
             cell.textLabel?.text = "Goal"
             cell.detailTextLabel?.text = "$\(goal)"
-        } else if indexPath.row == 1 {
+        } else if indexPath.row == 2 {
             cell.textLabel?.text = "Raised"
             cell.detailTextLabel?.text = "$\(value)"
-        } else if indexPath.row == 2 {
+        } else if indexPath.row == 3 {
             cell.textLabel?.text = "Progress"
             let percent = Int(floor(100.0 * CGFloat(value) / CGFloat(goal)))
             cell.detailTextLabel?.text = "\(percent)%"
+        } else if indexPath.row == 4 {
+            cell.textLabel?.text = nil
+            cell.detailTextLabel?.text = nil
+
+            let height = CGFloat(60.0)
+            let button = CAButton(frame: CGRectMake(cell.separatorInset.left, cell.frame.height / 2.0 - height / 2.0, cell.frame.width - cell.separatorInset.left - cell.separatorInset.right, height), url: url)
+            cell.contentView.addSubview(button)
         }
 
         return cell
     }
 }
 
-class CAButton: UIView {
-    private var bgLayer = CALayer()
-
+class CAButton: UIButton {
+    var url = ""
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    init(frame: CGRect, url: String) {
+        super.init(frame: frame)
+        self.url = url
+        
+        addTarget(self, action: "buttonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        contentEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 8)
         
         layer.cornerRadius = 8.0
         layer.masksToBounds = true
         
         layer.borderColor = Color.tvcSeparator.CGColor
-        layer.borderWidth = 1.0
+        layer.borderWidth = 2.0
+        
+        setBackgroundImage(backgroundImage(), forState: UIControlState.Normal)
+        setBackgroundImage(pressedImage(), forState: UIControlState.Highlighted)
+        setBackgroundImage(pressedImage(), forState: UIControlState.Selected)
+        
+        setAttributedTitle(NSAttributedString(string: "My Kintera Page", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: Font.accent.fontName, size: 20.0)!]), forState: UIControlState.Normal)
+        
+        titleLabel?.adjustsFontSizeToFitWidth = true
+    }
+    
+    func buttonPressed(sender: AnyObject?) {
+        println("Button pressed")
+        CAF.openURL([url])
+    }
+
+    func backgroundImage() -> UIImage? {
+        
+        var image: UIImage?
         
         let grad = CAGradientLayer()
         grad.frame = bounds
@@ -216,8 +250,38 @@ class CAButton: UIView {
         grad.locations = [0.0, 1.0]
         grad.startPoint = CGPointMake(0.5, 0)
         grad.endPoint = CGPointMake(0.5, 1.0)
-        layer.addSublayer(grad)
+        
+        UIGraphicsBeginImageContext(grad.bounds.size);
+        grad.renderInContext(UIGraphicsGetCurrentContext())
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return image
+    }
+
+    func pressedImage() -> UIImage? {
+        
+        var image: UIImage?
+        
+        let grad = CAGradientLayer()
+        grad.frame = bounds
+        grad.colors = [Color.primary1.CGColor, Color.secondary1.CGColor]
+        grad.locations = [0.0, 1.0]
+        grad.startPoint = CGPointMake(0.5, 0)
+        grad.endPoint = CGPointMake(0.5, 1.0)
+        
+        let overlay = CALayer()
+        overlay.frame = bounds
+        overlay.backgroundColor = UIColor(white: 1.0, alpha: 0.5).CGColor
+        
+        UIGraphicsBeginImageContext(grad.bounds.size);
+        grad.renderInContext(UIGraphicsGetCurrentContext())
+        overlay.renderInContext(UIGraphicsGetCurrentContext())
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return image
     }
 }
-    
+
     

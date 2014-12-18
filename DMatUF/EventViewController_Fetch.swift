@@ -18,7 +18,7 @@ extension EventViewController {
         refreshControl?.beginRefreshing()
         
         let session = NSURLSession.sharedSession()
-        let url: NSURL! = NSURL(string: "http://mickmaccallum.com/ian/events.php")
+        let url: NSURL! = NSURL(string: "http://104.236.1.77/app/events.php")
         
         session.dataTaskWithURL(url) { (data, response, error)  in
             

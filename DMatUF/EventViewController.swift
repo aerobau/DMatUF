@@ -41,8 +41,12 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         {
             println("Unresolved error: \(error), \(error.debugDescription)")
         }
-        
-        
+//        
+////        let results = managedObjectContext?.executeFetchRequest(<#request: NSFetchRequest#>, error: <#NSErrorPointer#>) as [Event]
+//        
+//        for result in results {
+//            println(result.eID)
+//        }
 //        refreshControl = UIRefreshControl()
 //        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh!")
 //        refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
@@ -74,7 +78,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             cell.backgroundColor = Color.tvcOdd
         }
         
-
   
         cell.titleLabel.text = cellEvent.eTitle
         cell.dayLabel.text = "\(cellEvent.eStart.day())"
@@ -90,6 +93,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
+        
         tableView.reloadData()
     }
 
@@ -102,8 +106,17 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             return
         })
         
-        shareAction.backgroundColor = UIColor.whiteColor()
-        return [shareAction]
+        shareAction.backgroundColor = UIColor.blueColor()
+        
+        var shareAction2 = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Share2", handler: {
+            (action: UITableViewRowAction!, indexPath: NSIndexPath!) in
+            println("Triggered share action \(action) atIndexPath: \(indexPath)")
+            return
+        })
+        
+        shareAction2.backgroundColor = UIColor.blueColor()
+
+        return [shareAction, shareAction2]
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

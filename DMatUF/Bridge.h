@@ -7,6 +7,8 @@
 //
 
 
+#import "Reachability.h"
+
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAITracker.h"

@@ -10,7 +10,6 @@
 		EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890A1A34D53C006CD2E0 /* TabBarController.swift */; };
 		EA06890D1A34E793006CD2E0 /* CAThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* CAThermometer.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
-		EA07FD5F1A2931F4000F2957 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07FD5E1A2931F4000F2957 /* Reachability.swift */; };
 		EA1970F71A0005BC0097245E /* EventViewController_Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1970F61A0005BC0097245E /* EventViewController_Format.swift */; };
 		EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */; };
 		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
@@ -40,6 +39,7 @@
 		EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */; };
 		EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D02B819FAAC9A005406E4 /* Date.swift */; };
 		EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA814B571A11596A00569306 /* EventsNavigationController.swift */; };
+		EAA6DA821A411CE90088B76E /* CountDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6DA811A411CE90088B76E /* CountDown.swift */; };
 		EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */; };
 		EAC85D6319FA92BC006840A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6119FA92BC006840A0 /* Main.storyboard */; };
 		EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6419FA92BC006840A0 /* Images.xcassets */; };
@@ -57,6 +57,7 @@
 		EAC85D9219FA96E4006840A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9119FA96E4006840A0 /* Event.swift */; };
 		EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9319FA9DC8006840A0 /* EventCell.swift */; };
 		EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9619FAA78F006840A0 /* EventViewController_Context.swift */; };
+		EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +97,6 @@
 		EA06890A1A34D53C006CD2E0 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EA06890C1A34E793006CD2E0 /* CAThermometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAThermometer.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EA07FD5E1A2931F4000F2957 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA1970F61A0005BC0097245E /* EventViewController_Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Format.swift; sourceTree = "<group>"; };
 		EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_CRUD.swift; sourceTree = "<group>"; };
 		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
@@ -139,6 +139,7 @@
 		EA7D02B819FAAC9A005406E4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
 		EA814B571A11596A00569306 /* EventsNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsNavigationController.swift; sourceTree = "<group>"; };
+		EAA6DA811A411CE90088B76E /* CountDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDown.swift; sourceTree = "<group>"; };
 		EAC85D5619FA92BC006840A0 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC85D5A19FA92BC006840A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +161,8 @@
 		EAC85D9119FA96E4006840A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EAC85D9319FA9DC8006840A0 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		EAC85D9619FAA78F006840A0 /* EventViewController_Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Context.swift; sourceTree = "<group>"; };
+		EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC85D8719FA93D6006840A0 /* HomeViewController.swift */,
+				EAA6DA811A411CE90088B76E /* CountDown.swift */,
 				EA74B8FE1A1E583E00B883BF /* FundViewController.swift */,
 				EA74B9001A1E599700B883BF /* HomeCell.swift */,
 			);
@@ -402,10 +406,11 @@
 		EAC85D9519FAA766006840A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */,
+				EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */,
 				EA318D6F1A2ED68E00F89F3B /* Google Analytics */,
 				EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */,
 				EA6917321A325FF40024E35C /* Theme.swift */,
-				EA07FD5E1A2931F4000F2957 /* Reachability.swift */,
 				EA7D02B819FAAC9A005406E4 /* Date.swift */,
 				EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */,
 				EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */,
@@ -476,6 +481,7 @@
 					};
 					EAC85D6C19FA92BC006840A0 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = H5HQ99Y6FU;
 						TestTargetID = EAC85D5519FA92BC006840A0;
 					};
 				};
@@ -535,13 +541,14 @@
 				EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */,
+				EAA6DA821A411CE90088B76E /* CountDown.swift in Sources */,
 				EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */,
-				EA07FD5F1A2931F4000F2957 /* Reachability.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */,
 				EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */,
 				EA74B8FF1A1E583E00B883BF /* FundViewController.swift in Sources */,
+				EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
 				EA814B581A11596A00569306 /* EventsNavigationController.swift in Sources */,
@@ -617,7 +624,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -629,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -646,7 +653,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = DMatUF/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -655,6 +662,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -662,7 +670,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -670,7 +679,7 @@
 				INFOPLIST_FILE = DMatUFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMatUF.app/DMatUF";
 			};
 			name = Debug;
@@ -692,7 +701,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.MacCDevTeam.DMatUF";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -704,7 +713,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -720,7 +729,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = DMatUF/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -729,6 +738,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -736,7 +746,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -744,7 +755,7 @@
 				INFOPLIST_FILE = DMatUFTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMatUF.app/DMatUF";
 			};
 			name = Release;

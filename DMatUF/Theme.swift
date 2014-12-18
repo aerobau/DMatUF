@@ -39,7 +39,7 @@ class Theme {
 
     init() {
         
-        customizeNavBar(color: Color.primary1, titleFont: Font.accent, buttonFont: Font.body1)
+        customizeNavBar(color: Color.primary1, titleFont: Font.header, buttonFont: Font.body1)
         customizeTabBar(color: Color.primary1, font: Font.body2)
         
     }
@@ -52,15 +52,9 @@ class Theme {
     }
     
     func customizeTabBar(#color: UIColor, font: UIFont) {
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.brownColor()], forState: UIControlState.Normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.magentaColor()], forState: UIControlState.Selected)
-        
-        UITabBar.appearance().selectedImageTintColor = UIColor.redColor()
-        UITabBar.appearance().tintColor = UIColor.greenColor()
-
-
-//        UITabBarItem.appearance().image = UITabBarItem.appearance().image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        
+        UITabBar.appearance().tintColor = color
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Selected)
     }
     
     
@@ -79,10 +73,6 @@ class Theme {
     // UIButton
     func customizeButton(#color: UIColor) {
         UIButton.appearance().setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
-//        let font = UIFont(name: "Pacifico", size: 14.0)
-//        UIButton.appearance().setAttributedTitle(NSAttributedString([NSFontAttributeName: font]))
-//        let attrText = NSAttributedString(string: "", attributes: [])
-//        UIButton.appearance().setAttributedTitle([NSFontAttributeName: font!], forState: UIControlState.Normal)
     }
 
     // UISwitch

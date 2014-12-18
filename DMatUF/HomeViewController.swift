@@ -8,49 +8,27 @@
 
 import UIKit
 
-class BlueBar: UIView {
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        backgroundColor = Color.primary2
-    }
-}
-
-
-
-
 class HomeViewController: UIViewController, UIAlertViewDelegate  {
     
-    // Create Outles
-    @IBOutlet weak var loginBarButton: UIBarButtonItem!
-    @IBOutlet weak var homePageControl: UIPageControl!
-    
-    var loginTask: NSURLSessionDataTask?
     
     // Create Variables
+    var loginTask: NSURLSessionDataTask?
     var loggedIn: Bool = false
-    var loadingAlert: UIAlertView?
-
-    @IBOutlet weak var fundsButton: UIButton!
+    
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
+
         // Google Analytics
         GA.sendScreenView(name: "HomeViewTest")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLoadingAlert()
     
         
     }
-    
-    
-
-
-
-    
     
     func login(username: String, password: String) {
         startLoading()
@@ -103,13 +81,13 @@ class HomeViewController: UIViewController, UIAlertViewDelegate  {
         }
     }
     
-    
-
-    
-    
-    
     // Handle UIAlerts
     func loginAlert() {
+        
+        if NSClassFromString("UIAlertController") == nil {
+            
+            return
+        }
         
         let alertController = UIAlertController(title: "Kintera Login", message: "Enter your username and password:", preferredStyle: .Alert)
         
@@ -149,11 +127,7 @@ class HomeViewController: UIViewController, UIAlertViewDelegate  {
         let loginTextField = alertController.textFields![0] as UITextField
         if let defaultUsername = defaults.objectForKey("username") as? String {
             loginTextField.text = defaultUsername
-            let passwordTextField = alertController.textFields![1] as UITextField
-            if let defaultPassword = defaults.objectForKey("password") as? String {
-                passwordTextField.text = defaultPassword
-                loginAction.enabled = true
-            }
+            loginAction.enabled = true
         }
         
         // Add Actions
@@ -171,34 +145,32 @@ class HomeViewController: UIViewController, UIAlertViewDelegate  {
     }
     
     func startLoading() {
-        loadingAlert?.show()
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        activityIndicator.color = Color.primary1
+//        UIView.animateWithDuration(1.0, animations: { () -> Void in
+//            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+//        })
+        
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(customView: activityIndicator))
+        
+        
+        activityIndicator.startAnimating()
+        
     }
     
     func stopLoading() {
-        loadingAlert?.dismissWithClickedButtonIndex(0, animated: false)
+
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if alertView == loadingAlert {
-            if buttonIndex == 0 {
-                loginTask?.cancel()
-                stopLoading()
-            }
-        }
-    }
     
     
     // MARK: Button Actions
-    @IBAction func fundsButtonPressed(sender: UIButton) {
+    @IBAction func fundsButtonPressed(sender: UIBarButtonItem) {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             performSegueWithIdentifier("FundSegue", sender: self)
         } else {
-            if Reachability.isConnectedToNetwork() {
-                loginAlert()
-            } else {
-                errorMessage("No Internet Connection!", message: nil)
-            }
+            loginAlert()
         }
     }
     
@@ -208,58 +180,48 @@ class HomeViewController: UIViewController, UIAlertViewDelegate  {
         CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
     }
     
-    @IBAction func websiteButtonPressed(sender: UIButton) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "website", value: nil)
-
-        CAF.openURL(["http://www.floridadm.org"])
-    }
-    
-    @IBAction func instagramButtonPressed(sender: UIButton) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "instagram", value: nil)
-
-        CAF.openURL([
-            "instagram://user?username=DMatUF", // App
-            "https://instagram.com/DMatUF" // Website
-        ])
-    }
-    
-    @IBAction func facebookButtonPressed(sender: UIButton) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "facebook", value: nil)
-
-        CAF.openURL([
-            "fb://profile/floridaDM", // App
-            "https://www.facebook.com/floridaDM" // Website
-        ])
-    }
-    
-    @IBAction func twitterButtonPressed(sender: UIButton) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "twitter", value: nil)
-
-        let handle: String = "floridadm"
-        CAF.openURL(["twitter://user?screen_name=\(handle)", // Twitter
-            "tweetbot:///user_profile/\(handle)", // TweetBot
-            "echofon:///user_timeline?\(handle)", // Echofon
-            "twit:///user?screen_name=\(handle)", // Twittelator Pro
-            "x-seesmic://twitter_profile?twitter_screen_name=\(handle)", // Seesmic
-            "x-birdfeed://user?screen_name=\(handle)", // Birdfeed
-            "tweetings:///user?screen_name=\(handle)", // Tweetings
-            "simplytweet:?link=http://twitter.com/\(handle)", // SimplyTweet
-            "icebird://user?screen_name=\(handle)", // IceBird
-            "fluttr://user/\(handle)", // Fluttr
-            "http://twitter.com/\(handle)"])
-    }
-    
-    @IBAction func gameButtonPressed(sender: UIButton) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "game", value: nil)
-    }
-    
-    
-    // MARK: Other Functions
-        
-    func setupLoadingAlert() {
-        loadingAlert  = UIAlertView(title: "Loading...", message: nil, delegate: self, cancelButtonTitle: "Cancel")
-        var indicator = UIActivityIndicatorView(activityIndicatorStyle: .White)
-        loadingAlert?.setValue(indicator, forKey: "accessoryView")
-        indicator.startAnimating()
-    }
+//    @IBAction func websiteButtonPressed(sender: UIButton) {
+//        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "website", value: nil)
+//
+//        CAF.openURL(["http://www.floridadm.org"])
+//    }
+//    
+//    @IBAction func instagramButtonPressed(sender: UIButton) {
+//        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "instagram", value: nil)
+//
+//        CAF.openURL([
+//            "instagram://user?username=DMatUF", // App
+//            "https://instagram.com/DMatUF" // Website
+//        ])
+//    }
+//    
+//    @IBAction func facebookButtonPressed(sender: UIButton) {
+//        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "facebook", value: nil)
+//
+//        CAF.openURL([
+//            "fb://profile/floridaDM", // App
+//            "https://www.facebook.com/floridaDM" // Website
+//        ])
+//    }
+//    
+//    @IBAction func twitterButtonPressed(sender: UIButton) {
+//        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "twitter", value: nil)
+//
+//        let handle: String = "floridadm"
+//        CAF.openURL(["twitter://user?screen_name=\(handle)", // Twitter
+//            "tweetbot:///user_profile/\(handle)", // TweetBot
+//            "echofon:///user_timeline?\(handle)", // Echofon
+//            "twit:///user?screen_name=\(handle)", // Twittelator Pro
+//            "x-seesmic://twitter_profile?twitter_screen_name=\(handle)", // Seesmic
+//            "x-birdfeed://user?screen_name=\(handle)", // Birdfeed
+//            "tweetings:///user?screen_name=\(handle)", // Tweetings
+//            "simplytweet:?link=http://twitter.com/\(handle)", // SimplyTweet
+//            "icebird://user?screen_name=\(handle)", // IceBird
+//            "fluttr://user/\(handle)", // Fluttr
+//            "http://twitter.com/\(handle)"])
+//    }
+//    
+//    @IBAction func gameButtonPressed(sender: UIButton) {
+//        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "game", value: nil)
+//    }
 }

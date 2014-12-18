@@ -10,16 +10,20 @@ import Foundation
 import UIKit
 
 class FundViewController: UIViewController {
-    var personalURL: String = ""
-    var teamURL: String = ""
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var thermometer: CAThermometer!
     @IBOutlet weak var table: CATable!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateFundraisingGraphics()
         view.backgroundColor = Color.tvcOdd
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateFundraisingGraphics()
     }
     
     
@@ -34,6 +38,7 @@ class FundViewController: UIViewController {
             
             // Participant Name
             if let partName = dict["ParticipantName"] as? String {
+                table.name = partName
             }
             
             // Participant Goal
@@ -53,7 +58,7 @@ class FundViewController: UIViewController {
             
             // Personal URL
             if let personalPageURL = dict["PersonalPageUrl"] as? NSString {
-                personalURL = personalPageURL
+                table.url = personalPageURL
             }
             
             // Last Updated
@@ -62,20 +67,14 @@ class FundViewController: UIViewController {
         }
         thermometer.setup()
         table.reloadData()
+        table.separatorInset = UIEdgeInsets(top: 0, left: thermometer.frame.width / 2 + 20.0, bottom: 0, right: 20.0)
     }
     
     @IBAction func logoutButtonPressed(sender: UIBarButtonItem) {
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(nil, forKey: "username")
         defaults.setObject(nil, forKey: "password")
         defaults.setObject(nil, forKey: "userInfo")
         
         navigationController?.popViewControllerAnimated(true)
     }
-    
-    @IBAction func participantDonateButtonPressed(sender: UIButton) {
-    }
-    @IBAction func teamDonateButtonPressed(sender: UIButton) {
-    }
-    
 }
