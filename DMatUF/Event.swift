@@ -20,9 +20,6 @@ class Event: NSManagedObject {
     @NSManaged var eLocation: String
     @NSManaged var eSecID: String
         
-        
-        
-        
     var sectionIdentifier: String {
         get {
             if eStart.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {

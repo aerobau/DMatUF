@@ -302,31 +302,25 @@ at the O’Connell Center at UF</string>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="6jl-nk-Lry">
                                             <rect key="frame" x="8" y="8" width="48" height="48"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="FHA-bo-dJI"/>
-                                                <constraint firstAttribute="height" constant="48" id="Yu9-lz-7IM"/>
+                                                <constraint firstAttribute="height" constant="48" id="49y-wE-Nbm"/>
+                                                <constraint firstAttribute="width" constant="48" id="J3A-jh-fze"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-SW-ZVN">
                                             <rect key="frame" x="8" y="8" width="48" height="16"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="Kx9-qd-JjC"/>
-                                                <constraint firstAttribute="height" constant="16" id="k7O-gT-CS9"/>
+                                                <constraint firstAttribute="height" constant="16" id="eEY-rz-QnM"/>
+                                                <constraint firstAttribute="width" constant="48" id="v31-21-Oxw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10:30 AM to 11:30 PM on 12/22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uT-sh-udH">
-                                            <rect key="frame" x="64" y="42" width="487" height="14"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="14" id="6aY-PN-I3I"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-Au-QDP">
-                                            <rect key="frame" x="64" y="8" width="503" height="26"/>
+                                            <rect key="frame" x="64" y="4" width="503" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="dDc-3Z-s6E"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -334,29 +328,37 @@ at the O’Connell Center at UF</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qye-qS-xV9">
                                             <rect key="frame" x="8" y="24" width="48" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="QQq-kL-mbX"/>
-                                                <constraint firstAttribute="height" constant="32" id="UEC-99-1gl"/>
+                                                <constraint firstAttribute="width" constant="48" id="HcI-fP-uwP"/>
+                                                <constraint firstAttribute="height" constant="32" id="PY5-Y2-ttP"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10:30 AM to 11:30 PM on 12/22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uT-sh-udH">
+                                            <rect key="frame" x="64" y="42" width="503" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="Yfl-5o-MB2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5uT-sh-udH" firstAttribute="top" secondItem="seJ-Au-QDP" secondAttribute="bottom" constant="8" id="2u9-6G-Q05"/>
-                                        <constraint firstItem="6jl-nk-Lry" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="DqK-ZX-Rph"/>
-                                        <constraint firstItem="seJ-Au-QDP" firstAttribute="leading" secondItem="7ZE-SW-ZVN" secondAttribute="trailing" constant="8" id="MGR-7q-Os3"/>
-                                        <constraint firstItem="seJ-Au-QDP" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" id="Pqb-rb-Dym"/>
-                                        <constraint firstItem="Qye-qS-xV9" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="Xdz-Yj-0Gk"/>
-                                        <constraint firstItem="5uT-sh-udH" firstAttribute="bottom" secondItem="jiB-H7-3SD" secondAttribute="bottomMargin" id="d7U-C8-mwp"/>
-                                        <constraint firstItem="7ZE-SW-ZVN" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="eJY-8D-iM7"/>
-                                        <constraint firstItem="6jl-nk-Lry" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" id="kSN-Nt-3bI"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="seJ-Au-QDP" secondAttribute="trailing" constant="-8" id="lXu-Wa-Oy3"/>
-                                        <constraint firstItem="Qye-qS-xV9" firstAttribute="top" secondItem="7ZE-SW-ZVN" secondAttribute="bottom" id="lox-Hq-ROi"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="5uT-sh-udH" secondAttribute="trailing" constant="8" id="onf-Ii-dL0"/>
-                                        <constraint firstItem="7ZE-SW-ZVN" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" id="pKN-1Y-SQi"/>
-                                        <constraint firstItem="5uT-sh-udH" firstAttribute="leading" secondItem="Qye-qS-xV9" secondAttribute="trailing" constant="8" id="pfZ-ee-aOx"/>
+                                        <constraint firstItem="7ZE-SW-ZVN" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" id="Esi-dt-lb5"/>
+                                        <constraint firstItem="6jl-nk-Lry" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="HIw-fv-rQV"/>
+                                        <constraint firstItem="seJ-Au-QDP" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" constant="-4" id="PEn-7Q-vPr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="seJ-Au-QDP" secondAttribute="trailing" constant="-8" id="PH1-bH-lxd"/>
+                                        <constraint firstItem="7ZE-SW-ZVN" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="QKg-8W-7PY"/>
+                                        <constraint firstItem="Qye-qS-xV9" firstAttribute="top" secondItem="7ZE-SW-ZVN" secondAttribute="bottom" id="QrT-vz-LNy"/>
+                                        <constraint firstItem="Qye-qS-xV9" firstAttribute="leading" secondItem="jiB-H7-3SD" secondAttribute="leadingMargin" id="Rvy-d4-853"/>
+                                        <constraint firstItem="seJ-Au-QDP" firstAttribute="leading" secondItem="Qye-qS-xV9" secondAttribute="trailing" constant="8" id="Sw3-8h-xcm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5uT-sh-udH" secondAttribute="trailing" constant="-8" id="VAz-sF-PYk"/>
+                                        <constraint firstItem="5uT-sh-udH" firstAttribute="top" secondItem="seJ-Au-QDP" secondAttribute="bottom" constant="8" id="cyG-OS-6Jb"/>
+                                        <constraint firstItem="5uT-sh-udH" firstAttribute="leading" secondItem="Qye-qS-xV9" secondAttribute="trailing" constant="8" id="pIS-F2-gbb"/>
+                                        <constraint firstItem="6jl-nk-Lry" firstAttribute="top" secondItem="jiB-H7-3SD" secondAttribute="topMargin" id="yTg-0F-0mZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -379,7 +381,7 @@ at the O’Connell Center at UF</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvO-ac-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="-1"/>
+            <point key="canvasLocation" x="1288" y="-2"/>
         </scene>
         <!--Meet the Kids!-->
         <scene sceneID="gBj-XC-g6L">

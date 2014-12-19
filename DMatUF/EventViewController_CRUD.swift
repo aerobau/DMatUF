@@ -21,7 +21,7 @@ extension EventViewController {
     func createEvent(eventDict: Dictionary<String, AnyObject>) {
 
         var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
-        println(eventDict)
+
         newEvent.eID = getInt(eventDict["id"])
         newEvent.eTitle = getString(eventDict["title"])
         newEvent.eLocation = getString(eventDict["location"])
@@ -31,10 +31,6 @@ extension EventViewController {
         newEvent.eMod = NSDate()
         newEvent.eSecID = getSecID(newEvent)
     }
-    
-    
-    
-    
     
     // Read
     func getFetchedResultController() -> NSFetchedResultsController {
@@ -83,9 +79,6 @@ extension EventViewController {
         return nil
     }
     
-    
-    
-    
     // Update
     func updateEvent(eventDict: Dictionary<String, AnyObject>, id: Int) {
         if let event: Event = fetchEvent(id) {
@@ -102,66 +95,20 @@ extension EventViewController {
         }
     }
     
-    
-    
-    
+    func update() {
+        if self.managedObjectContext!.hasChanges {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+                var saveError = NSErrorPointer()
+                self.appDelegate?.saveContext()
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
     
     // Delete
 
-    
-    
-    
-    
-    
-    
-    
-    
-    /* Convert to non-optional */
-    func getSecID(event: Event) -> String {
-        if event.eStart.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
-            return "Completed"
-        }
-        return "Upcoming"
-    }
-    
-    func getInt(obj: AnyObject?) -> Int {
-        if let object = obj?.integerValue {
-            return object
-        }
-        return 0
-    }
-    
-    func getString(obj: AnyObject?) -> String {
-        if let object: String = obj as? String {
-            println(object)
-            return object
-        }
-        return ""
-    }
-
-    func getDate(obj: AnyObject?) -> NSDate {
-        if let object: String = obj as? String {
-            let date = NSDate(fromString: object)
-            return date
-        }
-        return NSDate(timeIntervalSince1970: 0)
-    }
-    
-    func dateEST(dateGMT: NSDate) -> NSDate {
-        let formatterGMT = NSDateFormatter()
-        formatterGMT.timeZone = NSTimeZone.systemTimeZone()
-        formatterGMT.dateFormat = ""
-        let stringGMT = formatterGMT.stringFromDate(dateGMT)
-        
-        let formatterEST = NSDateFormatter()
-        formatterEST.timeZone = NSTimeZone.systemTimeZone()
-        formatterEST.dateFormat = ""
-        let dateEST = formatterEST.dateFromString(stringGMT)
-        
-        if let date = dateEST {
-            return date
-        }
-        return dateGMT
-    }
 
 }

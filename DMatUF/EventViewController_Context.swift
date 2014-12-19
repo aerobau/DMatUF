@@ -26,25 +26,5 @@ extension EventViewController {
     }
     
     
-    func update() {
-        if self.managedObjectContext!.hasChanges {
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-                var saveError = NSErrorPointer()
-                self.appDelegate?.saveContext()
-                
-                if saveError == nil {
-                    println("Save error = nil")
-                }else {
-                    println("Save error != nil")
-                }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.tableView.reloadData()
-                }
-            }
-        }
-    }
-    
-    
+        
 }

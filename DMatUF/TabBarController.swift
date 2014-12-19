@@ -9,15 +9,11 @@
 import Foundation
 import UIKit
 
-class TabBarController: UITabBarController, UITabBarControllerDelegate, UITabBarDelegate, UINavigationControllerDelegate, UITableViewDelegate {
+class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         customizableViewControllers = nil
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
     }
 }
 

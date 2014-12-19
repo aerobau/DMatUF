@@ -34,32 +34,25 @@ class FundViewController: UIViewController {
         var value: Int?
         
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
-            println(dict)
             
             // Participant Name
-            if let partName = dict["ParticipantName"] as? String {
-                table.name = partName
-            }
+            let partName = dict["ParticipantName"] as? String ?? ""
+            table.name = partName
+    
             
             // Participant Goal
-            if let partGoal = dict["PersonalGoal"] as? NSString {
-                let partGoalInt = partGoal.integerValue
-                thermometer.goal = partGoalInt
-                table.goal = partGoalInt
-                
-            }
+            let partGoal = dict["PersonalGoal"] as? NSString ?? ""
+            thermometer.goal = partGoal.integerValue
+            table.goal = partGoal.integerValue
             
             // Participant Raised
-            if let partRaised = dict["PersonalRaised"] as? NSString {
-                let partRaisedInt = partRaised.integerValue
-                thermometer.value = partRaisedInt
-                table.value = partRaisedInt
-            }
+            let partRaised = dict["PersonalRaised"] as? NSString ?? ""
+            thermometer.value = partRaised.integerValue
+            table.value = partRaised.integerValue
             
             // Personal URL
-            if let personalPageURL = dict["PersonalPageUrl"] as? NSString {
-                table.url = personalPageURL
-            }
+            let personalPageURL = dict["PersonalPageUrl"] as? NSString ?? ""
+            table.url = personalPageURL
             
             // Last Updated
             if let lastUpdated = dict["PersonalRaisedToDate"] as? NSString {

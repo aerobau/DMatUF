@@ -20,15 +20,12 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         super.viewDidLoad()
         tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 64.0
-
-        tableView.estimatedSectionHeaderHeight = 26.0
-        tableView.sectionHeaderHeight = 26.0
-        
-        tableView.estimatedSectionFooterHeight = 0.0
-        tableView.sectionFooterHeight = 0.0
-        
+        tableView.rowHeight = CAF.version < 8.0 ? 64.0 : UITableViewAutomaticDimension
+//        tableView.estimatedSectionHeaderHeight = 26.0
+//        tableView.sectionHeaderHeight = 26.0
+//        tableView.estimatedSectionFooterHeight = 0.0
+//        tableView.sectionFooterHeight = 0.0
+//        
         // TableView Separators
         tableView.separatorColor = Color.tvcSeparator
         
@@ -41,15 +38,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         {
             println("Unresolved error: \(error), \(error.debugDescription)")
         }
-//        
-////        let results = managedObjectContext?.executeFetchRequest(<#request: NSFetchRequest#>, error: <#NSErrorPointer#>) as [Event]
-//        
-//        for result in results {
-//            println(result.eID)
-//        }
-//        refreshControl = UIRefreshControl()
-//        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh!")
-//        refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
         fetchJSON(tableView)
     }
     

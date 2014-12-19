@@ -23,11 +23,10 @@ class KidsCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
 }
 
-class KidsViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class KidsViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // Get array of kids from plist file
     var array: NSArray = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Kids", ofType: "plist")!)!
-    
     var namesArray: Array<String> = []
     var thumbsArray: Array<String> = []
     
@@ -87,16 +86,11 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destination = segue.destinationViewController as KidDetailViewController
+
         if (segue.identifier == "KidDetailSegue") {
-            let cell = sender as KidsCell
-            var destination = segue.destinationViewController as KidDetailViewController
-            
-            
-            if let index = collectionView?.indexPathForCell(cell) {
-                println(index.row)
-                
-                if let dict = array.objectAtIndex(index.row) as? Dictionary<String, AnyObject> {
-                    println(dict)
+            if let indexPath = collectionView?.indexPathForCell(sender as KidsCell) {
+                if let dict = array.objectAtIndex(indexPath.row) as? Dictionary<String, AnyObject> {
                     destination.kid = Kid(dict: dict)
                 }
             }

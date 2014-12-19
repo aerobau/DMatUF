@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class CAF {
-    
+    class var version: Float {
+        get {
+            return (UIDevice.currentDevice().systemVersion as NSString).floatValue
+        }
+    }
+
     class func openURL(dict: [String]) {
         let application: UIApplication = UIApplication.sharedApplication()
         for url in dict {
@@ -29,6 +34,8 @@ class CAF {
             ),
             dispatch_get_main_queue(), closure)
     }
+    
+    
 }
 
 extension UIImage {
