@@ -17,12 +17,6 @@
 import UIKit
 import Foundation
 
-// Cell
-class KidsCell: UICollectionViewCell {
-    @IBOutlet weak var cellLabel: UILabel!
-    @IBOutlet weak var cellImage: UIImageView!
-}
-
 class KidsViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // Get array of kids from plist file

@@ -16,9 +16,9 @@ class CAF {
         }
     }
 
-    class func openURL(dict: [String]) {
+    class func openURL(arr: [String]) {
         let application: UIApplication = UIApplication.sharedApplication()
-        for url in dict {
+        for url in arr {
             if application.canOpenURL(NSURL(string: url)!) {
                 application.openURL(NSURL(string: url)!)
                 return

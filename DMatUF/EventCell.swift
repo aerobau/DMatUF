@@ -15,6 +15,23 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var calendarImageView: UIImageView!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        titleLabel.font = UIFont(name: Font.body1.fontName, size: 16.0)
+        timeLabel.font = UIFont(name: Font.body2.fontName, size: 12.0)
+        
+        if CAF.version < 8.0 {
+            titleLabel.numberOfLines = 1
+            titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        } else {
+            titleLabel.numberOfLines = 0
+            titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        }
+    }
+
+
+
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         

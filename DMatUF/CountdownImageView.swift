@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Countdown: UIImageView {
+class CountdownImageView: UIImageView {
     
     var timer: NSTimer?
     var endDate: NSDate?
@@ -31,12 +31,6 @@ class Countdown: UIImageView {
     var label14: UILabel?
     var label15: UILabel?
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -50,15 +44,8 @@ class Countdown: UIImageView {
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateLabels:", userInfo: nil, repeats: true)
             timer?.fire()
             updateLabels(nil)
-            
-            
-            
         }
-
     }
-    
-    
-    
     
     func setLabel(inout label: UILabel?, rect: CGRect, rotation: CGFloat) {
         func toRadians(degrees: CGFloat) -> CGFloat {
@@ -72,39 +59,26 @@ class Countdown: UIImageView {
         
     }
     
-
-
-    
     func updateLabels(sender: AnyObject?) {
         
         if endDate?.timeIntervalSince1970 >= NSDate().timeIntervalSince1970 {
             
-            
-            println("now: \(NSDate())")
-            println("end: \(endDate?)")
-            
-            
             let date = NSDate(timeIntervalSince1970: ((endDate?.timeIntervalSince1970 ?? 0) - NSDate().timeIntervalSince1970))
             
-            
-            
-            
-            
             let dateString = dateFormatter.stringFromDate(date)
-            println(dateString)
-            
             let charArray = Array(dateString)
             
+            // Days
             label1?.text = "\(charArray[0])"
             label2?.text = "\(charArray[1])"
             label3?.text = "\(charArray[2])"
-            
+            // Hours
             label5?.text = "\(charArray[4])"
             label6?.text = "\(charArray[5])"
-
+            // Minutes
             label8?.text = "\(charArray[7])"
             label9?.text = "\(charArray[8])"
-
+            // Seconds
             label11?.text = "\(charArray[10])"
             label12?.text = "\(charArray[11])"
         }
@@ -131,7 +105,7 @@ class Countdown: UIImageView {
         
         setLabel(&label10, rect: CGRectMake(frame.width * (183.0 / 320.0), frame.height * (132.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (23.0 / 151.0)), rotation: 0.0)
         
-        setLabel(&label11, rect: CGRectMake(frame.width * (199.0 / 320.0), frame.height * (132.0 / 302.0) , frame.width * (15.0 / 320.0), frame.height * (23.0 / 151.0)), rotation: 0.0)
+        setLabel(&label11, rect: CGRectMake(frame.width * (198.0 / 320.0), frame.height * (132.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (23.0 / 151.0)), rotation: 0.0)
         
         setLabel(&label12, rect: CGRectMake(frame.width * (214.0 / 320.0), frame.height * (138.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (25.0 / 151.0)), rotation: 3.0)
         
@@ -143,29 +117,25 @@ class Countdown: UIImageView {
         
         let labels = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15]
         
-        label4?.text = "d"
-        label7?.text = "h"
-        label10?.text = "m"
-        label13?.text = "s"
-        label14?.text = "#"
-        label14?.font = Font.subheader
-        label15?.attributedText = NSAttributedString(string: "F  \n T \n  K")
-
+        label4?.text = ":"
+        label7?.text = ":"
+        label10?.text = ":"
+        label13?.text = "D\nM"
+        label14?.text = "a\nt"
+        label15?.text = "U\nF"
         
         for label in labels {
-            
-            label?.font = Font.header
+            label?.font = UIFont(name: Font.header.fontName, size: 48.0)
             label?.textColor = Color.primary1
             label?.textAlignment = NSTextAlignment.Center
-            
-//            label?.numberOfLines = 4
-            label?.sizeThatFits(CGSizeMake(label?.frame.width ?? 0, label?.frame.height ?? 0))
-            
+            label?.baselineAdjustment = UIBaselineAdjustment.None
+            label?.adjustsFontSizeToFitWidth = true
+            label?.numberOfLines = 0
         }
-        label15?.font = UIFont(name: Font.header.fontName, size: (label15?.frame.height ?? 0) / 3.5)
-        label15?.numberOfLines = 3
-        label15?.lineBreakMode = NSLineBreakMode.ByCharWrapping
+        label4?.textColor = Color.primary2
+        label7?.textColor = Color.primary2
+        label10?.textColor = Color.primary2
+        label13?.textColor = Color.primary2
+        label15?.textColor = Color.primary2
     }
-    
-    
 }

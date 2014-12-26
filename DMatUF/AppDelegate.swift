@@ -23,22 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "App_Launch", value: nil)
 
         // Implement Theme
-        
         Theme()
-
-        
-        // Check to see if this is an iOS 8 device.
-        var systemVersion = UIDevice.currentDevice().systemVersion as NSString
-        println("Sysem version: \(systemVersion)")
-        if systemVersion.floatValue >= 8.0 {
-            // Register for push in iOS 8
-            let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
-            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-            UIApplication.sharedApplication().registerForRemoteNotifications()
-        } else {
-            // Register for push in iOS 7
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound | UIRemoteNotificationType.Alert)
-        }
         
         return true
     }
@@ -64,35 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         saveContext()
     }
-    
-    
-    // MARK: - Push Notifications
-//    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
-//        println("Got token data! \(deviceToken)")
-//    }
-//    
-//    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
-//        println("Couldn't register: \(error)")
-//    }
-//    
-//    func application(application: UIApplication!, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings!) {
-//
-//    }
-//    
-//    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-//        if let payload: AnyObject = userInfo["aps"] {
-//            if let message = payload["alert"] as? String {
-//                println(message)
-//            }
-//        }
-//    }
-//    
-//    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-//        
-//    }
-    
-    
-    
     
     // MARK: - Core Data Stack
     lazy var applicationDocumentsDirectory: NSURL = {

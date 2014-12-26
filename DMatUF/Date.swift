@@ -27,7 +27,7 @@ extension NSDate {
         }
     }
     
-    class func relativeDateString(#start: NSDate?, end: NSDate?) -> String? {
+    class func relativeDateString(#start: NSDate?, end: NSDate?) -> String {
         
         var time: String?
         
@@ -45,7 +45,7 @@ extension NSDate {
             }
         }
 
-        return time
+        return time ?? ""
     }
 }
 

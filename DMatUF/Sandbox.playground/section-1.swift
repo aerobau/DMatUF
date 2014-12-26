@@ -1,10 +1,30 @@
-var n = 10
+import Foundation
 
-switch n {
-case 1...7:
-    println("1-7")
-case 8...14:
-    println("8-14")
-default:
-    break
+
+class SomeClass {
+    var name: String = "No Name"
 }
+
+let a = SomeClass()
+a.name = "Jeff Stevens"
+
+let b = SomeClass()
+b.name = "Mick MacCallum"
+
+let c = SomeClass()
+c.name = "Ian MacCallum"
+
+let d = SomeClass()
+d.name = "Jeff Perez"
+
+let names = [a, b, c, d]
+
+let maccallums = names.filter { $0.name.hasSuffix("MacCallum") }
+
+maccallums
+
+
+let jeffs = names.filter { $0.name.hasPrefix("Jeff") }
+
+jeffs
+

@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890A1A34D53C006CD2E0 /* TabBarController.swift */; };
-		EA06890D1A34E793006CD2E0 /* CAThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* CAThermometer.swift */; };
+		EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
-		EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */; };
-		EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */; };
+		EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */; };
+		EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */; };
 		EA318D7C1A2ED71D00F89F3B /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */; };
 		EA318D7D1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D7B1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a */; };
 		EA318D891A2ED7A800F89F3B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D881A2ED7A800F89F3B /* libz.dylib */; };
 		EA318D8B1A2ED95800F89F3B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */; };
 		EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */; };
-		EA3CBCA91A1D4B32002EC704 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */; };
 		EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */; };
 		EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */ = {isa = PBXBuildFile; fileRef = EA4294F41A3AF59B0056A3D7 /* Bugs */; };
+		EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */; };
 		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
 		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
 		EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */; };
@@ -33,13 +33,18 @@
 		EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6917341A32DBC50024E35C /* CAFunctions.swift */; };
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
-		EA74B8FF1A1E583E00B883BF /* FundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B8FE1A1E583E00B883BF /* FundViewController.swift */; };
-		EA74B9011A1E599700B883BF /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B9001A1E599700B883BF /* HomeCell.swift */; };
+		EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */; };
 		EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */; };
 		EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D02B819FAAC9A005406E4 /* Date.swift */; };
+		EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */; };
+		EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1F1A48F37B0039BC6C /* KidCell.swift */; };
 		EAA041DA1A439C770028C062 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041D91A439C770028C062 /* Kid.swift */; };
-		EAA041DC1A43A2410028C062 /* EventViewController_Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041DB1A43A2410028C062 /* EventViewController_Functions.swift */; };
-		EAA6DA821A411CE90088B76E /* CountDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6DA811A411CE90088B76E /* CountDown.swift */; };
+		EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */; };
+		EAA6DA821A411CE90088B76E /* CountdownImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6DA811A411CE90088B76E /* CountdownImageView.swift */; };
+		EAA7F8CE1A46347300F7FACC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA7F8CD1A46347300F7FACC /* Announcement.swift */; };
+		EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */; };
+		EAAA7A301A45FCDA00990D15 /* HomeViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */; };
+		EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */; };
 		EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */; };
 		EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6419FA92BC006840A0 /* Images.xcassets */; };
 		EAC85D6819FA92BC006840A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6619FA92BC006840A0 /* LaunchScreen.xib */; };
@@ -55,7 +60,6 @@
 		EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */; };
 		EAC85D9219FA96E4006840A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9119FA96E4006840A0 /* Event.swift */; };
 		EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9319FA9DC8006840A0 /* EventCell.swift */; };
-		EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9619FAA78F006840A0 /* EventViewController_Context.swift */; };
 		EADB1A7D1A43C74600F46668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB1A7C1A43C74600F46668 /* Main.storyboard */; };
 		EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */; };
 /* End PBXBuildFile section */
@@ -95,10 +99,10 @@
 
 /* Begin PBXFileReference section */
 		EA06890A1A34D53C006CD2E0 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		EA06890C1A34E793006CD2E0 /* CAThermometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAThermometer.swift; sourceTree = "<group>"; };
+		EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraHubView.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_CRUD.swift; sourceTree = "<group>"; };
-		EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Fetch.swift; sourceTree = "<group>"; };
+		EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerCRUD.swift; sourceTree = "<group>"; };
+		EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerFetch.swift; sourceTree = "<group>"; };
 		EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
 		EA318D7B1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		EA318D7E1A2ED74100F89F3B /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -115,10 +119,10 @@
 		EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EA318D8C1A2ED9C500F89F3B /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAnalytics.swift; sourceTree = "<group>"; };
-		EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		EA41E7081A313F5800903926 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 		EA4294F41A3AF59B0056A3D7 /* Bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bugs; sourceTree = "<group>"; };
+		EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 		EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramView.xib; sourceTree = "<group>"; };
@@ -132,14 +136,19 @@
 		EA6917341A32DBC50024E35C /* CAFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAFunctions.swift; sourceTree = "<group>"; };
 		EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
-		EA74B8FE1A1E583E00B883BF /* FundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundViewController.swift; sourceTree = "<group>"; };
-		EA74B9001A1E599700B883BF /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraViewController.swift; sourceTree = "<group>"; };
 		EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EA7D02B819FAAC9A005406E4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
+		EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
+		EA882C1F1A48F37B0039BC6C /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
 		EAA041D91A439C770028C062 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
-		EAA041DB1A43A2410028C062 /* EventViewController_Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Functions.swift; sourceTree = "<group>"; };
-		EAA6DA811A411CE90088B76E /* CountDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDown.swift; sourceTree = "<group>"; };
+		EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerFunctions.swift; sourceTree = "<group>"; };
+		EAA6DA811A411CE90088B76E /* CountdownImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownImageView.swift; sourceTree = "<group>"; };
+		EAA7F8CD1A46347300F7FACC /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFollow.swift; sourceTree = "<group>"; };
+		EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerLogin.swift; sourceTree = "<group>"; };
+		EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsTableView.swift; sourceTree = "<group>"; };
 		EAC85D5619FA92BC006840A0 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC85D5A19FA92BC006840A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,7 +168,6 @@
 		EAC85D8F19FA9598006840A0 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		EAC85D9119FA96E4006840A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EAC85D9319FA9DC8006840A0 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		EAC85D9619FAA78F006840A0 /* EventViewController_Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController_Context.swift; sourceTree = "<group>"; };
 		EADB1A7C1A43C74600F46668 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */,
 				EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */,
 				EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */,
 				EA318D8B1A2ED95800F89F3B /* SystemConfiguration.framework in Frameworks */,
@@ -194,52 +203,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EA2F1FA619FAC581000C5685 /* Event Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EAC85D9619FAA78F006840A0 /* EventViewController_Context.swift */,
-				EA2F1FA719FAC614000C5685 /* EventViewController_CRUD.swift */,
-				EAA041DB1A43A2410028C062 /* EventViewController_Functions.swift */,
-				EA2F1FAA19FAC671000C5685 /* EventViewController_Fetch.swift */,
-			);
-			name = "Event Extensions";
-			sourceTree = "<group>";
-		};
 		EA2F1FA919FAC624000C5685 /* Home Tab */ = {
 			isa = PBXGroup;
 			children = (
 				EAC85D8719FA93D6006840A0 /* HomeViewController.swift */,
-				EAA6DA811A411CE90088B76E /* CountDown.swift */,
-				EA74B8FE1A1E583E00B883BF /* FundViewController.swift */,
-				EA74B9001A1E599700B883BF /* HomeCell.swift */,
+				EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */,
+				EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */,
+				EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */,
+				EAA6DA811A411CE90088B76E /* CountdownImageView.swift */,
+				EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */,
+				EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */,
 			);
 			name = "Home Tab";
-			sourceTree = "<group>";
-		};
-		EA2F1FAE19FAD80D000C5685 /* Event Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				EAC85D9119FA96E4006840A0 /* Event.swift */,
-				EAC85D9319FA9DC8006840A0 /* EventCell.swift */,
-			);
-			name = "Event Subclasses";
 			sourceTree = "<group>";
 		};
 		EA318D6F1A2ED68E00F89F3B /* Google Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */,
-				EA318D7B1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a */,
-				EA318D7E1A2ED74100F89F3B /* GAI.h */,
-				EA318D7F1A2ED74100F89F3B /* GAIDictionaryBuilder.h */,
-				EA318D801A2ED74100F89F3B /* GAIEcommerceFields.h */,
-				EA318D811A2ED74100F89F3B /* GAIEcommerceProduct.h */,
-				EA318D821A2ED74100F89F3B /* GAIEcommerceProductAction.h */,
-				EA318D831A2ED74100F89F3B /* GAIEcommercePromotion.h */,
-				EA318D841A2ED74100F89F3B /* GAIFields.h */,
-				EA318D851A2ED74100F89F3B /* GAILogger.h */,
-				EA318D861A2ED74100F89F3B /* GAITrackedViewController.h */,
-				EA318D871A2ED74100F89F3B /* GAITracker.h */,
+				EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */,
+				EA882C221A48F4C10039BC6C /* API */,
 			);
 			name = "Google Analytics";
 			sourceTree = "<group>";
@@ -247,6 +229,7 @@
 		EA41E7071A313F5800903926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */,
 				EA318D881A2ED7A800F89F3B /* libz.dylib */,
 				EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */,
 				EAC85D8519FA92E3006840A0 /* UIKit.framework */,
@@ -321,9 +304,65 @@
 				EA6401FA19FBF3F400C7167C /* Kids.plist */,
 				EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */,
 				EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */,
-				EAA041D91A439C770028C062 /* Kid.swift */,
 			);
 			name = "Kids Tab";
+			sourceTree = "<group>";
+		};
+		EA882C1D1A48F2FD0039BC6C /* Object Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				EAA7F8CD1A46347300F7FACC /* Announcement.swift */,
+				EAC85D9119FA96E4006840A0 /* Event.swift */,
+				EAA041D91A439C770028C062 /* Kid.swift */,
+			);
+			name = "Object Subclasses";
+			sourceTree = "<group>";
+		};
+		EA882C1E1A48F30C0039BC6C /* Cell Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */,
+				EAC85D9319FA9DC8006840A0 /* EventCell.swift */,
+				EA882C1F1A48F37B0039BC6C /* KidCell.swift */,
+			);
+			name = "Cell Subclasses";
+			sourceTree = "<group>";
+		};
+		EA882C211A48F48A0039BC6C /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */,
+				EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		EA882C221A48F4C10039BC6C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */,
+				EA318D7B1A2ED71D00F89F3B /* libGoogleAnalyticsServices.a */,
+				EA318D7E1A2ED74100F89F3B /* GAI.h */,
+				EA318D7F1A2ED74100F89F3B /* GAIDictionaryBuilder.h */,
+				EA318D801A2ED74100F89F3B /* GAIEcommerceFields.h */,
+				EA318D811A2ED74100F89F3B /* GAIEcommerceProduct.h */,
+				EA318D821A2ED74100F89F3B /* GAIEcommerceProductAction.h */,
+				EA318D831A2ED74100F89F3B /* GAIEcommercePromotion.h */,
+				EA318D841A2ED74100F89F3B /* GAIFields.h */,
+				EA318D851A2ED74100F89F3B /* GAILogger.h */,
+				EA318D861A2ED74100F89F3B /* GAITrackedViewController.h */,
+				EA318D871A2ED74100F89F3B /* GAITracker.h */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		EA882C231A48F4D10039BC6C /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */,
+				EA7D02B819FAAC9A005406E4 /* Date.swift */,
+			);
+			name = Date;
 			sourceTree = "<group>";
 		};
 		EAC85D4D19FA92BC006840A0 = {
@@ -354,6 +393,8 @@
 				EA4294F41A3AF59B0056A3D7 /* Bugs */,
 				EADB1A7C1A43C74600F46668 /* Main.storyboard */,
 				EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */,
+				EA882C1E1A48F30C0039BC6C /* Cell Subclasses */,
+				EA882C1D1A48F2FD0039BC6C /* Object Subclasses */,
 				EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */,
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
@@ -396,8 +437,9 @@
 			isa = PBXGroup;
 			children = (
 				EAC85D8A19FA9446006840A0 /* EventViewController.swift */,
-				EA2F1FAE19FAD80D000C5685 /* Event Subclasses */,
-				EA2F1FA619FAC581000C5685 /* Event Extensions */,
+				EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */,
+				EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */,
+				EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */,
 				EAC85D8C19FA945C006840A0 /* EventDetailViewController.swift */,
 			);
 			name = "Events Tab";
@@ -406,16 +448,11 @@
 		EAC85D9519FAA766006840A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */,
-				EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */,
 				EA318D6F1A2ED68E00F89F3B /* Google Analytics */,
-				EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */,
+				EA882C211A48F48A0039BC6C /* Reachability */,
+				EA882C231A48F4D10039BC6C /* Date */,
 				EA6917321A325FF40024E35C /* Theme.swift */,
-				EA7D02B819FAAC9A005406E4 /* Date.swift */,
-				EA3CBCA81A1D4B32002EC704 /* ProgressBar.swift */,
-				EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */,
 				EA6917341A32DBC50024E35C /* CAFunctions.swift */,
-				EA06890C1A34E793006CD2E0 /* CAThermometer.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
 			name = Extensions;
@@ -475,7 +512,7 @@
 						DevelopmentTeam = H5HQ99Y6FU;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -540,29 +577,32 @@
 			files = (
 				EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
-				EA2F1FAB19FAC671000C5685 /* EventViewController_Fetch.swift in Sources */,
-				EAA6DA821A411CE90088B76E /* CountDown.swift in Sources */,
+				EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */,
+				EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */,
+				EAA6DA821A411CE90088B76E /* CountdownImageView.swift in Sources */,
 				EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
+				EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
-				EA2F1FA819FAC614000C5685 /* EventViewController_CRUD.swift in Sources */,
+				EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */,
 				EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */,
-				EA74B8FF1A1E583E00B883BF /* FundViewController.swift in Sources */,
+				EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */,
+				EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */,
 				EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */,
+				EAA7F8CE1A46347300F7FACC /* Announcement.swift in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
+				EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */,
+				EAAA7A301A45FCDA00990D15 /* HomeViewControllerLogin.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
-				EAC85D9719FAA78F006840A0 /* EventViewController_Context.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
-				EAA041DC1A43A2410028C062 /* EventViewController_Functions.swift in Sources */,
+				EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
-				EA06890D1A34E793006CD2E0 /* CAThermometer.swift in Sources */,
-				EA3CBCA91A1D4B32002EC704 /* ProgressBar.swift in Sources */,
+				EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */,
 				EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */,
 				EAA041DA1A439C770028C062 /* Kid.swift in Sources */,
-				EA74B9011A1E599700B883BF /* HomeCell.swift in Sources */,
 				EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */,
 				EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
 				EA6917331A325FF40024E35C /* Theme.swift in Sources */,
