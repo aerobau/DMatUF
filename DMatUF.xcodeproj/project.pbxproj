@@ -10,6 +10,9 @@
 		EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890A1A34D53C006CD2E0 /* TabBarController.swift */; };
 		EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
+		EA2AAD481A4F2D3600CCD01D /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2AAD471A4F2D3600CCD01D /* Kids.plist */; };
+		EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9D1A51157200995A93 /* AboutViewController.swift */; };
+		EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */; };
 		EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */; };
 		EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */; };
 		EA318D7C1A2ED71D00F89F3B /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */; };
@@ -20,10 +23,8 @@
 		EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */; };
 		EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */ = {isa = PBXBuildFile; fileRef = EA4294F41A3AF59B0056A3D7 /* Bugs */; };
 		EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */; };
-		EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */; };
-		EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */; };
-		EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */; };
-		EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6401FA19FBF3F400C7167C /* Kids.plist */; };
+		EA4EFCE41A5C42C50078250A /* EventViewControllerKintera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4EFCE31A5C42C50078250A /* EventViewControllerKintera.swift */; };
+		EA5177401A4FF31500124F61 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51773F1A4FF31500124F61 /* Reachability.swift */; };
 		EA68B12E1A396E8A0084271D /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */; };
 		EA68B12F1A396E8A0084271D /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */; };
 		EA68B1301A396E8A0084271D /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12C1A396E8A0084271D /* Pacifico.ttf */; };
@@ -35,9 +36,9 @@
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
 		EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */; };
 		EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */; };
-		EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7D02B819FAAC9A005406E4 /* Date.swift */; };
 		EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */; };
 		EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1F1A48F37B0039BC6C /* KidCell.swift */; };
+		EA9BA3BD1A5328A60088FEAB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */; };
 		EAA041DA1A439C770028C062 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041D91A439C770028C062 /* Kid.swift */; };
 		EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */; };
 		EAA6DA821A411CE90088B76E /* CountdownImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6DA811A411CE90088B76E /* CountdownImageView.swift */; };
@@ -45,6 +46,7 @@
 		EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */; };
 		EAAA7A301A45FCDA00990D15 /* HomeViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */; };
 		EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */; };
+		EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD13F71A533C1400A3C288 /* BFImageView.swift */; };
 		EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */; };
 		EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6419FA92BC006840A0 /* Images.xcassets */; };
 		EAC85D6819FA92BC006840A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6619FA92BC006840A0 /* LaunchScreen.xib */; };
@@ -60,6 +62,7 @@
 		EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */; };
 		EAC85D9219FA96E4006840A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9119FA96E4006840A0 /* Event.swift */; };
 		EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9319FA9DC8006840A0 /* EventCell.swift */; };
+		EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */; };
 		EADB1A7D1A43C74600F46668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB1A7C1A43C74600F46668 /* Main.storyboard */; };
 		EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +104,9 @@
 		EA06890A1A34D53C006CD2E0 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraHubView.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA2AAD471A4F2D3600CCD01D /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
+		EA2C8D9D1A51157200995A93 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCells.swift; sourceTree = "<group>"; };
 		EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerCRUD.swift; sourceTree = "<group>"; };
 		EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerFetch.swift; sourceTree = "<group>"; };
 		EA318D7A1A2ED71D00F89F3B /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
@@ -123,10 +129,8 @@
 		EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 		EA4294F41A3AF59B0056A3D7 /* Bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bugs; sourceTree = "<group>"; };
 		EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
-		EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
-		EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramView.xib; sourceTree = "<group>"; };
-		EA6401FA19FBF3F400C7167C /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
+		EA4EFCE31A5C42C50078250A /* EventViewControllerKintera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerKintera.swift; sourceTree = "<group>"; };
+		EA51773F1A4FF31500124F61 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		EA68B12C1A396E8A0084271D /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
@@ -138,10 +142,10 @@
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
 		EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraViewController.swift; sourceTree = "<group>"; };
 		EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		EA7D02B819FAAC9A005406E4 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
 		EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		EA882C1F1A48F37B0039BC6C /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
+		EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		EAA041D91A439C770028C062 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
 		EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerFunctions.swift; sourceTree = "<group>"; };
 		EAA6DA811A411CE90088B76E /* CountdownImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownImageView.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFollow.swift; sourceTree = "<group>"; };
 		EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerLogin.swift; sourceTree = "<group>"; };
 		EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsTableView.swift; sourceTree = "<group>"; };
+		EABD13F71A533C1400A3C288 /* BFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFImageView.swift; sourceTree = "<group>"; };
 		EAC85D5619FA92BC006840A0 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC85D5A19FA92BC006840A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +173,7 @@
 		EAC85D8F19FA9598006840A0 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		EAC85D9119FA96E4006840A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EAC85D9319FA9DC8006840A0 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundraiseViewController.swift; sourceTree = "<group>"; };
 		EADB1A7C1A43C74600F46668 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9BA3BD1A5328A60088FEAB /* CoreImage.framework in Frameworks */,
 				EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */,
 				EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */,
 				EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */,
@@ -229,6 +236,7 @@
 		EA41E7071A313F5800903926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */,
 				EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */,
 				EA318D881A2ED7A800F89F3B /* libz.dylib */,
 				EA318D8A1A2ED95800F89F3B /* SystemConfiguration.framework */,
@@ -244,46 +252,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EA5DBD9419FE7DBC0085DC14 /* Social Tab */ = {
+		EA61D0EB1A50E46B00565206 /* About Tab */ = {
 			isa = PBXGroup;
 			children = (
-				EA5DBD9219FE7DB70085DC14 /* SocialViewController.swift */,
-				EA5DBD9519FE9F5B0085DC14 /* Instagram */,
-				EA5DBD9619FE9F6A0085DC14 /* Twitter */,
-				EA5DBD9719FE9F700085DC14 /* Facebook */,
-				EA5DBD9819FE9F780085DC14 /* YouTube */,
+				EA2C8D9D1A51157200995A93 /* AboutViewController.swift */,
 			);
-			name = "Social Tab";
-			sourceTree = "<group>";
-		};
-		EA5DBD9519FE9F5B0085DC14 /* Instagram */ = {
-			isa = PBXGroup;
-			children = (
-				EA5DBD9919FE9FA20085DC14 /* InstagramView.swift */,
-				EA5DBD9B19FEA12D0085DC14 /* InstagramView.xib */,
-			);
-			name = Instagram;
-			sourceTree = "<group>";
-		};
-		EA5DBD9619FE9F6A0085DC14 /* Twitter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Twitter;
-			sourceTree = "<group>";
-		};
-		EA5DBD9719FE9F700085DC14 /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Facebook;
-			sourceTree = "<group>";
-		};
-		EA5DBD9819FE9F780085DC14 /* YouTube */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = YouTube;
+			name = "About Tab";
 			sourceTree = "<group>";
 		};
 		EA68B1331A39705A0084271D /* Fonts */ = {
@@ -301,7 +275,7 @@
 		EA6B0E1219FBE995006CC2F2 /* Kids Tab */ = {
 			isa = PBXGroup;
 			children = (
-				EA6401FA19FBF3F400C7167C /* Kids.plist */,
+				EA2AAD471A4F2D3600CCD01D /* Kids.plist */,
 				EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */,
 				EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */,
 			);
@@ -322,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */,
+				EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */,
 				EAC85D9319FA9DC8006840A0 /* EventCell.swift */,
 				EA882C1F1A48F37B0039BC6C /* KidCell.swift */,
 			);
@@ -333,6 +308,7 @@
 			children = (
 				EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */,
 				EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */,
+				EA51773F1A4FF31500124F61 /* Reachability.swift */,
 			);
 			name = Reachability;
 			sourceTree = "<group>";
@@ -360,9 +336,16 @@
 			isa = PBXGroup;
 			children = (
 				EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */,
-				EA7D02B819FAAC9A005406E4 /* Date.swift */,
 			);
 			name = Date;
+			sourceTree = "<group>";
+		};
+		EABD13F91A533C1900A3C288 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				EABD13F71A533C1400A3C288 /* BFImageView.swift */,
+			);
+			name = UIImageView;
 			sourceTree = "<group>";
 		};
 		EAC85D4D19FA92BC006840A0 = {
@@ -399,8 +382,9 @@
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
 				EAC85D8919FA9432006840A0 /* Events Tab */,
+				EAD6E7171A529BDB001187E6 /* Fundraise Tab */,
 				EA6B0E1219FBE995006CC2F2 /* Kids Tab */,
-				EA5DBD9419FE7DBC0085DC14 /* Social Tab */,
+				EA61D0EB1A50E46B00565206 /* About Tab */,
 			);
 			path = DMatUF;
 			sourceTree = "<group>";
@@ -439,6 +423,7 @@
 				EAC85D8A19FA9446006840A0 /* EventViewController.swift */,
 				EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */,
 				EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */,
+				EA4EFCE31A5C42C50078250A /* EventViewControllerKintera.swift */,
 				EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */,
 				EAC85D8C19FA945C006840A0 /* EventDetailViewController.swift */,
 			);
@@ -448,6 +433,7 @@
 		EAC85D9519FAA766006840A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EABD13F91A533C1900A3C288 /* UIImageView */,
 				EA318D6F1A2ED68E00F89F3B /* Google Analytics */,
 				EA882C211A48F48A0039BC6C /* Reachability */,
 				EA882C231A48F4D10039BC6C /* Date */,
@@ -456,6 +442,14 @@
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EAD6E7171A529BDB001187E6 /* Fundraise Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */,
+			);
+			name = "Fundraise Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,14 +544,13 @@
 				EA68B1371A3AAB1C0084271D /* agbookrounded-medium.otf in Resources */,
 				EA68B12E1A396E8A0084271D /* AvenirLTStd-Light.otf in Resources */,
 				EA68B12F1A396E8A0084271D /* AvenirLTStd-Roman.otf in Resources */,
+				EA2AAD481A4F2D3600CCD01D /* Kids.plist in Resources */,
 				EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */,
 				EAC85D6819FA92BC006840A0 /* LaunchScreen.xib in Resources */,
 				EADB1A7D1A43C74600F46668 /* Main.storyboard in Resources */,
 				EA68B1321A396FCF0084271D /* AvenirLTStd-Black.otf in Resources */,
 				EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */,
 				EA68B1301A396E8A0084271D /* Pacifico.ttf in Resources */,
-				EA6401FB19FBF3F400C7167C /* Kids.plist in Resources */,
-				EA5DBD9C19FEA12D0085DC14 /* InstagramView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +568,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5DBD9319FE7DB70085DC14 /* SocialViewController.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */,
@@ -584,6 +576,7 @@
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
+				EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */,
 				EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */,
 				EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */,
@@ -593,18 +586,21 @@
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
 				EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */,
 				EAAA7A301A45FCDA00990D15 /* HomeViewControllerLogin.swift in Sources */,
+				EA4EFCE41A5C42C50078250A /* EventViewControllerKintera.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
 				EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
-				EA7D02B919FAAC9A005406E4 /* Date.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
+				EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */,
+				EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */,
 				EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */,
-				EA5DBD9A19FE9FA20085DC14 /* InstagramView.swift in Sources */,
 				EAA041DA1A439C770028C062 /* Kid.swift in Sources */,
+				EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */,
 				EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */,
 				EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
+				EA5177401A4FF31500124F61 /* Reachability.swift in Sources */,
 				EA6917331A325FF40024E35C /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,8 +676,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos8.1]" = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = DMatUF/Info.plist;
@@ -757,8 +754,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

@@ -16,32 +16,45 @@ class HomeViewController: UIViewController  {
     @IBOutlet weak var announcementsTableView: AnnouncementsTableView!
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var bottomBar: UIView!
+    var task: NSURLSessionDataTask?
+    var kinteraButtonItem: UIBarButtonItem?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        
-        // Set Attributes
-        welcomeLabel.textColor = Color.primary2
-        announcementsLabel.textColor = Color.primary1
-        topBar.backgroundColor = Color.secondary1
-        bottomBar.backgroundColor = Color.secondary1
-        
-        announcementsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+        super.viewDidAppear(animated)
+
         // Google Analytics
         GA.sendScreenView(name: "HomeViewTest")
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopLoading()
+        countdownImageView.timer = nil
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // Set Attributes
+        welcomeLabel?.textColor = Color.primary2
+        announcementsLabel?.textColor = Color.primary1
+        topBar?.backgroundColor = Color.secondary1
+        bottomBar?.backgroundColor = Color.secondary1
+        kinteraButtonItem = navigationItem.rightBarButtonItem
+        announcementsTableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
         
+        if CAF.deviceType == DeviceType.iPhone4s {
+            welcomeLabel.text = nil
+            welcomeLabel.frame.size.height = 0
+        }
     }
-    
-
 }
 

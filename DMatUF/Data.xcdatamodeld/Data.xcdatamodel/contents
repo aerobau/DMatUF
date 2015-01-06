@@ -6,18 +6,16 @@
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="DMatUF.Event" syncable="YES">
-        <attribute name="eDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eEnd" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="eID" optional="YES" attributeType="Integer 64" defaultValueString="-1" syncable="YES"/>
-        <attribute name="eLocation" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eMod" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="eSecID" optional="YES" attributeType="String" defaultValueString="Upcoming" syncable="YES"/>
-        <attribute name="eStart" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="eTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sectionIdentifier" optional="YES" transient="YES" attributeType="String" defaultValueString="Upcoming" syncable="YES"/>
+        <attribute name="complete" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="-1" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moreInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="178"/>
         <element name="Announcement" positionX="-63" positionY="45" width="128" height="88"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

@@ -11,15 +11,15 @@ import UIKit
 
 class Kid {
     var name: String?
-    var age: NSDate?
+    var age: Int?
     var story: String?
     var imageName: String?
     
     convenience init(dict: Dictionary<String, AnyObject>) {
         self.init()
-        name = Optional(dict["name"]! as? String)!
-        age = Optional(dict["age"]! as? NSDate)!
-        story = Optional(dict["story"]! as? String)!
-        imageName = Optional(dict["image"]! as? String)!
+        name = Optional(dict["name"] as String)
+        age = Optional((dict["ageYear"] as NSNumber).integerValue)
+        story = Optional(dict["story"] as String)
+        imageName = Optional(dict["image"] as String)
     }
 }

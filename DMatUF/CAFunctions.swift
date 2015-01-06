@@ -9,10 +9,37 @@
 import Foundation
 import UIKit
 
-class CAF {
+enum DeviceType {
+    case iPhone4s, iPhone5, iPhone5s, iPhone6, iPhone6Plus
+    case iPad, iPadMini, iPadRetina, iPadMiniRetina
+    case unknownDevice
+}
+
+
+class CAF: NSObject, UIAlertViewDelegate {
     class var version: Float {
         get {
             return (UIDevice.currentDevice().systemVersion as NSString).floatValue
+        }
+    }
+    
+    class var deviceType: DeviceType {
+        
+        if let size = UIScreen.mainScreen().currentMode?.size {
+            switch size {
+            case CGSizeMake(640 , 960 ) : return .iPhone4s
+            case CGSizeMake(640 , 1136) : return .iPhone5
+            case CGSizeMake(750 , 1334) : return .iPhone6
+            case CGSizeMake(1242, 2208) : return .iPhone6Plus
+            case CGSizeMake(1024, 768 ) : return .iPad
+            case CGSizeMake(768 , 1024) : return .iPadMini
+            case CGSizeMake(2048, 1536) : return .iPadRetina
+            case CGSizeMake(1536, 2048) : return .iPadMiniRetina
+            default : return .unknownDevice
+            }
+        }
+        else {
+            return .unknownDevice
         }
     }
 
@@ -35,7 +62,24 @@ class CAF {
             dispatch_get_main_queue(), closure)
     }
     
+    class func errorMessage(title: String, message: String?) {
+        let errorAlert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle: "Dismiss")
+        
+        errorAlert.show()
+    }
     
+    
+}
+
+extension Int {
+    subscript(i: Int) -> Int? {
+        let digits = reverse(String(self))
+        
+        if i >= digits.count {
+            return nil
+        }
+        return String(digits[i]).toInt()
+    }
 }
 
 extension UIImage {

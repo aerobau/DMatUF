@@ -13,7 +13,6 @@ class CountdownImageView: UIImageView {
     
     var timer: NSTimer?
     var endDate: NSDate?
-    let dateFormatter = NSDateFormatter()
     
     var label1: UILabel?
     var label2: UILabel?
@@ -31,19 +30,20 @@ class CountdownImageView: UIImageView {
     var label14: UILabel?
     var label15: UILabel?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     override func layoutSubviews() {
         super.layoutSubviews()
         
         if timer == nil {
             createLabels()
             
-            dateFormatter.dateFormat = "DDD:hh:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+            endDate = NSDate(fromString: "03/14/2015 12:00:00", format: .Standard, timeZone: .EST)
             
-            endDate = NSDate(fromString: "03/14/2015 10:00:00 GMT", format: .Custom("MM/dd/yyyy hh:mm:ss ZZZ"))
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateLabels:", userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateLabels", userInfo: nil, repeats: true)
             timer?.fire()
-            updateLabels(nil)
+            updateLabels()
         }
     }
     
@@ -51,21 +51,31 @@ class CountdownImageView: UIImageView {
         func toRadians(degrees: CGFloat) -> CGFloat {
             return CGFloat(M_PI) * degrees / 180.0
         }
-
         label = UILabel(frame: rect)
-        
         label?.transform = CGAffineTransformMakeRotation(toRadians(rotation))
         addSubview(label!)
-        
     }
     
-    func updateLabels(sender: AnyObject?) {
+    func updateLabels() {
         
         if endDate?.timeIntervalSince1970 >= NSDate().timeIntervalSince1970 {
             
-            let date = NSDate(timeIntervalSince1970: ((endDate?.timeIntervalSince1970 ?? 0) - NSDate().timeIntervalSince1970))
+//            let date =
             
-            let dateString = dateFormatter.stringFromDate(date)
+            
+            
+
+            let calendar = NSCalendar.currentCalendar()
+            let flags = NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.HourCalendarUnit | NSCalendarUnit.MinuteCalendarUnit | NSCalendarUnit.SecondCalendarUnit
+            let components = calendar.components(flags, fromDate: NSDate(), toDate: endDate!, options: nil)
+            println("\(components.day):\(components.hour):\(components.minute):\(components.second)")
+            let date = components.date ?? NSDate(timeIntervalSince1970: endDate!.timeIntervalSinceNow).dateByAddingDays(-1).dateByAddingHours(1)
+            
+            println(components.date)
+            let dateString = date.toString(format: .Custom("DDD:HH:mm:ss"), timeZone: .UTC)
+//            println(dateString)
+            
+            
             let charArray = Array(dateString)
             
             // Days
@@ -81,6 +91,8 @@ class CountdownImageView: UIImageView {
             // Seconds
             label11?.text = "\(charArray[10])"
             label12?.text = "\(charArray[11])"
+        } else {
+            println("DM Started")
         }
     }
     
@@ -103,7 +115,7 @@ class CountdownImageView: UIImageView {
         
         setLabel(&label9, rect: CGRectMake(frame.width * (167.0 / 320.0), frame.height * (143.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (24.0 / 151.0)), rotation: -1.0)
         
-        setLabel(&label10, rect: CGRectMake(frame.width * (183.0 / 320.0), frame.height * (132.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (23.0 / 151.0)), rotation: 0.0)
+        setLabel(&label10, rect: CGRectMake(frame.width * (186.0 / 320.0), frame.height * (132.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (23.0 / 151.0)), rotation: 0.0)
         
         setLabel(&label11, rect: CGRectMake(frame.width * (198.0 / 320.0), frame.height * (132.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (23.0 / 151.0)), rotation: 0.0)
         
@@ -126,12 +138,13 @@ class CountdownImageView: UIImageView {
         
         for label in labels {
             label?.font = UIFont(name: Font.header.fontName, size: 48.0)
-            label?.textColor = Color.primary1
+            label?.textColor = UIColor.blackColor()
             label?.textAlignment = NSTextAlignment.Center
             label?.baselineAdjustment = UIBaselineAdjustment.None
             label?.adjustsFontSizeToFitWidth = true
             label?.numberOfLines = 0
         }
+        
         label4?.textColor = Color.primary2
         label7?.textColor = Color.primary2
         label10?.textColor = Color.primary2

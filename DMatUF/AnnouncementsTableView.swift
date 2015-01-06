@@ -21,20 +21,19 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
         super.init(coder: aDecoder)
         
         estimatedRowHeight = 40.0
+        delegate = self
+        dataSource = self
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: allAnnouncementsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
-        dataSource = self
-        delegate = self
         fetchedResultsController.performFetch(nil)
         
-        refreshControl.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: "fetchJSON", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.tintColor = Color.primary2
         addSubview(refreshControl)
         
-        fetchJSON(nil)
+        fetchJSON()
 
-        
-    
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -54,13 +53,13 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
         let cellAnnouncement = fetchedResultsController.objectAtIndexPath(indexPath) as Announcement
         
         cell.titleLabel.text = cellAnnouncement.text
-        cell.dateLabel.text = cellAnnouncement.date.toString(format: DateFormat.Custom("MM/dd/yy 'at' h:mm a"))
+        cell.dateLabel.text = cellAnnouncement.date.toString(format: .Custom("MM/dd/yy 'at' h:mm a"), timeZone: .EST)
         return cell
     }
 }
 
 extension AnnouncementsTableView {
-    func fetchJSON(sender: AnyObject?) {
+    func fetchJSON() {
         
         let session = NSURLSession.sharedSession()
         let url: NSURL! = NSURL(string: "http://store.floridadm.org/app/announcements.php")
@@ -71,18 +70,27 @@ extension AnnouncementsTableView {
             
             
             if let result = rawJSON as? [[String: AnyObject]] {
-                println(result)
-                for eventDict in result {
+                var ids: [Int] = []
+                
+                for announcementDict in result {
                         
-                    if let id = (eventDict["id"] as AnyObject?)?.integerValue {
+                    if let id = (announcementDict["id"] as AnyObject?)?.integerValue {
+                        ids.append(id)
 
                         if let event = self.fetchAnnouncement(id) {
-                            self.updateAnnouncement(eventDict, id: id)
+                            self.updateAnnouncement(announcementDict, id: id)
                         } else {
-                            self.createAnnouncement(eventDict)
+                            self.createAnnouncement(announcementDict)
                         }
                     }
                 }
+                
+                for announcement in self.fetchedResultsController.fetchedObjects as [Announcement] {
+                    if (find(ids, announcement.id.integerValue) == nil) {
+                        self.deleteAnnouncement(announcement.id.integerValue)
+                    }
+                }
+                
                 self.update()
             } else {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -170,6 +178,14 @@ extension AnnouncementsTableView {
             }
         }
     }
+    
+    
+    // Delete
+    func deleteAnnouncement(announcementID: Int) {
+        if let announcement = fetchAnnouncement(announcementID) {
+            managedObjectContext?.deleteObject(announcement)
+        }
+    }
 }
 
 extension AnnouncementsTableView {
@@ -183,6 +199,6 @@ extension AnnouncementsTableView {
     }
     
     func getDate(obj: AnyObject?) -> NSDate {
-        return NSDate(fromString: obj as String) ?? NSDate(timeIntervalSince1970: 0)
+        return NSDate(fromString: obj as String, format: .FromSQL, timeZone: .EST) ?? NSDate(timeIntervalSince1970: 0)
     }
 }

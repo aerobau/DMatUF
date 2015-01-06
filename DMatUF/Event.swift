@@ -11,23 +11,17 @@ import CoreData
 
 class Event: NSManagedObject {
 
-    @NSManaged var eID: NSNumber
-    @NSManaged var eMod: NSDate
-    @NSManaged var eTitle: String
-    @NSManaged var eStart: NSDate
-    @NSManaged var eEnd: NSDate
-    @NSManaged var eDescription: String
-    @NSManaged var eLocation: String
-    @NSManaged var eSecID: String
-        
-    var sectionIdentifier: String {
-        get {
-            if eStart.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
-                eSecID = "Complete"
-                return "Complete"
-            }
-            eSecID = "Upcoming"
-            return "Upcoming"
+    @NSManaged var id: NSNumber
+    @NSManaged var title: String
+    @NSManaged var startDate: NSDate
+    @NSManaged var endDate: NSDate
+    @NSManaged var moreInfo: String
+    @NSManaged var location: String
+    dynamic var complete: Bool {
+        println("complete calculation")
+        if startDate.timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
+            return false
         }
+        return true
     }
 }

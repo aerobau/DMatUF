@@ -11,7 +11,7 @@ import Foundation
 extension EventViewController {
     
     func getSecID(event: Event) -> String {
-        return event.eStart.timeIntervalSince1970 < NSDate().timeIntervalSince1970 ? "Completed" : "Upcoming"
+        return event.startDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 ? "Completed" : "Upcoming"
     }
     
     func getInt(obj: AnyObject?) -> Int {
@@ -23,6 +23,22 @@ extension EventViewController {
     }
     
     func getDate(obj: AnyObject?) -> NSDate {
-        return NSDate(fromString: obj as String) ?? NSDate(timeIntervalSince1970: 0)
+        return NSDate(fromString: obj as String, format: .FromSQL, timeZone: .EST) ?? NSDate(timeIntervalSince1970: 0)
+    }
+    
+    func dateLabelText(start: NSDate, end: NSDate) -> String {
+        var str = start.toString(format: .Custom("h:mm a"), timeZone: .EST)
+
+        if start.day() > end.day() {
+            return str
+        }
+        
+        if start.day() == end.day() {
+            str = str + " - " + end.toString(format: .Custom("h:mm a"), timeZone: .EST)
+        } else {
+            str = str + " - " + end.toString(format: .Custom("h:mm a 'on' M/dd"), timeZone: .EST)
+        }
+ 
+        return str
     }
 }

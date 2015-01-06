@@ -23,10 +23,13 @@ extension EventViewController {
             
             if let result = rawJSON as? [[String: AnyObject]] {
                 println(result)
-
+                var ids: [Int] = []
+                
                 for eventDict in result {
-                    
+                    println(eventDict)
                     if let id = (eventDict["id"] as AnyObject?)?.integerValue {
+                        ids.append(id)
+                        
                         if let event = self.fetchEvent(id) {
                             self.updateEvent(eventDict, id: id)
                         } else {
@@ -34,6 +37,18 @@ extension EventViewController {
                         }
                     }
                 }
+                
+                println(ids)
+                
+                for event in self.fetchedResultsController.fetchedObjects as [Event] {
+                    if (find(ids, event.id.integerValue) == nil) {
+                        self.deleteEvent(event.id.integerValue)
+                        println("Deleted event with id: \(event.id)")
+                    }
+                }
+                
+                
+                
                 
                 self.update()
             } else {

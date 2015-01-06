@@ -18,31 +18,32 @@ extension EventViewController {
 
         var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
 
-        newEvent.eID = getInt(eventDict["id"])
-        newEvent.eTitle = getString(eventDict["title"])
-        newEvent.eLocation = getString(eventDict["location"])
-        newEvent.eDescription = getString(eventDict["description"])
-        newEvent.eStart = getDate(eventDict["startDate"])
-        newEvent.eEnd = getDate(eventDict["endDate"])
-        newEvent.eMod = NSDate()
-        newEvent.eSecID = getSecID(newEvent)
+        newEvent.id = getInt(eventDict["id"])
+        newEvent.title = getString(eventDict["title"])
+        newEvent.location = getString(eventDict["location"])
+        newEvent.moreInfo = getString(eventDict["description"])
+        newEvent.startDate = getDate(eventDict["startDate"])
+        newEvent.endDate = getDate(eventDict["endDate"])
     }
     
     // Read
+    
+
     func getFetchedResultController() -> NSFetchedResultsController {
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: "eSecID", cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultsController
     }
     
     func eventsFetchRequest() -> NSFetchRequest {
         
         var fetchRequest = NSFetchRequest(entityName: "Event")
-        let sortDescriptor = NSSortDescriptor(key: "eSecID", ascending: false)
-        let sortDescriptor1 = NSSortDescriptor(key: "eStart", ascending: true)
-        let sortDescriptor2 = NSSortDescriptor(key: "eEnd", ascending: true)
-
-        fetchRequest.sortDescriptors = [sortDescriptor, sortDescriptor1, sortDescriptor2]
+        let predicate = NSPredicate(format: "startDate >= %@", NSDate())
+//        let sortDescriptor = NSSortDescriptor(key: "complete", ascending: false)
+        let sortDescriptor1 = NSSortDescriptor(key: "startDate", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "endDate", ascending: true)
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
         return fetchRequest
@@ -52,7 +53,7 @@ extension EventViewController {
         
         // Define fetch request/predicate
         var fetchRequest = NSFetchRequest(entityName: "Event")
-        let predicate = NSPredicate(format: "eID == \(eventID)")
+        let predicate = NSPredicate(format: "id == \(eventID)")
         
         // Assign fetch request properties
         fetchRequest.predicate = predicate
@@ -75,14 +76,12 @@ extension EventViewController {
     func updateEvent(eventDict: Dictionary<String, AnyObject>, id: Int) {
         if let event: Event = fetchEvent(id) {
 
-            event.eID = id
-            event.eTitle = getString(eventDict["title"])
-            event.eLocation = getString(eventDict["location"])
-            event.eDescription = getString(eventDict["description"])
-            event.eStart = getDate(eventDict["startDate"])
-            event.eEnd = getDate(eventDict["endDate"])
-            event.eMod = NSDate()
-            event.eSecID = getSecID(event)
+            event.id = id
+            event.title = getString(eventDict["title"])
+            event.location = getString(eventDict["location"])
+            event.moreInfo = getString(eventDict["description"])
+            event.startDate = getDate(eventDict["startDate"])
+            event.endDate = getDate(eventDict["endDate"])
         }
     }
     
@@ -104,6 +103,13 @@ extension EventViewController {
                 self.refreshControl?.endRefreshing()
                 return
             }
+        }
+    }
+    
+    // Delete
+    func deleteEvent(eventID: Int) {
+        if let event = fetchEvent(eventID) {
+            managedObjectContext?.deleteObject(event)
         }
     }
 }

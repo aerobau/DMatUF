@@ -15,7 +15,7 @@ class CAThermometer: UIView {
     // Base Layer
     private var bgLayer = CALayer()
     private var fillLayer = CALayer()
-    private var fillMask = CALayer()
+    var fillMask = CALayer()
     private var outlineLayer = CALayer()
     private var borderLayer = CALayer()
     
@@ -29,13 +29,15 @@ class CAThermometer: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = nil
-    }
-    
-    func setup() {
+        
         layer.addSublayer(borderLayer)
         layer.addSublayer(outlineLayer)
         layer.addSublayer(bgLayer)
         layer.addSublayer(fillLayer)
+
+    }
+
+    func setup() {
         
         // Draw Filling Layer
         let percent = CGFloat(CGFloat(value) / CGFloat(goal))
@@ -124,8 +126,11 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
     var goal: Int = 100
     var value: Int = 0
     var name: String = ""
+    var lastUpdated: String = "dcfgvhbj"
     var url: String = ""
     
+    var task: NSURLSessionDataTask?
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         dataSource = self
@@ -150,7 +155,6 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
         super.init(frame: frame, style: style)
         dataSource = self
         delegate = self
-        
     }
     
     override func numberOfSections() -> Int {
@@ -180,9 +184,9 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0 {
             let titleFont = UIFont(name: Font.header.fontName, size: cell.contentView.frame.width / 12.0)!
+            let subtitleFont = UIFont(name: Font.body1.fontName, size: cell.contentView.frame.width / 24.0)!
             cell.textLabel?.attributedText = NSAttributedString(string: name, attributes: [NSForegroundColorAttributeName: Color.primary2, NSFontAttributeName: titleFont])
-
-            cell.detailTextLabel?.text = nil
+            cell.detailTextLabel?.attributedText = NSAttributedString(string: "Updated: \(lastUpdated)", attributes: [NSForegroundColorAttributeName: UIColor.grayColor(), NSFontAttributeName: subtitleFont])
         } else if indexPath.row == 1 {
             cell.textLabel?.text = "Goal"
             cell.detailTextLabel?.text = "$\(goal)"
@@ -201,7 +205,6 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
             let button = CAButton(frame: CGRectMake(cell.separatorInset.left, cell.frame.height / 2.0 - height / 2.0, cell.frame.width - cell.separatorInset.left - cell.separatorInset.right, height), url: url)
             cell.contentView.addSubview(button)
         }
-
         return cell
     }
 }
@@ -266,6 +269,68 @@ class CAButton: UIButton {
         let grad = CAGradientLayer()
         grad.frame = bounds
         grad.colors = [Color.primary1.CGColor, Color.secondary1.CGColor]
+        grad.locations = [0.0, 1.0]
+        grad.startPoint = CGPointMake(0.5, 0)
+        grad.endPoint = CGPointMake(0.5, 1.0)
+        
+        let overlay = CALayer()
+        overlay.frame = bounds
+        overlay.backgroundColor = UIColor(white: 1.0, alpha: 0.5).CGColor
+        
+        UIGraphicsBeginImageContext(grad.bounds.size);
+        grad.renderInContext(UIGraphicsGetCurrentContext())
+        overlay.renderInContext(UIGraphicsGetCurrentContext())
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return image
+    }
+}
+
+
+class CARefreshButton: UIButton {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        layer.cornerRadius = frame.width / 2.0
+        layer.masksToBounds = true
+        
+        layer.borderColor = Color.tvcSeparator.CGColor
+        layer.borderWidth = 2.0
+        
+        setBackgroundImage(backgroundImage(), forState: UIControlState.Normal)
+        setBackgroundImage(pressedImage(), forState: UIControlState.Highlighted)
+        setBackgroundImage(pressedImage(), forState: UIControlState.Selected)
+
+    }
+
+    func backgroundImage() -> UIImage? {
+        
+        var image: UIImage?
+        
+        let grad = CAGradientLayer()
+        grad.frame = bounds
+        grad.colors = [Color.primary2.CGColor, Color.secondary2.CGColor]
+        grad.locations = [0.0, 1.0]
+        grad.startPoint = CGPointMake(0.5, 0)
+        grad.endPoint = CGPointMake(0.5, 1.0)
+        
+        UIGraphicsBeginImageContext(grad.bounds.size);
+        grad.renderInContext(UIGraphicsGetCurrentContext())
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return image
+    }
+    
+    func pressedImage() -> UIImage? {
+        
+        var image: UIImage?
+        
+        let grad = CAGradientLayer()
+        grad.frame = bounds
+        grad.colors = [Color.primary2.CGColor, Color.secondary2.CGColor]
         grad.locations = [0.0, 1.0]
         grad.startPoint = CGPointMake(0.5, 0)
         grad.endPoint = CGPointMake(0.5, 1.0)

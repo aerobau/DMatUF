@@ -11,10 +11,15 @@ import UIKit
 
 extension HomeViewController: UIActionSheetDelegate {
     
+    @IBAction func donateButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
+        
+        CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
+    }
     
     
-    @IBAction func followButtonPressed(sender: UIBarButtonItem) {
-        let actionSheet = UIActionSheet(title: "Follow Us!", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Facebook", "Instagram", "Twitter", "YouTube")
+    @IBAction func followButtonPressed(sender: UIButton) {
+        let actionSheet = UIActionSheet(title: "Follow Us!", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Facebook", "Instagram", "Twitter", "YouTube", "FloridaDM.org")
         actionSheet.showInView(view)
     }
 
@@ -35,6 +40,10 @@ extension HomeViewController: UIActionSheetDelegate {
         case 4:
             youtubeButtonPressed()
             break
+        case 5:
+            websiteButtonPressed()
+            break
+
         default:
             break
         }
@@ -47,8 +56,8 @@ extension HomeViewController: UIActionSheetDelegate {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "facebook", value: nil)
         
         CAF.openURL([
-            "fb://profile/floridaDM", // App
-            "https://www.facebook.com/floridaDM" // Website
+            "fb://profile/116374146706", // App
+            "http://www.facebook.com/116374146706" // Website
             ])
     }
     
@@ -86,18 +95,7 @@ extension HomeViewController: UIActionSheetDelegate {
             "https://www.youtube.com/user/UFDanceMarathon" // Website
             ])
     }
-    
 
-    
-
-    
-   
-    func donateButtonPressed() {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
-        
-        CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
-    }
-    
     func websiteButtonPressed() {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "website", value: nil)
         

@@ -10,8 +10,11 @@
 import Foundation
 
 enum DateFormat {
-    case ISO8601, DotNet, RSS, AltRSS
-    case Custom(String)
+    case Standard, FromSQL, Custom(String)
+}
+
+enum TimeZone {
+    case UTC, EST, Custom(String)
 }
 
 extension NSDate {
@@ -36,83 +39,37 @@ extension NSDate {
     
     // MARK: Date From String
     
-    convenience init(fromString string: String, format:DateFormat)
+    convenience init(fromString string: String, format: DateFormat, timeZone: TimeZone)
     {
         if string.isEmpty {
             self.init()
             return
         }
         
+        let formatter = NSDateFormatter()
+        formatter.calendar = NSCalendar.currentCalendar()
+        
         let string = string as NSString
         
         switch format {
-            
-            case .DotNet:
-                
-                // Expects "/Date(1268123281843)/"
-                let startIndex = string.rangeOfString("(").location + 1
-                let endIndex = string.rangeOfString(")").location
-                let range = NSRange(location: startIndex, length: endIndex-startIndex)
-                let milliseconds = (string.substringWithRange(range) as NSString).longLongValue
-                let interval = NSTimeInterval(milliseconds / 1000)
-                self.init(timeIntervalSince1970: interval)
-            
-            case .ISO8601:
-                
-                var s = string
-                if string.hasSuffix(" 00:00") {
-                    s = s.substringToIndex(s.length-6) + "GMT"
-                } else if string.hasSuffix("Z") {
-                    s = s.substringToIndex(s.length-1) + "GMT"
-                }
-                let formatter = NSDateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
-                if let date = formatter.dateFromString(string) {
-                    self.init(timeInterval:0, sinceDate:date)
-                } else {
-                    self.init()
-                }
-                
-            case .RSS:
-                
-                var s  = string
-                if string.hasSuffix("Z") {
-                    s = s.substringToIndex(s.length-1) + "GMT"
-                }
-                let formatter = NSDateFormatter()
-                formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss ZZZ"
-                if let date = formatter.dateFromString(string) {
-                    self.init(timeInterval:0, sinceDate:date)
-                } else {
-                    self.init()
-                }
-            
-            case .AltRSS:
-                
-                var s  = string
-                if string.hasSuffix("Z") {
-                    s = s.substringToIndex(s.length-1) + "GMT"
-                }
-                let formatter = NSDateFormatter()
-                formatter.dateFormat = "d MMM yyyy HH:mm:ss ZZZ"
-                if let date = formatter.dateFromString(string) {
-                    self.init(timeInterval:0, sinceDate:date)
-                } else {
-                    self.init()
-                }
-            
-            case .Custom(let dateFormat):
-                
-                let formatter = NSDateFormatter()
-                formatter.dateFormat = dateFormat
-                if let date = formatter.dateFromString(string) {
-                    self.init(timeInterval:0, sinceDate:date)
-                } else {
-                    self.init()
-                }
+        case .Standard: formatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
+        case .FromSQL: formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        case .Custom(let dateFormat): formatter.dateFormat = dateFormat
+         }
+        
+        switch timeZone {
+        case .EST: formatter.timeZone = NSTimeZone(name: "EST")
+        case .UTC: formatter.timeZone = NSTimeZone(name: "UTC")
+        case .Custom(let customTimeZone): formatter.timeZone = NSTimeZone(name: customTimeZone)
+        }
+        
+        if let date = formatter.dateFromString(string) {
+            self.init(timeInterval:0, sinceDate:date)
+        } else {
+            self.init()
         }
     }
-     
+    
     
     
     // MARK: Comparing Dates
@@ -375,24 +332,25 @@ extension NSDate {
         return self.toString(dateStyle: .ShortStyle, timeStyle: .ShortStyle, doesRelativeDateFormatting: false)
     }
     
-    func toString(#format: DateFormat) -> String
+    func toString(#format: DateFormat, timeZone: TimeZone) -> String
     {
-        var dateFormat: String
-        switch format {
-            case .DotNet:
-                let offset = NSTimeZone.defaultTimeZone().secondsFromGMT / 3600
-                let nowMillis = 1000 * self.timeIntervalSince1970
-                return  "/Date(\(nowMillis)\(offset))/"
-            case .ISO8601:
-                dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            case .RSS:
-                dateFormat = "EEE, d MMM yyyy HH:mm:ss ZZZ"
-            case .AltRSS:
-                dateFormat = "d MMM yyyy HH:mm:ss ZZZ"
-            case .Custom(let string):
-                dateFormat = string
-        }
         let formatter = NSDateFormatter()
+        formatter.calendar = NSCalendar.currentCalendar()
+
+        var dateFormat: String
+        
+        switch format {
+            case .Standard: dateFormat = "MM/dd/yyyy HH:mm:ss"
+            case .FromSQL: dateFormat = "yyyy-MM-dd HH:mm:ss"
+            case .Custom(let string): dateFormat = string
+        }
+        
+        switch timeZone {
+            case .EST: formatter.timeZone = NSTimeZone(name: "EST")
+            case .UTC: formatter.timeZone = NSTimeZone(name: "UTC")
+            case .Custom(let customTimeZone): formatter.timeZone = NSTimeZone(name: customTimeZone)
+        }
+        
         formatter.dateFormat = dateFormat
         return formatter.stringFromDate(self)
     }

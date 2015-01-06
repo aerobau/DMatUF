@@ -1,30 +1,29 @@
 import Foundation
 
 
-class SomeClass {
-    var name: String = "No Name"
+//extension String {
+//    subscript(pattern: String) -> Bool {
+//    get {
+//    let range = self.rangeOfString(pattern)
+//    
+//    return range.isEmpty
+//    }
+//    }
+//}
+//
+//var aString = "We ❤ Swift"
+//aString["❤"]
+//aString["Hello World"]
+
+extension Int {
+    subscript(i: Int) -> Int? {
+        let digits = reverse(String(self))
+            
+        if i >= digits.count {
+            return nil
+        }
+        return String(digits[i]).toInt()
+    }
 }
 
-let a = SomeClass()
-a.name = "Jeff Stevens"
-
-let b = SomeClass()
-b.name = "Mick MacCallum"
-
-let c = SomeClass()
-c.name = "Ian MacCallum"
-
-let d = SomeClass()
-d.name = "Jeff Perez"
-
-let names = [a, b, c, d]
-
-let maccallums = names.filter { $0.name.hasSuffix("MacCallum") }
-
-maccallums
-
-
-let jeffs = names.filter { $0.name.hasPrefix("Jeff") }
-
-jeffs
-
+6493[3]
