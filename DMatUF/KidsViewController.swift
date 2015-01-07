@@ -28,6 +28,10 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Google Analytics
+        GA.sendScreenView(name: "KidsView")
+
         view.backgroundColor = Color.tvcEven
         generateArrays()
     }
@@ -64,6 +68,8 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
     
     
     @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+
         let defaults = NSUserDefaults.standardUserDefaults()
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             performSegueWithIdentifier("FundSegue", sender: self)
@@ -83,17 +89,11 @@ class KidsViewController: UICollectionViewController, UICollectionViewDelegate, 
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("KidCellID", forIndexPath: indexPath) as KidsCell
             
-            // Set cell background color
             cell.backgroundColor = UIColor.clearColor()
-            
-
-            
             cell.cellLabel.text = self.namesArray[indexPath.row]
             cell.cellLabel.adjustsFontSizeToFitWidth = true
-            
             cell.cellImage.image = UIImage(named: self.thumbsArray[indexPath.row]) ?? UIImage(named: "ImageNotFound")
-        
-            
+
             return cell
     }
     
@@ -159,7 +159,7 @@ extension KidsViewController: UIAlertViewDelegate {
                         
                         // Update Components
                         self.stopLoading()
-                        
+                        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login success", value: nil)
                         self.performSegueWithIdentifier("FundSegue", sender: self)
                         
                     } else {
@@ -179,6 +179,8 @@ extension KidsViewController: UIAlertViewDelegate {
     
     // Handle UIAlerts
     func loginAlert() {
+        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login attempt", value: nil)
+
         if Reachability.connectedToInternet() {
             
             let alertTitle = "Kintera Login"
@@ -246,15 +248,10 @@ extension KidsViewController: UIAlertViewDelegate {
                 alertController.addAction(cancelAction)
                 
                 self.presentViewController(alertController, animated: true) {
-                    
                 }
             }
-            
-            
-            
         } else {
             CAF.errorMessage("Error", message: "Internet connection required!")
-            
         }
     }
     

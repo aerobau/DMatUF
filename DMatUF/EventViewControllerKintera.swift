@@ -45,7 +45,7 @@ extension EventViewController: UIAlertViewDelegate {
                         
                         // Update Components
                         self.stopLoading()
-                        
+                        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "login success", value: nil)
                         self.performSegueWithIdentifier("FundSegue", sender: self)
                         
                     } else {
@@ -65,6 +65,8 @@ extension EventViewController: UIAlertViewDelegate {
     
     // Handle UIAlerts
     func loginAlert() {
+        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login attempt", value: nil)
+
         if Reachability.connectedToInternet() {
             
             let alertTitle = "Kintera Login"

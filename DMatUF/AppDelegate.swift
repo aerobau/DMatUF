@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         // Implement Google Analytics
-        GA.initialize(trackingId: "UA-31255631-3", dispatchInterval: 5)
+        GA.initialize(trackingId: "UA-31255631-3", dispatchInterval: 20)
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "App_Launch", value: nil)
 
         // Implement Theme
@@ -82,8 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             println("Unresolved error \(error), \(error!.userInfo)")
             
-//            NSFileManager.defaultManager().removeItemAtURL(url, error: nil)
-//            coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: nil)
             abort()
         }
         

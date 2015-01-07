@@ -11,20 +11,21 @@ import UIKit
 
 extension HomeViewController: UIAlertViewDelegate {
     
-    @IBAction func fundsButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+
         let defaults = NSUserDefaults.standardUserDefaults()
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             performSegueWithIdentifier("FundSegue", sender: self)
         } else {
             loginAlert()
         }
+
     }
 
     func login(username: String, password: String) {
         startLoading()
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "login", value: nil)
-        
-        
 
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: "http://mickmaccallum.com/ian/kintera.php?username=\(username)&password=\(password)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) ?? NSURL()
@@ -57,7 +58,7 @@ extension HomeViewController: UIAlertViewDelegate {
                         
                         // Update Components
                         self.stopLoading()
-                            
+                        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login success", value: nil)
                         self.performSegueWithIdentifier("FundSegue", sender: self)
                             
                     } else {
@@ -77,12 +78,10 @@ extension HomeViewController: UIAlertViewDelegate {
     
     // Handle UIAlerts
     func loginAlert() {
-        
-        
+        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "login attempt", value: nil)
 
         if Reachability.connectedToInternet() {
-            
-            
+
             let alertTitle = "Kintera Login"
             let alertMessage = "Enter your username and password:"
             let defaults = NSUserDefaults.standardUserDefaults()

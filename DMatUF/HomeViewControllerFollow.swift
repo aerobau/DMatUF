@@ -47,7 +47,6 @@ extension HomeViewController: UIActionSheetDelegate {
         default:
             break
         }
-        println("Dismiss: \(buttonIndex)")
         actionSheet.dismissWithClickedButtonIndex(buttonIndex, animated: true)
     }
     

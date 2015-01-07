@@ -17,6 +17,9 @@ class FundraiseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Google Analytics
+        GA.sendScreenView(name: "FundraiseView")
+
         setText()
     }
     
@@ -37,6 +40,8 @@ class FundraiseViewController: UIViewController {
     }
     
     @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+
         let defaults = NSUserDefaults.standardUserDefaults()
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             performSegueWithIdentifier("FundSegue", sender: self)
@@ -118,7 +123,7 @@ extension FundraiseViewController: UIAlertViewDelegate {
                         
                         // Update Components
                         self.stopLoading()
-                        
+                        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login success", value: nil)
                         self.performSegueWithIdentifier("FundSegue", sender: self)
                         
                     } else {
@@ -138,6 +143,8 @@ extension FundraiseViewController: UIAlertViewDelegate {
     
     // Handle UIAlerts
     func loginAlert() {
+        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login attempt", value: nil)
+
         if Reachability.connectedToInternet() {
             
             let alertTitle = "Kintera Login"

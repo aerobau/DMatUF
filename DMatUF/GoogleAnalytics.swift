@@ -23,21 +23,6 @@ class GA: UIAlertView, UIAlertViewDelegate {
             static let LOGIN = "Login"
         }
     }
-    
-    class func optOutAlert() {
-        func promptOptIn() {
-        }
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let newUser = defaults.objectForKey("newUser") as? Bool {
-            if newUser {
-                promptOptIn()
-            }
-        } else {
-            
-        }
-        
-    }
 
     class func checkOptOut() {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -70,5 +55,4 @@ class GA: UIAlertView, UIAlertViewDelegate {
     class func sendEvent(#category: String!, action: String!, label: String!, value: NSNumber!) {
         GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: label, value: value).build())
     }
-
 }

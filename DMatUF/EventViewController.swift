@@ -19,6 +19,10 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Google Analytics
+        GA.sendScreenView(name: "EventsView")
+
         tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
         tableView.separatorColor = Color.tvcSeparator
         tableView.estimatedRowHeight = 64.0
@@ -88,6 +92,8 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+
         let defaults = NSUserDefaults.standardUserDefaults()
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             performSegueWithIdentifier("FundSegue", sender: self)

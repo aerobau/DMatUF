@@ -137,6 +137,7 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
         delegate = self
         
         separatorColor = Color.tvcSeparator
+        
     }
     
     override func drawRect(rect: CGRect) {
@@ -288,65 +289,65 @@ class CAButton: UIButton {
 }
 
 
-class CARefreshButton: UIButton {
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        layer.cornerRadius = frame.width / 2.0
-        layer.masksToBounds = true
-        
-        layer.borderColor = Color.tvcSeparator.CGColor
-        layer.borderWidth = 2.0
-        
-        setBackgroundImage(backgroundImage(), forState: UIControlState.Normal)
-        setBackgroundImage(pressedImage(), forState: UIControlState.Highlighted)
-        setBackgroundImage(pressedImage(), forState: UIControlState.Selected)
-
-    }
-
-    func backgroundImage() -> UIImage? {
-        
-        var image: UIImage?
-        
-        let grad = CAGradientLayer()
-        grad.frame = bounds
-        grad.colors = [Color.primary2.CGColor, Color.secondary2.CGColor]
-        grad.locations = [0.0, 1.0]
-        grad.startPoint = CGPointMake(0.5, 0)
-        grad.endPoint = CGPointMake(0.5, 1.0)
-        
-        UIGraphicsBeginImageContext(grad.bounds.size);
-        grad.renderInContext(UIGraphicsGetCurrentContext())
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        return image
-    }
-    
-    func pressedImage() -> UIImage? {
-        
-        var image: UIImage?
-        
-        let grad = CAGradientLayer()
-        grad.frame = bounds
-        grad.colors = [Color.primary2.CGColor, Color.secondary2.CGColor]
-        grad.locations = [0.0, 1.0]
-        grad.startPoint = CGPointMake(0.5, 0)
-        grad.endPoint = CGPointMake(0.5, 1.0)
-        
-        let overlay = CALayer()
-        overlay.frame = bounds
-        overlay.backgroundColor = UIColor(white: 1.0, alpha: 0.5).CGColor
-        
-        UIGraphicsBeginImageContext(grad.bounds.size);
-        grad.renderInContext(UIGraphicsGetCurrentContext())
-        overlay.renderInContext(UIGraphicsGetCurrentContext())
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        return image
-    }
-}
+//class CARefreshButton: UIButton {
+//    
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//        layer.cornerRadius = frame.width / 2.0
+//        layer.masksToBounds = true
+//        
+//        layer.borderColor = Color.tvcSeparator.CGColor
+//        layer.borderWidth = 2.0
+//        
+//        setBackgroundImage(backgroundImage(), forState: UIControlState.Normal)
+//        setBackgroundImage(pressedImage(), forState: UIControlState.Highlighted)
+//        setBackgroundImage(pressedImage(), forState: UIControlState.Selected)
+//
+//    }
+//
+//    func backgroundImage() -> UIImage? {
+//        
+//        var image: UIImage?
+//        
+//        let grad = CAGradientLayer()
+//        grad.frame = bounds
+//        grad.colors = [Color.primary2.CGColor, Color.secondary2.CGColor]
+//        grad.locations = [0.0, 1.0]
+//        grad.startPoint = CGPointMake(0.5, 0)
+//        grad.endPoint = CGPointMake(0.5, 1.0)
+//        
+//        UIGraphicsBeginImageContext(grad.bounds.size);
+//        grad.renderInContext(UIGraphicsGetCurrentContext())
+//        image = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        
+//        return image
+//    }
+//    
+//    func pressedImage() -> UIImage? {
+//        
+//        var image: UIImage?
+//        
+//        let grad = CAGradientLayer()
+//        grad.frame = bounds
+//        grad.colors = [Color.primary2.CGColor, Color.secondary2.CGColor]
+//        grad.locations = [0.0, 1.0]
+//        grad.startPoint = CGPointMake(0.5, 0)
+//        grad.endPoint = CGPointMake(0.5, 1.0)
+//        
+//        let overlay = CALayer()
+//        overlay.frame = bounds
+//        overlay.backgroundColor = UIColor(white: 1.0, alpha: 0.5).CGColor
+//        
+//        UIGraphicsBeginImageContext(grad.bounds.size);
+//        grad.renderInContext(UIGraphicsGetCurrentContext())
+//        overlay.renderInContext(UIGraphicsGetCurrentContext())
+//        image = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        
+//        return image
+//    }
+//}
 
     

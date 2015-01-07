@@ -27,7 +27,7 @@ class HomeViewController: UIViewController  {
         super.viewDidAppear(animated)
 
         // Google Analytics
-        GA.sendScreenView(name: "HomeViewTest")
+        GA.sendScreenView(name: "HomeView")
     }
     
     override func viewDidDisappear(animated: Bool) {

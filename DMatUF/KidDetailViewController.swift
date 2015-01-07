@@ -16,6 +16,10 @@ class KidDetailViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Google Analytics
+        GA.sendScreenView(name: "KidsDetailView")
+
         view.backgroundColor = Color.tvcEven
 
         storyView.font = Font.body1

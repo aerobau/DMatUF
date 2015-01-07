@@ -437,7 +437,7 @@ at the O’Connell Center at UF</string>
                         </button>
                         <barButtonItem key="rightBarButtonItem" title="My Kintera" id="Zuk-2e-XKe">
                             <connections>
-                                <action selector="fundsButtonPressed:" destination="enI-aY-D12" id="LW8-Og-36V"/>
+                                <action selector="kinteraButtonPressed:" destination="enI-aY-D12" id="bSz-id-ZGe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -468,7 +468,7 @@ at the O’Connell Center at UF</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="247" placeholderIntrinsicHeight="471" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zax-Bl-62L" customClass="CATable" customModule="DMatUF" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="247" placeholderIntrinsicHeight="471" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zax-Bl-62L" customClass="CATable" customModule="DMatUF" customModuleProvider="target">
                                 <rect key="frame" x="174.5" y="72" width="250" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -506,20 +506,6 @@ at the O’Connell Center at UF</string>
                                     <constraint firstAttribute="width" secondItem="ft3-KA-iDG" secondAttribute="height" multiplier="7:44" id="LGK-8u-7MX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K59-eT-r8F" customClass="CARefreshButton" customModule="DMatUF" customModuleProvider="target">
-                                <rect key="frame" x="388" y="76" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="5O1-HL-gLK"/>
-                                    <constraint firstAttribute="height" constant="32" id="wI0-iX-Ld7"/>
-                                </constraints>
-                                <state key="normal" image="Refresh">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="refreshButtonPressed:" destination="u9J-dg-dJc" eventType="touchUpInside" id="V9k-m6-epK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -528,10 +514,8 @@ at the O’Connell Center at UF</string>
                             <constraint firstItem="uef-Ht-6fs" firstAttribute="top" secondItem="ft3-KA-iDG" secondAttribute="bottom" constant="40" id="41X-3k-Gll"/>
                             <constraint firstItem="ft3-KA-iDG" firstAttribute="top" secondItem="tOj-IK-Cxw" secondAttribute="bottom" constant="40" id="6Yh-Ut-7MW"/>
                             <constraint firstItem="zax-Bl-62L" firstAttribute="top" secondItem="tOj-IK-Cxw" secondAttribute="bottom" constant="8" id="6ht-mn-Sjk"/>
-                            <constraint firstItem="zax-Bl-62L" firstAttribute="top" secondItem="K59-eT-r8F" secondAttribute="top" constant="-4" id="EDD-Ff-UMn"/>
                             <constraint firstItem="uef-Ht-6fs" firstAttribute="top" secondItem="zax-Bl-62L" secondAttribute="bottom" constant="8" id="RSb-Hf-yTq"/>
                             <constraint firstAttribute="centerX" secondItem="zax-Bl-62L" secondAttribute="centerX" id="Wtv-Pv-Ud0"/>
-                            <constraint firstItem="zax-Bl-62L" firstAttribute="trailing" secondItem="K59-eT-r8F" secondAttribute="trailing" constant="4" id="YJ8-8m-5JA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Fundraising" id="84N-JF-CV3">
@@ -542,7 +526,6 @@ at the O’Connell Center at UF</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="refreshButton" destination="K59-eT-r8F" id="are-W8-nky"/>
                         <outlet property="table" destination="zax-Bl-62L" id="JIc-93-cZN"/>
                         <outlet property="thermometer" destination="ft3-KA-iDG" id="Edq-Et-0OP"/>
                     </connections>
@@ -927,7 +910,6 @@ at the O’Connell Center at UF</string>
         <image name="Balloon" width="14" height="24"/>
         <image name="Calendar" width="48" height="48"/>
         <image name="Countdown" width="320" height="151"/>
-        <image name="Refresh" width="20" height="20"/>
         <image name="TabAboutIcon" width="25" height="25"/>
         <image name="TabBalloonIcon" width="25" height="25"/>
         <image name="TabCalendarIcon" width="25" height="25"/>

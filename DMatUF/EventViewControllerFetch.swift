@@ -37,19 +37,12 @@ extension EventViewController {
                         }
                     }
                 }
-                
-                println(ids)
-                
                 for event in self.fetchedResultsController.fetchedObjects as [Event] {
                     if (find(ids, event.id.integerValue) == nil) {
                         self.deleteEvent(event.id.integerValue)
                         println("Deleted event with id: \(event.id)")
                     }
                 }
-                
-                
-                
-                
                 self.update()
             } else {
                 dispatch_async(dispatch_get_main_queue()) {

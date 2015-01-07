@@ -1,9 +1,10 @@
 Known Bugs:
 =========================================
-TableViewHeader changes to white after scrolling up
-Mutated while enumerated crash
-Glitch when loading events table view with automatically resizing cell
 Login failing on certain wifi networks
+
+Known Bug fixes
+=========================================
+Stop refresh control loading
 
 
 To be done:

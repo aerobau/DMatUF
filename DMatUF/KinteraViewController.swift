@@ -13,14 +13,20 @@ class KinteraViewController: UIViewController {
     
     @IBOutlet weak var thermometer: CAThermometer!
     @IBOutlet weak var table: CATable!
-    @IBOutlet weak var refreshButton: CAButton!
     var task: NSURLSessionDataTask?
+    var refreshControl = UIRefreshControl()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Google Analytics
+        GA.sendScreenView(name: "KinteraView")
+
         view.backgroundColor = Color.tvcOdd
-//        navigationItem.leftBarButtonItem?.title = "Back"
+
+        refreshControl.addTarget(self, action: "refreshControlAction", forControlEvents: UIControlEvents.ValueChanged)
+        table.addSubview(refreshControl)
     }
     
     override func awakeFromNib() {
@@ -76,7 +82,7 @@ class KinteraViewController: UIViewController {
         table.reloadRowsAtIndexPaths(indexPaths ?? [], withRowAnimation: UITableViewRowAnimation.Fade)
 
     }
-    @IBAction func refreshButtonPressed(sender: CARefreshButton) {
+    func refreshControlAction() {
         
         if Reachability.connectedToInternet() {
             refresh()
@@ -92,8 +98,6 @@ class KinteraViewController: UIViewController {
         
         navigationController?.popViewControllerAnimated(true)
     }
-    
-    
     
     func refresh() {
         
@@ -156,17 +160,12 @@ class KinteraViewController: UIViewController {
     }
     
     func startLoading() {
-//        refreshButton.imageView?.image = nil
-        refreshButton.enabled = false
         println("Start loading")
      }
     
     func stopLoading() {
-//        refreshButton.imageView?.image = UIImage(named: "Refresh")
-        refreshButton.enabled = true
-
-
         println("Stop loading")
+        refreshControl.endRefreshing()
         task?.cancel()
     }
 }

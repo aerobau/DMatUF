@@ -21,6 +21,10 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Google Analytics
+        GA.sendScreenView(name: "EventsDetailView")
+
         setInfo()
         
         view.backgroundColor = Color.tvcEven
@@ -62,8 +66,7 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
     
     @IBAction func addEvent(sender: UIBarButtonItem) {
 
-        
-        
+        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.PRESSED, label: "add event", value: nil)
         
         var addEventController = EKEventEditViewController()
         addEventController.eventStore = store
@@ -81,7 +84,6 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         store.requestAccessToEntityType(EKEntityType(), completion: {granted, error in
             self.presentViewController(addEventController, animated: true, completion: nil)
         })
-        
     }
     
     func getCalendar() -> EKCalendar? {

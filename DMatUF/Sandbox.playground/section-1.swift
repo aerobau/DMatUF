@@ -27,3 +27,16 @@ extension Int {
 }
 
 6493[3]
+
+
+func greeting (language: String, greeting: String) -> (String, String) {
+    
+    var found = ("\(language)", "\(greeting)")
+    
+    return found
+}
+
+let foo = greeting("English", "some greeting")
+
+foo.0
+foo.1
