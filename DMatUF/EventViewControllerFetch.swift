@@ -15,7 +15,7 @@ extension EventViewController {
     func fetchJSON(sender: AnyObject?) {
         
         let session = NSURLSession.sharedSession()
-        let url: NSURL! = NSURL(string: "http://store.floridadm.org/app/events.php")
+        let url: NSURL! = NSURL(string: "http://dev.floridadm.org/app/events.php")
         
         session.dataTaskWithURL(url) { (data, response, error)  in
             

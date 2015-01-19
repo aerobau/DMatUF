@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class KidDetailViewController: UIViewController {
     var kid: Kid?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var storyView: UITextView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var milestoneButton: UIButton!
+    @IBOutlet weak var milestoneButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var milestoneTopSpace: NSLayoutConstraint!
+    @IBOutlet weak var milestoneBottomSpace: NSLayoutConstraint!
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,43 +26,51 @@ class KidDetailViewController: UIViewController {
         // Google Analytics
         GA.sendScreenView(name: "KidsDetailView")
 
+        setInfo()
+
         view.backgroundColor = Color.tvcEven
+        navigationItem.leftBarButtonItem?.title = "Back"
+
+        nameLabel.textColor = Color.primary2
+        nameLabel.font = Font.header
 
         storyView.font = Font.body1
-        setInfo()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        navigationItem.leftBarButtonItem?.title = "Back"
+        
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        storyView.contentOffset.y = 0
 
         let size = imageView.image?.size ?? CGSizeZero
         imageView.bounds = CGRect(origin: CGPointZero, size: CGSize(width: size.width, height: imageView.frame.height))
-        
         imageView.layer.cornerRadius = 8.0
         imageView.layer.borderWidth = 2.0
         imageView.layer.borderColor = Color.primary2.CGColor
-        
         imageView.clipsToBounds = true
-
     }
     
     func setInfo(){
-        
         if let kid = kid {
-            navigationItem.title = kid.name ?? "Miracle Child"
+            nameLabel.text = kid.name ?? "Miracle Child"
             storyView.text = kid.story ?? "No story available"
-            imageView.image = UIImage(named: kid.imageName ?? "ImageNotFound") ?? UIImage(named: "ImageNotFound")!
+            imageView.image = UIImage(named: kid.image) ?? UIImage(named: "ImageNotFound")!
+            
+            if let milestone = kid.milestone {
+                milestoneButton.hidden = false
+                let attributedString = NSAttributedString(string: "View \(kid.name)'s Milestone", attributes: [NSForegroundColorAttributeName: Color.primary1, NSFontAttributeName: Font.subheader])
+                milestoneButton.setAttributedTitle(attributedString, forState: .Normal)
+                milestoneButtonHeight.constant = 22
+            } else {
+                milestoneButton.hidden = true
+                milestoneButtonHeight.constant = 0
+            }
         }
     }
     
-    @IBAction func donateButtonPressed(sender: UIBarButtonItem) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
-        
-        CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
+    @IBAction func milestoneButtonPressed(sender: UIButton) {
+        CAF.openURL(["youtube://\(kid!.milestone!)",
+            "https://\(kid!.milestone!)"])
     }
+    
 }

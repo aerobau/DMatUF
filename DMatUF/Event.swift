@@ -17,11 +17,12 @@ class Event: NSManagedObject {
     @NSManaged var endDate: NSDate
     @NSManaged var moreInfo: String
     @NSManaged var location: String
-    dynamic var complete: Bool {
-        println("complete calculation")
-        if startDate.timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
-            return false
-        }
-        return true
-    }
+    @NSManaged var imageName: String
+
+//    dynamic var complete: Bool {
+//        if startDate.timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
+//            return false
+//        }
+//        return true
+//    }
 }

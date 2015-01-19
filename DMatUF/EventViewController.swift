@@ -13,8 +13,6 @@ import QuartzCore
 class EventViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
-    var task: NSURLSessionDataTask?
-    var kinteraButtonItem: UIBarButtonItem?
 
 
     override func viewDidLoad() {
@@ -36,27 +34,24 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
         
         fetchJSON(nil)
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        stopLoading()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        kinteraButtonItem = navigationItem.rightBarButtonItem
-    }
 
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        CAF.printDocsDirectory()
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+
+        println(documentsPath)
+    }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CAF.version < 8.0 ? 64.0 : UITableViewAutomaticDimension
+        return UIDevice.version < 8.0 ? 64.0 : UITableViewAutomaticDimension
 
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        println("Sections: \(fetchedResultsController.sections?.count)")
         return fetchedResultsController.sections?.count ?? 0
     }
 
@@ -75,36 +70,28 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         }
   
         cell.titleLabel.text = cellEvent.title
-        cell.dayLabel.text = "\(cellEvent.startDate.day())"
-        cell.monthLabel.text = cellEvent.startDate.shortMonthToString()
-        
         cell.timeLabel.text =  dateLabelText(cellEvent.startDate, end: cellEvent.endDate)
+        
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String).stringByAppendingString("/\(cellEvent.imageName).png")
+        
+        if let image = UIImage(contentsOfFile: imagePath) {
+            cell.calendarImageView.image = image
+            cell.dayLabel.text = nil
+            cell.monthLabel.text = nil
+        } else {
+            cell.calendarImageView.image = UIImage(named: "Calendar")
+            cell.dayLabel.text = "\(cellEvent.startDate.day())"
+            cell.monthLabel.text = cellEvent.startDate.shortMonthToString()
+        }
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "EventDetailSegue" {
             let destination = segue.destinationViewController as EventDetailViewController
-            if let index = self.tableView?.indexPathForCell(sender as EventCell)!{
-                destination.event = fetchedResultsController.objectAtIndexPath(index) as? Event
-            }
+            let indexPath = self.tableView?.indexPathForCell(sender as EventCell)
+            
+            destination.event = indexPath != nil ? fetchedResultsController.objectAtIndexPath(indexPath!) as? Event : nil
         }
-    }
-    
-    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
-
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
-            performSegueWithIdentifier("FundSegue", sender: self)
-        } else {
-            loginAlert()
-        }
-    }
-    
-    @IBAction func donateButtonPressed(sender: UIBarButtonItem) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
-        
-        CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
     }
 }

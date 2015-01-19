@@ -9,8 +9,12 @@
 import UIKit
 import EventKit
 import EventKitUI
+import CoreData
 
 class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    var fetchedResultsController = NSFetchedResultsController()
+    
     var store : EKEventStore = EKEventStore()
     var event: Event?
     
@@ -28,7 +32,8 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         setInfo()
         
         view.backgroundColor = Color.tvcEven
-        
+        navigationItem.leftBarButtonItem?.title = "Back"
+
         titleLabel.textColor = Color.primary2
         titleLabel.font = Font.header
         
@@ -38,12 +43,7 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         locationLabel.textColor = Color.primary1
         locationLabel.font = Font.subheader
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        navigationItem.leftBarButtonItem?.title = "Back"
-    }
-    
+
     func setInfo(){
         let startDate = event?.startDate.toString(format: DateFormat.Custom("EEEE, MMMM d 'at' h:mm a"), timeZone: TimeZone.EST) ?? ""
         let endDate = event?.endDate.toString(format: DateFormat.Custom("EEEE, MMMM d 'at' h:mm a"), timeZone: TimeZone.EST)
@@ -54,18 +54,8 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         descriptionTextView.text = event?.moreInfo ?? ""
     }
     
-    
-    func eventEditViewController(controller: EKEventEditViewController!, didCompleteWithAction action: EKEventEditViewAction) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func eventEditViewControllerDefaultCalendarForNewEvents(controller: EKEventEditViewController!) -> EKCalendar! {
-        return store.defaultCalendarForNewEvents
-    }
-    
-    
     @IBAction func addEvent(sender: UIBarButtonItem) {
-
+        
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.PRESSED, label: "add event", value: nil)
         
         var addEventController = EKEventEditViewController()
@@ -84,6 +74,14 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
         store.requestAccessToEntityType(EKEntityType(), completion: {granted, error in
             self.presentViewController(addEventController, animated: true, completion: nil)
         })
+    }
+    
+    func eventEditViewController(controller: EKEventEditViewController!, didCompleteWithAction action: EKEventEditViewAction) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func eventEditViewControllerDefaultCalendarForNewEvents(controller: EKEventEditViewController!) -> EKCalendar! {
+        return store.defaultCalendarForNewEvents
     }
     
     func getCalendar() -> EKCalendar? {
@@ -112,5 +110,59 @@ class EventDetailViewController: UIViewController, EKEventEditViewDelegate {
             }
         }
          return calendar
+    }
+    
+    
+    
+    // Read
+    func getFetchedResultController() -> NSFetchedResultsController {
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultsController
+    }
+    
+    func eventsFetchRequest() -> NSFetchRequest {
+        
+        var fetchRequest = NSFetchRequest(entityName: "Event")
+        let predicate = NSPredicate(format: "startDate >= %@", NSDate())
+        //        let sortDescriptor = NSSortDescriptor(key: "complete", ascending: false)
+        let sortDescriptor1 = NSSortDescriptor(key: "startDate", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "endDate", ascending: true)
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+        fetchRequest.fetchBatchSize = 1000
+        fetchRequest.fetchLimit = 1000
+        return fetchRequest
+    }
+    
+    func fetchEvent(eventID: Int) -> Event? {
+        
+        // Define fetch request/predicate
+        var fetchRequest = NSFetchRequest(entityName: "Event")
+        let predicate = NSPredicate(format: "id == \(eventID)")
+        
+        // Assign fetch request properties
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchBatchSize = 1
+        fetchRequest.fetchLimit = 1
+        
+        // Handle results
+        let fetchedResults = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
+        
+        if fetchedResults?.count != 0 {
+            
+            if let fetchedEvent: Event = fetchedResults![0] as? Event {
+                return fetchedEvent
+            }
+        }
+        return nil
+    }
+    
+    func addAllEvents() {
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        
+        for event in fetchedResultsController.fetchedObjects as [Event] {
+            
+        }
     }
 }

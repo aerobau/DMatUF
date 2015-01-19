@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        window?.backgroundColor = UIColor.whiteColor()
         
         // Implement Google Analytics
         GA.initialize(trackingId: "UA-31255631-3", dispatchInterval: 20)
@@ -25,8 +26,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Implement Theme
         Theme()
         
+        // Push notification
+        Parse.setApplicationId("D5WDItwsDdOXIfnwmr9SEfqhO9aC67fHSRYfusRA", clientKey: "XkdWyiBIr4QQFApX6dYrkxd8KQBvFV6jw9H3GL1u")
+        
+        if UIDevice.version < 8.0 {
+            
+        } else {
+            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+
+        }
         return true
     }
+    
+//    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+//        
+//        if window!.rootViewController!.isKindOfClass(UIViewController) {
+//            
+//            let currentViewController = window?.rootViewController?.childViewControllers[0] as UIViewController
+//            
+//            if currentViewController.respondsToSelector("canRotate") {
+//                return UIInterfaceOrientationMask.AllButUpsideDown.rawValue.hashValue
+//            }
+//        }
+//        
+//        return UIInterfaceOrientation.Portrait.rawValue
+//    }
+    
+    
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("\(deviceToken)")
+        
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in
+            println(error)
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println(userInfo)
+    }
+    
+    
+    
     
     func applicationDidBecomeActive(application: UIApplication) {
     }
@@ -82,11 +132,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             println("Unresolved error \(error), \(error!.userInfo)")
             
-            abort()
+//            abort()
+            
+            if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
+                if NSFileManager.defaultManager().removeItemAtPath(url.path!, error: nil) {
+                    
+                var newCoordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+
+//                    for store in coordinator?.persistentStores as [NSPersistentStore] {
+//                        coordinator?.removePersistentStore(store, error: nil)
+//                    }
+//                    
+                    if newCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) != nil {
+                        return newCoordinator
+                    }
+                }
+            }
         }
         
         return coordinator
         }()
+    
+    func getPersistentStoreCoordinator() {
+        
+    }
     
     lazy var managedObjectContext: NSManagedObjectContext? = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.

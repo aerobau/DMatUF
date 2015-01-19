@@ -8,6 +8,7 @@
 
 
 #import "Reachability.h"
+#import <Parse/Parse.h>
 
 #import "GAI.h"
 #import "GAIFields.h"

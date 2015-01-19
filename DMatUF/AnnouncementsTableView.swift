@@ -37,7 +37,7 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CAF.version < 8.0 ? 40.0 : UITableViewAutomaticDimension
+        return UIDevice.version < 8.0 ? 40.0 : UITableViewAutomaticDimension
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,7 +62,7 @@ extension AnnouncementsTableView {
     func fetchJSON() {
         
         let session = NSURLSession.sharedSession()
-        let url: NSURL! = NSURL(string: "http://store.floridadm.org/app/announcements.php")
+        let url: NSURL! = NSURL(string: "http://dev.floridadm.org/app/announcements.php")
         
         session.dataTaskWithURL(url) { (data, response, error)  in
             

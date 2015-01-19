@@ -15,16 +15,12 @@ enum DeviceType {
     case unknownDevice
 }
 
-
-class CAF: NSObject, UIAlertViewDelegate {
+extension UIDevice {
     class var version: Float {
-        get {
-            return (UIDevice.currentDevice().systemVersion as NSString).floatValue
-        }
+       return (UIDevice.currentDevice().systemVersion as NSString).floatValue
     }
     
-    class var deviceType: DeviceType {
-        
+    class var type: DeviceType {
         if let size = UIScreen.mainScreen().currentMode?.size {
             switch size {
             case CGSizeMake(640 , 960 ) : return .iPhone4s
@@ -42,7 +38,10 @@ class CAF: NSObject, UIAlertViewDelegate {
             return .unknownDevice
         }
     }
+}
 
+class CAF: NSObject, UIAlertViewDelegate {
+    
     class func openURL(arr: [String]) {
         let application: UIApplication = UIApplication.sharedApplication()
         for url in arr {
@@ -68,7 +67,15 @@ class CAF: NSObject, UIAlertViewDelegate {
         errorAlert.show()
     }
     
-    
+    class func printDocsDirectory() {
+        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(documentsDirectory, error: nil)
+        
+        println("DOCUMENTS DIRECTORY: \(files?.count) Files")
+        for file in files as [String] {
+            println(file)
+        }
+    }
 }
 
 extension Int {
@@ -83,6 +90,38 @@ extension Int {
 }
 
 extension UIImage {
+    
+    convenience init?(fromURL: String) {
+
+        if let url = NSURL(string: fromURL) {
+            if let data = NSData(contentsOfURL: url) {
+                self.init(data: data)
+            } else {
+                self.init()
+                return nil
+            }
+        } else {
+            self.init()
+            return nil
+        }
+    }
+    
+    convenience init?(fromView view: UIView) {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext())
+        self.init(CGImage:UIGraphicsGetImageFromCurrentImageContext().CGImage)
+        UIGraphicsEndImageContext()
+    }
+    
+    convenience init?(fileName: String, type: String) {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    
+
+        let path = "\(documentsPath)\(fileName).\(type)"
+        self.init(contentsOfFile: path)
+    }
+
+    
     func imageWithColor(tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         
@@ -100,5 +139,26 @@ extension UIImage {
         UIGraphicsEndImageContext()
         
         return newImage
+    }
+    
+    func save(fileName: String, type: String) {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+
+        if type.lowercaseString == "png" {
+            let path = "\(documentsPath)/\(fileName).\(type)"
+            UIImagePNGRepresentation(self).writeToFile(path, atomically: true)
+        } else if type.lowercaseString == "jpg" {
+            let path = "\(documentsPath)/\(fileName).\(type)"
+            UIImageJPEGRepresentation(self, 1.0).writeToFile(path, atomically: true)
+        } else {
+            abort()
+        }
+    }
+}
+
+extension Array {
+    func randomItem() -> T {
+        let index = Int(arc4random_uniform(UInt32(self.count)))
+        return self[index]
     }
 }

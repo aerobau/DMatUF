@@ -14,5 +14,4 @@ class Announcement: NSManagedObject {
     @NSManaged var text: String?
     @NSManaged var date: NSDate
     @NSManaged var id: NSNumber
-
 }

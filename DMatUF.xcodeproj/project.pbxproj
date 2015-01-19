@@ -10,6 +10,20 @@
 		EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890A1A34D53C006CD2E0 /* TabBarController.swift */; };
 		EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
+		EA1CF9331A5F7E4300DF1777 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */; };
+		EA1CF9341A5F7E4300DF1777 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF92F1A5F7E4300DF1777 /* Parse.framework */; };
+		EA1CF9351A5F7E4300DF1777 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */; };
+		EA1CF9361A5F7E4300DF1777 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9311A5F7E4300DF1777 /* ParseFacebookUtils.framework */; };
+		EA1CF9371A5F7E4300DF1777 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9321A5F7E4300DF1777 /* ParseUI.framework */; };
+		EA1CF9391A5F7E8F00DF1777 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9381A5F7E8F00DF1777 /* AudioToolbox.framework */; };
+		EA1CF93B1A5F7E9F00DF1777 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93A1A5F7E9F00DF1777 /* CFNetwork.framework */; };
+		EA1CF93D1A5F7EAA00DF1777 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */; };
+		EA1CF93F1A5F7EC300DF1777 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93E1A5F7EC300DF1777 /* MobileCoreServices.framework */; };
+		EA1CF9411A5F7ECF00DF1777 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9401A5F7ECF00DF1777 /* Security.framework */; };
+		EA1CF9431A5F7ED700DF1777 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */; };
+		EA1CF9451A5F7EEE00DF1777 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */; };
+		EA1CF9471A5F90A500DF1777 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1CF9461A5F90A500DF1777 /* DataManager.swift */; };
+		EA23C1501A68E17D0066D118 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA23C14F1A68E17D0066D118 /* GameData.swift */; };
 		EA2AAD481A4F2D3600CCD01D /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2AAD471A4F2D3600CCD01D /* Kids.plist */; };
 		EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9D1A51157200995A93 /* AboutViewController.swift */; };
 		EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */; };
@@ -23,8 +37,8 @@
 		EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */; };
 		EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */ = {isa = PBXBuildFile; fileRef = EA4294F41A3AF59B0056A3D7 /* Bugs */; };
 		EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */; };
-		EA4EFCE41A5C42C50078250A /* EventViewControllerKintera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4EFCE31A5C42C50078250A /* EventViewControllerKintera.swift */; };
 		EA5177401A4FF31500124F61 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51773F1A4FF31500124F61 /* Reachability.swift */; };
+		EA622B571A66580500926CE4 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA622B561A66580500926CE4 /* Kid.swift */; };
 		EA68B12E1A396E8A0084271D /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */; };
 		EA68B12F1A396E8A0084271D /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */; };
 		EA68B1301A396E8A0084271D /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12C1A396E8A0084271D /* Pacifico.ttf */; };
@@ -39,13 +53,13 @@
 		EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */; };
 		EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1F1A48F37B0039BC6C /* KidCell.swift */; };
 		EA9BA3BD1A5328A60088FEAB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */; };
-		EAA041DA1A439C770028C062 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041D91A439C770028C062 /* Kid.swift */; };
 		EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */; };
 		EAA6DA821A411CE90088B76E /* CountdownImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6DA811A411CE90088B76E /* CountdownImageView.swift */; };
 		EAA7F8CE1A46347300F7FACC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA7F8CD1A46347300F7FACC /* Announcement.swift */; };
 		EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */; };
-		EAAA7A301A45FCDA00990D15 /* HomeViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */; };
 		EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */; };
+		EAB18CEE1A5E00130064BE45 /* BarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */; };
+		EAB757BA1A665ED700351F72 /* UIViewController+Kintera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */; };
 		EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD13F71A533C1400A3C288 /* BFImageView.swift */; };
 		EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */; };
 		EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6419FA92BC006840A0 /* Images.xcassets */; };
@@ -64,6 +78,8 @@
 		EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9319FA9DC8006840A0 /* EventCell.swift */; };
 		EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */; };
 		EADB1A7D1A43C74600F46668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB1A7C1A43C74600F46668 /* Main.storyboard */; };
+		EAEB80951A68B3510056DBDB /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB80941A68B3510056DBDB /* PlayViewController.swift */; };
+		EAEB80971A68B38E0056DBDB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB80961A68B38E0056DBDB /* GameViewController.swift */; };
 		EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +120,20 @@
 		EA06890A1A34D53C006CD2E0 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraHubView.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		EA1CF92F1A5F7E4300DF1777 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		EA1CF9311A5F7E4300DF1777 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		EA1CF9321A5F7E4300DF1777 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		EA1CF9381A5F7E8F00DF1777 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EA1CF93A1A5F7E9F00DF1777 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EA1CF93E1A5F7EC300DF1777 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EA1CF9401A5F7ECF00DF1777 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		EA1CF9461A5F90A500DF1777 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EA23C14F1A68E17D0066D118 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		EA2AAD471A4F2D3600CCD01D /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
 		EA2C8D9D1A51157200995A93 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCells.swift; sourceTree = "<group>"; };
@@ -129,8 +159,8 @@
 		EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 		EA4294F41A3AF59B0056A3D7 /* Bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bugs; sourceTree = "<group>"; };
 		EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		EA4EFCE31A5C42C50078250A /* EventViewControllerKintera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerKintera.swift; sourceTree = "<group>"; };
 		EA51773F1A4FF31500124F61 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		EA622B561A66580500926CE4 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
 		EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		EA68B12C1A396E8A0084271D /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
@@ -146,13 +176,13 @@
 		EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		EA882C1F1A48F37B0039BC6C /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
 		EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		EAA041D91A439C770028C062 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
 		EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerFunctions.swift; sourceTree = "<group>"; };
 		EAA6DA811A411CE90088B76E /* CountdownImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownImageView.swift; sourceTree = "<group>"; };
 		EAA7F8CD1A46347300F7FACC /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFollow.swift; sourceTree = "<group>"; };
-		EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerLogin.swift; sourceTree = "<group>"; };
 		EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsTableView.swift; sourceTree = "<group>"; };
+		EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItems.swift; sourceTree = "<group>"; };
+		EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Kintera.swift"; sourceTree = "<group>"; };
 		EABD13F71A533C1400A3C288 /* BFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFImageView.swift; sourceTree = "<group>"; };
 		EAC85D5619FA92BC006840A0 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC85D5A19FA92BC006840A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,6 +205,9 @@
 		EAC85D9319FA9DC8006840A0 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundraiseViewController.swift; sourceTree = "<group>"; };
 		EADB1A7C1A43C74600F46668 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EAEB808E1A683B2F0056DBDB /* Data 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Data 2.xcdatamodel"; sourceTree = "<group>"; };
+		EAEB80941A68B3510056DBDB /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		EAEB80961A68B38E0056DBDB /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,10 +217,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1CF9451A5F7EEE00DF1777 /* libsqlite3.dylib in Frameworks */,
+				EA1CF9431A5F7ED700DF1777 /* StoreKit.framework in Frameworks */,
+				EA1CF9411A5F7ECF00DF1777 /* Security.framework in Frameworks */,
+				EA1CF93F1A5F7EC300DF1777 /* MobileCoreServices.framework in Frameworks */,
+				EA1CF93D1A5F7EAA00DF1777 /* CoreLocation.framework in Frameworks */,
+				EA1CF93B1A5F7E9F00DF1777 /* CFNetwork.framework in Frameworks */,
+				EA1CF9391A5F7E8F00DF1777 /* AudioToolbox.framework in Frameworks */,
+				EA1CF9371A5F7E4300DF1777 /* ParseUI.framework in Frameworks */,
 				EA9BA3BD1A5328A60088FEAB /* CoreImage.framework in Frameworks */,
 				EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */,
 				EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */,
 				EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */,
+				EA1CF9341A5F7E4300DF1777 /* Parse.framework in Frameworks */,
+				EA1CF9361A5F7E4300DF1777 /* ParseFacebookUtils.framework in Frameworks */,
 				EA318D8B1A2ED95800F89F3B /* SystemConfiguration.framework in Frameworks */,
 				EA318D891A2ED7A800F89F3B /* libz.dylib in Frameworks */,
 				EAC85D8619FA92E3006840A0 /* UIKit.framework in Frameworks */,
@@ -197,6 +240,8 @@
 				EAC85D8119FA92D3006840A0 /* EventKit.framework in Frameworks */,
 				EAC85D8219FA92D3006840A0 /* EventKitUI.framework in Frameworks */,
 				EAC85D7E19FA92CC006840A0 /* CoreData.framework in Frameworks */,
+				EA1CF9331A5F7E4300DF1777 /* Bolts.framework in Frameworks */,
+				EA1CF9351A5F7E4300DF1777 /* ParseCrashReporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +255,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA1CF92D1A5F7E4300DF1777 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */,
+				EA1CF92F1A5F7E4300DF1777 /* Parse.framework */,
+				EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */,
+				EA1CF9311A5F7E4300DF1777 /* ParseFacebookUtils.framework */,
+				EA1CF9321A5F7E4300DF1777 /* ParseUI.framework */,
+			);
+			name = Parse;
+			path = "parse-library-1";
+			sourceTree = "<group>";
+		};
 		EA2F1FA919FAC624000C5685 /* Home Tab */ = {
 			isa = PBXGroup;
 			children = (
 				EAC85D8719FA93D6006840A0 /* HomeViewController.swift */,
 				EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */,
-				EAAA7A2F1A45FCDA00990D15 /* HomeViewControllerLogin.swift */,
 				EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */,
 				EAA6DA811A411CE90088B76E /* CountdownImageView.swift */,
 				EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */,
@@ -236,6 +293,14 @@
 		EA41E7071A313F5800903926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */,
+				EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */,
+				EA1CF9401A5F7ECF00DF1777 /* Security.framework */,
+				EA1CF93E1A5F7EC300DF1777 /* MobileCoreServices.framework */,
+				EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */,
+				EA1CF93A1A5F7E9F00DF1777 /* CFNetwork.framework */,
+				EA1CF9381A5F7E8F00DF1777 /* AudioToolbox.framework */,
+				EA1CF92D1A5F7E4300DF1777 /* Parse */,
 				EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */,
 				EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */,
 				EA318D881A2ED7A800F89F3B /* libz.dylib */,
@@ -287,7 +352,7 @@
 			children = (
 				EAA7F8CD1A46347300F7FACC /* Announcement.swift */,
 				EAC85D9119FA96E4006840A0 /* Event.swift */,
-				EAA041D91A439C770028C062 /* Kid.swift */,
+				EA622B561A66580500926CE4 /* Kid.swift */,
 			);
 			name = "Object Subclasses";
 			sourceTree = "<group>";
@@ -379,7 +444,10 @@
 				EA882C1E1A48F30C0039BC6C /* Cell Subclasses */,
 				EA882C1D1A48F2FD0039BC6C /* Object Subclasses */,
 				EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */,
+				EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */,
+				EA1CF9461A5F90A500DF1777 /* DataManager.swift */,
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
+				EAEB80931A68B2BA0056DBDB /* Game Tab */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
 				EAC85D8919FA9432006840A0 /* Events Tab */,
 				EAD6E7171A529BDB001187E6 /* Fundraise Tab */,
@@ -423,7 +491,6 @@
 				EAC85D8A19FA9446006840A0 /* EventViewController.swift */,
 				EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */,
 				EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */,
-				EA4EFCE31A5C42C50078250A /* EventViewControllerKintera.swift */,
 				EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */,
 				EAC85D8C19FA945C006840A0 /* EventDetailViewController.swift */,
 			);
@@ -439,6 +506,7 @@
 				EA882C231A48F4D10039BC6C /* Date */,
 				EA6917321A325FF40024E35C /* Theme.swift */,
 				EA6917341A32DBC50024E35C /* CAFunctions.swift */,
+				EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
 			name = Extensions;
@@ -450,6 +518,16 @@
 				EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */,
 			);
 			name = "Fundraise Tab";
+			sourceTree = "<group>";
+		};
+		EAEB80931A68B2BA0056DBDB /* Game Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EAEB80961A68B38E0056DBDB /* GameViewController.swift */,
+				EAEB80941A68B3510056DBDB /* PlayViewController.swift */,
+				EA23C14F1A68E17D0066D118 /* GameData.swift */,
+			);
+			name = "Game Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,7 +584,7 @@
 						DevelopmentTeam = H5HQ99Y6FU;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -579,29 +657,33 @@
 				EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */,
 				EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */,
+				EA23C1501A68E17D0066D118 /* GameData.swift in Sources */,
 				EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */,
 				EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */,
 				EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */,
 				EAA7F8CE1A46347300F7FACC /* Announcement.swift in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
 				EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */,
-				EAAA7A301A45FCDA00990D15 /* HomeViewControllerLogin.swift in Sources */,
-				EA4EFCE41A5C42C50078250A /* EventViewControllerKintera.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
+				EA622B571A66580500926CE4 /* Kid.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
 				EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
+				EA1CF9471A5F90A500DF1777 /* DataManager.swift in Sources */,
 				EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */,
 				EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */,
 				EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */,
-				EAA041DA1A439C770028C062 /* Kid.swift in Sources */,
+				EAEB80951A68B3510056DBDB /* PlayViewController.swift in Sources */,
 				EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */,
 				EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */,
+				EAB757BA1A665ED700351F72 /* UIViewController+Kintera.swift in Sources */,
 				EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
+				EAEB80971A68B38E0056DBDB /* GameViewController.swift in Sources */,
 				EA5177401A4FF31500124F61 /* Reachability.swift in Sources */,
 				EA6917331A325FF40024E35C /* Theme.swift in Sources */,
+				EAB18CEE1A5E00130064BE45 /* BarButtonItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,7 +734,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Southeastern Healthcare Foundation, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -666,7 +748,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				PROVISIONING_PROFILE = "c1d11780-8afa-42ef-8b55-baf8453379e8";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -678,9 +760,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1",
+				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -690,7 +776,7 @@
 					"$(PROJECT_DIR)/DMatUF",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,7 +831,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				PROVISIONING_PROFILE = "9c99ee5c-83f8-40d8-868e-15e1f6384fd7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -757,9 +843,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alex Migdall (9HD6R7657D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Migdall (9HD6R7657D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1",
+				);
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -768,7 +858,7 @@
 					"$(PROJECT_DIR)/DMatUF",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -828,6 +918,7 @@
 		EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				EAEB808E1A683B2F0056DBDB /* Data 2.xcdatamodel */,
 				EAC85D8F19FA9598006840A0 /* Data.xcdatamodel */,
 			);
 			currentVersion = EAC85D8F19FA9598006840A0 /* Data.xcdatamodel */;

@@ -52,7 +52,7 @@ class AboutViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CAF.version < 8.0 ? 84.0 : UITableViewAutomaticDimension
+        return UIDevice.version < 8.0 ? 84.0 : UITableViewAutomaticDimension
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentControl.selectedSegmentIndex == 0 {

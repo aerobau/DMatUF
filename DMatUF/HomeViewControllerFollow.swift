@@ -11,13 +11,6 @@ import UIKit
 
 extension HomeViewController: UIActionSheetDelegate {
     
-    @IBAction func donateButtonPressed(sender: UIBarButtonItem) {
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
-        
-        CAF.openURL(["http://floridadm.kintera.org/faf/home/default.asp?ievent=1114670"])
-    }
-    
-    
     @IBAction func followButtonPressed(sender: UIButton) {
         let actionSheet = UIActionSheet(title: "Follow Us!", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Facebook", "Instagram", "Twitter", "YouTube", "FloridaDM.org")
         actionSheet.showInView(view)

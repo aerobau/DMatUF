@@ -31,7 +31,7 @@ class AnnouncementCell: UITableViewCell {
         titleLabel.textColor = Color.primary2
         dateLabel.textColor = Color.secondary2
         
-        if CAF.version < 8.0 {
+        if UIDevice.version < 8.0 {
             titleLabel.numberOfLines = 1
             titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         } else {

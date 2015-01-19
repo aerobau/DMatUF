@@ -2,24 +2,19 @@
 //  Kid.swift
 //  DMatUF
 //
-//  Created by Ian MacCallum on 12/18/14.
-//  Copyright (c) 2014 MacCDevTeam. All rights reserved.
+//  Created by Ian MacCallum on 1/14/15.
+//  Copyright (c) 2015 MacCDevTeam. All rights reserved.
 //
 
 import Foundation
-import UIKit
+import CoreData
 
-class Kid {
-    var name: String?
-    var age: Int?
-    var story: String?
-    var imageName: String?
-    
-    convenience init(dict: Dictionary<String, AnyObject>) {
-        self.init()
-        name = Optional(dict["name"] as String)
-        age = Optional((dict["ageYear"] as NSNumber).integerValue)
-        story = Optional(dict["story"] as String)
-        imageName = Optional(dict["image"] as String)
-    }
+class Kid: NSManagedObject {
+
+    @NSManaged var name: String
+    @NSManaged var image: String
+    @NSManaged var story: String
+    @NSManaged var ageYear: NSNumber
+    @NSManaged var milestone: String?
+
 }

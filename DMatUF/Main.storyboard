@@ -13,6 +13,7 @@
         </mutableArray>
         <mutableArray key="agbookrounded-medium.otf">
             <string>AGBookRounded-Medium</string>
+            <string>AGBookRounded-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -33,6 +34,130 @@
             </objects>
             <point key="canvasLocation" x="-100" y="-543"/>
         </scene>
+        <!--Play View Controller-->
+        <scene sceneID="SY4-59-lYp">
+            <objects>
+                <viewController id="UHu-KT-E2E" customClass="PlayViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XOc-Qt-EOz"/>
+                        <viewControllerLayoutGuide type="bottom" id="xMP-S3-nfA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nw3-hF-gvD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNo-J3-2aN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sNo-J3-2aN" firstAttribute="leading" secondItem="nw3-hF-gvD" secondAttribute="leading" id="FA7-Tu-1As"/>
+                            <constraint firstItem="xMP-S3-nfA" firstAttribute="top" secondItem="sNo-J3-2aN" secondAttribute="bottom" id="ONQ-jI-opN"/>
+                            <constraint firstAttribute="trailing" secondItem="sNo-J3-2aN" secondAttribute="trailing" id="U5x-Uh-IOm"/>
+                            <constraint firstItem="sNo-J3-2aN" firstAttribute="top" secondItem="nw3-hF-gvD" secondAttribute="top" id="UPh-fQ-R3n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textLabel" destination="sNo-J3-2aN" id="4mR-3c-rbg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nM4-OM-ZSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2139" y="132"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="kjp-ZY-f39">
+            <objects>
+                <viewController id="TSc-AT-ezG" customClass="GameViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KQR-bS-6oQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="IIh-sd-kHv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i10-3q-8Xj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjT-Q1-N8y">
+                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="HwJ-83-fLY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCP-9g-t2d">
+                                <rect key="frame" x="16" y="71" width="75" height="30"/>
+                                <state key="normal" title="Categories">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoriesButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="kjx-Zc-OVp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh2-Yk-vcs">
+                                <rect key="frame" x="16" y="121" width="93" height="30"/>
+                                <state key="normal" title="Game Modes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameModesButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="Ar2-KX-zu0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lit-Bh-KA0">
+                                <rect key="frame" x="16" y="172" width="83" height="30"/>
+                                <state key="normal" title="How to Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="howToPlayButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="Jbv-yL-K8W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="UHu-KT-E2E" kind="presentation" identifier="PlaySegue" modalTransitionStyle="crossDissolve" id="aBk-JO-PLq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6do-7o-Bzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1498" y="132"/>
+        </scene>
+        <!--DM Game-->
+        <scene sceneID="bXy-FY-x8s">
+            <objects>
+                <viewController id="qUT-XQ-Vwc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LkK-Gv-ZRI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dpj-bK-Bdt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Egs-si-njK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efz-U8-N0W">
+                                <rect key="frame" x="16" y="20" width="72" height="30"/>
+                                <state key="normal" title="Play game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TSc-AT-ezG" kind="presentation" id="NbV-qB-jND"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="DM Game" id="Wgc-oh-RsM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYb-mN-Xr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-868" y="132"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -45,6 +170,7 @@
                     </tabBar>
                     <connections>
                         <outlet property="delegate" destination="W28-zg-YXA" id="5JB-ec-h7c"/>
+                        <segue destination="qUT-XQ-Vwc" kind="relationship" relationship="viewControllers" id="RjN-cY-9dS"/>
                         <segue destination="baT-Nm-5ij" kind="relationship" relationship="viewControllers" id="CiF-f6-LKF"/>
                         <segue destination="Wbn-ml-ree" kind="relationship" relationship="viewControllers" id="zhM-y3-7rq"/>
                         <segue destination="rcd-lD-cpE" kind="relationship" relationship="viewControllers" id="LBK-lE-HB3"/>
@@ -218,16 +344,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fundraise Now" id="JZX-oB-WCK">
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="Yf7-9J-ygX">
-                            <connections>
-                                <action selector="donateButtonPressed:" destination="pvj-06-eXF" id="aob-qn-ycR"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="XgF-pr-MUJ">
-                            <connections>
-                                <action selector="kinteraButtonPressed:" destination="pvj-06-eXF" id="n1L-1S-pVZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Donate" id="Yf7-9J-ygX" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="Rxg-Kn-RU0" id="08R-Zg-OI1"/>
@@ -419,11 +536,7 @@ at the O’Connell Center at UF</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1Zc-0K-LSZ">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="nBK-NM-4na">
-                            <connections>
-                                <action selector="donateButtonPressed:" destination="enI-aY-D12" id="LAJ-gu-ckx"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Donate" id="nBK-NM-4na" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sW1-KH-kKP">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -435,9 +548,9 @@ at the O’Connell Center at UF</string>
                                 <action selector="followButtonPressed:" destination="enI-aY-D12" eventType="touchUpInside" id="ZEN-Dk-gxO"/>
                             </connections>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="Zuk-2e-XKe">
+                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="BeW-Gz-Eoj">
                             <connections>
-                                <action selector="kinteraButtonPressed:" destination="enI-aY-D12" id="bSz-id-ZGe"/>
+                                <action selector="kinteraButtonPressed:" destination="enI-aY-D12" id="a2C-zD-v45"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -449,6 +562,7 @@ at the O’Connell Center at UF</string>
                         <outlet property="countdownImageView" destination="Sgz-BX-Jqn" id="Z4b-kK-9LT"/>
                         <outlet property="topBar" destination="OoW-Ss-MpT" id="e9x-7v-Dng"/>
                         <outlet property="welcomeLabel" destination="9Hx-yY-und" id="cAT-eu-9vs"/>
+                        <outlet property="welcomeLabelHeight" destination="wWI-Ba-BTE" id="Pgw-FI-hVm"/>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="SPU-yS-yHX"/>
                     </connections>
                 </viewController>
@@ -469,7 +583,7 @@ at the O’Connell Center at UF</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="247" placeholderIntrinsicHeight="471" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zax-Bl-62L" customClass="CATable" customModule="DMatUF" customModuleProvider="target">
-                                <rect key="frame" x="174.5" y="72" width="250" height="476"/>
+                                <rect key="frame" x="176" y="72" width="247" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zax-Bl-62L" secondAttribute="height" multiplier="11:21" id="riT-b4-Tsz"/>
@@ -500,7 +614,7 @@ at the O’Connell Center at UF</string>
                                 <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="ft3-KA-iDG" customClass="CAThermometer" customModule="DMatUF" customModuleProvider="target">
-                                <rect key="frame" x="142" y="104" width="65.5" height="412"/>
+                                <rect key="frame" x="143" y="104" width="65" height="407"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ft3-KA-iDG" secondAttribute="height" multiplier="7:44" id="LGK-8u-7MX"/>
@@ -534,7 +648,7 @@ at the O’Connell Center at UF</string>
             </objects>
             <point key="canvasLocation" x="2186" y="-1211"/>
         </scene>
-        <!--Upcoming Events-->
+        <!--Event View Controller-->
         <scene sceneID="TJE-hW-zUU">
             <objects>
                 <tableViewController id="VaQ-tg-DLN" customClass="EventViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
@@ -628,17 +742,8 @@ at the O’Connell Center at UF</string>
                             <outlet property="delegate" destination="VaQ-tg-DLN" id="Yrv-Zi-ZhE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Upcoming Events" id="Zvo-6m-Hvx">
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="hM1-aH-aji">
-                            <connections>
-                                <action selector="donateButtonPressed:" destination="VaQ-tg-DLN" id="2FA-Y7-4Io"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="vxF-V8-VsG">
-                            <connections>
-                                <action selector="kinteraButtonPressed:" destination="VaQ-tg-DLN" id="3ag-5J-X9A"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="Zvo-6m-Hvx">
+                        <barButtonItem key="leftBarButtonItem" title="Donate" id="hM1-aH-aji" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="GUj-jN-WjV"/>
@@ -648,7 +753,7 @@ at the O’Connell Center at UF</string>
             </objects>
             <point key="canvasLocation" x="1288" y="17"/>
         </scene>
-        <!--Meet the Kids!-->
+        <!--Kids View Controller-->
         <scene sceneID="gBj-XC-g6L">
             <objects>
                 <collectionViewController id="Qdx-qd-rxg" customClass="KidsViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
@@ -701,7 +806,6 @@ at the O’Connell Center at UF</string>
                                 <connections>
                                     <outlet property="cellImage" destination="i6W-Cd-KST" id="8ev-3p-y60"/>
                                     <outlet property="cellLabel" destination="BXy-Uy-psW" id="PsK-4J-Jag"/>
-                                    <segue destination="b6o-Ej-9If" kind="show" identifier="KidDetailSegue" id="n7z-og-teP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -710,20 +814,12 @@ at the O’Connell Center at UF</string>
                             <outlet property="delegate" destination="Qdx-qd-rxg" id="rLo-Ui-2JH"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Meet the Kids!" id="eVb-fP-prz">
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="TMj-cP-Uj0">
-                            <connections>
-                                <action selector="donateButtonPressed:" destination="Qdx-qd-rxg" id="SAO-8D-4d3"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="dL1-ar-lPX">
-                            <connections>
-                                <action selector="kinteraButtonPressed:" destination="Qdx-qd-rxg" id="yNO-eY-raf"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="eVb-fP-prz">
+                        <barButtonItem key="leftBarButtonItem" title="Donate" id="TMj-cP-Uj0" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="Oub-lh-KC3"/>
+                        <segue destination="b6o-Ej-9If" kind="show" identifier="KidDetailSegue" id="oO3-aM-0H6"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfM-Hu-5rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -836,51 +932,69 @@ at the O’Connell Center at UF</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvX-6h-2Y1">
-                                <rect key="frame" x="16" y="230" width="568" height="318"/>
+                                <rect key="frame" x="16" y="306" width="568" height="242"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMf-kK-HsJ">
-                                <rect key="frame" x="225" y="72" width="150" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMf-kK-HsJ">
+                                <rect key="frame" x="225" y="118" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Qsz-l0-Aaz"/>
                                     <constraint firstAttribute="width" constant="150" id="eXo-0H-R8X"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="568" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-Zn-Yhg">
+                                <rect key="frame" x="16" y="72" width="568" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="MZ5-pz-HcA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AGBookRounded-Medium" family="AG Book Rounded" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X00-U2-Tsm">
+                                <rect key="frame" x="16" y="276" width="568" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="afN-ft-Ygd"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="milestoneButtonPressed:" destination="b6o-Ej-9If" eventType="touchUpInside" id="8cC-Mb-ffg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="jMf-kK-HsJ" secondAttribute="centerX" id="B40-mo-zWy"/>
-                            <constraint firstItem="jMf-kK-HsJ" firstAttribute="trailing" secondItem="95J-Kk-3AY" secondAttribute="trailingMargin" constant="-209" id="FhB-gi-Iio"/>
-                            <constraint firstItem="xvX-6h-2Y1" firstAttribute="trailing" secondItem="95J-Kk-3AY" secondAttribute="trailingMargin" id="KNh-np-Syn"/>
-                            <constraint firstAttribute="centerX" secondItem="jMf-kK-HsJ" secondAttribute="centerX" id="RdO-9j-TXz"/>
-                            <constraint firstItem="xvX-6h-2Y1" firstAttribute="leading" secondItem="95J-Kk-3AY" secondAttribute="leadingMargin" id="a0g-ub-1bj"/>
-                            <constraint firstItem="xvX-6h-2Y1" firstAttribute="top" secondItem="jMf-kK-HsJ" secondAttribute="bottom" constant="8" id="dbC-hR-vrq"/>
-                            <constraint firstItem="jMf-kK-HsJ" firstAttribute="top" secondItem="Xsa-gI-Eid" secondAttribute="bottom" constant="8" id="eeP-dS-y4d"/>
-                            <constraint firstItem="jMf-kK-HsJ" firstAttribute="leading" secondItem="95J-Kk-3AY" secondAttribute="leadingMargin" constant="209" id="jOW-zH-4dP"/>
-                            <constraint firstItem="kCJ-kF-Rfm" firstAttribute="top" secondItem="xvX-6h-2Y1" secondAttribute="bottom" constant="8" id="pTO-gF-7lH"/>
+                            <constraint firstItem="xvX-6h-2Y1" firstAttribute="leading" secondItem="95J-Kk-3AY" secondAttribute="leadingMargin" id="1ZH-f9-ubT"/>
+                            <constraint firstItem="X00-U2-Tsm" firstAttribute="top" secondItem="jMf-kK-HsJ" secondAttribute="bottom" constant="8" id="1zf-1E-6xd"/>
+                            <constraint firstItem="1GN-Zn-Yhg" firstAttribute="trailing" secondItem="95J-Kk-3AY" secondAttribute="trailingMargin" id="AS7-OS-Ghf"/>
+                            <constraint firstItem="jMf-kK-HsJ" firstAttribute="top" secondItem="1GN-Zn-Yhg" secondAttribute="bottom" constant="8" id="CBM-9j-4fP"/>
+                            <constraint firstItem="1GN-Zn-Yhg" firstAttribute="top" secondItem="Xsa-gI-Eid" secondAttribute="bottom" constant="8" id="WGl-Ay-8Rb"/>
+                            <constraint firstItem="X00-U2-Tsm" firstAttribute="trailing" secondItem="95J-Kk-3AY" secondAttribute="trailingMargin" id="e10-zt-g2c"/>
+                            <constraint firstItem="X00-U2-Tsm" firstAttribute="leading" secondItem="95J-Kk-3AY" secondAttribute="leadingMargin" id="nh9-9s-8Iy"/>
+                            <constraint firstItem="xvX-6h-2Y1" firstAttribute="top" secondItem="X00-U2-Tsm" secondAttribute="bottom" constant="8" id="qzU-0J-3I2"/>
+                            <constraint firstItem="1GN-Zn-Yhg" firstAttribute="leading" secondItem="95J-Kk-3AY" secondAttribute="leadingMargin" id="rzj-94-yCN"/>
+                            <constraint firstAttribute="centerX" secondItem="jMf-kK-HsJ" secondAttribute="centerX" id="skH-97-fUL"/>
+                            <constraint firstItem="kCJ-kF-Rfm" firstAttribute="top" secondItem="xvX-6h-2Y1" secondAttribute="bottom" constant="8" id="vo8-VB-ZK0"/>
+                            <constraint firstItem="xvX-6h-2Y1" firstAttribute="trailing" secondItem="95J-Kk-3AY" secondAttribute="trailingMargin" id="xwx-bD-YXW"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="FhB-gi-Iio"/>
-                                <exclude reference="RdO-9j-TXz"/>
-                                <exclude reference="jOW-zH-4dP"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5fb-02-7yM">
-                        <barButtonItem key="rightBarButtonItem" title="Donate" id="dt2-gH-bqE">
-                            <connections>
-                                <action selector="donateButtonPressed:" destination="b6o-Ej-9If" id="Swu-Qu-txD"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Donate" id="dt2-gH-bqE" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="jMf-kK-HsJ" id="f1U-FU-Nes"/>
+                        <outlet property="milestoneBottomSpace" destination="qzU-0J-3I2" id="ujh-Po-rBI"/>
+                        <outlet property="milestoneButton" destination="X00-U2-Tsm" id="ful-Bc-E1u"/>
+                        <outlet property="milestoneButtonHeight" destination="afN-ft-Ygd" id="KuO-jt-g8b"/>
+                        <outlet property="milestoneTopSpace" destination="1zf-1E-6xd" id="2bG-G7-Wfs"/>
+                        <outlet property="nameLabel" destination="1GN-Zn-Yhg" id="XGN-z6-DsR"/>
                         <outlet property="storyView" destination="xvX-6h-2Y1" id="QNq-vT-2b1"/>
                     </connections>
                 </viewController>
@@ -917,6 +1031,6 @@ at the O’Connell Center at UF</string>
         <image name="TabStarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPU-yS-yHX"/>
+        <segue reference="Oub-lh-KC3"/>
     </inferredMetricsTieBreakers>
 </document>

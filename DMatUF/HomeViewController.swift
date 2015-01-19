@@ -16,44 +16,55 @@ class HomeViewController: UIViewController  {
     @IBOutlet weak var announcementsTableView: AnnouncementsTableView!
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var bottomBar: UIView!
-    var task: NSURLSessionDataTask?
-    var kinteraButtonItem: UIBarButtonItem?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet weak var welcomeLabelHeight: NSLayoutConstraint!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
+        // Set Attributes
+        welcomeLabel?.textColor = Color.primary2
+        announcementsLabel?.textColor = Color.primary1
+        topBar?.backgroundColor = Color.secondary1
+        bottomBar?.backgroundColor = Color.secondary1
+        announcementsTableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        if UIDevice.type == DeviceType.iPhone4s {
+            welcomeLabel.hidden = true
+            welcomeLabelHeight.constant = 0
+        }
+        
         // Google Analytics
         GA.sendScreenView(name: "HomeView")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        stopLoading()
+        countdownImageView.timer?.invalidate()
         countdownImageView.timer = nil
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Set Attributes
-        welcomeLabel?.textColor = Color.primary2
-        announcementsLabel?.textColor = Color.primary1
-        topBar?.backgroundColor = Color.secondary1
-        bottomBar?.backgroundColor = Color.secondary1
-        kinteraButtonItem = navigationItem.rightBarButtonItem
-        announcementsTableView?.separatorStyle = UITableViewCellSeparatorStyle.None
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        if CAF.deviceType == DeviceType.iPhone4s {
-            welcomeLabel.text = nil
-            welcomeLabel.frame.size.height = 0
+        countdownImageView.layoutSubviews()
+
+
+    }
+    
+    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+            performSegueWithIdentifier("FundSegue", sender: self)
+        } else {
+            loginAlert()
         }
     }
 }

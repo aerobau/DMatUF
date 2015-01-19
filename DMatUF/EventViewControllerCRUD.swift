@@ -17,18 +17,37 @@ extension EventViewController {
     func createEvent(eventDict: Dictionary<String, AnyObject>) {
 
         var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
-
-        newEvent.id = getInt(eventDict["id"])
+        let id = getInt(eventDict["id"])
+        newEvent.id = id
         newEvent.title = getString(eventDict["title"])
         newEvent.location = getString(eventDict["location"])
         newEvent.moreInfo = getString(eventDict["description"])
         newEvent.startDate = getDate(eventDict["startDate"])
         newEvent.endDate = getDate(eventDict["endDate"])
+        newEvent.imageName = getString(eventDict["imageName"])
+        
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            self.saveImageForEvent(self.getString(eventDict["imageName"]), url: self.getString(eventDict["imageURL"]))
+        }
     }
     
-    // Read
-    
+    func saveImageForEvent(name: String, url: String) {
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String).stringByAppendingString("\(name).png")
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(imagePath) {
+            if let eventImage = UIImage(fromURL: url) {
+                eventImage.save(name , type: "png")
+                println("IMAGE CREATED")
+            } else {
+                println("IMAGE COULD NOT BE CREATED")
+            }
+        } else {
+        
+            println("IMAGE ALREADY EXISTED")
+        }
+    }
 
+    // Read
     func getFetchedResultController() -> NSFetchedResultsController {
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
@@ -39,13 +58,13 @@ extension EventViewController {
         
         var fetchRequest = NSFetchRequest(entityName: "Event")
         let predicate = NSPredicate(format: "startDate >= %@", NSDate())
-//        let sortDescriptor = NSSortDescriptor(key: "complete", ascending: false)
         let sortDescriptor1 = NSSortDescriptor(key: "startDate", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "endDate", ascending: true)
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
+        fetchRequest.propertiesToFetch = ["title", "startDate", "endDate", "imageName"]
         return fetchRequest
     }
 
@@ -82,6 +101,9 @@ extension EventViewController {
             event.moreInfo = getString(eventDict["description"])
             event.startDate = getDate(eventDict["startDate"])
             event.endDate = getDate(eventDict["endDate"])
+            event.imageName = getString(eventDict["imageName"])
+            
+            saveImageForEvent(getString(eventDict["imageName"]), url: getString(eventDict["imageURL"]))
         }
     }
     

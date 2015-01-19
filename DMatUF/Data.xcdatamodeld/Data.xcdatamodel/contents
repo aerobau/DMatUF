@@ -6,16 +6,24 @@
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="DMatUF.Event" syncable="YES">
-        <attribute name="complete" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="-1" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="moreInfo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Kid" representedClassName="DMatUF.Kid" syncable="YES">
+        <attribute name="ageYear" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="milestone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="story" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Announcement" positionX="-63" positionY="45" width="128" height="88"/>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Announcement" positionX="-63" positionY="45" width="128" height="90"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Kid" positionX="-63" positionY="36" width="128" height="118"/>
     </elements>
 </model>

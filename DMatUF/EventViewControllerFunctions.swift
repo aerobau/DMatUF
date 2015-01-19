@@ -33,6 +33,10 @@ extension EventViewController {
             return str
         }
         
+        if (start.hour() == 0 && start.hoursBeforeDate(end) == 24) || (start == end) {
+            return "All Day"
+        }
+        
         if start.day() == end.day() {
             str = str + " - " + end.toString(format: .Custom("h:mm a"), timeZone: .EST)
         } else {

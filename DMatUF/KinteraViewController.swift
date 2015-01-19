@@ -13,7 +13,6 @@ class KinteraViewController: UIViewController {
     
     @IBOutlet weak var thermometer: CAThermometer!
     @IBOutlet weak var table: CATable!
-    var task: NSURLSessionDataTask?
     var refreshControl = UIRefreshControl()
 
     
@@ -25,22 +24,23 @@ class KinteraViewController: UIViewController {
 
         view.backgroundColor = Color.tvcOdd
 
-        refreshControl.addTarget(self, action: "refreshControlAction", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         table.addSubview(refreshControl)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         navigationItem.leftBarButtonItem?.title = "Back"
      }
-    
-    override func viewDidLayoutSubviews() {
+
+        override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         updateFundraisingGraphics()
     }
     
-    
+
     func updateFundraisingGraphics() {
+        println("REFRESH")
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var value: Int?
@@ -85,12 +85,13 @@ class KinteraViewController: UIViewController {
     func refreshControlAction() {
         
         if Reachability.connectedToInternet() {
-            refresh()
+            self.refresh()
         } else {
             CAF.errorMessage("Error", message: "Internet connection required!")
         }
     }
     
+
     @IBAction func logoutButtonPressed(sender: UIBarButtonItem) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(nil, forKey: "password")
@@ -98,74 +99,29 @@ class KinteraViewController: UIViewController {
         
         navigationController?.popViewControllerAnimated(true)
     }
-    
+
     func refresh() {
-        
-        startLoading()
-        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "login", value: nil)
+    
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "RefreshMyKintera", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        let username = defaults.stringForKey("username")
-        let password = defaults.stringForKey("password")
-        
-        if !(username != nil && password != nil) {
-            CAF.errorMessage("Login Failed", message: "Username or password does not exist.")
-            return
+        if let username = defaults.stringForKey("username") {
+            if let password = defaults.stringForKey("password") {
+                login(username, password: password)
+            }
+        } else {
+            loginAlert()
         }
         
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://mickmaccallum.com/ian/kintera.php?username=\(username!)&password=\(password!)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) ?? NSURL()
-        let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 8.0)
-        
-        task = session.dataTaskWithRequest(request) { [unowned self] data, response, error in
-            println("DATA \(data)")
-            println(NSString(data: data, encoding: 8))
-            println("RESPONSE \(response)")
-            println(error)
-            
-            if NSString(data: data, encoding: 8) as String == "Error" {
-                self.task?.cancel()
-                dispatch_async(dispatch_get_main_queue()) {
-                    CAF.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
-                }
-            }
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                if let dataUnwrapped = data {
-                    var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataUnwrapped, options: .allZeros, error: nil)
-                    
-                    if let result = rawJSON as? [String: AnyObject] {
-                        println(result)
-                        // Save Login info to NSUserDefaults
-                        let defaults = NSUserDefaults.standardUserDefaults()
-                        defaults.setObject(result, forKey: "userInfo")
-                        
-                        // Update Components
-                        self.stopLoading()
-                        
-                        self.updateFundraisingGraphics()
-                    } else {
-                        self.stopLoading()
-                    }
-                } else {
-                    self.stopLoading()
-                }
-                
-                if error != nil {
-                    CAF.errorMessage("Error \(error.code)", message: "\(error.localizedDescription)")
-                }
-            }
-        }
-        task?.resume()
     }
-    
-    func startLoading() {
+  
+    override func startLoading() {
         println("Start loading")
      }
     
-    func stopLoading() {
+    override func stopLoading() {
         println("Stop loading")
+        updateFundraisingGraphics()
         refreshControl.endRefreshing()
-        task?.cancel()
     }
 }
