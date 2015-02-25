@@ -796,8 +796,13 @@
 					"$(PROJECT_DIR)/DMatUF",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
+=======
+				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				SWIFT_OBJC_BRIDGING_HEADER = $PROJECT_DIR/DMatUF/Bridge.h;
+>>>>>>> origin/master
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -878,8 +883,13 @@
 					"$(PROJECT_DIR)/DMatUF",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
+=======
+				PROVISIONING_PROFILE = "2a1c9b7e-c508-40c9-91a4-8e49a736221b";
+				SWIFT_OBJC_BRIDGING_HEADER = $PROJECT_DIR/DMatUF/Bridge.h;
+>>>>>>> origin/master
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
