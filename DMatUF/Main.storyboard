@@ -123,19 +123,16 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="rWq-JP-GBu" customClass="MapViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7gT-pd-gnu"/>
-                        <viewControllerLayoutGuide type="bottom" id="EQw-J4-dgL"/>
+                        <viewControllerLayoutGuide type="top" id="aF9-sm-hQK"/>
+                        <viewControllerLayoutGuide type="bottom" id="8z3-gg-e6R"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="3" id="U3D-5N-Rh5">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="asY-2q-2aG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <outlet property="delegate" destination="rWq-JP-GBu" id="N4L-1f-a3D"/>
-                        </connections>
                     </scrollView>
                     <navigationItem key="navigationItem" title="Map" id="uJE-4b-WkM"/>
                     <connections>
-                        <outlet property="scrollView" destination="U3D-5N-Rh5" id="5ty-OS-BoU"/>
+                        <outlet property="scrollView" destination="asY-2q-2aG" id="e6c-nJ-Idz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yz-Oe-ORf" userLabel="First Responder" sceneMemberID="firstResponder"/>
