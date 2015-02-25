@@ -5,6 +5,10 @@
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Category" representedClassName="DMatUF.Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="category" inverseEntity="Event" syncable="YES"/>
+    </entity>
     <entity name="Event" representedClassName="DMatUF.Event" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="-1" syncable="YES"/>
@@ -13,6 +17,7 @@
         <attribute name="moreInfo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="events" inverseEntity="Category" syncable="YES"/>
     </entity>
     <entity name="Kid" representedClassName="DMatUF.Kid" syncable="YES">
         <attribute name="ageYear" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -23,7 +28,8 @@
     </entity>
     <elements>
         <element name="Announcement" positionX="-63" positionY="45" width="128" height="90"/>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="Kid" positionX="-63" positionY="36" width="128" height="118"/>
+        <element name="Event" positionX="-254" positionY="45" width="128" height="163"/>
+        <element name="Kid" positionX="-171" positionY="-100" width="128" height="118"/>
+        <element name="Category" positionX="-252" positionY="242" width="128" height="73"/>
     </elements>
 </model>

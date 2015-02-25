@@ -19,6 +19,9 @@ class FundraiseViewController: UIViewController {
         GA.sendScreenView(name: "FundraiseView")
 
         setText()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -29,12 +32,21 @@ class FundraiseViewController: UIViewController {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-//        stopLoading()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        kinteraButtonItem = navigationItem.rightBarButtonItem
+    }
+    
+    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+            performSegueWithIdentifier("FundSegue", sender: self)
+        } else {
+            loginAlert()
+        }
     }
 
     func setText() {

@@ -33,12 +33,22 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
         addSubview(refreshControl)
         
         fetchJSON()
-
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UIDevice.version < 8.0 ? 40.0 : UITableViewAutomaticDimension
+        if UIDevice.version < 8.0 {
+            
+            
+            let text = (fetchedResultsController.objectAtIndexPath(indexPath) as Announcement).text ?? ""
+            let attributedText = NSAttributedString(string: text, attributes: [NSFontAttributeName: UIFont(name: Font.body1.fontName, size: 14.0)!])
+            let height = textViewHeightForAttributedText(attributedText, andWidth: frame.width - 99.0)
+            
+            return height + 8.0
+        } else {
+            return UITableViewAutomaticDimension
+        }
     }
+
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
@@ -49,12 +59,21 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("AnnouncementCell", forIndexPath: indexPath) as AnnouncementCell
         let cellAnnouncement = fetchedResultsController.objectAtIndexPath(indexPath) as Announcement
         
-        cell.titleLabel.text = cellAnnouncement.text
-        cell.dateLabel.text = cellAnnouncement.date.toString(format: .Custom("MM/dd/yy 'at' h:mm a"), timeZone: .EST)
+        cell.textView.text = cellAnnouncement.text
+        
+        cell.dateLabel.text = cellAnnouncement.date.toString(format: .Custom("M/d/yy"), timeZone: .EST)
         return cell
+    }
+    
+    func textViewHeightForAttributedText(text: NSAttributedString, andWidth width: CGFloat) -> CGFloat {
+        let calculationView = UITextView()
+        calculationView.attributedText = text
+        let size = calculationView.sizeThatFits(CGSize(width: width, height: CGFloat(FLT_MAX)))
+        return size.height
     }
 }
 
@@ -109,7 +128,6 @@ extension AnnouncementsTableView {
 
     // Create
     func createAnnouncement(eventDict: Dictionary<String, AnyObject>) {
-        
         var newAnnouncement = NSEntityDescription.insertNewObjectForEntityForName("Announcement", inManagedObjectContext: self.managedObjectContext!) as Announcement
         
         newAnnouncement.id = getInt(eventDict["id"])
@@ -120,7 +138,7 @@ extension AnnouncementsTableView {
     // Read
     func allAnnouncementsFetchRequest() -> NSFetchRequest {
         let fetchRequest = NSFetchRequest(entityName: "Announcement")
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
@@ -128,7 +146,6 @@ extension AnnouncementsTableView {
     }
     
     func fetchAnnouncement(id: Int) -> Announcement? {
-        
         // Define fetch request/predicate
         var fetchRequest = NSFetchRequest(entityName: "Announcement")
         let predicate = NSPredicate(format: "id == \(id)")
@@ -142,7 +159,6 @@ extension AnnouncementsTableView {
         let fetchedResults = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
         
         if fetchedResults?.count != 0 {
-            
             if let fetchedAnnouncement = fetchedResults![0] as? Announcement {
                 return fetchedAnnouncement
             }
@@ -179,7 +195,6 @@ extension AnnouncementsTableView {
         }
     }
     
-    
     // Delete
     func deleteAnnouncement(announcementID: Int) {
         if let announcement = fetchAnnouncement(announcementID) {
@@ -195,7 +210,7 @@ extension AnnouncementsTableView {
     }
     
     func getString(obj: AnyObject?) -> String {
-        return obj as? String ?? ""
+        return (obj as? String) ?? ""
     }
     
     func getDate(obj: AnyObject?) -> NSDate {

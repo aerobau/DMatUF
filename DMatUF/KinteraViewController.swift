@@ -48,25 +48,25 @@ class KinteraViewController: UIViewController {
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             
             // Participant Name
-            let partName = dict["ParticipantName"] as? String ?? ""
+            let partName = (dict["ParticipantName"] as? String) ?? ""
             table.name = partName
     
             // Participant Goal
-            let partGoal = dict["PersonalGoal"] as? NSString ?? ""
+            let partGoal = (dict["PersonalGoal"] as? NSString) ?? ""
             thermometer.goal = partGoal.integerValue
             table.goal = partGoal.integerValue
             
             // Participant Raised
-            let partRaised = dict["PersonalRaised"] as? NSString ?? ""
+            let partRaised = (dict["PersonalRaised"] as? NSString) ?? ""
             thermometer.value = partRaised.integerValue
             table.value = partRaised.integerValue
             
             // Personal URL
-            let personalPageURL = dict["PersonalPageUrl"] as? NSString ?? ""
+            let personalPageURL = (dict["PersonalPageUrl"] as? String) ?? ""
             table.url = personalPageURL
             
             // Last Updated
-            let lastUpdated = dict["PersonalRaisedToDate"] as? NSString ?? ""
+            let lastUpdated = (dict["PersonalRaisedToDate"] as? String) ?? ""
             table.lastUpdated = lastUpdated
         }
 
@@ -87,7 +87,7 @@ class KinteraViewController: UIViewController {
         if Reachability.connectedToInternet() {
             self.refresh()
         } else {
-            CAF.errorMessage("Error", message: "Internet connection required!")
+            UIAlertView.errorMessage("Error", message: "Internet connection required!")
         }
     }
     
@@ -107,7 +107,9 @@ class KinteraViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let username = defaults.stringForKey("username") {
             if let password = defaults.stringForKey("password") {
-                login(username, password: password)
+                login(username, password: password) {
+                    
+                }
             }
         } else {
             loginAlert()

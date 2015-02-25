@@ -63,7 +63,7 @@ extension NSDate {
         case .Custom(let customTimeZone): formatter.timeZone = NSTimeZone(name: customTimeZone)
         }
         
-        if let date = formatter.dateFromString(string) {
+        if let date = formatter.dateFromString(string as String) {
             self.init(timeInterval:0, sinceDate:date)
         } else {
             self.init()

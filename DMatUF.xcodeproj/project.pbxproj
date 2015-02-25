@@ -10,6 +10,7 @@
 		EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890A1A34D53C006CD2E0 /* TabBarController.swift */; };
 		EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
+		EA1AEEE91A71A3E900467179 /* EventDetailViewControllerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AEEE81A71A3E900467179 /* EventDetailViewControllerEvents.swift */; };
 		EA1CF9331A5F7E4300DF1777 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */; };
 		EA1CF9341A5F7E4300DF1777 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF92F1A5F7E4300DF1777 /* Parse.framework */; };
 		EA1CF9351A5F7E4300DF1777 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */; };
@@ -22,8 +23,6 @@
 		EA1CF9411A5F7ECF00DF1777 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9401A5F7ECF00DF1777 /* Security.framework */; };
 		EA1CF9431A5F7ED700DF1777 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */; };
 		EA1CF9451A5F7EEE00DF1777 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */; };
-		EA1CF9471A5F90A500DF1777 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1CF9461A5F90A500DF1777 /* DataManager.swift */; };
-		EA23C1501A68E17D0066D118 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA23C14F1A68E17D0066D118 /* GameData.swift */; };
 		EA2AAD481A4F2D3600CCD01D /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2AAD471A4F2D3600CCD01D /* Kids.plist */; };
 		EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9D1A51157200995A93 /* AboutViewController.swift */; };
 		EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */; };
@@ -36,8 +35,11 @@
 		EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA318D8D1A2FDECB00F89F3B /* GoogleAnalytics.swift */; };
 		EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */; };
 		EA4294F51A3AF59B0056A3D7 /* Bugs in Resources */ = {isa = PBXBuildFile; fileRef = EA4294F41A3AF59B0056A3D7 /* Bugs */; };
+		EA4407191A83411200DF5D6E /* UITextViewAutoHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4407181A83411200DF5D6E /* UITextViewAutoHeight.swift */; };
 		EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */; };
 		EA5177401A4FF31500124F61 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51773F1A4FF31500124F61 /* Reachability.swift */; };
+		EA5524151A7ACDE700380010 /* DropdownTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5524141A7ACDE700380010 /* DropdownTableView.swift */; };
+		EA616DAB1A6DF2AF005F7EB8 /* GameWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA616DAA1A6DF2AF005F7EB8 /* GameWebViewController.swift */; };
 		EA622B571A66580500926CE4 /* Kid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA622B561A66580500926CE4 /* Kid.swift */; };
 		EA68B12E1A396E8A0084271D /* AvenirLTStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */; };
 		EA68B12F1A396E8A0084271D /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */; };
@@ -52,6 +54,7 @@
 		EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */; };
 		EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */; };
 		EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1F1A48F37B0039BC6C /* KidCell.swift */; };
+		EA91BB141A75F4A50057D772 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91BB131A75F4A50057D772 /* MapViewController.swift */; };
 		EA9BA3BD1A5328A60088FEAB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */; };
 		EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */; };
 		EAA6DA821A411CE90088B76E /* CountdownImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6DA811A411CE90088B76E /* CountdownImageView.swift */; };
@@ -76,9 +79,9 @@
 		EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D8E19FA9598006840A0 /* Data.xcdatamodeld */; };
 		EAC85D9219FA96E4006840A0 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9119FA96E4006840A0 /* Event.swift */; };
 		EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D9319FA9DC8006840A0 /* EventCell.swift */; };
+		EACF23FF1A7DB74E0076EBFD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF23FE1A7DB74E0076EBFD /* Category.swift */; };
 		EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */; };
 		EADB1A7D1A43C74600F46668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADB1A7C1A43C74600F46668 /* Main.storyboard */; };
-		EAEB80951A68B3510056DBDB /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB80941A68B3510056DBDB /* PlayViewController.swift */; };
 		EAEB80971A68B38E0056DBDB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB80961A68B38E0056DBDB /* GameViewController.swift */; };
 		EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +123,7 @@
 		EA06890A1A34D53C006CD2E0 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraHubView.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA1AEEE81A71A3E900467179 /* EventDetailViewControllerEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewControllerEvents.swift; sourceTree = "<group>"; };
 		EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		EA1CF92F1A5F7E4300DF1777 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -132,8 +136,6 @@
 		EA1CF9401A5F7ECF00DF1777 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		EA1CF9461A5F90A500DF1777 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		EA23C14F1A68E17D0066D118 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		EA2AAD471A4F2D3600CCD01D /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
 		EA2C8D9D1A51157200995A93 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		EA2C8D9F1A511E2D00995A93 /* AboutCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCells.swift; sourceTree = "<group>"; };
@@ -158,8 +160,11 @@
 		EA41E7081A313F5800903926 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		EA41E72D1A3144B400903926 /* AF+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AF+Date+Extension.swift"; sourceTree = "<group>"; };
 		EA4294F41A3AF59B0056A3D7 /* Bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bugs; sourceTree = "<group>"; };
+		EA4407181A83411200DF5D6E /* UITextViewAutoHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewAutoHeight.swift; sourceTree = "<group>"; };
 		EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		EA51773F1A4FF31500124F61 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		EA5524141A7ACDE700380010 /* DropdownTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownTableView.swift; sourceTree = "<group>"; };
+		EA616DAA1A6DF2AF005F7EB8 /* GameWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWebViewController.swift; sourceTree = "<group>"; };
 		EA622B561A66580500926CE4 /* Kid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kid.swift; sourceTree = "<group>"; };
 		EA68B12A1A396E8A0084271D /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
 		EA68B12B1A396E8A0084271D /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
@@ -175,6 +180,7 @@
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
 		EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		EA882C1F1A48F37B0039BC6C /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
+		EA91BB131A75F4A50057D772 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerFunctions.swift; sourceTree = "<group>"; };
 		EAA6DA811A411CE90088B76E /* CountdownImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownImageView.swift; sourceTree = "<group>"; };
@@ -203,10 +209,10 @@
 		EAC85D8F19FA9598006840A0 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		EAC85D9119FA96E4006840A0 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EAC85D9319FA9DC8006840A0 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		EACF23FE1A7DB74E0076EBFD /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EAD6E7181A529C48001187E6 /* FundraiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundraiseViewController.swift; sourceTree = "<group>"; };
 		EADB1A7C1A43C74600F46668 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EAEB808E1A683B2F0056DBDB /* Data 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Data 2.xcdatamodel"; sourceTree = "<group>"; };
-		EAEB80941A68B3510056DBDB /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		EAEB80961A68B38E0056DBDB /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EAFB3B8A1A3FD8F100CD0F12 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EAFB3B8B1A3FD8F100CD0F12 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -273,8 +279,8 @@
 			children = (
 				EAC85D8719FA93D6006840A0 /* HomeViewController.swift */,
 				EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */,
-				EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */,
 				EAA6DA811A411CE90088B76E /* CountdownImageView.swift */,
+				EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */,
 				EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */,
 				EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */,
 			);
@@ -351,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				EAA7F8CD1A46347300F7FACC /* Announcement.swift */,
+				EACF23FE1A7DB74E0076EBFD /* Category.swift */,
 				EAC85D9119FA96E4006840A0 /* Event.swift */,
 				EA622B561A66580500926CE4 /* Kid.swift */,
 			);
@@ -405,6 +412,14 @@
 			name = Date;
 			sourceTree = "<group>";
 		};
+		EA91BB121A75F48C0057D772 /* Map Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EA91BB131A75F4A50057D772 /* MapViewController.swift */,
+			);
+			name = "Map Tab";
+			sourceTree = "<group>";
+		};
 		EABD13F91A533C1900A3C288 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,14 +459,14 @@
 				EA882C1E1A48F30C0039BC6C /* Cell Subclasses */,
 				EA882C1D1A48F2FD0039BC6C /* Object Subclasses */,
 				EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */,
-				EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */,
-				EA1CF9461A5F90A500DF1777 /* DataManager.swift */,
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
+				EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */,
+				EA91BB121A75F48C0057D772 /* Map Tab */,
 				EAEB80931A68B2BA0056DBDB /* Game Tab */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
 				EAC85D8919FA9432006840A0 /* Events Tab */,
-				EAD6E7171A529BDB001187E6 /* Fundraise Tab */,
 				EA6B0E1219FBE995006CC2F2 /* Kids Tab */,
+				EAD6E7171A529BDB001187E6 /* Fundraise Tab */,
 				EA61D0EB1A50E46B00565206 /* About Tab */,
 			);
 			path = DMatUF;
@@ -488,11 +503,13 @@
 		EAC85D8919FA9432006840A0 /* Events Tab */ = {
 			isa = PBXGroup;
 			children = (
+				EA5524141A7ACDE700380010 /* DropdownTableView.swift */,
 				EAC85D8A19FA9446006840A0 /* EventViewController.swift */,
 				EA2F1FA719FAC614000C5685 /* EventViewControllerCRUD.swift */,
 				EAA041DB1A43A2410028C062 /* EventViewControllerFunctions.swift */,
 				EA2F1FAA19FAC671000C5685 /* EventViewControllerFetch.swift */,
 				EAC85D8C19FA945C006840A0 /* EventDetailViewController.swift */,
+				EA1AEEE81A71A3E900467179 /* EventDetailViewControllerEvents.swift */,
 			);
 			name = "Events Tab";
 			sourceTree = "<group>";
@@ -506,6 +523,7 @@
 				EA882C231A48F4D10039BC6C /* Date */,
 				EA6917321A325FF40024E35C /* Theme.swift */,
 				EA6917341A32DBC50024E35C /* CAFunctions.swift */,
+				EA4407181A83411200DF5D6E /* UITextViewAutoHeight.swift */,
 				EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
@@ -524,8 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				EAEB80961A68B38E0056DBDB /* GameViewController.swift */,
-				EAEB80941A68B3510056DBDB /* PlayViewController.swift */,
-				EA23C14F1A68E17D0066D118 /* GameData.swift */,
+				EA616DAA1A6DF2AF005F7EB8 /* GameWebViewController.swift */,
 			);
 			name = "Game Tab";
 			sourceTree = "<group>";
@@ -653,17 +670,20 @@
 				EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */,
+				EA91BB141A75F4A50057D772 /* MapViewController.swift in Sources */,
+				EA1AEEE91A71A3E900467179 /* EventDetailViewControllerEvents.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
+				EA4407191A83411200DF5D6E /* UITextViewAutoHeight.swift in Sources */,
 				EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */,
 				EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */,
-				EA23C1501A68E17D0066D118 /* GameData.swift in Sources */,
 				EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */,
 				EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */,
 				EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */,
 				EAA7F8CE1A46347300F7FACC /* Announcement.swift in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
 				EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */,
+				EA5524151A7ACDE700380010 /* DropdownTableView.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
 				EA622B571A66580500926CE4 /* Kid.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
@@ -671,12 +691,11 @@
 				EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
-				EA1CF9471A5F90A500DF1777 /* DataManager.swift in Sources */,
 				EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */,
 				EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */,
 				EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */,
-				EAEB80951A68B3510056DBDB /* PlayViewController.swift in Sources */,
 				EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */,
+				EA616DAB1A6DF2AF005F7EB8 /* GameWebViewController.swift in Sources */,
 				EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */,
 				EAB757BA1A665ED700351F72 /* UIViewController+Kintera.swift in Sources */,
 				EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
@@ -684,6 +703,7 @@
 				EA5177401A4FF31500124F61 /* Reachability.swift in Sources */,
 				EA6917331A325FF40024E35C /* Theme.swift in Sources */,
 				EAB18CEE1A5E00130064BE45 /* BarButtonItems.swift in Sources */,
+				EACF23FF1A7DB74E0076EBFD /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

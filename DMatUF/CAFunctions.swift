@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 
+
+
+func printDocsDirectory() {
+    let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(documentsDirectory, error: nil)
+    
+    println("DOCUMENTS DIRECTORY: \(files?.count) Files")
+    for file in files as [String] {
+        println(file)
+    }
+}
+
+
 enum DeviceType {
     case iPhone4s, iPhone5, iPhone5s, iPhone6, iPhone6Plus
     case iPad, iPadMini, iPadRetina, iPadMiniRetina
@@ -40,9 +53,8 @@ extension UIDevice {
     }
 }
 
-class CAF: NSObject, UIAlertViewDelegate {
-    
-    class func openURL(arr: [String]) {
+extension UIApplication {
+    class func tryURL(arr: [String]) {
         let application: UIApplication = UIApplication.sharedApplication()
         for url in arr {
             if application.canOpenURL(NSURL(string: url)!) {
@@ -51,7 +63,10 @@ class CAF: NSObject, UIAlertViewDelegate {
             }
         }
     }
-    
+
+}
+
+extension UIView {
     class func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
@@ -60,21 +75,13 @@ class CAF: NSObject, UIAlertViewDelegate {
             ),
             dispatch_get_main_queue(), closure)
     }
-    
+}
+
+extension UIAlertView {
     class func errorMessage(title: String, message: String?) {
         let errorAlert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle: "Dismiss")
         
         errorAlert.show()
-    }
-    
-    class func printDocsDirectory() {
-        let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(documentsDirectory, error: nil)
-        
-        println("DOCUMENTS DIRECTORY: \(files?.count) Files")
-        for file in files as [String] {
-            println(file)
-        }
     }
 }
 
@@ -114,13 +121,18 @@ extension UIImage {
     }
     
     convenience init?(fileName: String, type: String) {
+        if fileName == "" {
+            self.init()
+            return nil
+        }
+        
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
     
 
-        let path = "\(documentsPath)\(fileName).\(type)"
+        let path = "\(documentsPath)/\(fileName).\(type)"
+        println(path)
         self.init(contentsOfFile: path)
     }
-
     
     func imageWithColor(tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
@@ -151,7 +163,7 @@ extension UIImage {
             let path = "\(documentsPath)/\(fileName).\(type)"
             UIImageJPEGRepresentation(self, 1.0).writeToFile(path, atomically: true)
         } else {
-            abort()
+
         }
     }
 }
@@ -160,5 +172,61 @@ extension Array {
     func randomItem() -> T {
         let index = Int(arc4random_uniform(UInt32(self.count)))
         return self[index]
+    }
+}
+
+extension UINavigationController {
+    func toggleNavBar() {
+        if navigationBar.hidden {
+            
+            navigationBar.alpha = 0
+            navigationBar.hidden = false
+            UIView.animateWithDuration(0.2) {
+                self.navigationBar.alpha = 1.0
+            }
+            
+        } else {
+            
+            UIView.animateWithDuration(0.2, animations: {
+                self.navigationBar.alpha = 0
+                }, completion: { complete in
+                    if complete {
+                        self.navigationBar.hidden = true
+                    }
+            })
+        }
+    }
+}
+
+extension UITabBarController {
+    func toggleTabBar() {
+        if tabBar.hidden {
+            
+            tabBar.alpha = 0
+            tabBar.hidden = false
+            UIView.animateWithDuration(0.2) {
+                self.tabBar.alpha = 1.0
+            }
+            
+        } else {
+            
+            UIView.animateWithDuration(0.2, animations: {
+                self.tabBar.alpha = 0
+            }, completion: { complete in
+                if complete {
+                    self.tabBar.hidden = true
+                }
+            })
+        }
+    }
+}
+
+extension UIViewController {
+    func toggleStatusBar() {
+        if prefersStatusBarHidden() {
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        } else {
+            UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        }
     }
 }

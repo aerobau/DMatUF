@@ -19,7 +19,7 @@ extension EventViewController {
     }
     
     func getString(obj: AnyObject?) -> String {
-        return obj as? String ?? ""
+        return (obj as? String) ?? ""
     }
     
     func getDate(obj: AnyObject?) -> NSDate {
@@ -27,6 +27,11 @@ extension EventViewController {
     }
     
     func dateLabelText(start: NSDate, end: NSDate) -> String {
+        
+        if start.timeIntervalSince1970 < NSDate().timeIntervalSince1970 && NSDate().timeIntervalSince1970 < end.timeIntervalSince1970 {
+            return "In Progress"
+        }
+        
         var str = start.toString(format: .Custom("h:mm a"), timeZone: .EST)
 
         if start.day() > end.day() {

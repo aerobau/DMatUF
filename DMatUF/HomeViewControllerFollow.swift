@@ -47,7 +47,7 @@ extension HomeViewController: UIActionSheetDelegate {
     func facebookButtonPressed() {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "facebook", value: nil)
         
-        CAF.openURL([
+        UIApplication.tryURL([
             "fb://profile/116374146706", // App
             "http://www.facebook.com/116374146706" // Website
             ])
@@ -56,7 +56,7 @@ extension HomeViewController: UIActionSheetDelegate {
     func instagramButtonPressed() {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "instagram", value: nil)
         
-        CAF.openURL([
+        UIApplication.tryURL([
             "instagram://user?username=DMatUF", // App
             "https://instagram.com/DMatUF" // Website
             ])
@@ -66,7 +66,7 @@ extension HomeViewController: UIActionSheetDelegate {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "twitter", value: nil)
         
         let handle: String = "floridadm"
-        CAF.openURL(["twitter://user?screen_name=\(handle)", // Twitter
+        UIApplication.tryURL(["twitter://user?screen_name=\(handle)", // Twitter
             "tweetbot:///user_profile/\(handle)", // TweetBot
             "echofon:///user_timeline?\(handle)", // Echofon
             "twit:///user?screen_name=\(handle)", // Twittelator Pro
@@ -82,7 +82,7 @@ extension HomeViewController: UIActionSheetDelegate {
     func youtubeButtonPressed() {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "youtube", value: nil)
         
-        CAF.openURL([
+        UIApplication.tryURL([
             "youtube://www.youtube.com/user/UFDanceMarathon", // App
             "https://www.youtube.com/user/UFDanceMarathon" // Website
             ])
@@ -91,7 +91,7 @@ extension HomeViewController: UIActionSheetDelegate {
     func websiteButtonPressed() {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "website", value: nil)
         
-        CAF.openURL(["http://www.floridadm.org"])
+        UIApplication.tryURL(["http://www.floridadm.org"])
     }
     
     

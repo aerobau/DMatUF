@@ -1,12 +1,13 @@
 Known Bugs:
 =========================================
 Login failing on certain wifi networks
-Kids scroll view doesn't start at the beginning
 
 Known Bug fixes
 =========================================
-Stop refresh control loading
+Reload tableview on fundraising refresh to update goal, raised, percent, and graphic
+reload dropdown menu frc to on refresh to only display categories with events
 
 To be done:
 =========================================
-Sponsers view
+Get description for each zone on map
+

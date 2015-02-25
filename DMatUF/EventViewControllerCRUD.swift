@@ -25,13 +25,57 @@ extension EventViewController {
         newEvent.startDate = getDate(eventDict["startDate"])
         newEvent.endDate = getDate(eventDict["endDate"])
         newEvent.imageName = getString(eventDict["imageName"])
+        newEvent.category = fetchOrCreateCategory(getString(eventDict["category"]))
         
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             self.saveImageForEvent(self.getString(eventDict["imageName"]), url: self.getString(eventDict["imageURL"]))
         }
     }
     
+    func fetchOrCreateCategory(name: String) -> Category {
+        if let category = fetchCategory(name) {
+            return category
+        } else {
+            if name != "" {
+                let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: managedObjectContext!) as Category
+                newCategory.name = name
+                
+                return newCategory
+            } else {
+                return fetchOrCreateCategory("Other")
+            }
+        }
+    }
+    
+    func fetchCategory(name: String) -> Category? {
+        
+        // Define fetch request/predicate
+        let fetchRequest = NSFetchRequest(entityName: "Category")
+        let predicate = NSPredicate(format: "name = %@", name)
+        
+        // Assign fetch request properties
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchBatchSize = 1
+        fetchRequest.fetchLimit = 1
+        
+        // Handle results
+        let fetchedResults = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
+        
+        if fetchedResults?.count != 0 {
+            
+            if let fetchedCategory: Category = fetchedResults![0] as? Category {
+                return fetchedCategory
+            }
+        }
+        return nil
+    }
+
+    
     func saveImageForEvent(name: String, url: String) {
+        
+        if name == "" {
+            return
+        }
         let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String).stringByAppendingString("\(name).png")
         
         if !NSFileManager.defaultManager().fileExistsAtPath(imagePath) {
@@ -50,22 +94,42 @@ extension EventViewController {
     // Read
     func getFetchedResultController() -> NSFetchedResultsController {
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultsController
     }
     
-    func eventsFetchRequest() -> NSFetchRequest {
+    func eventsFetchRequest(category: Category?) -> NSFetchRequest {
         
         var fetchRequest = NSFetchRequest(entityName: "Event")
-        let predicate = NSPredicate(format: "startDate >= %@", NSDate())
+        
+        if category != nil {
+            let predicate = NSPredicate(format: "startDate >= %@ && category = %@", NSDate(), category!)
+            fetchRequest.predicate = predicate
+        } else {
+            let predicate = NSPredicate(format: "startDate >= %@", NSDate())
+            fetchRequest.predicate = predicate
+        }
+        
         let sortDescriptor1 = NSSortDescriptor(key: "startDate", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "endDate", ascending: true)
-        fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
         fetchRequest.propertiesToFetch = ["title", "startDate", "endDate", "imageName"]
         return fetchRequest
+    }
+    
+    func fetchCategories() -> [Category] {
+        let fetchRequest = NSFetchRequest(entityName: "Category")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let predicate = NSPredicate(format: "events.@count != 0")
+        
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.fetchBatchSize = 1000
+        fetchRequest.fetchLimit = 1000
+
+        return managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as [Category]
     }
 
     func fetchEvent(eventID: Int) -> Event? {
@@ -102,7 +166,8 @@ extension EventViewController {
             event.startDate = getDate(eventDict["startDate"])
             event.endDate = getDate(eventDict["endDate"])
             event.imageName = getString(eventDict["imageName"])
-            
+            event.category = fetchOrCreateCategory(getString(eventDict["category"]))
+
             saveImageForEvent(getString(eventDict["imageName"]), url: getString(eventDict["imageURL"]))
         }
     }
@@ -114,8 +179,10 @@ extension EventViewController {
 
                 self.managedObjectContext?.save(nil)
                 self.fetchedResultsController.performFetch(nil)
-                
+                self.updateCategories()
+
                 dispatch_async(dispatch_get_main_queue()) {
+                    self.dropDownTableView.reloadData()
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                 }
@@ -125,6 +192,13 @@ extension EventViewController {
                 self.refreshControl?.endRefreshing()
                 return
             }
+        }
+    }
+    
+    func updateCategories() {
+        dropDownTableView.items = ["All"]
+        fetchCategories().map() {
+            self.dropDownTableView.items.append($0.name)
         }
     }
     

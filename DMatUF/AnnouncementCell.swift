@@ -11,8 +11,9 @@ import UIKit
 
 class AnnouncementCell: UITableViewCell {
     @IBOutlet weak var balloonImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var textView: UITextViewAutoHeight!
+
 
     let separator = UIView()
     
@@ -20,27 +21,21 @@ class AnnouncementCell: UITableViewCell {
         super.init(coder: aDecoder)
         
         contentView.addSubview(separator)
+        separator.backgroundColor = Color.secondary1
+
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        titleLabel.font = UIFont(name: Font.body1.fontName, size: 16.0)
         dateLabel.font = UIFont(name: Font.body2.fontName, size: 12.0)
-        
-        titleLabel.textColor = Color.primary2
+        textView.font = UIFont(name: Font.body1.fontName, size: 14.0)
+
+        textView.textColor = Color.primary2
         dateLabel.textColor = Color.secondary2
+                
+//        dateLabel.adjustsFontSizeToFitWidth = true
         
-        if UIDevice.version < 8.0 {
-            titleLabel.numberOfLines = 1
-            titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
-        } else {
-            titleLabel.numberOfLines = 0
-            titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        }
-        
-        dateLabel.adjustsFontSizeToFitWidth = true        
-        separator.backgroundColor = Color.secondary1
     }
     
     override func layoutSubviews() {

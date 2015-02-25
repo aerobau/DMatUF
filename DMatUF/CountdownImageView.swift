@@ -82,10 +82,11 @@ class CountdownImageView: UIImageView {
             let calendar = NSCalendar.currentCalendar()
             let flags = NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.HourCalendarUnit | NSCalendarUnit.MinuteCalendarUnit | NSCalendarUnit.SecondCalendarUnit
             let components = calendar.components(flags, fromDate: NSDate(), toDate: endDate, options: nil)
-            println("\(components.day):\(components.hour):\(components.minute):\(components.second)")
+
+            
+            
             let date = components.date ?? NSDate(timeIntervalSince1970: endDate.timeIntervalSinceNow).dateByAddingDays(-1).dateByAddingHours(1)
             
-            println(components.date)
             let dateString = date.toString(format: .Custom("DDD:HH:mm:ss"), timeZone: .UTC)
             
             let charArray = Array(dateString)

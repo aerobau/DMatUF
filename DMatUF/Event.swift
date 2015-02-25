@@ -18,11 +18,5 @@ class Event: NSManagedObject {
     @NSManaged var moreInfo: String
     @NSManaged var location: String
     @NSManaged var imageName: String
-
-//    dynamic var complete: Bool {
-//        if startDate.timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
-//            return false
-//        }
-//        return true
-//    }
+    @NSManaged var category: Category
 }

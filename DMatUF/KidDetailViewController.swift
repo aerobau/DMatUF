@@ -29,7 +29,6 @@ class KidDetailViewController: UIViewController {
         setInfo()
 
         view.backgroundColor = Color.tvcEven
-        navigationItem.leftBarButtonItem?.title = "Back"
 
         nameLabel.textColor = Color.primary2
         nameLabel.font = Font.header
@@ -69,7 +68,7 @@ class KidDetailViewController: UIViewController {
     }
     
     @IBAction func milestoneButtonPressed(sender: UIButton) {
-        CAF.openURL(["youtube://\(kid!.milestone!)",
+        UIApplication.tryURL(["youtube://\(kid!.milestone!)",
             "https://\(kid!.milestone!)"])
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -32,47 +32,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXU-KL-We8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-543"/>
+            <point key="canvasLocation" x="-1788" y="1117"/>
         </scene>
-        <!--Play View Controller-->
-        <scene sceneID="SY4-59-lYp">
-            <objects>
-                <viewController id="UHu-KT-E2E" customClass="PlayViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XOc-Qt-EOz"/>
-                        <viewControllerLayoutGuide type="bottom" id="xMP-S3-nfA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nw3-hF-gvD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNo-J3-2aN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sNo-J3-2aN" firstAttribute="leading" secondItem="nw3-hF-gvD" secondAttribute="leading" id="FA7-Tu-1As"/>
-                            <constraint firstItem="xMP-S3-nfA" firstAttribute="top" secondItem="sNo-J3-2aN" secondAttribute="bottom" id="ONQ-jI-opN"/>
-                            <constraint firstAttribute="trailing" secondItem="sNo-J3-2aN" secondAttribute="trailing" id="U5x-Uh-IOm"/>
-                            <constraint firstItem="sNo-J3-2aN" firstAttribute="top" secondItem="nw3-hF-gvD" secondAttribute="top" id="UPh-fQ-R3n"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="textLabel" destination="sNo-J3-2aN" id="4mR-3c-rbg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nM4-OM-ZSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2139" y="132"/>
-        </scene>
-        <!--Game View Controller-->
+        <!--Game Web View Controller-->
         <scene sceneID="kjp-ZY-f39">
             <objects>
-                <viewController id="TSc-AT-ezG" customClass="GameViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TSc-AT-ezG" customClass="GameWebViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KQR-bS-6oQ"/>
                         <viewControllerLayoutGuide type="bottom" id="IIh-sd-kHv"/>
@@ -81,57 +46,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjT-Q1-N8y">
-                                <rect key="frame" x="16" y="20" width="30" height="30"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="HwJ-83-fLY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCP-9g-t2d">
-                                <rect key="frame" x="16" y="71" width="75" height="30"/>
-                                <state key="normal" title="Categories">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="categoriesButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="kjx-Zc-OVp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh2-Yk-vcs">
-                                <rect key="frame" x="16" y="121" width="93" height="30"/>
-                                <state key="normal" title="Game Modes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="gameModesButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="Ar2-KX-zu0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lit-Bh-KA0">
-                                <rect key="frame" x="16" y="172" width="83" height="30"/>
-                                <state key="normal" title="How to Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="howToPlayButtonPressed:" destination="TSc-AT-ezG" eventType="touchUpInside" id="Jbv-yL-K8W"/>
-                                </connections>
-                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AM-U1-eDH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8AM-U1-eDH" firstAttribute="leading" secondItem="i10-3q-8Xj" secondAttribute="leading" id="B5p-uk-FE2"/>
+                            <constraint firstItem="8AM-U1-eDH" firstAttribute="top" secondItem="i10-3q-8Xj" secondAttribute="top" id="Scs-tZ-kfk"/>
+                            <constraint firstItem="IIh-sd-kHv" firstAttribute="top" secondItem="8AM-U1-eDH" secondAttribute="bottom" id="in7-O3-BYQ"/>
+                            <constraint firstAttribute="trailing" secondItem="8AM-U1-eDH" secondAttribute="trailing" id="mSM-Te-pZh"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="UHu-KT-E2E" kind="presentation" identifier="PlaySegue" modalTransitionStyle="crossDissolve" id="aBk-JO-PLq"/>
+                        <outlet property="webView" destination="8AM-U1-eDH" id="Nsw-k5-pDo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6do-7o-Bzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1498" y="132"/>
+            <point key="canvasLocation" x="-233" y="-1804"/>
         </scene>
-        <!--DM Game-->
+        <!--Game View Controller-->
         <scene sceneID="bXy-FY-x8s">
             <objects>
-                <viewController id="qUT-XQ-Vwc" sceneMemberID="viewController">
+                <viewController id="qUT-XQ-Vwc" customClass="GameViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LkK-Gv-ZRI"/>
                         <viewControllerLayoutGuide type="bottom" id="Dpj-bK-Bdt"/>
@@ -140,23 +79,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efz-U8-N0W">
-                                <rect key="frame" x="16" y="20" width="72" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8G-JP-lWU">
+                                <rect key="frame" x="16" y="72" width="72" height="30"/>
                                 <state key="normal" title="Play game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TSc-AT-ezG" kind="presentation" id="NbV-qB-jND"/>
+                                    <action selector="playButtonPressed:" destination="qUT-XQ-Vwc" eventType="touchUpInside" id="SQI-BS-dh9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="DM Game" id="Wgc-oh-RsM"/>
+                    <tabBarItem key="tabBarItem" title="" id="Wgc-oh-RsM"/>
+                    <navigationItem key="navigationItem" id="bgy-7s-bgp"/>
+                    <connections>
+                        <segue destination="TSc-AT-ezG" kind="presentation" identifier="GameSegue" id="F2i-RH-lH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYb-mN-Xr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868" y="132"/>
+            <point key="canvasLocation" x="-1008" y="-1804"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="fDN-JO-EN3">
+            <objects>
+                <navigationController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="63N-Jf-iqn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Game" image="TabGameIcon" id="QSc-lK-hrv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wWD-hP-8NE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qUT-XQ-Vwc" kind="relationship" relationship="rootViewController" id="CPh-4F-Upt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pB-rZ-Pzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1788" y="-1804"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Xu0-bN-oQV">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rWq-JP-GBu" customClass="MapViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7gT-pd-gnu"/>
+                        <viewControllerLayoutGuide type="bottom" id="EQw-J4-dgL"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="3" id="U3D-5N-Rh5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="rWq-JP-GBu" id="N4L-1f-a3D"/>
+                        </connections>
+                    </scrollView>
+                    <navigationItem key="navigationItem" title="Map" id="uJE-4b-WkM"/>
+                    <connections>
+                        <outlet property="scrollView" destination="U3D-5N-Rh5" id="5ty-OS-BoU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yz-Oe-ORf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1002" y="-2498"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="0Fr-Am-cvr">
+            <objects>
+                <navigationController id="hMa-vD-GlC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="TabMapIcon" id="XkX-UD-c4Z"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ih3-jA-z6v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rWq-JP-GBu" kind="relationship" relationship="rootViewController" id="BBy-RQ-pOw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YtZ-H9-s4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1788" y="-2498"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -170,9 +171,10 @@
                     </tabBar>
                     <connections>
                         <outlet property="delegate" destination="W28-zg-YXA" id="5JB-ec-h7c"/>
-                        <segue destination="qUT-XQ-Vwc" kind="relationship" relationship="viewControllers" id="RjN-cY-9dS"/>
                         <segue destination="baT-Nm-5ij" kind="relationship" relationship="viewControllers" id="CiF-f6-LKF"/>
                         <segue destination="Wbn-ml-ree" kind="relationship" relationship="viewControllers" id="zhM-y3-7rq"/>
+                        <segue destination="hMa-vD-GlC" kind="relationship" relationship="viewControllers" id="Sba-cB-WQw"/>
+                        <segue destination="63N-Jf-iqn" kind="relationship" relationship="viewControllers" id="iYr-Fp-hAO"/>
                         <segue destination="rcd-lD-cpE" kind="relationship" relationship="viewControllers" id="LBK-lE-HB3"/>
                         <segue destination="jwp-nU-o3f" kind="relationship" relationship="viewControllers" id="sDh-EC-kTw"/>
                         <segue destination="kg9-hF-dsk" kind="relationship" relationship="viewControllers" id="lSj-7d-epC"/>
@@ -180,7 +182,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="132"/>
+            <point key="canvasLocation" x="-2510" y="-1080"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="Pgz-UJ-ipd">
@@ -281,7 +283,7 @@
                             <segments>
                                 <segment title="FAQ"/>
                                 <segment title="Contact Us!"/>
-                                <segment title="Shands &amp; CMNH"/>
+                                <segment title="Shands"/>
                             </segments>
                             <connections>
                                 <action selector="segmentValueChanged:" destination="avb-xr-HPi" eventType="valueChanged" id="3DV-uW-pNq"/>
@@ -295,7 +297,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UST-fx-jpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-736" y="868"/>
+            <point key="canvasLocation" x="-1008" y="1848"/>
         </scene>
         <!--About-->
         <scene sceneID="GsS-8x-AeT">
@@ -312,7 +314,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30s-ko-WyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="868"/>
+            <point key="canvasLocation" x="-1788" y="1848"/>
         </scene>
         <!--Fundraise Now-->
         <scene sceneID="Cd1-lA-HwX">
@@ -344,7 +346,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fundraise Now" id="JZX-oB-WCK">
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="Yf7-9J-ygX" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
+                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="p7d-CU-a3O">
+                            <connections>
+                                <action selector="kinteraButtonPressed:" destination="pvj-06-eXF" id="Cqg-AR-91C"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="Rxg-Kn-RU0" id="08R-Zg-OI1"/>
@@ -353,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUl-YU-Zfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-1211"/>
+            <point key="canvasLocation" x="-1008" y="1117"/>
         </scene>
         <!--Home-->
         <scene sceneID="dC6-M2-rwl">
@@ -370,7 +376,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khT-IA-WaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="635" y="-675"/>
+            <point key="canvasLocation" x="-1788" y="-1080"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="CfQ-gA-6DU">
@@ -450,38 +456,39 @@ at the O’Connell Center at UF</string>
                                                         <constraint firstAttribute="width" constant="15" id="xe7-RQ-Ibb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-ge-Ojm">
-                                                    <rect key="frame" x="31" y="8" width="457" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="96" translatesAutoresizingMaskIntoConstraints="NO" id="Xf0-TP-Cm0">
-                                                    <rect key="frame" x="496" y="8" width="96" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="96" translatesAutoresizingMaskIntoConstraints="NO" id="Xf0-TP-Cm0">
+                                                    <rect key="frame" x="532" y="8" width="60" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="0zc-a4-bbh"/>
-                                                        <constraint firstAttribute="width" constant="96" id="TQ0-4C-h0b"/>
+                                                        <constraint firstAttribute="width" constant="60" id="TQ0-4C-h0b"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlj-Xp-f5z" customClass="UITextViewAutoHeight" customModule="DMatUF" customModuleProvider="target">
+                                                    <rect key="frame" x="31" y="4" width="501" height="32"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Xf0-TP-Cm0" firstAttribute="leading" secondItem="0HS-ge-Ojm" secondAttribute="trailing" constant="8" id="056-DD-YmE"/>
-                                                <constraint firstItem="0HS-ge-Ojm" firstAttribute="top" secondItem="a2e-g6-FRJ" secondAttribute="topMargin" id="3lG-BA-ZCF"/>
-                                                <constraint firstItem="0HS-ge-Ojm" firstAttribute="leading" secondItem="hvs-KL-T9S" secondAttribute="trailing" constant="8" id="4AJ-sh-9j1"/>
                                                 <constraint firstItem="hvs-KL-T9S" firstAttribute="leading" secondItem="a2e-g6-FRJ" secondAttribute="leadingMargin" id="66Z-Zj-bvj"/>
                                                 <constraint firstAttribute="centerY" secondItem="hvs-KL-T9S" secondAttribute="centerY" id="KXx-iG-OJh"/>
+                                                <constraint firstItem="dlj-Xp-f5z" firstAttribute="top" secondItem="a2e-g6-FRJ" secondAttribute="topMargin" constant="-4" id="OKj-jW-dla"/>
                                                 <constraint firstAttribute="centerY" secondItem="Xf0-TP-Cm0" secondAttribute="centerY" id="PcX-yZ-Kjn"/>
-                                                <constraint firstItem="0HS-ge-Ojm" firstAttribute="bottom" secondItem="a2e-g6-FRJ" secondAttribute="bottomMargin" id="c2X-vJ-177"/>
+                                                <constraint firstItem="Xf0-TP-Cm0" firstAttribute="leading" secondItem="dlj-Xp-f5z" secondAttribute="trailing" id="UxD-aN-Wff"/>
+                                                <constraint firstItem="dlj-Xp-f5z" firstAttribute="leading" secondItem="hvs-KL-T9S" secondAttribute="trailing" constant="8" id="YOz-z3-Ak4"/>
                                                 <constraint firstItem="Xf0-TP-Cm0" firstAttribute="trailing" secondItem="a2e-g6-FRJ" secondAttribute="trailingMargin" id="fcc-7S-zTt"/>
+                                                <constraint firstItem="dlj-Xp-f5z" firstAttribute="bottom" secondItem="a2e-g6-FRJ" secondAttribute="bottomMargin" constant="4" id="l3m-a3-ir6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="balloonImageView" destination="hvs-KL-T9S" id="CTL-Ly-TTh"/>
                                             <outlet property="dateLabel" destination="Xf0-TP-Cm0" id="heC-SX-xte"/>
-                                            <outlet property="titleLabel" destination="0HS-ge-Ojm" id="5bo-K3-Xli"/>
+                                            <outlet property="textView" destination="dlj-Xp-f5z" id="EGl-cH-VSF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -568,7 +575,7 @@ at the O’Connell Center at UF</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDq-N4-s9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="-658"/>
+            <point key="canvasLocation" x="-1008" y="-1080"/>
         </scene>
         <!--My Fundraising-->
         <scene sceneID="mSb-8W-dyt">
@@ -646,7 +653,7 @@ at the O’Connell Center at UF</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9T-56-20I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-1211"/>
+            <point key="canvasLocation" x="491" y="375"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="TJE-hW-zUU">
@@ -743,17 +750,43 @@ at the O’Connell Center at UF</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Zvo-6m-Hvx">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Donate" id="hM1-aH-aji" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vv3-sL-WND">
+                            <rect key="frame" x="155" y="9" width="290" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="All">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="sortButtonPressed:" destination="VaQ-tg-DLN" eventType="touchUpInside" id="wgH-GY-kqM"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="98e-Sb-3J7">
+                            <connections>
+                                <action selector="kinteraButtonPressed:" destination="VaQ-tg-DLN" id="6jQ-vr-Oye"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dropdownButton" destination="Vv3-sL-WND" id="OKZ-Xs-bLG"/>
+                        <outlet property="searchDisplayController" destination="Pbj-Dt-0pn" id="qut-Oa-jme"/>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="GUj-jN-WjV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvO-ac-BSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Pbj-Dt-0pn">
+                    <connections>
+                        <outlet property="delegate" destination="VaQ-tg-DLN" id="pNF-Nw-QTO"/>
+                        <outlet property="searchContentsController" destination="VaQ-tg-DLN" id="3gc-QS-F2I"/>
+                        <outlet property="searchResultsDataSource" destination="VaQ-tg-DLN" id="4d7-Pw-Xzx"/>
+                        <outlet property="searchResultsDelegate" destination="VaQ-tg-DLN" id="g1g-VH-3Ou"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1288" y="17"/>
+            <point key="canvasLocation" x="-1008" y="-356"/>
         </scene>
-        <!--Kids View Controller-->
+        <!--Meet the Kids!-->
         <scene sceneID="gBj-XC-g6L">
             <objects>
                 <collectionViewController id="Qdx-qd-rxg" customClass="KidsViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
@@ -814,8 +847,12 @@ at the O’Connell Center at UF</string>
                             <outlet property="delegate" destination="Qdx-qd-rxg" id="rLo-Ui-2JH"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="eVb-fP-prz">
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="TMj-cP-Uj0" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
+                    <navigationItem key="navigationItem" title="Meet the Kids!" id="eVb-fP-prz">
+                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="Mfy-11-HOg">
+                            <connections>
+                                <action selector="kinteraButtonPressed:" destination="Qdx-qd-rxg" id="cgl-Vq-IMV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="Oub-lh-KC3"/>
@@ -824,7 +861,7 @@ at the O’Connell Center at UF</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfM-Hu-5rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="683"/>
+            <point key="canvasLocation" x="-1008" y="375"/>
         </scene>
         <!--Meet the Kids-->
         <scene sceneID="ehc-ol-gds">
@@ -841,7 +878,7 @@ at the O’Connell Center at UF</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q20-xr-EY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="683"/>
+            <point key="canvasLocation" x="-1788" y="375"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="Afw-sf-qRi">
@@ -904,7 +941,7 @@ at the O’Connell Center at UF</string>
                     <navigationItem key="navigationItem" id="LIf-AW-cIv">
                         <barButtonItem key="rightBarButtonItem" title="Add Event" id="xWf-cI-k5U">
                             <connections>
-                                <action selector="addEvent:" destination="7UV-Yy-BPB" id="CFL-1Q-7Z9"/>
+                                <action selector="addEventButtonPressed:" destination="7UV-Yy-BPB" id="gfj-Rv-5Zr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -917,7 +954,7 @@ at the O’Connell Center at UF</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apK-Qo-fwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2131" y="0.0"/>
+            <point key="canvasLocation" x="-233" y="-356"/>
         </scene>
         <!--Kid Detail View Controller-->
         <scene sceneID="cri-PN-6dL">
@@ -1000,12 +1037,12 @@ at the O’Connell Center at UF</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAN-Hj-dIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2131" y="683"/>
+            <point key="canvasLocation" x="-233" y="375"/>
         </scene>
         <!--Events-->
         <scene sceneID="Bjv-DP-tre">
             <objects>
-                <navigationController id="Wbn-ml-ree" customClass="EventsNavigationController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Wbn-ml-ree" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="TabCalendarIcon" id="pkS-vS-ccT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aic-zq-Wc2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1017,7 +1054,7 @@ at the O’Connell Center at UF</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEU-r6-vDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="0.0"/>
+            <point key="canvasLocation" x="-1788" y="-356"/>
         </scene>
     </scenes>
     <resources>
@@ -1028,9 +1065,11 @@ at the O’Connell Center at UF</string>
         <image name="TabBalloonIcon" width="25" height="25"/>
         <image name="TabCalendarIcon" width="25" height="25"/>
         <image name="TabFundraiseIcon" width="25" height="25"/>
+        <image name="TabGameIcon" width="25" height="25"/>
+        <image name="TabMapIcon" width="25" height="25"/>
         <image name="TabStarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oub-lh-KC3"/>
+        <segue reference="MjB-mX-g7x"/>
     </inferredMetricsTieBreakers>
 </document>

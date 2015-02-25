@@ -7,13 +7,15 @@
 //
 import UIKit
 import CoreData
-import QuartzCore
 
 
-class EventViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class EventViewController: UITableViewController, NSFetchedResultsControllerDelegate, DropdownController {
+    
+    @IBOutlet weak var dropdownButton: UIButton!
+    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
-
+    var dropDownTableView = DropdownTableView(frame: CGRectZero, style: UITableViewStyle.Plain)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +36,17 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
         
         fetchJSON(nil)
-
+        
+        dropDownTableView.dropdownDelegate = self
+        dropdownButton.setTitleColor(Color.primary1, forState: .Normal)
+        
+        updateCategories()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        CAF.printDocsDirectory()
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
 
-        println(documentsPath)
-    }
+    
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UIDevice.version < 8.0 ? 64.0 : UITableViewAutomaticDimension
@@ -72,12 +74,12 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         cell.titleLabel.text = cellEvent.title
         cell.timeLabel.text =  dateLabelText(cellEvent.startDate, end: cellEvent.endDate)
         
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String).stringByAppendingString("/\(cellEvent.imageName).png")
-        
-        if let image = UIImage(contentsOfFile: imagePath) {
+        if let image = UIImage(fileName: cellEvent.imageName, type: "png") {
             cell.calendarImageView.image = image
             cell.dayLabel.text = nil
             cell.monthLabel.text = nil
+            println("Index \(indexPath.row) image name \(cellEvent.imageName)")
+
         } else {
             cell.calendarImageView.image = UIImage(named: "Calendar")
             cell.dayLabel.text = "\(cellEvent.startDate.day())"
@@ -85,13 +87,49 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         }
         return cell
     }
+
+    func dropdown(dropdown: DropdownTableView, didDismissWithIndexPath indexPath: NSIndexPath, andTitle title: String) {
+        dropdownButton.setTitle(title, forState: UIControlState.Normal)
+        
+        if indexPath.row == 0 {
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+
+        }
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(fetchCategory(title)), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.performFetch(nil)
+        tableView.reloadData()
+        println("DISMISS INDEX: \(indexPath.row), \(title)")
+
+    }
+
+    @IBAction func sortButtonPressed(sender: UIButton) {
+        if dropDownTableView.isOpened {
+            dropDownTableView.hide()
+        } else {
+
+            dropDownTableView.showInView(tableView.superview!, withFrame: CGRect(origin: CGPointZero, size: view.bounds.size))
+            dropDownTableView.contentInset.top = tableView.contentInset.top ?? 0
+        }
+    }
+    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+            performSegueWithIdentifier("FundSegue", sender: self)
+        } else {
+            loginAlert()
+        }
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "EventDetailSegue" {
             let destination = segue.destinationViewController as EventDetailViewController
             let indexPath = self.tableView?.indexPathForCell(sender as EventCell)
             
-            destination.event = indexPath != nil ? fetchedResultsController.objectAtIndexPath(indexPath!) as? Event : nil
+            destination.selectedEvent = indexPath != nil ? fetchedResultsController.objectAtIndexPath(indexPath!) as? Event : nil
+            destination.fetchedResultsController = fetchedResultsController
         }
     }
 }

@@ -21,7 +21,7 @@ class DonateBarButtonItem: UIBarButtonItem {
     func donateButtonPressed(sender: UIBarButtonItem) {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "donate", value: nil)
         
-        CAF.openURL(["http://floridadm.kintera.org/faf/search/searchParticipants.asp?ievent=1114670&lis=1&kntae1114670=15F87DA40F9142E489120152BF028EB2"])
+        UIApplication.tryURL(["http://floridadm.kintera.org/faf/search/searchParticipants.asp?ievent=1114670&lis=1&kntae1114670=15F87DA40F9142E489120152BF028EB2"])
     }
 }
 

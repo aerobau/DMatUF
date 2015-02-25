@@ -16,12 +16,13 @@ extension UIViewController: UIAlertViewDelegate  {
         static var kinteraButtonItem: UIBarButtonItem?
     }
     
-    func login(username: String, password: String) {
+    func login(username: String, password: String, success: () -> Void) {
         startLoading()
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "login", value: nil)
         
         let session = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://mickmaccallum.com/ian/kintera.php?username=\(username)&password=\(password)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) ?? NSURL()
+        
+        let url = NSURL(string: "http://dev.floridadm.org/app/kintera.php?username=\(username)&password=\(password)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) ?? NSURL()
         let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 8.0)
         
         Properties.task = session.dataTaskWithRequest(request) { [unowned self] data, response, error in
@@ -33,7 +34,7 @@ extension UIViewController: UIAlertViewDelegate  {
             if NSString(data: data, encoding: 8) as String == "Error" {
                 Properties.task?.cancel()
                 dispatch_async(dispatch_get_main_queue()) {
-                    CAF.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
+                    UIAlertView.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
                 }
             }
             
@@ -52,8 +53,7 @@ extension UIViewController: UIAlertViewDelegate  {
                         // Update Components
                         self.stopLoading()
                         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login success", value: nil)
-                        self.performSegueWithIdentifier("FundSegue", sender: self)
-                        
+                        success()
                     } else {
                         self.stopLoading()
                     }
@@ -62,7 +62,7 @@ extension UIViewController: UIAlertViewDelegate  {
                 }
                 
                 if error != nil {
-                    CAF.errorMessage("Error \(error.code)", message: "\(error.localizedDescription)")
+                    UIAlertView.errorMessage("Error \(error.code)", message: "\(error.localizedDescription)")
                 }
             }
         }
@@ -100,18 +100,21 @@ extension UIViewController: UIAlertViewDelegate  {
                     let loginTextField = alertController.textFields![0] as UITextField
                     let passwordTextField = alertController.textFields![1] as UITextField
                     
-                    self.login(loginTextField.text, password: passwordTextField.text)
+                    self.login(loginTextField.text, password: passwordTextField.text) {
+                        self.performSegueWithIdentifier("FundSegue", sender: self)
+                    }
                 }
+            
                 loginAction.enabled = false
                 
                 
                 // Forgot Button
                 let forgotPasswordAction = UIAlertAction(title: "Forgot Password", style: .Destructive) { (_) in
-                    CAF.openURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
+                    UIApplication.tryURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
                 }
                 
                 // Cancel Button
-                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { Void in
                 }
                 
                 // Configure TextFields
@@ -148,7 +151,7 @@ extension UIViewController: UIAlertViewDelegate  {
             
             
         } else {
-            CAF.errorMessage("Error", message: "Internet connection required!")
+            UIAlertView.errorMessage("Error", message: "Internet connection required!")
             
         }
         
@@ -157,16 +160,19 @@ extension UIViewController: UIAlertViewDelegate  {
     }
     
     public func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 0 {
-            println("cancel")
-        } else if buttonIndex == 1 {
-            self.login(alertView.textFieldAtIndex(0)!.text, password: alertView.textFieldAtIndex(1)!.text)
-        } else if buttonIndex == 2 {
-            CAF.openURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
+        if respondsToSelector("kinteraButtonPressed:") {
+            if buttonIndex == 0 {
+                println("cancel")
+            } else if buttonIndex == 1 {
+                self.login(alertView.textFieldAtIndex(0)!.text, password: alertView.textFieldAtIndex(1)!.text) {
+                    self.performSegueWithIdentifier("FundSegue", sender: self)
+                }
+            } else if buttonIndex == 2 {
+                UIApplication.tryURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
+            }
+            
+            alertView.dismissWithClickedButtonIndex(buttonIndex, animated: true)
         }
-        
-        alertView.dismissWithClickedButtonIndex(buttonIndex, animated: true)
-        
     }
     
     func startLoading() {

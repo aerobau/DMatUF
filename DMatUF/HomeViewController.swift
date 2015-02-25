@@ -18,6 +18,12 @@ class HomeViewController: UIViewController  {
     @IBOutlet weak var bottomBar: UIView!
     @IBOutlet weak var welcomeLabelHeight: NSLayoutConstraint!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -35,26 +41,13 @@ class HomeViewController: UIViewController  {
         
         // Google Analytics
         GA.sendScreenView(name: "HomeView")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        countdownImageView.timer?.invalidate()
-        countdownImageView.timer = nil
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
         
-        
+        countdownImageView.updateLabelFrames()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         countdownImageView.layoutSubviews()
-
-
     }
     
     @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {

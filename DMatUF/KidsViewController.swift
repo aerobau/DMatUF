@@ -42,6 +42,8 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
         GA.sendScreenView(name: "KidsView")
 
         view.backgroundColor = Color.tvcEven
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
     }
 
     
@@ -117,11 +119,23 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if (fetchedResultsController.objectAtIndexPath(indexPath) as Kid).story != "" {
+        let kid = fetchedResultsController.objectAtIndexPath(indexPath) as Kid
+        if kid.story != "" || kid.milestone != nil {
             selectedKid = fetchedResultsController.objectAtIndexPath(indexPath) as? Kid
             performSegueWithIdentifier("KidDetailSegue", sender: self)
         } else {
-            CAF.errorMessage("Sorry!", message: "No story available!")
+            UIAlertView.errorMessage("Sorry!", message: "No story available!")
+        }
+    }
+    
+    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+            performSegueWithIdentifier("FundSegue", sender: self)
+        } else {
+            loginAlert()
         }
     }
     
