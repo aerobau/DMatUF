@@ -73,6 +73,31 @@ class CountdownImageView: UIImageView {
         addSubview(label13)
         addSubview(label14)
         addSubview(label15)
+        
+        let labels = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15]
+        
+        label4.text = ":"
+        label7.text = ":"
+        label10.text = ":"
+        label13.text = "D\nM"
+        label14.text = "a\nt"
+        label15.text = "U\nF"
+        
+        for label in labels {
+            label.font = UIFont(name: Font.header.fontName, size: 48.0)
+            label.textColor = UIColor.blackColor()
+            label.textAlignment = NSTextAlignment.Center
+            label.baselineAdjustment = UIBaselineAdjustment.None
+            label.adjustsFontSizeToFitWidth = true
+            label.numberOfLines = 0
+        }
+        
+        label4.textColor = Color.primary2
+        label7.textColor = Color.primary2
+        label10.textColor = Color.primary2
+        label13.textColor = Color.primary2
+        label15.textColor = Color.primary2
+
     }
     
     func updateLabelText() {
@@ -139,29 +164,5 @@ class CountdownImageView: UIImageView {
         setLabel(&label14, rect: CGRectMake(frame.width * (246.0 / 320.0), frame.height * (139.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (25.0 / 151.0)), rotation: 1.0)
         
         setLabel(&label15, rect: CGRectMake(frame.width * (262.0 / 320.0), frame.height * (137.0 / 302.0) , frame.width * (16.0 / 320.0), frame.height * (25.0 / 151.0)), rotation: 1.0)
-        
-        let labels = [label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15]
-        
-        label4.text = ":"
-        label7.text = ":"
-        label10.text = ":"
-        label13.text = "D\nM"
-        label14.text = "a\nt"
-        label15.text = "U\nF"
-        
-        for label in labels {
-            label.font = UIFont(name: Font.header.fontName, size: 48.0)
-            label.textColor = UIColor.blackColor()
-            label.textAlignment = NSTextAlignment.Center
-            label.baselineAdjustment = UIBaselineAdjustment.None
-            label.adjustsFontSizeToFitWidth = true
-            label.numberOfLines = 0
-        }
-        
-        label4.textColor = Color.primary2
-        label7.textColor = Color.primary2
-        label10.textColor = Color.primary2
-        label13.textColor = Color.primary2
-        label15.textColor = Color.primary2
     }
 }

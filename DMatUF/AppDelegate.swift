@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Theme()
         
         // Push notification
-        Parse.setApplicationId("D5WDItwsDdOXIfnwmr9SEfqhO9aC67fHSRYfusRA", clientKey: "XkdWyiBIr4QQFApX6dYrkxd8KQBvFV6jw9H3GL1u")
         
         if UIDevice.version < 8.0 {
             
@@ -43,12 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         println("\(deviceToken)")
-        
-        let currentInstallation = PFInstallation.currentInstallation()
-        currentInstallation.setDeviceTokenFromData(deviceToken)
-        currentInstallation.saveInBackgroundWithBlock { (success, error) -> Void in
-            println(error)
-        }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

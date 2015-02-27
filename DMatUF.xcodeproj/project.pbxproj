@@ -11,11 +11,6 @@
 		EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
 		EA1AEEE91A71A3E900467179 /* EventDetailViewControllerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AEEE81A71A3E900467179 /* EventDetailViewControllerEvents.swift */; };
-		EA1CF9331A5F7E4300DF1777 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */; };
-		EA1CF9341A5F7E4300DF1777 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF92F1A5F7E4300DF1777 /* Parse.framework */; };
-		EA1CF9351A5F7E4300DF1777 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */; };
-		EA1CF9361A5F7E4300DF1777 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9311A5F7E4300DF1777 /* ParseFacebookUtils.framework */; };
-		EA1CF9371A5F7E4300DF1777 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9321A5F7E4300DF1777 /* ParseUI.framework */; };
 		EA1CF9391A5F7E8F00DF1777 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9381A5F7E8F00DF1777 /* AudioToolbox.framework */; };
 		EA1CF93B1A5F7E9F00DF1777 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93A1A5F7E9F00DF1777 /* CFNetwork.framework */; };
 		EA1CF93D1A5F7EAA00DF1777 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */; };
@@ -124,11 +119,6 @@
 		EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraHubView.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EA1AEEE81A71A3E900467179 /* EventDetailViewControllerEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewControllerEvents.swift; sourceTree = "<group>"; };
-		EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		EA1CF92F1A5F7E4300DF1777 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		EA1CF9311A5F7E4300DF1777 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		EA1CF9321A5F7E4300DF1777 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		EA1CF9381A5F7E8F00DF1777 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EA1CF93A1A5F7E9F00DF1777 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -230,13 +220,10 @@
 				EA1CF93D1A5F7EAA00DF1777 /* CoreLocation.framework in Frameworks */,
 				EA1CF93B1A5F7E9F00DF1777 /* CFNetwork.framework in Frameworks */,
 				EA1CF9391A5F7E8F00DF1777 /* AudioToolbox.framework in Frameworks */,
-				EA1CF9371A5F7E4300DF1777 /* ParseUI.framework in Frameworks */,
 				EA9BA3BD1A5328A60088FEAB /* CoreImage.framework in Frameworks */,
 				EA4E7BDB1A4D817800E3EAD2 /* CoreFoundation.framework in Frameworks */,
 				EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */,
 				EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */,
-				EA1CF9341A5F7E4300DF1777 /* Parse.framework in Frameworks */,
-				EA1CF9361A5F7E4300DF1777 /* ParseFacebookUtils.framework in Frameworks */,
 				EA318D8B1A2ED95800F89F3B /* SystemConfiguration.framework in Frameworks */,
 				EA318D891A2ED7A800F89F3B /* libz.dylib in Frameworks */,
 				EAC85D8619FA92E3006840A0 /* UIKit.framework in Frameworks */,
@@ -246,8 +233,6 @@
 				EAC85D8119FA92D3006840A0 /* EventKit.framework in Frameworks */,
 				EAC85D8219FA92D3006840A0 /* EventKitUI.framework in Frameworks */,
 				EAC85D7E19FA92CC006840A0 /* CoreData.framework in Frameworks */,
-				EA1CF9331A5F7E4300DF1777 /* Bolts.framework in Frameworks */,
-				EA1CF9351A5F7E4300DF1777 /* ParseCrashReporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,19 +246,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EA1CF92D1A5F7E4300DF1777 /* Parse */ = {
-			isa = PBXGroup;
-			children = (
-				EA1CF92E1A5F7E4300DF1777 /* Bolts.framework */,
-				EA1CF92F1A5F7E4300DF1777 /* Parse.framework */,
-				EA1CF9301A5F7E4300DF1777 /* ParseCrashReporting.framework */,
-				EA1CF9311A5F7E4300DF1777 /* ParseFacebookUtils.framework */,
-				EA1CF9321A5F7E4300DF1777 /* ParseUI.framework */,
-			);
-			name = Parse;
-			path = "parse-library-1";
-			sourceTree = "<group>";
-		};
 		EA2F1FA919FAC624000C5685 /* Home Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +278,6 @@
 				EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */,
 				EA1CF93A1A5F7E9F00DF1777 /* CFNetwork.framework */,
 				EA1CF9381A5F7E8F00DF1777 /* AudioToolbox.framework */,
-				EA1CF92D1A5F7E4300DF1777 /* Parse */,
 				EA9BA3BC1A5328A60088FEAB /* CoreImage.framework */,
 				EA4E7BDA1A4D817800E3EAD2 /* CoreFoundation.framework */,
 				EA318D881A2ED7A800F89F3B /* libz.dylib */,
@@ -784,10 +755,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library-1",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -868,10 +836,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library-1",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DMatUF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

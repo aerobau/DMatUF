@@ -74,12 +74,7 @@ class KinteraViewController: UIViewController {
 
         
         table.separatorInset = UIEdgeInsets(top: 0, left: thermometer.frame.width / 2 + 20.0, bottom: 0, right: 20.0)
-
-        var indexPaths: [NSIndexPath]?
-        for i in 0...4 {
-            indexPaths?.append(NSIndexPath(forRow: i, inSection: 0))
-        }
-        table.reloadRowsAtIndexPaths(indexPaths ?? [], withRowAnimation: UITableViewRowAnimation.Fade)
+        table.reloadData()
 
     }
     func refreshControlAction() {
@@ -107,9 +102,7 @@ class KinteraViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         if let username = defaults.stringForKey("username") {
             if let password = defaults.stringForKey("password") {
-                login(username, password: password) {
-                    
-                }
+                updateKintera(username, password: password)
             }
         } else {
             loginAlert()
@@ -125,5 +118,51 @@ class KinteraViewController: UIViewController {
         println("Stop loading")
         updateFundraisingGraphics()
         refreshControl.endRefreshing()
+    }
+    
+    func updateKintera(username: String, password: String) {
+        startLoading()
+        GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "update", value: nil)
+        
+        let session = NSURLSession.sharedSession()
+        
+        let url = NSURL(string: "http://dev.floridadm.org/app/kintera.php?username=\(username)&password=\(password)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!) ?? NSURL()
+        let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 8.0)
+        
+        Properties.task = session.dataTaskWithRequest(request) { [unowned self] data, response, error in
+
+            if NSString(data: data, encoding: 8) as String == "Error" {
+                Properties.task?.cancel()
+                dispatch_async(dispatch_get_main_queue()) {
+                    UIAlertView.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let dataUnwrapped = data {
+                    var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataUnwrapped, options: .allZeros, error: nil)
+                    
+                    if let result = rawJSON as? [String: AnyObject] {
+                        println(result)
+                        // Save Login info to NSUserDefaults
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setObject(result, forKey: "userInfo")
+                        
+                        // Update Components
+                        self.stopLoading()
+                        GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOGIN, label: "login success", value: nil)
+                    } else {
+                        self.stopLoading()
+                    }
+                } else {
+                    self.stopLoading()
+                }
+                
+                if error != nil {
+                    UIAlertView.errorMessage("Error \(error.code)", message: "\(error.localizedDescription)")
+                }
+            }
+        }
+        Properties.task?.resume()
     }
 }

@@ -81,6 +81,12 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
+    override func reloadData() {
+        super.reloadData()
+        
+        dropdownDelegate?.dropdown(self, didDismissWithIndexPath: NSIndexPath(forRow: 0, inSection: 0), andTitle: items[0])
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         dropdownDelegate?.dropdown(self, didDismissWithIndexPath: indexPath, andTitle: items[indexPath.row])

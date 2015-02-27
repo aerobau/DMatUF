@@ -13,11 +13,7 @@ import QuartzCore
 
 class CAThermometer: UIView {
     // Base Layer
-    private var bgLayer = CALayer()
-    private var fillLayer = CALayer()
-    var fillMask = CALayer()
-    private var outlineLayer = CALayer()
-    private var borderLayer = CALayer()
+
     
     var goal: Int = 100
     var value: Int = 0
@@ -30,14 +26,23 @@ class CAThermometer: UIView {
         super.init(coder: aDecoder)
         backgroundColor = nil
         
-        layer.addSublayer(borderLayer)
-        layer.addSublayer(outlineLayer)
-        layer.addSublayer(bgLayer)
-        layer.addSublayer(fillLayer)
+
 
     }
 
     func setup() {
+        layer.sublayers = []
+        
+        let bgLayer = CALayer()
+        let fillLayer = CALayer()
+        let fillMask = CALayer()
+        let outlineLayer = CALayer()
+        let borderLayer = CALayer()
+        
+        layer.addSublayer(borderLayer)
+        layer.addSublayer(outlineLayer)
+        layer.addSublayer(bgLayer)
+        layer.addSublayer(fillLayer)
         
         // Draw Filling Layer
         let percent = CGFloat(CGFloat(value) / CGFloat(goal))

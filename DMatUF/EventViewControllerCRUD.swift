@@ -16,20 +16,25 @@ extension EventViewController {
     // Create
     func createEvent(eventDict: Dictionary<String, AnyObject>) {
 
-        var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
-        let id = getInt(eventDict["id"])
-        newEvent.id = id
-        newEvent.title = getString(eventDict["title"])
-        newEvent.location = getString(eventDict["location"])
-        newEvent.moreInfo = getString(eventDict["description"])
-        newEvent.startDate = getDate(eventDict["startDate"])
-        newEvent.endDate = getDate(eventDict["endDate"])
-        newEvent.imageName = getString(eventDict["imageName"])
-        newEvent.category = fetchOrCreateCategory(getString(eventDict["category"]))
-        
-        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            self.saveImageForEvent(self.getString(eventDict["imageName"]), url: self.getString(eventDict["imageURL"]))
+        if getDate(eventDict["endDate"]).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
+            
+            var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
+            let id = getInt(eventDict["id"])
+            newEvent.id = id
+            newEvent.title = getString(eventDict["title"])
+            newEvent.location = getString(eventDict["location"])
+            newEvent.moreInfo = getString(eventDict["description"])
+            newEvent.startDate = getDate(eventDict["startDate"])
+            newEvent.endDate = getDate(eventDict["endDate"])
+            newEvent.imageName = getString(eventDict["imageName"])
+            newEvent.category = fetchOrCreateCategory(getString(eventDict["category"]))
+            
+            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                self.saveImageForEvent(self.getString(eventDict["imageName"]), url: self.getString(eventDict["imageURL"]))
+            }
+            
         }
+
     }
     
     func fetchOrCreateCategory(name: String) -> Category {
@@ -179,12 +184,14 @@ extension EventViewController {
 
                 self.managedObjectContext?.save(nil)
                 self.fetchedResultsController.performFetch(nil)
+                self.deleteOldEvents()
                 self.updateCategories()
 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.dropDownTableView.reloadData()
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
+                    self.dropdownButton.enabled = true
                 }
             }
         } else {
@@ -207,5 +214,26 @@ extension EventViewController {
         if let event = fetchEvent(eventID) {
             managedObjectContext?.deleteObject(event)
         }
+    }
+    
+    func deleteOldEvents() {
+        var fetchRequest = NSFetchRequest(entityName: "Event")
+        
+        let predicate = NSPredicate(format: "endDate <= %@", NSDate())
+        fetchRequest.predicate = predicate
+
+        let sortDescriptor1 = NSSortDescriptor(key: "startDate", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "endDate", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+        fetchRequest.fetchBatchSize = 1000
+        fetchRequest.fetchLimit = 1000
+        
+        if let oldEvents = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as? [Event] {
+            for event in oldEvents {
+                managedObjectContext?.deleteObject(event)
+            }
+        }
+
+        
     }
 }

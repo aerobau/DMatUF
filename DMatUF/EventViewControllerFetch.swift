@@ -13,6 +13,7 @@ import CoreData
 extension EventViewController {
     
     func fetchJSON(sender: AnyObject?) {
+        dropdownButton.enabled = false
         
         let session = NSURLSession.sharedSession()
         let url: NSURL! = NSURL(string: "http://dev.floridadm.org/app/events.php")

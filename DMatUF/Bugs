@@ -1,11 +1,8 @@
 Known Bugs:
 =========================================
-Login failing on certain wifi networks
 
 Known Bug fixes
 =========================================
-Reload tableview on fundraising refresh to update goal, raised, percent, and graphic
-reload dropdown menu frc to on refresh to only display categories with events
 
 To be done:
 =========================================
