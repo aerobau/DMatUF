@@ -131,6 +131,21 @@ class CountdownImageView: UIImageView {
             label12.text = "\(charArray[11])"
         } else {
             println("DM Started")
+            label1.text = "T"
+            label2.text = "H"
+            label3.text = "A"
+            label4.text = "N"
+            label5.text = "K"
+            label6.text = "Y"
+            label7.text = "O"
+            label8.text = "U"
+            label9.text = "D"
+            label10.text = "M"
+            label11.text = "A"
+            label12.text = "T"
+            label13.text = "U"
+            label14.text = "F"
+            label15.text = "!"
         }
     }
     

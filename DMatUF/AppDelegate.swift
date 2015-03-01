@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Other Variables
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {        
+        PushNotificationManager.sharedInstance.launchApplication(application)
 
         window?.backgroundColor = UIColor.whiteColor()
         
@@ -24,41 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.LOADED, label: "App_Launch", value: nil)
 
         // Implement Theme
-        Theme()
-        
-        // Push notification
-        
-        if UIDevice.version < 8.0 {
-            
-        } else {
-            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
-            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-            UIApplication.sharedApplication().registerForRemoteNotifications()
+        Theme()        
 
-        }
         return true
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("\(deviceToken)")
-    }
-    
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
-    }
-    
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        println(userInfo)
-    }
-    
-    
-    
-    
-    func applicationDidBecomeActive(application: UIApplication) {
-    }
-    
-    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+//        if x == NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as NSString {
+//            
+//        }
+        
+        completionHandler(UIBackgroundFetchResult.NoData)
     }
     
     func applicationWillResignActive(application: UIApplication) {

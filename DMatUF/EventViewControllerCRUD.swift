@@ -192,6 +192,8 @@ extension EventViewController {
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.dropdownButton.enabled = true
+                    self.dropdownButton.userInteractionEnabled = true
+                    self.dropdownButton.alpha = 1.0
                 }
             }
         } else {

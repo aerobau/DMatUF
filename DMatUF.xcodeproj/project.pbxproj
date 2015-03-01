@@ -16,7 +16,6 @@
 		EA1CF93D1A5F7EAA00DF1777 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */; };
 		EA1CF93F1A5F7EC300DF1777 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF93E1A5F7EC300DF1777 /* MobileCoreServices.framework */; };
 		EA1CF9411A5F7ECF00DF1777 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9401A5F7ECF00DF1777 /* Security.framework */; };
-		EA1CF9431A5F7ED700DF1777 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */; };
 		EA1CF9451A5F7EEE00DF1777 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */; };
 		EA2AAD481A4F2D3600CCD01D /* Kids.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2AAD471A4F2D3600CCD01D /* Kids.plist */; };
 		EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2C8D9D1A51157200995A93 /* AboutViewController.swift */; };
@@ -45,6 +44,8 @@
 		EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6917341A32DBC50024E35C /* CAFunctions.swift */; };
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
+		EA6B1DBC1AA0EBF000778F77 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */; };
+		EA6B1DBF1AA0EC0500778F77 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B1DBE1AA0EC0500778F77 /* CloudKit.framework */; };
 		EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */; };
 		EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */; };
 		EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA882C1B1A48F2D80039BC6C /* AnnouncementCell.swift */; };
@@ -124,7 +125,6 @@
 		EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EA1CF93E1A5F7EC300DF1777 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EA1CF9401A5F7ECF00DF1777 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EA2AAD471A4F2D3600CCD01D /* Kids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Kids.plist; sourceTree = "<group>"; };
 		EA2C8D9D1A51157200995A93 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +165,9 @@
 		EA6917341A32DBC50024E35C /* CAFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAFunctions.swift; sourceTree = "<group>"; };
 		EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
+		EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		EA6B1DBD1AA0EBFD00778F77 /* DMatUF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DMatUF.entitlements; sourceTree = "<group>"; };
+		EA6B1DBE1AA0EC0500778F77 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraViewController.swift; sourceTree = "<group>"; };
 		EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EA7D02BA19FAC28F005406E4 /* Sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sandbox.playground; sourceTree = "<group>"; };
@@ -213,8 +216,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6B1DBF1AA0EC0500778F77 /* CloudKit.framework in Frameworks */,
 				EA1CF9451A5F7EEE00DF1777 /* libsqlite3.dylib in Frameworks */,
-				EA1CF9431A5F7ED700DF1777 /* StoreKit.framework in Frameworks */,
 				EA1CF9411A5F7ECF00DF1777 /* Security.framework in Frameworks */,
 				EA1CF93F1A5F7EC300DF1777 /* MobileCoreServices.framework in Frameworks */,
 				EA1CF93D1A5F7EAA00DF1777 /* CoreLocation.framework in Frameworks */,
@@ -271,8 +274,8 @@
 		EA41E7071A313F5800903926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA6B1DBE1AA0EC0500778F77 /* CloudKit.framework */,
 				EA1CF9441A5F7EEE00DF1777 /* libsqlite3.dylib */,
-				EA1CF9421A5F7ED700DF1777 /* StoreKit.framework */,
 				EA1CF9401A5F7ECF00DF1777 /* Security.framework */,
 				EA1CF93E1A5F7EC300DF1777 /* MobileCoreServices.framework */,
 				EA1CF93C1A5F7EAA00DF1777 /* CoreLocation.framework */,
@@ -421,6 +424,8 @@
 		EAC85D5819FA92BC006840A0 /* DMatUF */ = {
 			isa = PBXGroup;
 			children = (
+				EA6B1DBD1AA0EBFD00778F77 /* DMatUF.entitlements */,
+				EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */,
 				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 				EAC85D9519FAA766006840A0 /* Extensions */,
 				EAC85D6419FA92BC006840A0 /* Images.xcassets */,
@@ -574,6 +579,12 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					EAC85D6C19FA92BC006840A0 = {
@@ -634,6 +645,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6B1DBC1AA0EBF000778F77 /* PushNotificationManager.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */,
@@ -752,6 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DMatUF/DMatUF.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -833,8 +846,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = DMatUF/DMatUF.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DMatUF/Info.plist;

@@ -28,22 +28,22 @@ class MapView: UIImageView {
     }
     
     func setup(gesture: UITapGestureRecognizer?) {
-        let button1 = AlertButton(title: "Study Room", message: "", frame: CGRect(x: 85, y: 25, width: 90, height: 50), rotation: 0)
-        let button2 = AlertButton(title: "Hobby Corner", message: "", frame: CGRect(x: 108, y: 86, width: 43, height: 20), rotation: 0)
-        let button3 = AlertButton(title: "Jail Break", message: "", frame: CGRect(x: 154, y: 86, width: 30, height: 20), rotation: 0)
-        let button4 = AlertButton(title: "Visitor Corner", message: "", frame: CGRect(x: 186, y: 86, width: 40, height: 20), rotation: 0)
-        let button5 = AlertButton(title: "Silent Auction", message: "", frame: CGRect(x: 224, y: 105, width: 22, height: 20), rotation: 0)
-        let button6 = AlertButton(title: "Tech Booth", message: "", frame: CGRect(x: 224, y: 126, width: 22, height: 30), rotation: 0)
-        let button7 = AlertButton(title: "Visitor Entrance", message: "", frame: CGRect(x: 255, y: 34, width: 16, height: 50), rotation: 40)
-        let button8 = AlertButton(title: "Main Stage", message: "", frame: CGRect(x: 88, y: 113, width: 22, height: 56), rotation: 0)
-        let button9 = AlertButton(title: "Hospitality Corner", message: "", frame: CGRect(x: 91, y: 177, width: 23, height: 10), rotation: 40)
-        let button10 = AlertButton(title: "Photo Booth", message: "", frame: CGRect(x: 119, y: 178, width: 18, height: 13), rotation: 0)
-        let button11 = AlertButton(title: "Side Stage", message: "", frame: CGRect(x: 140, y: 178, width: 57, height: 13), rotation: 0)
-        let button12 = AlertButton(title: "Basket Ball Hoops", message: "", frame: CGRect(x: 200, y: 178, width: 18, height: 13), rotation: 0)
-        let button13 = AlertButton(title: "Meals", message: "", frame: CGRect(x: 67, y: 191, width: 13, height: 43), rotation: 40)
-        let button14 = AlertButton(title: "Med Room", message: "", frame: CGRect(x: 77, y: 221, width: 16, height: 12), rotation: 40)
-        let button15 = AlertButton(title: "Men's Locker Room", message: "", frame: CGRect(x: 98, y: 207, width: 22, height: 28), rotation: 0)
-        let button16 = AlertButton(title: "Women's Locker Room", message: "", frame: CGRect(x: 208, y: 208, width: 29, height: 26), rotation: 0)
+        let button1 = AlertButton(title: "Study Room", message: "Stay on top of your school work in the Study Room, sponsored by Study Edge!", frame: CGRect(x: 85, y: 25, width: 90, height: 50), rotation: 0)
+        let button2 = AlertButton(title: "Hobby Corner", message: "This is where you'll find all the magazines, arts and crafts, computers, and even video games to help pass the time at the event and keep you busy!", frame: CGRect(x: 108, y: 86, width: 43, height: 20), rotation: 0)
+        let button3 = AlertButton(title: "Jail Break", message: "Volunteers have been put in DM Jail! They set a bail and can't get out until they have raised their bail.", frame: CGRect(x: 154, y: 86, width: 30, height: 20), rotation: 0)
+        let button4 = AlertButton(title: "Visitor Corner", message: "An area for visitors to see Dancers and volunteers.", frame: CGRect(x: 186, y: 86, width: 40, height: 20), rotation: 0)
+        let button5 = AlertButton(title: "Silent Auction", message: "Check out the items in the silent auction, all proceeds For The Kids.", frame: CGRect(x: 224, y: 105, width: 22, height: 20), rotation: 0)
+        let button6 = AlertButton(title: "Tech Booth", message: "Find the Technology Team here operating all of the music, videos, DM Live Feed and more!", frame: CGRect(x: 224, y: 126, width: 22, height: 30), rotation: 0)
+        let button7 = AlertButton(title: "Visitor Entrance", message: "All visitors must enter at Gate 1. In this area, you will also find the Marketing Table, Recruitment Team giving tours and the Community Events team.", frame: CGRect(x: 255, y: 34, width: 16, height: 50), rotation: 40)
+        let button8 = AlertButton(title: "Main Stage", message: "Learn the Linedance, hear Miracle Stories and see many other incredible performances on the Main Stage.", frame: CGRect(x: 88, y: 113, width: 22, height: 56), rotation: 0)
+        let button9 = AlertButton(title: "Hospitality Corner", message: "If you're hungry, thirsty, or just want a snack, here is where you'll be able to fill yourself with all the freshly made and donated food throughout the event.", frame: CGRect(x: 91, y: 177, width: 23, height: 10), rotation: 40)
+        let button10 = AlertButton(title: "Photo Booth", message: "Document your memories at Dance Marathon at the Photo Booth with the Art and Layout team.", frame: CGRect(x: 119, y: 178, width: 18, height: 13), rotation: 0)
+        let button11 = AlertButton(title: "Side Stage", message: "This is where all the families will speak, where the Morale team will be for each Linedance, and much more throughout the Event!", frame: CGRect(x: 140, y: 178, width: 57, height: 13), rotation: 0)
+        let button12 = AlertButton(title: "Basket Ball Hoops", message: "Take a break from dancing and shoot some hoops at Gate 2.", frame: CGRect(x: 200, y: 178, width: 18, height: 13), rotation: 0)
+        let button13 = AlertButton(title: "Meals", message: "Dancers, stay nourished with all of the delicious meals provided by our partners.", frame: CGRect(x: 67, y: 191, width: 13, height: 43), rotation: 40)
+        let button14 = AlertButton(title: "Medical Room", message: "If you need medical attention at any point throughout Dance Marathon, visit the Med. Room for assistance.", frame: CGRect(x: 77, y: 221, width: 16, height: 12), rotation: 40)
+        let button15 = AlertButton(title: "Men's Locker Room", message: "Male Dancers will keep their belongings here.", frame: CGRect(x: 98, y: 207, width: 22, height: 28), rotation: 0)
+        let button16 = AlertButton(title: "Women's Locker Room", message: "Female Dancers will keep their belongings here.", frame: CGRect(x: 208, y: 208, width: 29, height: 26), rotation: 0)
         
         buttons = [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16]
         
@@ -86,6 +86,7 @@ class AlertButton: UIView, UIAlertViewDelegate {
 class MapViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var infoButton: UIBarButtonItem!
     
     var imageView: MapView!
     var pinchPoint: CGPoint?
@@ -111,6 +112,14 @@ class MapViewController: UIViewController {
         scrollView.addSubview(imageView)
         scrollView.contentSize = image.size
         
+        // Add Description Label
+//        let label = UILabel(frame: CGRect(x: 0, y: 64, width: imageView.frame.width, height: 30))
+//        label.text = "Select Areas for Description"
+//        label.textAlignment = .Center
+//        label.font = Font.subheader.fontWithSize(18)
+//        scrollView.addSubview(label)
+        
+        
         // Scroll View Properties
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
@@ -128,6 +137,12 @@ class MapViewController: UIViewController {
 
         centerScrollViewContents()
     }
+    
+    @IBAction func infoButtonPressed(sender: UIBarButtonItem) {
+        let alert = UIAlertView(title: "Interactive Map", message: "Tap an area to learn what goes on there or zoom to get a better view!", delegate: self, cancelButtonTitle: "Dismiss")
+        alert.show()
+    }
+    
     
     func centerScrollViewContents() {
         let boundSize = scrollView.bounds.size

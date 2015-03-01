@@ -7,6 +7,7 @@
 //
 import UIKit
 import CoreData
+import CoreGraphics
 
 
 class EventViewController: UITableViewController, NSFetchedResultsControllerDelegate, DropdownController {
@@ -40,10 +41,32 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         dropDownTableView.dropdownDelegate = self
         dropdownButton.setTitleColor(Color.primary1, forState: .Normal)
         
+        
+        let l: CGFloat = 20
+        
+        UIGraphicsBeginImageContext(CGSize(width: l, height: l))
+        let context = UIGraphicsGetCurrentContext()
+        CGContextBeginPath(context)
+        CGContextSetLineCap(context, kCGLineCapSquare)
+        CGContextSetFillColorWithColor(context, Color.primary1.CGColor)
+        CGContextSetLineWidth(context, 1.0)
+        CGContextSetStrokeColorWithColor(context, Color.primary1.CGColor)
+        CGContextMoveToPoint(context, l / 4.0, l / 4.0)
+        CGContextAddLineToPoint(context, 3.0 * l / 4.0, l / 4.0)
+        CGContextAddLineToPoint(context, l / 2.0, 3.0 * l / 4.0)
+        CGContextClosePath(context)
+        CGContextFillPath(context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        dropdownButton.setImage(image, forState: UIControlState.Normal)
+        dropdownButton.frame.size.width = view.frame.width
         updateCategories()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
     }
+    
+    
     
 
     
@@ -107,6 +130,9 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             dropDownTableView.hide()
         } else {
 
+            println(tableView.contentOffset)
+            println(tableView.contentInset.top)
+            
             dropDownTableView.showInView(tableView.superview!, withFrame: CGRect(origin: CGPointZero, size: view.bounds.size))
             dropDownTableView.contentInset.top = tableView.contentInset.top ?? 0
         }
@@ -132,4 +158,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             destination.fetchedResultsController = fetchedResultsController
         }
     }
+    
+
 }

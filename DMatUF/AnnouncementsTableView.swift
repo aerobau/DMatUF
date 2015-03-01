@@ -31,7 +31,7 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
         refreshControl.addTarget(self, action: "fetchJSON", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.tintColor = Color.primary2
         addSubview(refreshControl)
-        
+                
         fetchJSON()
     }
 
@@ -58,10 +58,12 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
         return fetchedResultsController.fetchedObjects?.count ?? 0
     }
     
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("AnnouncementCell", forIndexPath: indexPath) as AnnouncementCell
         let cellAnnouncement = fetchedResultsController.objectAtIndexPath(indexPath) as Announcement
+        
         
         cell.textView.text = cellAnnouncement.text
         

@@ -95,6 +95,7 @@ class Theme {
     // UISegmentedControl
     func customizeSegmentControl(#primary: UIColor, secondary: UIColor) {
         UISegmentedControl.appearance().tintColor = primary
+        UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: Font.accent], forState: .Normal)
     }
     
     // UISlider

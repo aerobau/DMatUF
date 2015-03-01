@@ -46,7 +46,6 @@ class UITextViewAutoHeight: UITextView {
                 break;
             }
         }
-        
     }
     
     private func setUpConstraint() {

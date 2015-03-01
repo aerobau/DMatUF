@@ -26,6 +26,7 @@ class DropdownCell: UITableViewCell {
         textLabel?.textColor = Color.primary1
     
         selectionStyle = .None
+
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -59,6 +60,14 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         separatorStyle = .None
         userInteractionEnabled = true
         alwaysBounceVertical = false
+        
+        let tap = UITapGestureRecognizer(target: self, action: "hide")
+        
+        let bgView = UIView(frame: frame)
+        bgView.backgroundColor = UIColor.clearColor()
+        backgroundView = bgView
+        backgroundView?.addGestureRecognizer(tap)
+        
     }
     
     override func numberOfRowsInSection(section: Int) -> Int {
@@ -73,11 +82,8 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel?.text = items[indexPath.row]
         
-        if indexPath == checkedIndex {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
-        }
+        cell.textLabel?.font = indexPath == checkedIndex ? Font.subheader.fontWithSize(18) : Font.body1.fontWithSize(18)
+
         return cell
     }
     
@@ -101,9 +107,11 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     func showInView(view: UIView, withFrame frame: CGRect) {
-        reloadData()
-        view.addSubview(self)
-        self.frame = frame
-        isOpened = true
+//        if contentOffset.y == 0 {
+            reloadData()
+            view.addSubview(self)
+            self.frame = frame
+            isOpened = true
+//        }
     }
 }

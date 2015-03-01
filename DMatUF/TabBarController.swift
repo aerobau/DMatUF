@@ -14,6 +14,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customizableViewControllers = nil
+        moreNavigationController.view.tintColor = Color.primary1
     }
 }
 
