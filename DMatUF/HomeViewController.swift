@@ -22,6 +22,7 @@ class HomeViewController: UIViewController  {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
+        
     }
     
     override func viewDidAppear(animated: Bool) {

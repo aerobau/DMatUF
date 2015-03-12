@@ -425,7 +425,6 @@
 			isa = PBXGroup;
 			children = (
 				EA6B1DBD1AA0EBFD00778F77 /* DMatUF.entitlements */,
-				EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */,
 				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 				EAC85D9519FAA766006840A0 /* Extensions */,
 				EAC85D6419FA92BC006840A0 /* Images.xcassets */,
@@ -437,6 +436,7 @@
 				EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */,
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
 				EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */,
+				EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */,
 				EA91BB121A75F48C0057D772 /* Map Tab */,
 				EAEB80931A68B2BA0056DBDB /* Game Tab */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,

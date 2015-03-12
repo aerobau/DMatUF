@@ -89,29 +89,29 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     override func reloadData() {
         super.reloadData()
-        
-        dropdownDelegate?.dropdown(self, didDismissWithIndexPath: NSIndexPath(forRow: 0, inSection: 0), andTitle: items[0])
+        checkedIndex = NSIndexPath(forRow: 0, inSection: 0)
+        dropdownDelegate?.dropdown(self, didDismissWithIndexPath: checkedIndex, andTitle: items[0])
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        dropdownDelegate?.dropdown(self, didDismissWithIndexPath: indexPath, andTitle: items[indexPath.row])
         checkedIndex = indexPath
         deselectRowAtIndexPath(indexPath, animated: false)
         hide()
     }
-    
+
     func hide() {
+        dropdownDelegate?.dropdown(self, didDismissWithIndexPath: checkedIndex, andTitle: items[checkedIndex.row])
+
         removeFromSuperview()
         isOpened = false
     }
     
     func showInView(view: UIView, withFrame frame: CGRect) {
-//        if contentOffset.y == 0 {
-            reloadData()
-            view.addSubview(self)
-            self.frame = frame
-            isOpened = true
-//        }
+        super.reloadData()
+        view.addSubview(self)
+        self.frame = frame
+        
+        isOpened = true
     }
 }

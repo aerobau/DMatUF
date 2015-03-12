@@ -30,7 +30,7 @@ class KinteraViewController: UIViewController {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        navigationItem.leftBarButtonItem?.title = "Back"
+//        navigationItem.leftBarButtonItem?.title = "Back"
      }
 
         override func viewDidLayoutSubviews() {

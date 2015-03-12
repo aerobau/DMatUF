@@ -34,6 +34,7 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
             addAllEvents()
         }
     }
+
     
     
     func addEventModally(event: Event) {

@@ -108,10 +108,10 @@ extension EventViewController {
         var fetchRequest = NSFetchRequest(entityName: "Event")
         
         if category != nil {
-            let predicate = NSPredicate(format: "startDate >= %@ && category = %@", NSDate(), category!)
+            let predicate = NSPredicate(format: "endDate >= %@ && category = %@", NSDate(), category!)
             fetchRequest.predicate = predicate
         } else {
-            let predicate = NSPredicate(format: "startDate >= %@", NSDate())
+            let predicate = NSPredicate(format: "endDate >= %@", NSDate())
             fetchRequest.predicate = predicate
         }
         
@@ -209,6 +209,7 @@ extension EventViewController {
         fetchCategories().map() {
             self.dropDownTableView.items.append($0.name)
         }
+        dropDownTableView.tableView(dropDownTableView, didSelectRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
     }
     
     // Delete
@@ -224,9 +225,6 @@ extension EventViewController {
         let predicate = NSPredicate(format: "endDate <= %@", NSDate())
         fetchRequest.predicate = predicate
 
-        let sortDescriptor1 = NSSortDescriptor(key: "startDate", ascending: true)
-        let sortDescriptor2 = NSSortDescriptor(key: "endDate", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
         
@@ -235,7 +233,5 @@ extension EventViewController {
                 managedObjectContext?.deleteObject(event)
             }
         }
-
-        
     }
 }

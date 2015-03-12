@@ -45,7 +45,7 @@ class Theme {
     }
     
     func customizeNavBar(#color: UIColor, titleFont: UIFont, buttonFont: UIFont) {
-
+        
         UINavigationBar.appearance().tintColor = color
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: color, NSFontAttributeName: titleFont]
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: color, NSFontAttributeName: buttonFont], forState: UIControlState.Normal)

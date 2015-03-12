@@ -112,27 +112,30 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     }
 
     func dropdown(dropdown: DropdownTableView, didDismissWithIndexPath indexPath: NSIndexPath, andTitle title: String) {
-        dropdownButton.setTitle(title, forState: UIControlState.Normal)
         
         if indexPath.row == 0 {
             fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-
+            
         }
+        
         fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(fetchCategory(title)), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.performFetch(nil)
-        tableView.reloadData()
-        println("DISMISS INDEX: \(indexPath.row), \(title)")
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            println("\(indexPath) - \(title)")
+            self.dropdownButton.setTitle(title, forState: UIControlState.Normal)
+           
+            self.tableView.reloadData()
+            println("DISMISS INDEX: \(indexPath.row), \(title)")
 
+        }
     }
 
     @IBAction func sortButtonPressed(sender: UIButton) {
         if dropDownTableView.isOpened {
             dropDownTableView.hide()
         } else {
-
-            println(tableView.contentOffset)
-            println(tableView.contentInset.top)
-            
             dropDownTableView.showInView(tableView.superview!, withFrame: CGRect(origin: CGPointZero, size: view.bounds.size))
             dropDownTableView.contentInset.top = tableView.contentInset.top ?? 0
         }

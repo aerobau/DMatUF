@@ -12,7 +12,8 @@ import UIKit
 class CountdownImageView: UIImageView {
     
     var timer: NSTimer?
-    let endDate = NSDate(fromString: "03/14/2015 12:00:00", format: .Standard, timeZone: .EST)
+    let standDate = NSDate(fromString: "03/14/2015 12:02:00", format: .Standard, timeZone: .EST)
+    let sitDate = NSDate(fromString: "03/15/2015 2:14:00", format: .Standard, timeZone: .EST)
 
     var label1 = UILabel()
     var label2 = UILabel()
@@ -102,15 +103,31 @@ class CountdownImageView: UIImageView {
     
     func updateLabelText() {
         
-        if endDate.timeIntervalSince1970 >= NSDate().timeIntervalSince1970 {
-
-            let calendar = NSCalendar.currentCalendar()
-            let flags = NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.HourCalendarUnit | NSCalendarUnit.MinuteCalendarUnit | NSCalendarUnit.SecondCalendarUnit
-            let components = calendar.components(flags, fromDate: NSDate(), toDate: endDate, options: nil)
-
+        if standDate.timeIntervalSince1970 >= NSDate().timeIntervalSince1970 {
             
+            let t = standDate.dateBySubtractingDays(1).dateBySubtractingHours(1).timeIntervalSinceDate(NSDate())
+            let date = NSDate(timeIntervalSince1970: t)
+            let dateString = date.toString(format: .Custom("DDD:HH:mm:ss"), timeZone: .UTC)
             
-            let date = components.date ?? NSDate(timeIntervalSince1970: endDate.timeIntervalSinceNow).dateByAddingDays(-1).dateByAddingHours(1)
+            let charArray = Array(dateString)
+            
+            // Days
+            label1.text = "\(charArray[0])"
+            label2.text = "\(charArray[1])"
+            label3.text = "\(charArray[2])"
+            // Hours
+            label5.text = "\(charArray[4])"
+            label6.text = "\(charArray[5])"
+            // Minutes
+            label8.text = "\(charArray[7])"
+            label9.text = "\(charArray[8])"
+            // Seconds
+            label11.text = "\(charArray[10])"
+            label12.text = "\(charArray[11])"
+        } else if standDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 && NSDate().timeIntervalSince1970 < sitDate.timeIntervalSince1970 {
+            
+            let t = sitDate.dateBySubtractingDays(1).dateBySubtractingHours(1).timeIntervalSinceDate(NSDate())
+            let date = NSDate(timeIntervalSince1970: t)
             
             let dateString = date.toString(format: .Custom("DDD:HH:mm:ss"), timeZone: .UTC)
             
@@ -129,8 +146,9 @@ class CountdownImageView: UIImageView {
             // Seconds
             label11.text = "\(charArray[10])"
             label12.text = "\(charArray[11])"
+
+            
         } else {
-            println("DM Started")
             label1.text = "T"
             label2.text = "H"
             label3.text = "A"
