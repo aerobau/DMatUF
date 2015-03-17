@@ -28,37 +28,41 @@ extension EventViewController {
     
     func dateLabelText(start: NSDate, end: NSDate) -> String {
         
+        // Check in progress
         if start.timeIntervalSince1970 < NSDate().timeIntervalSince1970 && NSDate().timeIntervalSince1970 < end.timeIntervalSince1970 {
             return "In Progress"
         }
+        
+        if start == end {
+            return "All Day"
+        }
+        
+
         
         var str = start.toString(format: .Custom("h:mm a"), timeZone: .EST)
 
         if start.day() > end.day() {
             return str
         } else {
-            if (CGFloat(start.hoursBeforeDate(end)) % 24.0 == 0) || (start == end) {
-                if start.hoursBeforeDate(end) == 24 {
-                    return "All Day"
-                } else {
-     
-                    if start.week() == end.week() {
-                        let startDay = start.toString(format: .Custom("EEEE"), timeZone: .EST)
-                        let endDay = end.toString(format: .Custom("EEEE"), timeZone: .EST)
-                        return "All Day \(startDay) to \(endDay)"
-                    } else {
-                        let endDate = end.toString(format: .Custom("M'/'d"), timeZone: .EST)
-
-                        return "All Day Ending \(endDate)"
-                    }
-                }
-            }
             
             if start.day() == end.day() {
                 str = str + " - " + end.toString(format: .Custom("h:mm a"), timeZone: .EST)
             } else {
                 str = str + " - " + end.toString(format: .Custom("h:mm a 'on' M/dd"), timeZone: .EST)
             }
+
+
+//            if start.week() == end.week() {
+//                let startDay = start.toString(format: .Custom("EEEE"), timeZone: .EST)
+//                let endDay = end.toString(format: .Custom("EEEE"), timeZone: .EST)
+//                return "All Day \(startDay) to \(endDay)"
+//            } else {
+//                let endDate = end.toString(format: .Custom("M'/'d"), timeZone: .EST)
+//                
+//                return "All Day Ending \(endDate)"
+//            }
+//
+//            
         }
         
         

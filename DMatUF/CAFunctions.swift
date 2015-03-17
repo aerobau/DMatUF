@@ -230,3 +230,16 @@ extension UIViewController {
         }
     }
 }
+
+extension NSDateComponents {
+    convenience init(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int)  {
+        self.init()
+        self.year = year
+        self.month = month
+        self.day = day
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+        self.calendar = NSCalendar.currentCalendar()
+    }
+}

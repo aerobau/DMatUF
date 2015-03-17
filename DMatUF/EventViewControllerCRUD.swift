@@ -229,9 +229,12 @@ extension EventViewController {
         fetchRequest.fetchLimit = 1000
         
         if let oldEvents = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as? [Event] {
+            println("OLD EVENTS CALLED")
             for event in oldEvents {
+                println("OLD EVENT")
                 managedObjectContext?.deleteObject(event)
             }
+            managedObjectContext?.save(nil)
         }
     }
 }

@@ -66,6 +66,12 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: nil)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        deleteOldEvents()
+        
+    }
     
     
 
@@ -162,5 +168,19 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         }
     }
     
-
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch type {
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        case .Delete:
+            println("OBJECT DELETED")
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        case .Move:
+            break
+        case .Update:
+            tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        }
+    }
+    
 }
