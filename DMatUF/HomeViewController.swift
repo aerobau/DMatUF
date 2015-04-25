@@ -43,6 +43,8 @@ class HomeViewController: UIViewController  {
         // Google Analytics
         GA.sendScreenView(name: "HomeView")
         
+        fetchCountdownContent()
+        
         countdownImageView.updateLabelFrames()
     }
     
@@ -61,5 +63,45 @@ class HomeViewController: UIViewController  {
             loginAlert()
         }
     }
+    
+    func fetchCountdownContent() {
+        
+        let session = NSURLSession.sharedSession()
+        let url: NSURL! = NSURL(string: "http://dev.floridadm.org/app/countdown.php")
+        
+        session.dataTaskWithURL(url) { (data, response, error)  in
+            
+            var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: nil)
+            
+            
+            if let results = rawJSON as? [AnyObject] {
+                if let data = results[0] as? [String: AnyObject] {
+                    
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    
+                    if let date = data["date"] as? String {
+                        defaults.setObject(date, forKey: "CountdownDate")
+                    } else {
+                        defaults.setObject(nil, forKey: "CountdownDate")
+
+                    }
+                    
+                    if let message = data["message"] as? String {
+                        defaults.setObject(message, forKey: "CountdownMessage")
+                    } else {
+                        defaults.setObject(nil, forKey: "CountdownMessage")
+                    }
+                    
+                    
+                    self.countdownImageView.updateCountdownData()
+                }
+            } else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    return
+                }
+            }
+            }.resume()
+    }
+
 }
 

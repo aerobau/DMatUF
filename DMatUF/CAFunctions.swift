@@ -55,7 +55,7 @@ extension UIDevice {
 
 extension UIApplication {
     class func tryURL(arr: [String]) {
-        let application: UIApplication = UIApplication.sharedApplication()
+        let application = UIApplication.sharedApplication()
         for url in arr {
             if application.canOpenURL(NSURL(string: url)!) {
                 application.openURL(NSURL(string: url)!)

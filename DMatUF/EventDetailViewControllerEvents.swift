@@ -91,7 +91,7 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
         var match = false
         
         let predicate = store.predicateForEventsWithStartDate(event.startDate, endDate: event.endDate, calendars: nil)
-        let matchedEvents: Void = store.enumerateEventsMatchingPredicate(predicate) { existingEvent, stop in
+        store.enumerateEventsMatchingPredicate(predicate) { existingEvent, stop in
             
             if existingEvent.title.lowercaseString == event.title.lowercaseString {
                 match = true

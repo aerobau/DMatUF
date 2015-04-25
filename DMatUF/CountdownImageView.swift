@@ -13,6 +13,11 @@ class CountdownImageView: UIImageView {
     
     var timer: NSTimer?
     var labels: [UILabel] = []
+    
+    var message: String?
+    var date: NSDate?
+    
+    
     var standComponents: NSDateComponents!
     var sitComponents: NSDateComponents!
     
@@ -23,6 +28,8 @@ class CountdownImageView: UIImageView {
         sitComponents = NSDateComponents(year: 2015, month: 3, day: 15, hour: 14, minute: 12, second: 0)
         
         initializeLabels()
+        
+        
     }
 
     override func layoutSubviews() {
@@ -32,6 +39,23 @@ class CountdownImageView: UIImageView {
             timer?.fire()
         }
         updateLabelFrames()
+    }
+    
+    func updateCountdownData() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        message = defaults.stringForKey("CountdownMessage")
+        
+        let dateString = defaults.stringForKey("CountdownDate")  ?? ""
+        
+        println(message)
+        println(dateString)
+        
+        let date = NSDate(fromString: dateString, format: .FromSQL, timeZone: .EST)
+        
+
+        let components = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: date)
+        println(components)
+
     }
     
     func setLabel(inout label: UILabel, rect: CGRect, rotation: CGFloat) {
