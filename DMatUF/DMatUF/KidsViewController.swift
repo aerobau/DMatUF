@@ -20,7 +20,7 @@ import CoreData
 
 class KidsViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
     
     var selectedKid: Kid?
@@ -49,14 +49,14 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     
     func createKids() {
         
-        let array = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Kids", ofType: "plist")!) as [[String: AnyObject]]
+        let array = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Kids", ofType: "plist")!) as! [[String: AnyObject]]
 
         for kid in array {
-            var newKid: Kid = NSEntityDescription.insertNewObjectForEntityForName("Kid", inManagedObjectContext: self.managedObjectContext!) as Kid
-            newKid.name = kid["name"] as String
-            newKid.story = kid["story"] as String
-            newKid.image = kid["image"] as String
-            newKid.ageYear = kid["ageYear"] as Int
+            var newKid: Kid = NSEntityDescription.insertNewObjectForEntityForName("Kid", inManagedObjectContext: self.managedObjectContext!) as! Kid
+            newKid.name = kid["name"] as! String
+            newKid.story = kid["story"] as! String
+            newKid.image = kid["image"] as! String
+            newKid.ageYear = kid["ageYear"] as! Int
             newKid.milestone = kid["milestone"] as? String
 
         }
@@ -93,9 +93,9 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     override func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("KidCellID", forIndexPath: indexPath) as KidsCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("KidCellID", forIndexPath: indexPath) as! KidsCell
             
-            let kid = fetchedResultsController.objectAtIndexPath(indexPath) as Kid
+            let kid = fetchedResultsController.objectAtIndexPath(indexPath) as! Kid
 
             
             cell.backgroundColor = UIColor.clearColor()
@@ -119,7 +119,7 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let kid = fetchedResultsController.objectAtIndexPath(indexPath) as Kid
+        let kid = fetchedResultsController.objectAtIndexPath(indexPath) as! Kid
         if kid.story != "" || kid.milestone != nil {
             selectedKid = fetchedResultsController.objectAtIndexPath(indexPath) as? Kid
             performSegueWithIdentifier("KidDetailSegue", sender: self)
@@ -141,7 +141,7 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier! == "KidDetailSegue" {
-                let destination = segue.destinationViewController as KidDetailViewController
+                let destination = segue.destinationViewController as! KidDetailViewController
                 destination.kid = selectedKid
         }
     }

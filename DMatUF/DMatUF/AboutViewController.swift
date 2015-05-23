@@ -52,7 +52,7 @@ class AboutViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UIDevice.version < 8.0 ? 84.0 : UITableViewAutomaticDimension
+        return UITableViewAutomaticDimension
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentControl.selectedSegmentIndex == 0 {
@@ -68,7 +68,7 @@ class AboutViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if segmentControl.selectedSegmentIndex == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as FactsCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as! FactsCell
             
             cell.topLabel.text = questions[indexPath.row]
             cell.bottomLabel.text = answers[indexPath.row]
@@ -76,7 +76,7 @@ class AboutViewController: UITableViewController {
             return cell
 
         } else if segmentControl.selectedSegmentIndex == 1 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ContactCellID", forIndexPath: indexPath) as ContactCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("ContactCellID", forIndexPath: indexPath) as! ContactCell
             
             cell.typeLabel.text = types[indexPath.row]
             cell.infoTextView.text = contacts[indexPath.row]
@@ -85,7 +85,7 @@ class AboutViewController: UITableViewController {
             return cell
 
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as FactsCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as! FactsCell
             cell.topLabel.text = paragraphTitle
             cell.bottomLabel.text = paragraph
             

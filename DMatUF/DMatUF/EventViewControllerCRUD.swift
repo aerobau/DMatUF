@@ -18,7 +18,7 @@ extension EventViewController {
 
         if getDate(eventDict["endDate"]).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
             
-            var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as Event
+            var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as! Event
             let id = getInt(eventDict["id"])
             newEvent.id = id
             newEvent.title = getString(eventDict["title"])
@@ -42,7 +42,7 @@ extension EventViewController {
             return category
         } else {
             if name != "" {
-                let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: managedObjectContext!) as Category
+                let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: managedObjectContext!) as! Category
                 newCategory.name = name
                 
                 return newCategory
@@ -81,7 +81,7 @@ extension EventViewController {
         if name == "" {
             return
         }
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String).stringByAppendingString("\(name).png")
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String).stringByAppendingString("\(name).png")
         
         if !NSFileManager.defaultManager().fileExistsAtPath(imagePath) {
             if let eventImage = UIImage(fromURL: url) {
@@ -134,7 +134,7 @@ extension EventViewController {
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
 
-        return managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as [Category]
+        return managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as! [Category]
     }
 
     func fetchEvent(eventID: Int) -> Event? {

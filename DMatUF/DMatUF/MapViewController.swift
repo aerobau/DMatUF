@@ -200,10 +200,12 @@ extension MapViewController {
 }
 
 extension MapViewController: UIGestureRecognizerDelegate {
+
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        pinchPoint = imageView.center
-    }
+//    override func touchesBegan(touches: Set, withEvent event: UIEvent) {
+//        super.touchesBegan(touches: touches, event: event)
+//        pinchPoint = imageView.center
+//    }
 }
 
 extension MapViewController: UIScrollViewDelegate {

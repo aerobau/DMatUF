@@ -177,7 +177,7 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCellWithIdentifier("TableCellID", forIndexPath: indexPath) as UITableViewCell
+        let cell = dequeueReusableCellWithIdentifier("TableCellID", forIndexPath: indexPath) as! UITableViewCell
 
         cell.textLabel?.font = UIFont(name: Font.body1.fontName, size: cell.contentView.frame.width / 16.0)
         cell.textLabel?.textColor = UIColor.grayColor()

@@ -14,7 +14,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     
     @IBOutlet weak var dropdownButton: UIButton!
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
     var dropDownTableView = DropdownTableView(frame: CGRectZero, style: UITableViewStyle.Plain)
 
@@ -78,7 +78,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UIDevice.version < 8.0 ? 64.0 : UITableViewAutomaticDimension
+        return UITableViewAutomaticDimension
 
     }
     
@@ -91,8 +91,8 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCellID", forIndexPath: indexPath) as EventCell
-        let cellEvent = fetchedResultsController.objectAtIndexPath(indexPath) as Event
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCellID", forIndexPath: indexPath) as! EventCell
+        let cellEvent = fetchedResultsController.objectAtIndexPath(indexPath) as! Event
         
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = Color.tvcEven
@@ -160,8 +160,8 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "EventDetailSegue" {
-            let destination = segue.destinationViewController as EventDetailViewController
-            let indexPath = self.tableView?.indexPathForCell(sender as EventCell)
+            let destination = segue.destinationViewController as! EventDetailViewController
+            let indexPath = self.tableView?.indexPathForCell(sender as! EventCell)
             
             destination.selectedEvent = indexPath != nil ? fetchedResultsController.objectAtIndexPath(indexPath!) as? Event : nil
             destination.fetchedResultsController = fetchedResultsController

@@ -12,11 +12,11 @@ import UIKit
 
 
 func printDocsDirectory() {
-    let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+    let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
     let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(documentsDirectory, error: nil)
     
     println("DOCUMENTS DIRECTORY: \(files?.count) Files")
-    for file in files as [String] {
+    for file in files as! [String] {
         println(file)
     }
 }
@@ -29,10 +29,7 @@ enum DeviceType {
 }
 
 extension UIDevice {
-    class var version: Float {
-       return (UIDevice.currentDevice().systemVersion as NSString).floatValue
-    }
-    
+
     class var type: DeviceType {
         if let size = UIScreen.mainScreen().currentMode?.size {
             switch size {
@@ -126,7 +123,7 @@ extension UIImage {
             return nil
         }
         
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
     
 
         let path = "\(documentsPath)/\(fileName).\(type)"
@@ -154,7 +151,7 @@ extension UIImage {
     }
     
     func save(fileName: String, type: String) {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
 
         if type.lowercaseString == "png" {
             let path = "\(documentsPath)/\(fileName).\(type)"

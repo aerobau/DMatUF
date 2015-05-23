@@ -23,7 +23,7 @@ extension EventViewController {
     }
     
     func getDate(obj: AnyObject?) -> NSDate {
-        return NSDate(fromString: obj as String, format: .FromSQL, timeZone: .EST) ?? NSDate(timeIntervalSince1970: 0)
+        return NSDate(fromString: obj as! String, format: .FromSQL, timeZone: .EST) ?? NSDate(timeIntervalSince1970: 0)
     }
     
     func dateLabelText(start: NSDate, end: NSDate) -> String {

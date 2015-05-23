@@ -21,13 +21,8 @@ class EventCell: UITableViewCell {
         titleLabel.font = UIFont(name: Font.body1.fontName, size: 16.0)
         timeLabel.font = UIFont(name: Font.body2.fontName, size: 12.0)
         
-        if UIDevice.version < 8.0 {
-            titleLabel.numberOfLines = 1
-            titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
-        } else {
-            titleLabel.numberOfLines = 0
-            titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        }
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
 
     override func drawRect(rect: CGRect) {

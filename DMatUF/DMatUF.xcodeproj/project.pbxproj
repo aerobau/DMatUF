@@ -44,7 +44,6 @@
 		EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6917341A32DBC50024E35C /* CAFunctions.swift */; };
 		EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */; };
 		EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */; };
-		EA6B1DBC1AA0EBF000778F77 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */; };
 		EA6B1DBF1AA0EC0500778F77 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B1DBE1AA0EC0500778F77 /* CloudKit.framework */; };
 		EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */; };
 		EA7B6E5C1A36AB820042DFE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B6E5B1A36AB820042DFE0 /* QuartzCore.framework */; };
@@ -165,7 +164,6 @@
 		EA6917341A32DBC50024E35C /* CAFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAFunctions.swift; sourceTree = "<group>"; };
 		EA6B0E1319FBE9C6006CC2F2 /* KidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsViewController.swift; sourceTree = "<group>"; };
 		EA6B0E1519FBEBB9006CC2F2 /* KidDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidDetailViewController.swift; sourceTree = "<group>"; };
-		EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		EA6B1DBD1AA0EBFD00778F77 /* DMatUF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DMatUF.entitlements; sourceTree = "<group>"; };
 		EA6B1DBE1AA0EC0500778F77 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		EA74B8FE1A1E583E00B883BF /* KinteraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraViewController.swift; sourceTree = "<group>"; };
@@ -436,7 +434,6 @@
 				EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */,
 				EA06890A1A34D53C006CD2E0 /* TabBarController.swift */,
 				EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */,
-				EA6B1DBB1AA0EBF000778F77 /* PushNotificationManager.swift */,
 				EA91BB121A75F48C0057D772 /* Map Tab */,
 				EAEB80931A68B2BA0056DBDB /* Game Tab */,
 				EA2F1FA919FAC624000C5685 /* Home Tab */,
@@ -569,7 +566,7 @@
 		EAC85D4E19FA92BC006840A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = MacCDevTeam;
 				TargetAttributes = {
 					EAC85D5519FA92BC006840A0 = {
@@ -645,7 +642,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA6B1DBC1AA0EBF000778F77 /* PushNotificationManager.swift in Sources */,
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */,
@@ -751,6 +747,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "c1d11780-8afa-42ef-8b55-baf8453379e8";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -779,7 +776,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/DMatUF/Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -860,7 +857,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/Bridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/iancmaccallum/Documents/GitHub/DMatUF/DMatUF/DMatUF/Bridge.h;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

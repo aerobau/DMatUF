@@ -131,7 +131,7 @@ class KinteraViewController: UIViewController {
         
         Properties.task = session.dataTaskWithRequest(request) { [unowned self] data, response, error in
 
-            if NSString(data: data, encoding: 8) as String == "Error" {
+            if NSString(data: data, encoding: 8) as! String == "Error" {
                 Properties.task?.cancel()
                 dispatch_async(dispatch_get_main_queue()) {
                     UIAlertView.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")

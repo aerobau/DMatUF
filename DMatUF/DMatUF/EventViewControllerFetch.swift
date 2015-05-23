@@ -37,7 +37,7 @@ extension EventViewController {
                         }
                     }
                 }
-                for event in self.fetchedResultsController.fetchedObjects as [Event] {
+                for event in self.fetchedResultsController.fetchedObjects as! [Event] {
                     if (find(ids, event.id.integerValue) == nil) {
                         self.deleteEvent(event.id.integerValue)
                     }

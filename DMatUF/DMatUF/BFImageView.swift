@@ -126,7 +126,7 @@ class BFImageView: UIImageView {
         if let sublayers = self.layer.sublayers {
             for layer: AnyObject in sublayers {
                 if layer.name == BETTER_LAYER_NAME {
-                    return layer as CALayer
+                    return layer as! CALayer
                 }
             }
         }

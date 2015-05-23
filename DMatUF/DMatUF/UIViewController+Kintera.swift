@@ -31,7 +31,7 @@ extension UIViewController: UIAlertViewDelegate  {
             println("RESPONSE \(response)")
             println(error)
             
-            if NSString(data: data, encoding: 8) as String == "Error" {
+            if NSString(data: data, encoding: 8) as! String == "Error" {
                 Properties.task?.cancel()
                 dispatch_async(dispatch_get_main_queue()) {
                     UIAlertView.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
@@ -79,74 +79,62 @@ extension UIViewController: UIAlertViewDelegate  {
             let alertMessage = "Enter your username and password:"
             let defaults = NSUserDefaults.standardUserDefaults()
             
-            if UIDevice.version < 8.0 {
-                println("AlertController doesn't exists")
-                
-                let alertView = UIAlertView(title: alertTitle, message: alertMessage, delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Login", "Forgot Password")
-                alertView.alertViewStyle = UIAlertViewStyle.LoginAndPasswordInput
-                
-                if let defaultUsername = defaults.objectForKey("username") as? String {
-                    alertView.textFieldAtIndex(0)?.text = defaultUsername
-                }
-                alertView.show()
-                
-            } else {
-                println("AlertController exists")
-                
-                let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
-                
-                // Login Button
-                let loginAction = UIAlertAction(title: "Login", style: .Default) { (_) in
-                    let loginTextField = alertController.textFields![0] as UITextField
-                    let passwordTextField = alertController.textFields![1] as UITextField
-                    
-                    self.login(loginTextField.text, password: passwordTextField.text) {
-                        self.performSegueWithIdentifier("FundSegue", sender: self)
-                    }
-                }
             
-                loginAction.enabled = false
+            println("AlertController exists")
+            
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            
+            // Login Button
+            let loginAction = UIAlertAction(title: "Login", style: .Default) { (_) in
+                let loginTextField = alertController.textFields![0] as! UITextField
+                let passwordTextField = alertController.textFields![1] as! UITextField
                 
-                
-                // Forgot Button
-                let forgotPasswordAction = UIAlertAction(title: "Forgot Password", style: .Destructive) { (_) in
-                    UIApplication.tryURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
-                }
-                
-                // Cancel Button
-                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { Void in
-                }
-                
-                // Configure TextFields
-                let defaults = NSUserDefaults.standardUserDefaults()
-                
-                alertController.addTextFieldWithConfigurationHandler { (textField) in
-                    NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
-                        loginAction.enabled = textField.text != ""
-                    }
-                    textField.placeholder = "Login"
-                }
-                alertController.addTextFieldWithConfigurationHandler { (textField) in
-                    textField.placeholder = "Password"
-                    textField.secureTextEntry = true
-                }
-                
-                // Set Default Info
-                let loginTextField = alertController.textFields![0] as UITextField
-                if let defaultUsername = defaults.objectForKey("username") as? String {
-                    loginTextField.text = defaultUsername
-                    loginAction.enabled = true
-                }
-                
-                // Add Actions
-                alertController.addAction(loginAction)
-                alertController.addAction(forgotPasswordAction)
-                alertController.addAction(cancelAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    
+                self.login(loginTextField.text, password: passwordTextField.text) {
+                    self.performSegueWithIdentifier("FundSegue", sender: self)
                 }
             }
+            
+            loginAction.enabled = false
+            
+            
+            // Forgot Button
+            let forgotPasswordAction = UIAlertAction(title: "Forgot Password", style: .Destructive) { (_) in
+                UIApplication.tryURL(["http://floridadm.kintera.org/faf/login/loginFindPassword.asp?ievent=1114670&lis=1&kntae1114670=BA9334B40FC64C91BE87CF7E42172BE5"])
+            }
+            
+            // Cancel Button
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { Void in
+            }
+            
+            // Configure TextFields
+            
+            alertController.addTextFieldWithConfigurationHandler { (textField) in
+                NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
+                    loginAction.enabled = textField.text != ""
+                }
+                textField.placeholder = "Login"
+            }
+            alertController.addTextFieldWithConfigurationHandler { (textField) in
+                textField.placeholder = "Password"
+                textField.secureTextEntry = true
+            }
+            
+            // Set Default Info
+            let loginTextField = alertController.textFields![0] as! UITextField
+            if let defaultUsername = defaults.objectForKey("username") as? String {
+                loginTextField.text = defaultUsername
+                loginAction.enabled = true
+            }
+            
+            // Add Actions
+            alertController.addAction(loginAction)
+            alertController.addAction(forgotPasswordAction)
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                
+            }
+            
             
             
             

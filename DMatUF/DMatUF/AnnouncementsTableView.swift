@@ -13,7 +13,7 @@ import CoreData
 class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
     let refreshControl = UIRefreshControl()
 
@@ -36,17 +36,7 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if UIDevice.version < 8.0 {
-            
-            
-            let text = (fetchedResultsController.objectAtIndexPath(indexPath) as Announcement).text ?? ""
-            let attributedText = NSAttributedString(string: text, attributes: [NSFontAttributeName: UIFont(name: Font.body1.fontName, size: 14.0)!])
-            let height = textViewHeightForAttributedText(attributedText, andWidth: frame.width - 99.0)
-            
-            return height + 8.0
-        } else {
-            return UITableViewAutomaticDimension
-        }
+        return UITableViewAutomaticDimension
     }
 
 
@@ -61,8 +51,8 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("AnnouncementCell", forIndexPath: indexPath) as AnnouncementCell
-        let cellAnnouncement = fetchedResultsController.objectAtIndexPath(indexPath) as Announcement
+        let cell = tableView.dequeueReusableCellWithIdentifier("AnnouncementCell", forIndexPath: indexPath) as! AnnouncementCell
+        let cellAnnouncement = fetchedResultsController.objectAtIndexPath(indexPath) as! Announcement
         
         
         cell.textView.text = cellAnnouncement.text
@@ -106,7 +96,7 @@ extension AnnouncementsTableView {
                     }
                 }
                 
-                for announcement in self.fetchedResultsController.fetchedObjects as [Announcement] {
+                for announcement in self.fetchedResultsController.fetchedObjects as! [Announcement] {
                     if (find(ids, announcement.id.integerValue) == nil) {
                         self.deleteAnnouncement(announcement.id.integerValue)
                     }
@@ -130,7 +120,7 @@ extension AnnouncementsTableView {
 
     // Create
     func createAnnouncement(eventDict: Dictionary<String, AnyObject>) {
-        var newAnnouncement = NSEntityDescription.insertNewObjectForEntityForName("Announcement", inManagedObjectContext: self.managedObjectContext!) as Announcement
+        var newAnnouncement = NSEntityDescription.insertNewObjectForEntityForName("Announcement", inManagedObjectContext: self.managedObjectContext!) as! Announcement
         
         newAnnouncement.id = getInt(eventDict["id"])
         newAnnouncement.text = getString(eventDict["text"])
@@ -216,6 +206,6 @@ extension AnnouncementsTableView {
     }
     
     func getDate(obj: AnyObject?) -> NSDate {
-        return NSDate(fromString: obj as String, format: .FromSQL, timeZone: .EST) ?? NSDate(timeIntervalSince1970: 0)
+        return NSDate(fromString: obj as! String, format: .FromSQL, timeZone: .EST) ?? NSDate(timeIntervalSince1970: 0)
     }
 }

@@ -62,7 +62,7 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
         var count = 0
         var total = 0
         
-        for event in fetchedResultsController?.fetchedObjects! as [Event] {
+        for event in fetchedResultsController?.fetchedObjects! as! [Event] {
             total++
             if !eventExists(event) {
                 count++

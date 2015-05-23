@@ -19,27 +19,28 @@ class UITextViewAutoHeight: UITextView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setUpInit()
+        setup()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setUpInit()
-    }
     
+//    required init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setup()
+//    }
+//    
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpInit()
+        setup()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setUpConstraint()
+        setupConstraint()
     }
     
     //MARK: private
     
-    private func setUpInit() {
+    private func setup() {
         for constraint in self.constraints() {
             if constraint.firstAttribute == NSLayoutAttribute.Height {
                 self.heightConstraint = constraint as? NSLayoutConstraint;
@@ -48,7 +49,7 @@ class UITextViewAutoHeight: UITextView {
         }
     }
     
-    private func setUpConstraint() {
+    private func setupConstraint() {
         var finalContentSize:CGSize = self.contentSize
         finalContentSize.width  += (self.textContainerInset.left + self.textContainerInset.right ) / 2.0
         finalContentSize.height += (self.textContainerInset.top  + self.textContainerInset.bottom) / 2.0
