@@ -11,23 +11,20 @@ import UIKit
 class UITextViewAutoHeight: UITextView {
     
     //MARK: attributes
-
     var  maxHeight:CGFloat?
     var  heightConstraint:NSLayoutConstraint?
    
     //MARK: initialize
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    
-//    required init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setup()
-//    }
-//    
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        setup()
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()

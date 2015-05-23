@@ -57,8 +57,21 @@
 		EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */; };
 		EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */; };
 		EAB18CEE1A5E00130064BE45 /* BarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */; };
+		EAB5E4BF1B10412C000531C2 /* HighlighterTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B11B10412C000531C2 /* HighlighterTextStorage.swift */; };
+		EAB5E4C01B10412C000531C2 /* HighlighterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B21B10412C000531C2 /* HighlighterType.swift */; };
+		EAB5E4C11B10412C000531C2 /* LinkHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B31B10412C000531C2 /* LinkHighlighter.swift */; };
+		EAB5E4C21B10412C000531C2 /* MarkdownAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B41B10412C000531C2 /* MarkdownAttributes.swift */; };
+		EAB5E4C31B10412C000531C2 /* MarkdownFencedCodeHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B51B10412C000531C2 /* MarkdownFencedCodeHighlighter.swift */; };
+		EAB5E4C41B10412C000531C2 /* MarkdownHeaderHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B61B10412C000531C2 /* MarkdownHeaderHighlighter.swift */; };
+		EAB5E4C51B10412C000531C2 /* MarkdownLinkHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B71B10412C000531C2 /* MarkdownLinkHighlighter.swift */; };
+		EAB5E4C61B10412C000531C2 /* MarkdownListHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B81B10412C000531C2 /* MarkdownListHighlighter.swift */; };
+		EAB5E4C71B10412C000531C2 /* MarkdownStrikethroughHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4B91B10412C000531C2 /* MarkdownStrikethroughHighlighter.swift */; };
+		EAB5E4C81B10412C000531C2 /* MarkdownSuperscriptHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4BA1B10412C000531C2 /* MarkdownSuperscriptHighlighter.swift */; };
+		EAB5E4C91B10412C000531C2 /* MarkdownTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4BB1B10412C000531C2 /* MarkdownTextStorage.swift */; };
+		EAB5E4CA1B10412C000531C2 /* MarkdownTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4BC1B10412C000531C2 /* MarkdownTextView.swift */; };
+		EAB5E4CB1B10412C000531C2 /* RegularExpressionHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4BD1B10412C000531C2 /* RegularExpressionHighlighter.swift */; };
+		EAB5E4CC1B10412C000531C2 /* TextUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5E4BE1B10412C000531C2 /* TextUtilities.swift */; };
 		EAB757BA1A665ED700351F72 /* UIViewController+Kintera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */; };
-		EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD13F71A533C1400A3C288 /* BFImageView.swift */; };
 		EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */; };
 		EAC85D6519FA92BC006840A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6419FA92BC006840A0 /* Images.xcassets */; };
 		EAC85D6819FA92BC006840A0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC85D6619FA92BC006840A0 /* LaunchScreen.xib */; };
@@ -179,8 +192,22 @@
 		EAAA7A2D1A45FC5600990D15 /* HomeViewControllerFollow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFollow.swift; sourceTree = "<group>"; };
 		EAAA7A331A4607AD00990D15 /* AnnouncementsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsTableView.swift; sourceTree = "<group>"; };
 		EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItems.swift; sourceTree = "<group>"; };
+		EAB5E4B01B10412C000531C2 /* MarkdownTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownTextView.h; sourceTree = "<group>"; };
+		EAB5E4B11B10412C000531C2 /* HighlighterTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlighterTextStorage.swift; sourceTree = "<group>"; };
+		EAB5E4B21B10412C000531C2 /* HighlighterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlighterType.swift; sourceTree = "<group>"; };
+		EAB5E4B31B10412C000531C2 /* LinkHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4B41B10412C000531C2 /* MarkdownAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownAttributes.swift; sourceTree = "<group>"; };
+		EAB5E4B51B10412C000531C2 /* MarkdownFencedCodeHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownFencedCodeHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4B61B10412C000531C2 /* MarkdownHeaderHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownHeaderHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4B71B10412C000531C2 /* MarkdownLinkHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownLinkHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4B81B10412C000531C2 /* MarkdownListHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownListHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4B91B10412C000531C2 /* MarkdownStrikethroughHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownStrikethroughHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4BA1B10412C000531C2 /* MarkdownSuperscriptHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownSuperscriptHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4BB1B10412C000531C2 /* MarkdownTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownTextStorage.swift; sourceTree = "<group>"; };
+		EAB5E4BC1B10412C000531C2 /* MarkdownTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownTextView.swift; sourceTree = "<group>"; };
+		EAB5E4BD1B10412C000531C2 /* RegularExpressionHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularExpressionHighlighter.swift; sourceTree = "<group>"; };
+		EAB5E4BE1B10412C000531C2 /* TextUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextUtilities.swift; sourceTree = "<group>"; };
 		EAB757B91A665ED700351F72 /* UIViewController+Kintera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Kintera.swift"; sourceTree = "<group>"; };
-		EABD13F71A533C1400A3C288 /* BFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFImageView.swift; sourceTree = "<group>"; };
 		EAC85D5619FA92BC006840A0 /* DMatUF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMatUF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC85D5A19FA92BC006840A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAC85D5B19FA92BC006840A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -392,12 +419,34 @@
 			name = "Map Tab";
 			sourceTree = "<group>";
 		};
-		EABD13F91A533C1900A3C288 /* UIImageView */ = {
+		EAB5E4CD1B104134000531C2 /* UIMarkdownTextView */ = {
 			isa = PBXGroup;
 			children = (
-				EABD13F71A533C1400A3C288 /* BFImageView.swift */,
+				EAB5E4B01B10412C000531C2 /* MarkdownTextView.h */,
+				EAB5E4B11B10412C000531C2 /* HighlighterTextStorage.swift */,
+				EAB5E4B21B10412C000531C2 /* HighlighterType.swift */,
+				EAB5E4B31B10412C000531C2 /* LinkHighlighter.swift */,
+				EAB5E4B41B10412C000531C2 /* MarkdownAttributes.swift */,
+				EAB5E4B51B10412C000531C2 /* MarkdownFencedCodeHighlighter.swift */,
+				EAB5E4B61B10412C000531C2 /* MarkdownHeaderHighlighter.swift */,
+				EAB5E4B71B10412C000531C2 /* MarkdownLinkHighlighter.swift */,
+				EAB5E4B81B10412C000531C2 /* MarkdownListHighlighter.swift */,
+				EAB5E4B91B10412C000531C2 /* MarkdownStrikethroughHighlighter.swift */,
+				EAB5E4BA1B10412C000531C2 /* MarkdownSuperscriptHighlighter.swift */,
+				EAB5E4BB1B10412C000531C2 /* MarkdownTextStorage.swift */,
+				EAB5E4BC1B10412C000531C2 /* MarkdownTextView.swift */,
+				EAB5E4BD1B10412C000531C2 /* RegularExpressionHighlighter.swift */,
+				EAB5E4BE1B10412C000531C2 /* TextUtilities.swift */,
 			);
-			name = UIImageView;
+			name = UIMarkdownTextView;
+			sourceTree = "<group>";
+		};
+		EAB5E4CE1B1043C6000531C2 /* UITextViewAutoHeight */ = {
+			isa = PBXGroup;
+			children = (
+				EA4407181A83411200DF5D6E /* UITextViewAutoHeight.swift */,
+			);
+			name = UITextViewAutoHeight;
 			sourceTree = "<group>";
 		};
 		EAC85D4D19FA92BC006840A0 = {
@@ -490,13 +539,13 @@
 		EAC85D9519FAA766006840A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EABD13F91A533C1900A3C288 /* UIImageView */,
+				EAB5E4CD1B104134000531C2 /* UIMarkdownTextView */,
+				EAB5E4CE1B1043C6000531C2 /* UITextViewAutoHeight */,
 				EA318D6F1A2ED68E00F89F3B /* Google Analytics */,
 				EA882C211A48F48A0039BC6C /* Reachability */,
 				EA882C231A48F4D10039BC6C /* Date */,
 				EA6917321A325FF40024E35C /* Theme.swift */,
 				EA6917341A32DBC50024E35C /* CAFunctions.swift */,
-				EA4407181A83411200DF5D6E /* UITextViewAutoHeight.swift */,
 				EAB18CED1A5E00130064BE45 /* BarButtonItems.swift */,
 				EA7D02BA19FAC28F005406E4 /* Sandbox.playground */,
 			);
@@ -644,39 +693,52 @@
 			files = (
 				EAC85D5C19FA92BC006840A0 /* AppDelegate.swift in Sources */,
 				EA882C201A48F37B0039BC6C /* KidCell.swift in Sources */,
+				EAB5E4BF1B10412C000531C2 /* HighlighterTextStorage.swift in Sources */,
 				EA2F1FAB19FAC671000C5685 /* EventViewControllerFetch.swift in Sources */,
 				EAA6DA821A411CE90088B76E /* CountdownImageView.swift in Sources */,
 				EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */,
 				EAC85D8819FA93D6006840A0 /* HomeViewController.swift in Sources */,
 				EAAA7A341A4607AD00990D15 /* AnnouncementsTableView.swift in Sources */,
+				EAB5E4C51B10412C000531C2 /* MarkdownLinkHighlighter.swift in Sources */,
 				EA91BB141A75F4A50057D772 /* MapViewController.swift in Sources */,
+				EAB5E4C11B10412C000531C2 /* LinkHighlighter.swift in Sources */,
 				EA1AEEE91A71A3E900467179 /* EventDetailViewControllerEvents.swift in Sources */,
 				EAC85D9019FA9598006840A0 /* Data.xcdatamodeld in Sources */,
 				EA4407191A83411200DF5D6E /* UITextViewAutoHeight.swift in Sources */,
 				EA2C8D9E1A51157200995A93 /* AboutViewController.swift in Sources */,
+				EAB5E4C21B10412C000531C2 /* MarkdownAttributes.swift in Sources */,
 				EA2F1FA819FAC614000C5685 /* EventViewControllerCRUD.swift in Sources */,
+				EAB5E4C41B10412C000531C2 /* MarkdownHeaderHighlighter.swift in Sources */,
+				EAB5E4C71B10412C000531C2 /* MarkdownStrikethroughHighlighter.swift in Sources */,
+				EAB5E4CC1B10412C000531C2 /* TextUtilities.swift in Sources */,
 				EA6917351A32DBC50024E35C /* CAFunctions.swift in Sources */,
 				EA882C1C1A48F2D80039BC6C /* AnnouncementCell.swift in Sources */,
 				EA74B8FF1A1E583E00B883BF /* KinteraViewController.swift in Sources */,
 				EAFB3B8C1A3FD8F100CD0F12 /* Reachability.m in Sources */,
 				EAA7F8CE1A46347300F7FACC /* Announcement.swift in Sources */,
 				EAC85D8D19FA945C006840A0 /* EventDetailViewController.swift in Sources */,
+				EAB5E4C61B10412C000531C2 /* MarkdownListHighlighter.swift in Sources */,
 				EAAA7A2E1A45FC5600990D15 /* HomeViewControllerFollow.swift in Sources */,
+				EAB5E4CA1B10412C000531C2 /* MarkdownTextView.swift in Sources */,
 				EA5524151A7ACDE700380010 /* DropdownTableView.swift in Sources */,
 				EA6B0E1419FBE9C6006CC2F2 /* KidsViewController.swift in Sources */,
 				EA622B571A66580500926CE4 /* Kid.swift in Sources */,
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
 				EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */,
+				EAB5E4CB1B10412C000531C2 /* RegularExpressionHighlighter.swift in Sources */,
+				EAB5E4C91B10412C000531C2 /* MarkdownTextStorage.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
 				EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */,
+				EAB5E4C31B10412C000531C2 /* MarkdownFencedCodeHighlighter.swift in Sources */,
 				EA2C8DA01A511E2D00995A93 /* AboutCells.swift in Sources */,
+				EAB5E4C01B10412C000531C2 /* HighlighterType.swift in Sources */,
 				EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */,
-				EABD13F81A533C1400A3C288 /* BFImageView.swift in Sources */,
 				EA616DAB1A6DF2AF005F7EB8 /* GameWebViewController.swift in Sources */,
 				EA318D8E1A2FDECB00F89F3B /* GoogleAnalytics.swift in Sources */,
 				EAB757BA1A665ED700351F72 /* UIViewController+Kintera.swift in Sources */,
+				EAB5E4C81B10412C000531C2 /* MarkdownSuperscriptHighlighter.swift in Sources */,
 				EA41E72E1A3144B400903926 /* AF+Date+Extension.swift in Sources */,
 				EAEB80971A68B38E0056DBDB /* GameViewController.swift in Sources */,
 				EA5177401A4FF31500124F61 /* Reachability.swift in Sources */,

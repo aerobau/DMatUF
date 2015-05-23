@@ -20,13 +20,9 @@ class DropdownCell: UITableViewCell {
         
         backgroundColor = UIColor(white: 1.0, alpha: 0.9)
         textLabel?.textAlignment = .Center
-        
         tintColor = Color.primary1
-
         textLabel?.textColor = Color.primary1
-    
         selectionStyle = .None
-
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -81,7 +77,6 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! UITableViewCell
         cell.textLabel?.text = items[indexPath.row]
-        
         cell.textLabel?.font = indexPath == checkedIndex ? Font.subheader.fontWithSize(18) : Font.body1.fontWithSize(18)
 
         return cell

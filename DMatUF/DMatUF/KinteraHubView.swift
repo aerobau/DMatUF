@@ -26,8 +26,6 @@ class CAThermometer: UIView {
         super.init(coder: aDecoder)
         backgroundColor = nil
         
-
-
     }
 
     func setup() {
