@@ -18,6 +18,7 @@ class HomeViewController: UIViewController  {
     @IBOutlet weak var bottomBar: UIView!
     @IBOutlet weak var welcomeLabelHeight: NSLayoutConstraint!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

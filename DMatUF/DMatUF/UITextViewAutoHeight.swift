@@ -8,6 +8,10 @@
 
 import UIKit
 
+class Foo: UILabel {
+
+}
+
 class UITextViewAutoHeight: UITextView {
     
     //MARK: attributes
