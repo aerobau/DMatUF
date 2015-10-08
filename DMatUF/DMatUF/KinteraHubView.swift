@@ -22,7 +22,7 @@ class CAThermometer: UIView {
     let emptyColor = Color.tvcOdd
     let strokeWidth = CGFloat(8.0)
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = nil
         
@@ -79,7 +79,7 @@ class CAThermometer: UIView {
             strokeWidth: strokeWidth + 4.0))
     }
     
-    func drawThermometer(#frame: CGRect, filled: Bool, fillColor: CGColorRef?, stroked: Bool, strokeColor: CGColorRef?, strokeWidth: CGFloat) -> CAShapeLayer {
+    func drawThermometer(frame frame: CGRect, filled: Bool, fillColor: CGColorRef?, stroked: Bool, strokeColor: CGColorRef?, strokeWidth: CGFloat) -> CAShapeLayer {
         let radius = CGFloat(frame.width / 4.0)
         let x = CGFloat(frame.width / 2.0)
         var path = UIBezierPath(arcCenter: CGPointMake(x, radius), radius: radius, startAngle: 0, endAngle: CGFloat(M_PI), clockwise: false)
@@ -108,7 +108,7 @@ class CAThermometer: UIView {
         return shapeLayer
     }
     
-    func drawEllipse(#frame: CGRect, color: CGColorRef) -> CALayer {
+    func drawEllipse(frame frame: CGRect, color: CGColorRef) -> CALayer {
         var layer = CALayer()
         layer.frame = frame
         layer.borderColor = color
@@ -117,7 +117,7 @@ class CAThermometer: UIView {
         return layer
     }
     
-    func drawRectangle(#frame: CGRect, color: CGColorRef) -> CALayer {
+    func drawRectangle(frame frame: CGRect, color: CGColorRef) -> CALayer {
         var layer = CALayer()
         layer.frame = frame
         layer.backgroundColor = color
@@ -134,7 +134,7 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     var task: NSURLSessionDataTask?
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         dataSource = self
         delegate = self
@@ -159,10 +159,6 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
         super.init(frame: frame, style: style)
         dataSource = self
         delegate = self
-    }
-    
-    override func numberOfSections() -> Int {
-        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -218,7 +214,7 @@ class CATable: UITableView, UITableViewDelegate, UITableViewDataSource {
 class CAButton: UIButton {
     var url = ""
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -245,7 +241,7 @@ class CAButton: UIButton {
     }
     
     func buttonPressed(sender: AnyObject?) {
-        println("Button pressed")
+        print("Button pressed")
         UIApplication.tryURL([url])
     }
 
@@ -261,7 +257,7 @@ class CAButton: UIButton {
         grad.endPoint = CGPointMake(0.5, 1.0)
         
         UIGraphicsBeginImageContext(grad.bounds.size);
-        grad.renderInContext(UIGraphicsGetCurrentContext())
+        grad.renderInContext(UIGraphicsGetCurrentContext()!)
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
@@ -284,8 +280,8 @@ class CAButton: UIButton {
         overlay.backgroundColor = UIColor(white: 1.0, alpha: 0.5).CGColor
         
         UIGraphicsBeginImageContext(grad.bounds.size);
-        grad.renderInContext(UIGraphicsGetCurrentContext())
-        overlay.renderInContext(UIGraphicsGetCurrentContext())
+        grad.renderInContext(UIGraphicsGetCurrentContext()!)
+        overlay.renderInContext(UIGraphicsGetCurrentContext()!)
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         

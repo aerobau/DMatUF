@@ -1,3 +1,4 @@
+
 //
 //  EventViewController_CRUD.swift
 //  DMatUF
@@ -18,7 +19,7 @@ extension EventViewController {
 
         if getDate(eventDict["endDate"]).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
             
-            var newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext!) as! Event
+           let newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
             let id = getInt(eventDict["id"])
             newEvent.id = id
             newEvent.title = getString(eventDict["title"])
@@ -42,7 +43,7 @@ extension EventViewController {
             return category
         } else {
             if name != "" {
-                let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: managedObjectContext!) as! Category
+                let newCategory = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: managedObjectContext) as! Category
                 newCategory.name = name
                 
                 return newCategory
@@ -64,7 +65,7 @@ extension EventViewController {
         fetchRequest.fetchLimit = 1
         
         // Handle results
-        let fetchedResults = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
+        let fetchedResults = try? managedObjectContext.executeFetchRequest(fetchRequest)
         
         if fetchedResults?.count != 0 {
             
@@ -81,31 +82,30 @@ extension EventViewController {
         if name == "" {
             return
         }
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String).stringByAppendingString("\(name).png")
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] ).stringByAppendingString("\(name).png")
         
         if !NSFileManager.defaultManager().fileExistsAtPath(imagePath) {
             if let eventImage = UIImage(fromURL: url) {
                 eventImage.save(name , type: "png")
-                println("IMAGE CREATED")
+                print("IMAGE CREATED")
             } else {
-                println("IMAGE COULD NOT BE CREATED")
+                print("IMAGE COULD NOT BE CREATED")
             }
         } else {
-        
-            println("IMAGE ALREADY EXISTED")
+            print("IMAGE ALREADY EXISTED")
         }
     }
 
     // Read
     func getFetchedResultController() -> NSFetchedResultsController {
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultsController
     }
     
     func eventsFetchRequest(category: Category?) -> NSFetchRequest {
         
-        var fetchRequest = NSFetchRequest(entityName: "Event")
+        let fetchRequest = NSFetchRequest(entityName: "Event")
         
         if category != nil {
             let predicate = NSPredicate(format: "endDate >= %@ && category = %@", NSDate(), category!)
@@ -134,13 +134,13 @@ extension EventViewController {
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
 
-        return managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as! [Category]
+        return try! managedObjectContext.executeFetchRequest(fetchRequest) as! [Category]
     }
 
     func fetchEvent(eventID: Int) -> Event? {
         
         // Define fetch request/predicate
-        var fetchRequest = NSFetchRequest(entityName: "Event")
+        let fetchRequest = NSFetchRequest(entityName: "Event")
         let predicate = NSPredicate(format: "id == \(eventID)")
         
         // Assign fetch request properties
@@ -149,7 +149,7 @@ extension EventViewController {
         fetchRequest.fetchLimit = 1
         
         // Handle results
-        let fetchedResults = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
+        let fetchedResults = try? managedObjectContext.executeFetchRequest(fetchRequest)
         
         if fetchedResults?.count != 0 {
             
@@ -179,11 +179,11 @@ extension EventViewController {
     
     func update() {
         
-        if self.managedObjectContext!.hasChanges {
+        if self.managedObjectContext.hasChanges {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
 
-                self.managedObjectContext?.save(nil)
-                self.fetchedResultsController.performFetch(nil)
+                let _ = try? self.managedObjectContext.save()
+                let _ = try? self.fetchedResultsController.performFetch()
                 self.deleteOldEvents()
                 self.updateCategories()
 
@@ -206,7 +206,7 @@ extension EventViewController {
     
     func updateCategories() {
         dropDownTableView.items = ["All"]
-        fetchCategories().map() {
+        fetchCategories().forEach {
             self.dropDownTableView.items.append($0.name)
         }
         dropDownTableView.tableView(dropDownTableView, didSelectRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
@@ -215,12 +215,12 @@ extension EventViewController {
     // Delete
     func deleteEvent(eventID: Int) {
         if let event = fetchEvent(eventID) {
-            managedObjectContext?.deleteObject(event)
+            managedObjectContext.deleteObject(event)
         }
     }
     
     func deleteOldEvents() {
-        var fetchRequest = NSFetchRequest(entityName: "Event")
+        let fetchRequest = NSFetchRequest(entityName: "Event")
         
         let predicate = NSPredicate(format: "endDate <= %@", NSDate())
         fetchRequest.predicate = predicate
@@ -228,13 +228,13 @@ extension EventViewController {
         fetchRequest.fetchBatchSize = 1000
         fetchRequest.fetchLimit = 1000
         
-        if let oldEvents = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil) as? [Event] {
-            println("OLD EVENTS CALLED")
-            for event in oldEvents {
-                println("OLD EVENT")
-                managedObjectContext?.deleteObject(event)
+        if let oldEvents = try? managedObjectContext.executeFetchRequest(fetchRequest) as? [Event] {
+            print("OLD EVENTS CALLED")
+            for event in oldEvents ?? [] {
+                print("OLD EVENT")
+                managedObjectContext.deleteObject(event)
             }
-            managedObjectContext?.save(nil)
+            let _ = try? managedObjectContext.save()
         }
     }
 }

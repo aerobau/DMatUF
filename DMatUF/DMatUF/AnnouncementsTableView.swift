@@ -17,16 +17,16 @@ class AnnouncementsTableView: UITableView, NSFetchedResultsControllerDelegate, U
     var fetchedResultsController = NSFetchedResultsController()
     let refreshControl = UIRefreshControl()
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         estimatedRowHeight = 40.0
         delegate = self
         dataSource = self
 
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: allAnnouncementsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: allAnnouncementsFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
-        fetchedResultsController.performFetch(nil)
+        let _ = try? fetchedResultsController.performFetch()
         
         refreshControl.addTarget(self, action: "fetchJSON", forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.tintColor = Color.primary2
@@ -77,7 +77,8 @@ extension AnnouncementsTableView {
         
         session.dataTaskWithURL(url) { (data, response, error)  in
             
-            var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: nil)
+            guard let data = data else { return }
+            let rawJSON = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             
             
             if let result = rawJSON as? [[String: AnyObject]] {
@@ -88,7 +89,7 @@ extension AnnouncementsTableView {
                     if let id = (announcementDict["id"] as AnyObject?)?.integerValue {
                         ids.append(id)
 
-                        if let event = self.fetchAnnouncement(id) {
+                        if self.fetchAnnouncement(id) != nil {
                             self.updateAnnouncement(announcementDict, id: id)
                         } else {
                             self.createAnnouncement(announcementDict)
@@ -97,7 +98,7 @@ extension AnnouncementsTableView {
                 }
                 
                 for announcement in self.fetchedResultsController.fetchedObjects as! [Announcement] {
-                    if (find(ids, announcement.id.integerValue) == nil) {
+                    if (ids.indexOf(announcement.id.integerValue) == nil) {
                         self.deleteAnnouncement(announcement.id.integerValue)
                     }
                 }
@@ -120,7 +121,7 @@ extension AnnouncementsTableView {
 
     // Create
     func createAnnouncement(eventDict: Dictionary<String, AnyObject>) {
-        var newAnnouncement = NSEntityDescription.insertNewObjectForEntityForName("Announcement", inManagedObjectContext: self.managedObjectContext!) as! Announcement
+        let newAnnouncement = NSEntityDescription.insertNewObjectForEntityForName("Announcement", inManagedObjectContext: self.managedObjectContext) as! Announcement
         
         newAnnouncement.id = getInt(eventDict["id"])
         newAnnouncement.text = getString(eventDict["text"])
@@ -139,7 +140,7 @@ extension AnnouncementsTableView {
     
     func fetchAnnouncement(id: Int) -> Announcement? {
         // Define fetch request/predicate
-        var fetchRequest = NSFetchRequest(entityName: "Announcement")
+        let fetchRequest = NSFetchRequest(entityName: "Announcement")
         let predicate = NSPredicate(format: "id == \(id)")
         
         // Assign fetch request properties
@@ -148,7 +149,7 @@ extension AnnouncementsTableView {
         fetchRequest.fetchLimit = 1
         
         // Handle results
-        let fetchedResults = managedObjectContext?.executeFetchRequest(fetchRequest, error: nil)
+        let fetchedResults = try? managedObjectContext.executeFetchRequest(fetchRequest)
         
         if fetchedResults?.count != 0 {
             if let fetchedAnnouncement = fetchedResults![0] as? Announcement {
@@ -168,11 +169,11 @@ extension AnnouncementsTableView {
     
     func update() {
         
-        if self.managedObjectContext!.hasChanges {
+        if self.managedObjectContext.hasChanges {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
                 
-                self.managedObjectContext?.save(nil)
-                self.fetchedResultsController.performFetch(nil)
+                let _ = try? self.managedObjectContext.save()
+                let _ = try? self.fetchedResultsController.performFetch()
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.reloadData()
@@ -190,7 +191,7 @@ extension AnnouncementsTableView {
     // Delete
     func deleteAnnouncement(announcementID: Int) {
         if let announcement = fetchAnnouncement(announcementID) {
-            managedObjectContext?.deleteObject(announcement)
+            managedObjectContext.deleteObject(announcement)
         }
     }
 }

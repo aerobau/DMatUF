@@ -12,12 +12,12 @@ import UIKit
 
 
 func printDocsDirectory() {
-    let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-    let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(documentsDirectory, error: nil)
+    let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+    let files = try? NSFileManager.defaultManager().contentsOfDirectoryAtPath(documentsDirectory)
     
-    println("DOCUMENTS DIRECTORY: \(files?.count) Files")
-    for file in files as! [String] {
-        println(file)
+    print("DOCUMENTS DIRECTORY: \(files?.count) Files")
+    for file in files ?? [] {
+        print(file)
     }
 }
 
@@ -82,16 +82,14 @@ extension UIAlertView {
     }
 }
 
-extension Int {
-    subscript(i: Int) -> Int? {
-        let digits = reverse(String(self))
-        
-        if i >= digits.count {
-            return nil
-        }
-        return String(digits[i]).toInt()
-    }
-}
+//extension Int {
+//    subscript(i: Int) -> Int? {
+//        let digits = String(String(self).characters.reverse())
+//        
+//        guard i >= digits.characters.count else { return nil }
+//        return Int(String(digits.characters[i]))
+//    }
+//}
 
 extension UIImage {
     
@@ -112,8 +110,8 @@ extension UIImage {
     
     convenience init?(fromView view: UIView) {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext())
-        self.init(CGImage:UIGraphicsGetImageFromCurrentImageContext().CGImage)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        self.init(CGImage:UIGraphicsGetImageFromCurrentImageContext().CGImage!)
         UIGraphicsEndImageContext()
     }
     
@@ -123,21 +121,21 @@ extension UIImage {
             return nil
         }
         
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
     
 
         let path = "\(documentsPath)/\(fileName).\(type)"
-        println(path)
+        print(path)
         self.init(contentsOfFile: path)
     }
     
     func imageWithColor(tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         
-        let context = UIGraphicsGetCurrentContext() as CGContextRef
+        let context = UIGraphicsGetCurrentContext()!
         CGContextTranslateCTM(context, 0, self.size.height)
         CGContextScaleCTM(context, 1.0, -1.0);
-        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        CGContextSetBlendMode(context, CGBlendMode.Normal)
         
         let rect = CGRectMake(0, 0, self.size.width, self.size.height) as CGRect
         CGContextClipToMask(context, rect, self.CGImage)
@@ -151,14 +149,14 @@ extension UIImage {
     }
     
     func save(fileName: String, type: String) {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        
         if type.lowercaseString == "png" {
             let path = "\(documentsPath)/\(fileName).\(type)"
-            UIImagePNGRepresentation(self).writeToFile(path, atomically: true)
+            UIImagePNGRepresentation(self)?.writeToFile(path, atomically: true)
         } else if type.lowercaseString == "jpg" {
             let path = "\(documentsPath)/\(fileName).\(type)"
-            UIImageJPEGRepresentation(self, 1.0).writeToFile(path, atomically: true)
+            UIImageJPEGRepresentation(self, 1.0)?.writeToFile(path, atomically: true)
         } else {
 
         }
@@ -166,7 +164,7 @@ extension UIImage {
 }
 
 extension Array {
-    func randomItem() -> T {
+    func randomItem() -> Element {
         let index = Int(arc4random_uniform(UInt32(self.count)))
         return self[index]
     }

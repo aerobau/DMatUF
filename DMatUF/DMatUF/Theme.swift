@@ -44,14 +44,14 @@ class Theme {
         
     }
     
-    func customizeNavBar(#color: UIColor, titleFont: UIFont, buttonFont: UIFont) {
+    func customizeNavBar(color color: UIColor, titleFont: UIFont, buttonFont: UIFont) {
         
         UINavigationBar.appearance().tintColor = color
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: color, NSFontAttributeName: titleFont]
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: color, NSFontAttributeName: buttonFont], forState: UIControlState.Normal)
     }
     
-    func customizeTabBar(#color: UIColor, font: UIFont) {
+    func customizeTabBar(color color: UIColor, font: UIFont) {
         UITabBar.appearance().tintColor = color
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: UIControlState.Selected)
@@ -63,7 +63,7 @@ class Theme {
 
     
     // UILabel
-    func customizeLabel(#color: UIColor) {
+    func customizeLabel(color color: UIColor) {
         UILabel.appearance().textColor = color
     }
     
@@ -71,51 +71,51 @@ class Theme {
 
     
     // UIButton
-    func customizeButton(#color: UIColor) {
+    func customizeButton(color color: UIColor) {
         UIButton.appearance().setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
     }
 
     // UISwitch
-    func customizeSwitch(#color: UIColor) {
+    func customizeSwitch(color color: UIColor) {
         UISwitch.appearance().onTintColor = color
         //UISwitch.appearance().thumbTintColor = UIColor.lightGrayColor()
     }
 
     // UISearchBar
-    func customizeSearchBar(#bar: UIColor, tint: UIColor) {
+    func customizeSearchBar(bar bar: UIColor, tint: UIColor) {
         UISearchBar.appearance().barTintColor = bar
         UISearchBar.appearance().tintColor = tint
     }
 
     // UIActivityIndicator
-    func customizeActivityIndicator(#color: UIColor) {
+    func customizeActivityIndicator(color color: UIColor) {
         UIActivityIndicatorView.appearance().color = color
     }
     
     // UISegmentedControl
-    func customizeSegmentControl(#primary: UIColor, secondary: UIColor) {
+    func customizeSegmentControl(primary primary: UIColor, secondary: UIColor) {
         UISegmentedControl.appearance().tintColor = primary
         UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: Font.accent], forState: .Normal)
     }
     
     // UISlider
-    func customizeSlider(#primary: UIColor, secondary: UIColor) {
+    func customizeSlider(primary primary: UIColor, secondary: UIColor) {
         UISlider.appearance().minimumTrackTintColor = primary
     }
     
     // UIPageControl
-    func customizePageControl(#primary: UIColor, secondary: UIColor) {
+    func customizePageControl(primary primary: UIColor, secondary: UIColor) {
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGrayColor()
         UIPageControl.appearance().currentPageIndicatorTintColor = primary
     }
     
     // UIStepper
-    func customizeStepper(#color: UIColor) {
+    func customizeStepper(color color: UIColor) {
         UIStepper.appearance().tintColor = color
     }
     
     // UIProgressView
-    func customizeProgressView(#primary: UIColor, secondary: UIColor) {
+    func customizeProgressView(primary primary: UIColor, secondary: UIColor) {
         UIProgressView.appearance().progressTintColor = primary
         //UIProgressView.appearance().trackTintColor = secondary
     }

@@ -18,8 +18,11 @@ extension EventViewController {
         let url: NSURL! = NSURL(string: "http://dev.floridadm.org/app/events.php")
         
         session.dataTaskWithURL(url) { (data, response, error)  in
+            guard let data = data else { return }
             
-            var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: nil)
+//            let rawJSON = try? NSJSONSerialization.JSONObjectWithData(data!, options: .allZeros)
+            let rawJSON = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                
             
             if let result = rawJSON as? [[String: AnyObject]] {
 
@@ -30,7 +33,7 @@ extension EventViewController {
                     if let id = (eventDict["id"] as AnyObject?)?.integerValue {
                         ids.append(id)
                         
-                        if let event = self.fetchEvent(id) {
+                        if let _ = self.fetchEvent(id) {
                             self.updateEvent(eventDict, id: id)
                         } else {
                             self.createEvent(eventDict)
@@ -38,7 +41,7 @@ extension EventViewController {
                     }
                 }
                 for event in self.fetchedResultsController.fetchedObjects as! [Event] {
-                    if (find(ids, event.id.integerValue) == nil) {
+                    if ids.indexOf(event.id.integerValue) == nil {
                         self.deleteEvent(event.id.integerValue)
                     }
                 }

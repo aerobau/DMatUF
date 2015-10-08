@@ -21,7 +21,7 @@ class CountdownImageView: UIImageView {
     var standComponents: NSDateComponents!
     var sitComponents: NSDateComponents!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         standComponents = NSDateComponents(year: 2015, month: 3, day: 14, hour: 12, minute: 2, second: 0)
@@ -47,14 +47,14 @@ class CountdownImageView: UIImageView {
         
         let dateString = defaults.stringForKey("CountdownDate")  ?? ""
         
-        println(message)
-        println(dateString)
+        print(message)
+        print(dateString)
         
         let date = NSDate(fromString: dateString, format: .FromSQL, timeZone: .EST)
         
 
-        let components = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: date)
-        println(components)
+        let components = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDate: date)
+        print(components)
 
     }
     
@@ -102,21 +102,21 @@ class CountdownImageView: UIImageView {
     
     func updateLabelText() {
         
-        let nowComponents = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDate: NSDate())
+        let nowComponents = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDate: NSDate())
         
         if standComponents.date!.timeIntervalSince1970 >= NSDate().timeIntervalSince1970 {
             
-            let components = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDateComponents: nowComponents, toDateComponents: standComponents, options: nil)
+            let components = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDateComponents: nowComponents, toDateComponents: standComponents, options: [])
             
             let daysString = NSString(format: "%03d", components.day) as String
             let hoursString = NSString(format: "%02d", components.hour) as String
             let minutesString = NSString(format: "%02d", components.minute) as String
             let secondsString = NSString(format: "%02d", components.second) as String
             
-            let daysArray = map(daysString) { s -> String in String(s) }
-            let hoursArray = map(hoursString) { s -> String in String(s) }
-            let minutesArray = map(minutesString) { s -> String in String(s) }
-            let secondsArray = map(secondsString) { s -> String in String(s) }
+            let daysArray = daysString.characters.map { String($0) }
+            let hoursArray = hoursString.characters.map { String($0) }
+            let minutesArray = minutesString.characters.map { String($0) }
+            let secondsArray = secondsString.characters.map { String($0) }
             
             // Days
             labels[0].text = daysArray[0]
@@ -135,7 +135,7 @@ class CountdownImageView: UIImageView {
           
         } else if standComponents.date!.timeIntervalSince1970 < NSDate().timeIntervalSince1970 && NSDate().timeIntervalSince1970 < sitComponents.date!.timeIntervalSince1970 {
             
-            let components = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond, fromDateComponents: nowComponents, toDateComponents: sitComponents, options: nil)
+            let components = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDateComponents: nowComponents, toDateComponents: sitComponents, options: [])
 
             let daysString = NSString(format: "%03d", components.day) as String
             let hoursString = NSString(format: "%02d", components.hour) as String
@@ -144,10 +144,10 @@ class CountdownImageView: UIImageView {
             
 
             
-            let daysArray = map(daysString) { s -> String in String(s) }
-            let hoursArray = map(hoursString) { s -> String in String(s) }
-            let minutesArray = map(minutesString) { s -> String in String(s) }
-            let secondsArray = map(secondsString) { s -> String in String(s) }
+            let daysArray = daysString.characters.map { String($0) }
+            let hoursArray = hoursString.characters.map { String($0) }
+            let minutesArray = minutesString.characters.map { String($0) }
+            let secondsArray = secondsString.characters.map { String($0) }
             
             // Days
             labels[0].text = daysArray[0]
@@ -166,7 +166,7 @@ class CountdownImageView: UIImageView {
             
         } else {
             let message = "THANKYOUDMatUF!"
-            let messageArray = map(message) { s -> String in String(s) }
+            let messageArray = message.characters.map { String($0) }
             for i in 0..<labels.count {
                 labels[i].text = messageArray[i]
             }

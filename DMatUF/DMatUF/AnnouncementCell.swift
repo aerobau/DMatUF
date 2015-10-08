@@ -17,8 +17,8 @@ class AnnouncementCell: UITableViewCell {
 
     let separator = UIView()
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
         
         contentView.addSubview(separator)
         separator.backgroundColor = Color.secondary1

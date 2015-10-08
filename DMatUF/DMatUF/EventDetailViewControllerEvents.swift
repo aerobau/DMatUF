@@ -12,12 +12,12 @@ import EventKit
 import EventKitUI
 import CoreData
 
-extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegate {
+extension EventDetailViewController: EKEventEditViewDelegate {
     @IBAction func addEventButtonPressed(sender: UIBarButtonItem) {
         
         GA.sendEvent(category: GA.K.CAT.ACTION, action: GA.K.ACT.PRESSED, label: "add event", value: nil)
         
-        store.requestAccessToEntityType(EKEntityTypeEvent) { granted, error in
+        store.requestAccessToEntityType(.Event) { granted, error in
             if granted {
                 dispatch_async(dispatch_get_main_queue()) {
                     let alert = UIAlertView(title: "Add all events?", message: "", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Just this event", "Add all events")
@@ -41,17 +41,17 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
         if eventExists(event) {
             UIAlertView.errorMessage("Event Not Added", message: "This event already exists.")
         } else {
-            var addEventController = EKEventEditViewController()
+            let addEventController = EKEventEditViewController()
             addEventController.eventStore = store
             addEventController.editViewDelegate = self
             
-            var newEvent = EKEvent(eventStore: store)
-            newEvent.title = selectedEvent?.title
+            let newEvent = EKEvent(eventStore: store)
+            newEvent.title = selectedEvent?.title ?? ""
             newEvent.location = selectedEvent?.location
-            newEvent.startDate = selectedEvent?.startDate
-            newEvent.endDate = selectedEvent?.endDate
+            newEvent.startDate = selectedEvent?.startDate ?? NSDate()
+            newEvent.endDate = selectedEvent?.endDate ?? NSDate()
             newEvent.notes = selectedEvent?.moreInfo
-            newEvent.calendar = getCalendar()
+            newEvent.calendar = getCalendar() ?? EKCalendar()
             addEventController.event = newEvent
                 
             self.presentViewController(addEventController, animated: true, completion: nil)
@@ -74,17 +74,17 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
     }
     
     func addEvent(event: Event) {
-        println("CREATING NEW EVENT")
+        print("CREATING NEW EVENT")
 
-        var newEvent = EKEvent(eventStore: self.store)
+        let newEvent = EKEvent(eventStore: self.store)
         newEvent.title = event.title
         newEvent.location = event.location
         newEvent.startDate = event.startDate
         newEvent.endDate = event.endDate
         newEvent.notes = event.moreInfo
-        newEvent.calendar = getCalendar()
+        newEvent.calendar = getCalendar() ?? EKCalendar()
 
-        self.store.saveEvent(newEvent, span: EKSpanThisEvent, commit: true, error: nil)
+        let _ = try? self.store.saveEvent(newEvent, span: EKSpan.ThisEvent, commit: true)
     }
     
     func eventExists(event: Event) -> Bool {
@@ -100,15 +100,15 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
         }
         
         if match {
-            println("MATCH")
+            print("MATCH")
             return true
         } else {
-            println("NO MATCH")
+            print("NO MATCH")
             return false
         }
     }
 
-    func eventEditViewController(controller: EKEventEditViewController!, didCompleteWithAction action: EKEventEditViewAction) {
+    func eventEditViewController(controller: EKEventEditViewController, didCompleteWithAction action: EKEventEditViewAction) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -116,20 +116,20 @@ extension EventDetailViewController: EKEventEditViewDelegate, UIAlertViewDelegat
         let defaults = NSUserDefaults.standardUserDefaults()
 
         if let id = defaults.stringForKey("calendarID") {
-            println(id)
+            print(id)
             return store.calendarWithIdentifier(id)
         } else {
-            var calendar = EKCalendar(forEntityType: EKEntityTypeEvent, eventStore: self.store)
+            let calendar = EKCalendar(forEntityType: EKEntityType.Event, eventStore: self.store)
             
             calendar.title = "Dance Marathon"
             calendar.CGColor = Color.primary1.CGColor
             calendar.source = self.store.defaultCalendarForNewEvents.source
             
-            var error: NSError?
-            self.store.saveCalendar(calendar, commit: true, error: &error)
-            
-            if error == nil {
+            do {
+                try self.store.saveCalendar(calendar, commit: true)
                 defaults.setObject(calendar.calendarIdentifier, forKey: "calendarID")
+            } catch {
+                
             }
             
             return calendar

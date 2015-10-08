@@ -11,7 +11,7 @@ import UIKit
 
 class DonateBarButtonItem: UIBarButtonItem {
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         title = "Donate"
         target = self

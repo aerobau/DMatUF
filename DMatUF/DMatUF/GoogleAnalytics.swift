@@ -37,7 +37,7 @@ class GA: UIAlertView, UIAlertViewDelegate {
         }
     }
     
-    class func initialize(#trackingId: String!, dispatchInterval: NSTimeInterval) {
+    class func initialize(trackingId trackingId: String!, dispatchInterval: NSTimeInterval) {
         GAI.sharedInstance().trackerWithTrackingId(trackingId)
         GAI.sharedInstance().trackUncaughtExceptions = true
         GAI.sharedInstance().logger.logLevel = GAILogLevel.Info
@@ -46,13 +46,13 @@ class GA: UIAlertView, UIAlertViewDelegate {
         GAI.sharedInstance().defaultTracker.allowIDFACollection = true
     }
   
-    class func sendScreenView(#name: String!) {
+    class func sendScreenView(name name: String!) {
         let tracker = GAI.sharedInstance().defaultTracker
         tracker.set(kGAIScreenName, value: name)
 //        tracker.send(GAIDictionaryBuilder.createScreenView().build())
     }
     
-    class func sendEvent(#category: String!, action: String!, label: String!, value: NSNumber!) {
+    class func sendEvent(category category: String!, action: String!, label: String!, value: NSNumber!) {
 //        GAI.sharedInstance().defaultTracker.send(GAIDictionaryBuilder.createEventWithCategory(category, action: action, label: label, value: value).build())
     }
 }

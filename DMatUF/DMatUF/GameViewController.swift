@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
 
 class GameButton: UIButton {
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -97,7 +97,7 @@ class GameButton: UIButton {
         grad.endPoint = CGPointMake(0.5, 1.0)
         
         UIGraphicsBeginImageContext(grad.bounds.size);
-        grad.renderInContext(UIGraphicsGetCurrentContext())
+        grad.renderInContext(UIGraphicsGetCurrentContext()!)
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
@@ -120,8 +120,8 @@ class GameButton: UIButton {
         overlay.backgroundColor = UIColor(white: 1.0, alpha: 0.5).CGColor
         
         UIGraphicsBeginImageContext(grad.bounds.size);
-        grad.renderInContext(UIGraphicsGetCurrentContext())
-        overlay.renderInContext(UIGraphicsGetCurrentContext())
+        grad.renderInContext(UIGraphicsGetCurrentContext()!)
+        overlay.renderInContext(UIGraphicsGetCurrentContext()!)
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         

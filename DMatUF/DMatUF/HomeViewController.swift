@@ -58,7 +58,7 @@ class HomeViewController: UIViewController  {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+        if defaults.objectForKey("userInfo") as? [String: AnyObject] != nil {
             performSegueWithIdentifier("FundSegue", sender: self)
         } else {
             loginAlert()
@@ -72,7 +72,8 @@ class HomeViewController: UIViewController  {
         
         session.dataTaskWithURL(url) { (data, response, error)  in
             
-            var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error: nil)
+            guard let data = data else { return }
+            var rawJSON = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             
             
             if let results = rawJSON as? [AnyObject] {

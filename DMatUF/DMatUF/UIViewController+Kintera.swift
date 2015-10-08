@@ -26,12 +26,12 @@ extension UIViewController: UIAlertViewDelegate  {
         let request = NSURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 8.0)
         
         Properties.task = session.dataTaskWithRequest(request) { [unowned self] data, response, error in
-            println("DATA \(data)")
-            println(NSString(data: data, encoding: 8))
-            println("RESPONSE \(response)")
-            println(error)
+            print("DATA \(data)")
+            print(NSString(data: data!, encoding: 8))
+            print("RESPONSE \(response)")
+            print(error)
             
-            if NSString(data: data, encoding: 8) as! String == "Error" {
+            if NSString(data: data!, encoding: 8) as! String == "Error" {
                 Properties.task?.cancel()
                 dispatch_async(dispatch_get_main_queue()) {
                     UIAlertView.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
@@ -40,10 +40,10 @@ extension UIViewController: UIAlertViewDelegate  {
             
             dispatch_async(dispatch_get_main_queue()) {
                 if let dataUnwrapped = data {
-                    var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataUnwrapped, options: .allZeros, error: nil)
+                    var rawJSON = try? NSJSONSerialization.JSONObjectWithData(dataUnwrapped, options: .AllowFragments)
                     
                     if let result = rawJSON as? [String: AnyObject] {
-                        println(result)
+                        print(result)
                         // Save Login info to NSUserDefaults
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject(username, forKey: "username")
@@ -62,7 +62,7 @@ extension UIViewController: UIAlertViewDelegate  {
                 }
                 
                 if error != nil {
-                    UIAlertView.errorMessage("Error \(error.code)", message: "\(error.localizedDescription)")
+                    UIAlertView.errorMessage("Error \(error!.code)", message: "\(error!.localizedDescription)")
                 }
             }
         }
@@ -80,19 +80,20 @@ extension UIViewController: UIAlertViewDelegate  {
             let defaults = NSUserDefaults.standardUserDefaults()
             
             
-            println("AlertController exists")
+            print("AlertController exists")
             
             let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
             
             // Login Button
             let loginAction = UIAlertAction(title: "Login", style: .Default) { (_) in
-                let loginTextField = alertController.textFields![0] as! UITextField
-                let passwordTextField = alertController.textFields![1] as! UITextField
+                let loginTextField = alertController.textFields![0] 
+                let passwordTextField = alertController.textFields![1] 
                 
-                self.login(loginTextField.text, password: passwordTextField.text) {
+                self.login(loginTextField.text!, password: passwordTextField.text!) {
                     self.performSegueWithIdentifier("FundSegue", sender: self)
                 }
             }
+            
             
             loginAction.enabled = false
             
@@ -120,7 +121,7 @@ extension UIViewController: UIAlertViewDelegate  {
             }
             
             // Set Default Info
-            let loginTextField = alertController.textFields![0] as! UITextField
+            let loginTextField = alertController.textFields![0] 
             if let defaultUsername = defaults.objectForKey("username") as? String {
                 loginTextField.text = defaultUsername
                 loginAction.enabled = true
@@ -150,9 +151,9 @@ extension UIViewController: UIAlertViewDelegate  {
     public func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if respondsToSelector("kinteraButtonPressed:") {
             if buttonIndex == 0 {
-                println("cancel")
+                print("cancel")
             } else if buttonIndex == 1 {
-                self.login(alertView.textFieldAtIndex(0)!.text, password: alertView.textFieldAtIndex(1)!.text) {
+                self.login(alertView.textFieldAtIndex(0)!.text!, password: alertView.textFieldAtIndex(1)!.text!) {
                     self.performSegueWithIdentifier("FundSegue", sender: self)
                 }
             } else if buttonIndex == 2 {

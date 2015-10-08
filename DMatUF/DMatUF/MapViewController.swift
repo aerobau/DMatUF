@@ -23,7 +23,7 @@ class MapView: UIImageView {
         setup(gesture)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -74,7 +74,7 @@ class AlertButton: UIView, UIAlertViewDelegate {
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -201,7 +201,7 @@ extension MapViewController {
 
 extension MapViewController: UIGestureRecognizerDelegate {
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         pinchPoint = imageView.center
     }

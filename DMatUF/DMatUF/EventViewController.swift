@@ -30,7 +30,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         
         fetchedResultsController = getFetchedResultController()
         fetchedResultsController.delegate = self
-        fetchedResultsController.performFetch(nil)
+        let _ = try? fetchedResultsController.performFetch()
         
         refreshControl = UIRefreshControl()
         refreshControl?.tintColor = Color.primary2
@@ -47,7 +47,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         UIGraphicsBeginImageContext(CGSize(width: l, height: l))
         let context = UIGraphicsGetCurrentContext()
         CGContextBeginPath(context)
-        CGContextSetLineCap(context, kCGLineCapSquare)
+        CGContextSetLineCap(context, CGLineCap.Square)
         CGContextSetFillColorWithColor(context, Color.primary1.CGColor)
         CGContextSetLineWidth(context, 1.0)
         CGContextSetStrokeColorWithColor(context, Color.primary1.CGColor)
@@ -107,7 +107,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             cell.calendarImageView.image = image
             cell.dayLabel.text = nil
             cell.monthLabel.text = nil
-            println("Index \(indexPath.row) image name \(cellEvent.imageName)")
+            print("Index \(indexPath.row) image name \(cellEvent.imageName)")
 
         } else {
             cell.calendarImageView.image = UIImage(named: "Calendar")
@@ -120,20 +120,20 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
     func dropdown(dropdown: DropdownTableView, didDismissWithIndexPath indexPath: NSIndexPath, andTitle title: String) {
         
         if indexPath.row == 0 {
-            fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(nil), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
             
         }
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(fetchCategory(title)), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.performFetch(nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: eventsFetchRequest(fetchCategory(title)), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let _ = try? fetchedResultsController.performFetch()
         
         dispatch_async(dispatch_get_main_queue()) {
             
-            println("\(indexPath) - \(title)")
+            print("\(indexPath) - \(title)")
             self.dropdownButton.setTitle(title, forState: UIControlState.Normal)
            
             self.tableView.reloadData()
-            println("DISMISS INDEX: \(indexPath.row), \(title)")
+            print("DISMISS INDEX: \(indexPath.row), \(title)")
 
         }
     }
@@ -150,7 +150,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+        if defaults.objectForKey("userInfo") as? [String: AnyObject] != nil {
             performSegueWithIdentifier("FundSegue", sender: self)
         } else {
             loginAlert()
@@ -174,7 +174,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         case .Insert:
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
         case .Delete:
-            println("OBJECT DELETED")
+            print("OBJECT DELETED")
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Move:
             break

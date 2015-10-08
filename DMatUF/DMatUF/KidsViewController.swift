@@ -30,11 +30,11 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
         
         fetchedResultsController = getFetchedResultController()
         fetchedResultsController.delegate = self
-        fetchedResultsController.performFetch(nil)
+        let _ = try? fetchedResultsController.performFetch()
 
         if fetchedResultsController.fetchedObjects?.count == 0 {
             createKids()
-            fetchedResultsController.performFetch(nil)
+            let _ = try? fetchedResultsController.performFetch()
             collectionView?.reloadData()
         }
         
@@ -52,7 +52,7 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
         let array = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Kids", ofType: "plist")!) as! [[String: AnyObject]]
 
         for kid in array {
-            var newKid: Kid = NSEntityDescription.insertNewObjectForEntityForName("Kid", inManagedObjectContext: self.managedObjectContext!) as! Kid
+            let newKid: Kid = NSEntityDescription.insertNewObjectForEntityForName("Kid", inManagedObjectContext: self.managedObjectContext) as! Kid
             newKid.name = kid["name"] as! String
             newKid.story = kid["story"] as! String
             newKid.image = kid["image"] as! String
@@ -65,13 +65,13 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     
     func getFetchedResultController() -> NSFetchedResultsController {
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: kidsFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: kidsFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         return fetchedResultsController
     }
     
     func kidsFetchRequest() -> NSFetchRequest {
         
-        var fetchRequest = NSFetchRequest(entityName: "Kid")
+        let fetchRequest = NSFetchRequest(entityName: "Kid")
         let sortDescriptor1 = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor1]
         fetchRequest.fetchBatchSize = 1000
@@ -132,7 +132,7 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
+        if defaults.objectForKey("userInfo") as? [String: AnyObject] != nil {
             performSegueWithIdentifier("FundSegue", sender: self)
         } else {
             loginAlert()

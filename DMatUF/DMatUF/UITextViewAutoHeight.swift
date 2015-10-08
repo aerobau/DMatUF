@@ -19,7 +19,7 @@ class UITextViewAutoHeight: UITextView {
     var  heightConstraint:NSLayoutConstraint?
    
     //MARK: initialize
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -42,9 +42,9 @@ class UITextViewAutoHeight: UITextView {
     //MARK: private
     
     private func setup() {
-        for constraint in self.constraints() {
+        for constraint in self.constraints {
             if constraint.firstAttribute == NSLayoutAttribute.Height {
-                self.heightConstraint = constraint as? NSLayoutConstraint;
+                self.heightConstraint = constraint as NSLayoutConstraint;
                 break;
             }
         }

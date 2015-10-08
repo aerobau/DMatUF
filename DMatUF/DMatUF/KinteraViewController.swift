@@ -40,7 +40,7 @@ class KinteraViewController: UIViewController {
     
 
     func updateFundraisingGraphics() {
-        println("REFRESH")
+        print("REFRESH")
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var value: Int?
@@ -111,11 +111,11 @@ class KinteraViewController: UIViewController {
     }
   
     override func startLoading() {
-        println("Start loading")
+        print("Start loading")
      }
     
     override func stopLoading() {
-        println("Stop loading")
+        print("Stop loading")
         updateFundraisingGraphics()
         refreshControl.endRefreshing()
     }
@@ -131,7 +131,7 @@ class KinteraViewController: UIViewController {
         
         Properties.task = session.dataTaskWithRequest(request) { [unowned self] data, response, error in
 
-            if NSString(data: data, encoding: 8) as! String == "Error" {
+            if NSString(data: data!, encoding: 8) as! String == "Error" {
                 Properties.task?.cancel()
                 dispatch_async(dispatch_get_main_queue()) {
                     UIAlertView.errorMessage("Login Failed", message: "Invalid username or password.\nTry again.")
@@ -140,10 +140,10 @@ class KinteraViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
                 if let dataUnwrapped = data {
-                    var rawJSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataUnwrapped, options: .allZeros, error: nil)
+                    let rawJSON: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(dataUnwrapped, options: .AllowFragments)
                     
                     if let result = rawJSON as? [String: AnyObject] {
-                        println(result)
+                        print(result)
                         // Save Login info to NSUserDefaults
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject(result, forKey: "userInfo")
@@ -159,7 +159,7 @@ class KinteraViewController: UIViewController {
                 }
                 
                 if error != nil {
-                    UIAlertView.errorMessage("Error \(error.code)", message: "\(error.localizedDescription)")
+                    UIAlertView.errorMessage("Error \(error!.code)", message: "\(error!.localizedDescription)")
                 }
             }
         }
