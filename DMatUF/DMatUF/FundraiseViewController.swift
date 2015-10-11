@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FundraiseViewController: UIViewController {
+class FundraiseViewController: DMMainViewController {
     @IBOutlet weak var textView: UITextView!
 
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class FundraiseViewController: UIViewController {
         super.awakeFromNib()
     }
     
-    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+    @IBAction override func kinteraButtonPressed(sender: UIBarButtonItem) {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()

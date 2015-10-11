@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: DMMainViewController {
 
     @IBOutlet weak var playButton: GameButton!
     @IBOutlet weak var descriptionTextView: UITextView!

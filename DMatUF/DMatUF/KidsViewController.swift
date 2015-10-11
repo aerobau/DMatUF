@@ -18,7 +18,14 @@ import UIKit
 import Foundation
 import CoreData
 
-class KidsViewController: UICollectionViewController, NSFetchedResultsControllerDelegate {
+class KidsViewController: DMMainViewController, NSFetchedResultsControllerDelegate, UICollectionViewDelegate {
+    
+    
+    @IBOutlet var collectionView: UICollectionView! {
+        didSet {
+            collectionView.delegate = self
+        }
+    }
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
@@ -80,17 +87,17 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
     }
 
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
 
     
-    override func collectionView(collectionView: UICollectionView,
+    func collectionView(collectionView: UICollectionView,
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("KidCellID", forIndexPath: indexPath) as! KidsCell
@@ -118,7 +125,7 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
             return CGSize(width: size, height: size)
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let kid = fetchedResultsController.objectAtIndexPath(indexPath) as! Kid
         if kid.story != "" || kid.milestone != nil {
             selectedKid = fetchedResultsController.objectAtIndexPath(indexPath) as? Kid
@@ -128,7 +135,7 @@ class KidsViewController: UICollectionViewController, NSFetchedResultsController
         }
     }
     
-    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+    @IBAction override func kinteraButtonPressed(sender: UIBarButtonItem) {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()

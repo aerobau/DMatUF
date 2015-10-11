@@ -82,7 +82,7 @@ class CAThermometer: UIView {
     func drawThermometer(frame frame: CGRect, filled: Bool, fillColor: CGColorRef?, stroked: Bool, strokeColor: CGColorRef?, strokeWidth: CGFloat) -> CAShapeLayer {
         let radius = CGFloat(frame.width / 4.0)
         let x = CGFloat(frame.width / 2.0)
-        var path = UIBezierPath(arcCenter: CGPointMake(x, radius), radius: radius, startAngle: 0, endAngle: CGFloat(M_PI), clockwise: false)
+        let path = UIBezierPath(arcCenter: CGPointMake(x, radius), radius: radius, startAngle: 0, endAngle: CGFloat(M_PI), clockwise: false)
         let p1 = CGPointMake(x - radius, frame.height - frame.width)
         path.addLineToPoint(p1)
         
@@ -109,7 +109,7 @@ class CAThermometer: UIView {
     }
     
     func drawEllipse(frame frame: CGRect, color: CGColorRef) -> CALayer {
-        var layer = CALayer()
+        let layer = CALayer()
         layer.frame = frame
         layer.borderColor = color
         layer.borderWidth = strokeWidth

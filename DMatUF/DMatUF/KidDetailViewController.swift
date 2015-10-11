@@ -55,7 +55,7 @@ class KidDetailViewController: UIViewController {
             storyView.text = kid.story ?? "No story available"
             imageView.image = UIImage(named: kid.image) ?? UIImage(named: "ImageNotFound")!
             
-            if let milestone = kid.milestone {
+            if kid.milestone != nil {
                 milestoneButton.hidden = false
                 let attributedString = NSAttributedString(string: "View \(kid.name)'s Milestone", attributes: [NSForegroundColorAttributeName: Color.primary1, NSFontAttributeName: Font.subheader])
                 milestoneButton.setAttributedTitle(attributedString, forState: .Normal)

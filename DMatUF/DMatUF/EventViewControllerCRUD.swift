@@ -190,7 +190,7 @@ extension EventViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.dropDownTableView.reloadData()
                     self.tableView.reloadData()
-                    self.refreshControl?.endRefreshing()
+                    self.refreshControl.endRefreshing()
                     self.dropdownButton.enabled = true
                     self.dropdownButton.userInteractionEnabled = true
                     self.dropdownButton.alpha = 1.0
@@ -198,7 +198,7 @@ extension EventViewController {
             }
         } else {
             dispatch_async(dispatch_get_main_queue()) {
-                self.refreshControl?.endRefreshing()
+                self.refreshControl.endRefreshing()
                 return
             }
         }

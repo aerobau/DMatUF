@@ -10,9 +10,16 @@ import CoreData
 import CoreGraphics
 
 
-class EventViewController: UITableViewController, NSFetchedResultsControllerDelegate, DropdownController {
+class EventViewController: DMMainViewController, NSFetchedResultsControllerDelegate, DropdownController, UITableViewDelegate {
     
+    let refreshControl = UIRefreshControl()
     @IBOutlet weak var dropdownButton: UIButton!
+    @IBOutlet var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+        }
+    }
+    
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController = NSFetchedResultsController()
@@ -20,6 +27,10 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.tintColor = Color.primary2
+        refreshControl.addTarget(self, action: "fetchJSON:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         
         // Google Analytics
         GA.sendScreenView(name: "EventsView")
@@ -31,10 +42,6 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
         fetchedResultsController = getFetchedResultController()
         fetchedResultsController.delegate = self
         let _ = try? fetchedResultsController.performFetch()
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.tintColor = Color.primary2
-        refreshControl?.addTarget(self, action: "fetchJSON:", forControlEvents: UIControlEvents.ValueChanged)
         
         fetchJSON(nil)
         
@@ -77,20 +84,20 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
 
     
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
 
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCellID", forIndexPath: indexPath) as! EventCell
         let cellEvent = fetchedResultsController.objectAtIndexPath(indexPath) as! Event
         
@@ -146,7 +153,7 @@ class EventViewController: UITableViewController, NSFetchedResultsControllerDele
             dropDownTableView.contentInset.top = tableView.contentInset.top ?? 0
         }
     }
-    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+    @IBAction override func kinteraButtonPressed(sender: UIBarButtonItem) {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()

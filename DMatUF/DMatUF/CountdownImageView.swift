@@ -68,7 +68,7 @@ class CountdownImageView: UIImageView {
     
     func initializeLabels() {
         
-        for i in 0..<15 {
+        for _ in 0..<15 {
             let label = UILabel()
             addSubview(label)
             labels.append(label)

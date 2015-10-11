@@ -75,7 +75,7 @@ class DropdownTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
         cell.textLabel?.text = items[indexPath.row]
         cell.textLabel?.font = indexPath == checkedIndex ? Font.subheader.fontWithSize(18) : Font.body1.fontWithSize(18)
 

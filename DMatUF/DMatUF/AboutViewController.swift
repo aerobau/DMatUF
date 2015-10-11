@@ -8,7 +8,12 @@
 
 import Foundation
 
-class AboutViewController: UITableViewController {
+class AboutViewController: DMMainViewController, UITableViewDelegate {
+    @IBOutlet var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+        }
+    }
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
     let questions = ["If I register to dance, am I guaranteed a dancer spot at DM?",
@@ -47,14 +52,14 @@ class AboutViewController: UITableViewController {
         tableView.setNeedsDisplay()
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentControl.selectedSegmentIndex == 0 {
             return questions.count
         } else if segmentControl.selectedSegmentIndex == 1 {
@@ -65,7 +70,7 @@ class AboutViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if segmentControl.selectedSegmentIndex == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as! FactsCell

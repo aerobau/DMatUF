@@ -43,7 +43,6 @@ class KinteraViewController: UIViewController {
         print("REFRESH")
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        var value: Int?
         
         if let dict = defaults.objectForKey("userInfo") as? [String: AnyObject] {
             

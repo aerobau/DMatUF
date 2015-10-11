@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GU6-ca-Osi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -70,7 +70,7 @@
         <!--Stand Up FTK-->
         <scene sceneID="bXy-FY-x8s">
             <objects>
-                <viewController id="qUT-XQ-Vwc" customClass="GameViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMGameViewController" id="qUT-XQ-Vwc" customClass="GameViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LkK-Gv-ZRI"/>
                         <viewControllerLayoutGuide type="bottom" id="Dpj-bK-Bdt"/>
@@ -111,7 +111,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Wgc-oh-RsM"/>
-                    <navigationItem key="navigationItem" title="Stand Up FTK" id="bgy-7s-bgp"/>
+                    <navigationItem key="navigationItem" title="Stand Up FTK" id="bgy-7s-bgp">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="ufo-id-5HG">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="qUT-XQ-Vwc" id="dMp-UQ-d2N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="bQo-lV-nhT" id="0vt-DX-NOP"/>
                         <outlet property="playButton" destination="g8G-JP-lWU" id="GrN-Ww-TLD"/>
@@ -142,7 +148,7 @@
         <!--Map-->
         <scene sceneID="Xu0-bN-oQV">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rWq-JP-GBu" customClass="MapViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMMapViewController" automaticallyAdjustsScrollViewInsets="NO" id="rWq-JP-GBu" customClass="MapViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aF9-sm-hQK"/>
                         <viewControllerLayoutGuide type="bottom" id="8z3-gg-e6R"/>
@@ -152,6 +158,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </scrollView>
                     <navigationItem key="navigationItem" title="Map" id="uJE-4b-WkM">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Jsf-L6-80v">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="rWq-JP-GBu" id="Fy1-EG-1vw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="TabAboutIcon" id="9Cj-nh-Lip">
                             <connections>
                                 <action selector="infoButtonPressed:" destination="rWq-JP-GBu" id="z6P-p4-z8R"/>
@@ -166,6 +177,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yz-Oe-ORf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1002" y="-2498"/>
+        </scene>
+        <!--Side Panel Table View Controller-->
+        <scene sceneID="vld-vE-WrM">
+            <objects>
+                <tableViewController storyboardIdentifier="DMSidePanelTableViewController" id="ewK-PD-QWi" customClass="DMSidePanelTableViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncn-Fw-hWp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="panelCellReuse" id="khp-zj-62f" customClass="DMSidePanelTableViewCell" customModule="DMatUF" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="khp-zj-62f" id="2cr-2D-qi6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-0K-PrM">
+                                            <rect key="frame" x="37" y="11" width="555" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JUk-Oc-AJ6">
+                                            <rect key="frame" x="8" y="11" width="21" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="JUk-Oc-AJ6" secondAttribute="height" multiplier="1:1" id="Lns-ZK-euI"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="JUk-Oc-AJ6" secondAttribute="leading" id="JBM-f8-apg"/>
+                                        <constraint firstItem="0NN-0K-PrM" firstAttribute="top" secondItem="2cr-2D-qi6" secondAttribute="topMargin" constant="3" id="aZR-gS-GyX"/>
+                                        <constraint firstItem="JUk-Oc-AJ6" firstAttribute="top" secondItem="2cr-2D-qi6" secondAttribute="topMargin" constant="3" id="bQQ-up-YzR"/>
+                                        <constraint firstItem="0NN-0K-PrM" firstAttribute="leading" secondItem="JUk-Oc-AJ6" secondAttribute="trailing" constant="8" id="hyz-2Q-TxB"/>
+                                        <constraint firstItem="0NN-0K-PrM" firstAttribute="height" secondItem="JUk-Oc-AJ6" secondAttribute="height" id="ldq-BT-gdd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0NN-0K-PrM" secondAttribute="trailing" id="qxa-2H-95s"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0NN-0K-PrM" secondAttribute="bottom" constant="3.5" id="vz3-RF-4HY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="JUk-Oc-AJ6" id="K9J-YS-3WN"/>
+                                    <outlet property="label" destination="0NN-0K-PrM" id="baz-Qo-vnd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ewK-PD-QWi" id="pbc-kr-Bn7"/>
+                            <outlet property="delegate" destination="ewK-PD-QWi" id="4Og-Aq-HBr"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="7Tq-fg-OB8"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="PJY-8t-SaT"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxx-vv-rXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1788" y="-3199"/>
         </scene>
         <!--Map-->
         <scene sceneID="0Fr-Am-cvr">
@@ -184,35 +256,10 @@
             </objects>
             <point key="canvasLocation" x="-1788" y="-2498"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <outlet property="delegate" destination="W28-zg-YXA" id="5JB-ec-h7c"/>
-                        <segue destination="baT-Nm-5ij" kind="relationship" relationship="viewControllers" id="CiF-f6-LKF"/>
-                        <segue destination="Wbn-ml-ree" kind="relationship" relationship="viewControllers" id="zhM-y3-7rq"/>
-                        <segue destination="63N-Jf-iqn" kind="relationship" relationship="viewControllers" id="iYr-Fp-hAO"/>
-                        <segue destination="hMa-vD-GlC" kind="relationship" relationship="viewControllers" id="Sba-cB-WQw"/>
-                        <segue destination="rcd-lD-cpE" kind="relationship" relationship="viewControllers" id="LBK-lE-HB3"/>
-                        <segue destination="jwp-nU-o3f" kind="relationship" relationship="viewControllers" id="sDh-EC-kTw"/>
-                        <segue destination="kg9-hF-dsk" kind="relationship" relationship="viewControllers" id="lSj-7d-epC"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2510" y="-1080"/>
-        </scene>
         <!--About View Controller-->
         <scene sceneID="Pgz-UJ-ipd">
             <objects>
-                <tableViewController id="avb-xr-HPi" customClass="AboutViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DMAboutViewController" id="avb-xr-HPi" customClass="AboutViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5aL-1F-xwn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,13 +275,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-Iq-yCH">
                                             <rect key="frame" x="15" y="6" width="577" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="o2I-li-n5C">
                                             <rect key="frame" x="15" y="28" width="577" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -305,6 +352,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="RDC-U4-RzY">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="7aA-Ue-0ea">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="avb-xr-HPi" id="Vog-Zm-QfV"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cDO-5c-qfI">
                             <rect key="frame" x="125" y="5.5" width="350" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -320,6 +372,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="segmentControl" destination="cDO-5c-qfI" id="tJm-uU-Z8T"/>
+                        <outlet property="tableView" destination="5aL-1F-xwn" id="hZD-KP-Rf8"/>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="MjB-mX-g7x"/>
                     </connections>
                 </tableViewController>
@@ -347,7 +400,7 @@
         <!--Fundraise Now-->
         <scene sceneID="Cd1-lA-HwX">
             <objects>
-                <viewController id="pvj-06-eXF" customClass="FundraiseViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMFundraiseViewController" id="pvj-06-eXF" customClass="FundraiseViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PlK-vf-Bl8"/>
                         <viewControllerLayoutGuide type="bottom" id="81d-tQ-nkY"/>
@@ -374,6 +427,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fundraise Now" id="JZX-oB-WCK">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="fA4-I6-WUh">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="pvj-06-eXF" id="TZu-Z7-d3x"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="My Kintera" id="p7d-CU-a3O">
                             <connections>
                                 <action selector="kinteraButtonPressed:" destination="pvj-06-eXF" id="Cqg-AR-91C"/>
@@ -409,7 +467,7 @@
         <!--Home View Controller-->
         <scene sceneID="CfQ-gA-6DU">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="enI-aY-D12" customClass="HomeViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMHomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="enI-aY-D12" customClass="HomeViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ayR-Ln-6jU"/>
                         <viewControllerLayoutGuide type="bottom" id="oqB-G5-rb7"/>
@@ -492,7 +550,7 @@ at the O’Connell Center at UF</string>
                                                         <constraint firstAttribute="width" constant="60" id="TQ0-4C-h0b"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlj-Xp-f5z" customClass="UITextViewAutoHeight" customModule="DMatUF" customModuleProvider="target">
@@ -572,7 +630,11 @@ at the O’Connell Center at UF</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1Zc-0K-LSZ">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="nBK-NM-4na" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="nBK-NM-4na">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="enI-aY-D12" id="92B-n4-1QT"/>
+                            </connections>
+                        </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sW1-KH-kKP">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -636,14 +698,14 @@ at the O’Connell Center at UF</string>
                                                     <rect key="frame" x="15" y="0.0" width="25" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="79.5" id="cNX-h9-8xL">
                                                     <rect key="frame" x="15" y="14.5" width="82" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -690,7 +752,7 @@ at the O’Connell Center at UF</string>
         <!--Event View Controller-->
         <scene sceneID="TJE-hW-zUU">
             <objects>
-                <tableViewController id="VaQ-tg-DLN" customClass="EventViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DMEventsViewController" id="VaQ-tg-DLN" customClass="EventViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="yaz-xg-jYC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -718,7 +780,7 @@ at the O’Connell Center at UF</string>
                                                 <constraint firstAttribute="height" constant="32" id="wNH-ig-Q8F"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
@@ -747,7 +809,7 @@ at the O’Connell Center at UF</string>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="v41-MS-40s"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
@@ -785,7 +847,11 @@ at the O’Connell Center at UF</string>
                     </tableView>
                     <navigationItem key="navigationItem" id="Zvo-6m-Hvx">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Donate" id="hM1-aH-aji" customClass="DonateBarButtonItem" customModule="DMatUF" customModuleProvider="target"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="hM1-aH-aji">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="VaQ-tg-DLN" id="AHg-WP-lJy"/>
+                            </connections>
+                        </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vv3-sL-WND">
                             <rect key="frame" x="277" y="9" width="46" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -805,6 +871,7 @@ at the O’Connell Center at UF</string>
                     <connections>
                         <outlet property="dropdownButton" destination="Vv3-sL-WND" id="OKZ-Xs-bLG"/>
                         <outlet property="searchDisplayController" destination="Pbj-Dt-0pn" id="qut-Oa-jme"/>
+                        <outlet property="tableView" destination="yaz-xg-jYC" id="82G-jK-bv8"/>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="GUj-jN-WjV"/>
                     </connections>
                 </tableViewController>
@@ -823,7 +890,7 @@ at the O’Connell Center at UF</string>
         <!--Meet the Kids!-->
         <scene sceneID="gBj-XC-g6L">
             <objects>
-                <collectionViewController id="Qdx-qd-rxg" customClass="KidsViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="DMMeetTheKidsViewController" id="Qdx-qd-rxg" customClass="KidsViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ehb-gR-KNS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -855,7 +922,7 @@ at the O’Connell Center at UF</string>
                                                 <constraint firstAttribute="height" constant="28" id="fEK-hy-1tv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -882,6 +949,11 @@ at the O’Connell Center at UF</string>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Meet the Kids!" id="eVb-fP-prz">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="eVf-i2-piW">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="Qdx-qd-rxg" id="vKw-CP-Xe3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="My Kintera" id="Mfy-11-HOg">
                             <connections>
                                 <action selector="kinteraButtonPressed:" destination="Qdx-qd-rxg" id="cgl-Vq-IMV"/>
@@ -889,6 +961,7 @@ at the O’Connell Center at UF</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="ehb-gR-KNS" id="9MM-Bk-0Im"/>
                         <segue destination="u9J-dg-dJc" kind="show" identifier="FundSegue" id="Oub-lh-KC3"/>
                         <segue destination="b6o-Ej-9If" kind="show" identifier="KidDetailSegue" id="oO3-aM-0H6"/>
                     </connections>
@@ -929,19 +1002,19 @@ at the O’Connell Center at UF</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="568" translatesAutoresizingMaskIntoConstraints="NO" id="Mcy-hI-A8s">
                                 <rect key="frame" x="16" y="72" width="568" height="38.5"/>
                                 <fontDescription key="fontDescription" name="AGBookRounded-Medium" family="AG Book Rounded" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="December 22nd at 12:30 to 3:30 pm" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="C28-sM-Bd2">
                                 <rect key="frame" x="16" y="118" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="dW3-Oe-hYF">
                                 <rect key="frame" x="16" y="146" width="568" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E3-jU-9t9">
@@ -1022,7 +1095,7 @@ at the O’Connell Center at UF</string>
                                     <constraint firstAttribute="height" constant="38" id="MZ5-pz-HcA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AGBookRounded-Medium" family="AG Book Rounded" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X00-U2-Tsm">
@@ -1090,6 +1163,42 @@ at the O’Connell Center at UF</string>
             </objects>
             <point key="canvasLocation" x="-1788" y="-356"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vup-ac-EGn">
+            <objects>
+                <navigationController storyboardIdentifier="DMSidePanelNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mbh-lm-jBI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rKY-Io-Vue">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ewK-PD-QWi" kind="relationship" relationship="rootViewController" id="kof-ME-azo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0q-3R-cDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2594" y="-3199"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="6KM-2N-xtc">
+            <objects>
+                <viewController storyboardIdentifier="DMContainerViewController" id="GU6-ca-Osi" customClass="DMContainerViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mvl-LT-2i9"/>
+                        <viewControllerLayoutGuide type="bottom" id="JPK-v8-8Mg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uNK-4y-SBM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43d-m7-veX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2594" y="-2498"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Balloon" width="14" height="24"/>
@@ -1104,6 +1213,6 @@ at the O’Connell Center at UF</string>
         <image name="TabStarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPU-yS-yHX"/>
+        <segue reference="MjB-mX-g7x"/>
     </inferredMetricsTieBreakers>
 </document>

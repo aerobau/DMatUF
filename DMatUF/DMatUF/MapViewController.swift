@@ -83,7 +83,7 @@ class AlertButton: UIView, UIAlertViewDelegate {
     }
 }
 
-class MapViewController: UIViewController {
+class MapViewController: DMMainViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var infoButton: UIBarButtonItem!
@@ -106,8 +106,6 @@ class MapViewController: UIViewController {
         scrollView.addGestureRecognizer(doubleTapRecognizer)
 
         let image = UIImage(named: "Map")!
-        let x: CGFloat = (scrollView.frame.width - image.size.width) / 2.0
-        let y: CGFloat = (scrollView.frame.height - image.size.height) / 2.0
         imageView = MapView(frame: CGRect(origin: CGPointMake(0, 0), size:image.size), gesture: doubleTapRecognizer)
         scrollView.addSubview(imageView)
         scrollView.contentSize = image.size
@@ -130,11 +128,6 @@ class MapViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let scrollViewFrame = scrollView.frame
-        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
-        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
-
         centerScrollViewContents()
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController  {
+class HomeViewController: DMMainViewController  {
     
     @IBOutlet weak var countdownImageView: CountdownImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -54,7 +54,7 @@ class HomeViewController: UIViewController  {
         countdownImageView.layoutSubviews()
     }
     
-    @IBAction func kinteraButtonPressed(sender: UIBarButtonItem) {
+    @IBAction override func kinteraButtonPressed(sender: UIBarButtonItem) {
         GA.sendEvent(category: GA.K.CAT.BUTTON, action: GA.K.ACT.PRESSED, label: "kinteraButton", value: nil)
         
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -73,7 +73,7 @@ class HomeViewController: UIViewController  {
         session.dataTaskWithURL(url) { (data, response, error)  in
             
             guard let data = data else { return }
-            var rawJSON = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            let rawJSON = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             
             
             if let results = rawJSON as? [AnyObject] {
