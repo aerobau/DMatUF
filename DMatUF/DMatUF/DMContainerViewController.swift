@@ -88,6 +88,11 @@ class DMContainerViewController: UIViewController, DMMainDelegate, DMPanelDelega
     // Constant to determine the amount of expansion of the side panel
     let panelExpandedOffsetPercent: CGFloat = 0.4
     
+    var panelExpandedOffset: CGFloat {
+        return panelExpandedOffsetPercent * currentMainNavigationController.view.frame.width
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,39 +111,30 @@ class DMContainerViewController: UIViewController, DMMainDelegate, DMPanelDelega
     
     func changeMainViewController(optionSelected: DMMainViewControllerOption) {
         self.mainViewController = UIStoryboard.viewControllerForOption(optionSelected)
-        togglePanel() {
-            completion in
-            // Removing the old navigation controller with the embeded main view controller from the
-            // container's children
-            self.currentMainNavigationController.willMoveToParentViewController(nil)
-            self.currentMainNavigationController.view.removeFromSuperview()
-            self.currentMainNavigationController.removeFromParentViewController()
-            
-            // Getting a new navigation view controller with the new main controller and making it
-            // a child view
-            self.currentMainNavigationController =
-                UINavigationController(rootViewController: self.mainViewController)
-            self.view.addSubview(self.currentMainNavigationController.view)
-            self.addChildViewController(self.currentMainNavigationController)
-        }
-    }
-    
-    // Function togglePanel() to conform to the DMMainDelegate protocol, will call upon the more 
-    // complex function togglePanel(completion: () -> Void) with an empty closure.
-    func togglePanel() {
-        togglePanel() {}
+        // Removing the old navigation controller with the embeded main view controller from the
+        // container's children
+        self.currentMainNavigationController.willMoveToParentViewController(nil)
+        self.currentMainNavigationController.view.removeFromSuperview()
+        self.currentMainNavigationController.removeFromParentViewController()
+        self.currentMainNavigationController =
+            UINavigationController(rootViewController: self.mainViewController)
+        self.currentMainNavigationController.view.frame.origin.x =
+            CGRectGetWidth(currentMainNavigationController.view.frame) - panelExpandedOffset
+        self.view.addSubview(self.currentMainNavigationController.view)
+        self.addChildViewController(self.currentMainNavigationController)
+        togglePanel()
     }
     
     // The function togglePanel which takes a completion clsure to perform an operation after the
     // the panel has been fully animated
-    func togglePanel(completion: () -> Void) {
+    func togglePanel() {
         // If the panel is closed, add the panel view controller
         if panelClosed {
             addPanelViewController()
         }
         
         // Animate the panel's slide in or out
-        animatePanel(shouldExpand: panelClosed, completion: completion)
+        animatePanel(shouldExpand: panelClosed)
     }
     
     // Function to add a panel view controller
@@ -162,7 +158,7 @@ class DMContainerViewController: UIViewController, DMMainDelegate, DMPanelDelega
         childViewController.didMoveToParentViewController(self)
     }
     
-    func animatePanel(shouldExpand shouldExpand: Bool, completion: () -> Void) {
+    func animatePanel(shouldExpand shouldExpand: Bool) {
         // If the panel should expand, expand it from the left, otherwise retract it to the right
         if (shouldExpand) {
             panelClosed = false
@@ -171,13 +167,11 @@ class DMContainerViewController: UIViewController, DMMainDelegate, DMPanelDelega
             // controller the main controller is embedded in.  Target position is accordint to the
             // constants
             animateCenterPanelXPosition(targetPosition:
-                CGRectGetWidth(currentMainNavigationController.view.frame) -
-                    (panelExpandedOffsetPercent * currentMainNavigationController.view.frame.width))
+                CGRectGetWidth(currentMainNavigationController.view.frame) - panelExpandedOffset)
         } else {
             // Same as with expansion, but targer position is now 0 (left of plane)
             animateCenterPanelXPosition(targetPosition: 0) {
                 finished in
-                completion()
                 self.panelClosed = true
                 
                 // Removing the panel view contrller from the view and making it nil to save memory

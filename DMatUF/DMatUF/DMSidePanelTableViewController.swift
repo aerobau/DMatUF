@@ -45,7 +45,7 @@ class DMSidePanelTableViewController: UITableViewController {
         // Configuring the cell to contain the correct label value
         cell.label.text = options[indexPath.row].rawValue
         let iconName = options[indexPath.row].iconName
-        cell.iconView = UIImageView(image: UIImage(named: iconName))
+        cell.iconView.image = UIImage(named: iconName)
         
         return cell
     }

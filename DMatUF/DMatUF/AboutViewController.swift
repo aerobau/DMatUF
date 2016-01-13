@@ -8,14 +8,63 @@
 
 import Foundation
 
-class AboutViewController: DMMainViewController, UITableViewDelegate {
+enum SelectedButton {
+    case FAQ, contactUs, shands
+}
+
+class AboutViewController: DMMainViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.delegate = self
+            tableView.dataSource = self
         }
     }
-    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    var selectedButton: SelectedButton = .FAQ
 
+    @IBOutlet weak var faqButtonView: UIView!
+    @IBOutlet weak var contactUsButtonView: UIView!
+    @IBOutlet weak var shandsButtonView: UIView!
+    
+    @IBOutlet weak var faqButton: UIButton!
+    @IBOutlet weak var contactUsButton: UIButton!
+    @IBOutlet weak var shandsButton: UIButton!
+    
+    @IBAction func faqButtonPressed(sender: UIButton) {
+        if selectedButton != .FAQ {
+            selectedButton = .FAQ
+            resetButtons()
+            faqButtonView.backgroundColor = Color.primary1
+            faqButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            tableView.reloadData()
+            tableView.setNeedsDisplay()
+        }
+        
+    }
+    @IBAction func contactUsButtonPressed(sender: UIButton) {
+        if selectedButton != .contactUs {
+            selectedButton = .contactUs
+            resetButtons()
+            contactUsButtonView.backgroundColor = Color.primary1
+            contactUsButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            tableView.reloadData()
+            tableView.setNeedsDisplay()
+        }
+    }
+    @IBAction func shandsButtonPressed(sender: UIButton) {
+        if selectedButton != .shands {
+            selectedButton = .shands
+            resetButtons()
+            shandsButtonView.backgroundColor = Color.primary1
+            shandsButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            tableView.reloadData()
+            tableView.setNeedsDisplay()
+        }
+    }
+    
+
+    
+    
     let questions = ["If I register to dance, am I guaranteed a dancer spot at DM?",
         "I already registered to fundraise, do I need to register to dance?",
         "Do I have to be a UF student to dance?",
@@ -37,10 +86,12 @@ class AboutViewController: DMMainViewController, UITableViewDelegate {
     let contacts = ["floridadm@floridadm.org", "http://www.floridadm.org/meet-the-overalls", "352-265-7237\nhttps://ufhealth.org/shands-hospital-children-uf", "330C J. Wayne Reitz Union, P.O. Box 118505, Gainesville, FL 32611"]
     
     let paragraphTitle = "UF Health Shands Children’s Hospital, the local Children’s Miracle Network Hospital"
-    let paragraph = "UF Health Shands Children’s Hospital at the University of Florida is the local Children’s Miracle Network Hospital participating hospital for the Gainesville/North Central Florida, Tallahassee/South Georgia and West Palm Beach areas. Children’s Miracle Network is an international non-profit organization dedicated to raising funds for and awareness of children’s hospitals. Children’s Miracle Network’s founding pledge, to keep all donations in the area in which they were raised, remains at the core of its philosophy.\nUF Health Shands Children’s Hospital is the state’s premier pediatric health center providing innovative and comprehensive care at the highest standards of quality and service in partnership with patient families, healthcare teams and communities. Community contributions help support pediatric research and the purchase of the latest technology to maintain this high standard of clinical care.\nUF Health Shands Children’s Hospital is committed to the best medical care when kids need it most and also provides a comfortable environment for families during hospital stays. Donations enhance or help provide many of the services, programs and amenities that make UF Health Shands Children’s Hospital a leader in pediatric care.\nFor more information, please visit: https://ufhealth.org/shands-hospital-children-uf"
+    let paragraph = "UF Health Shands Children’s Hospital at the University of Florida is the local Children’s Miracle Network Hospital participating hospital for the Gainesville/North Central Florida, Tallahassee/South Georgia and West Palm Beach areas. Children’s Miracle Network is an international non-profit organization dedicated to raising funds for and awareness of children’s hospitals. Children’s Miracle Network’s founding pledge, to keep all donations in the area in which they were raised, remains at the core of its philosophy.\n\nUF Health Shands Children’s Hospital is the state’s premier pediatric health center providing innovative and comprehensive care at the highest standards of quality and service in partnership with patient families, healthcare teams and communities. Community contributions help support pediatric research and the purchase of the latest technology to maintain this high standard of clinical care.\n\nUF Health Shands Children’s Hospital is committed to the best medical care when kids need it most and also provides a comfortable environment for families during hospital stays. Donations enhance or help provide many of the services, programs and amenities that make UF Health Shands Children’s Hospital a leader in pediatric care.\n\nFor more information, please visit: https://ufhealth.org/shands-hospital-children-uf"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureButtonViews()
+        configureTableView()
         
         // Google Analytics
         GA.sendScreenView(name: "AboutView")
@@ -60,9 +111,9 @@ class AboutViewController: DMMainViewController, UITableViewDelegate {
         return UITableViewAutomaticDimension
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if segmentControl.selectedSegmentIndex == 0 {
+        if selectedButton == .FAQ {
             return questions.count
-        } else if segmentControl.selectedSegmentIndex == 1 {
+        } else if selectedButton == .contactUs {
             return types.count
 
         } else {
@@ -72,20 +123,23 @@ class AboutViewController: DMMainViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if segmentControl.selectedSegmentIndex == 0 {
+        if selectedButton == .FAQ {
             let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as! FactsCell
             
             cell.topLabel.text = questions[indexPath.row]
             cell.bottomLabel.text = answers[indexPath.row]
+            cell.topLabel.textColor = Color.primary1
+            cell.layoutMargins = UIEdgeInsetsZero
 
             return cell
 
-        } else if segmentControl.selectedSegmentIndex == 1 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ContactCellID", forIndexPath: indexPath) as! ContactCell
+        } else if selectedButton == .contactUs {
+            let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as! FactsCell
             
-            cell.typeLabel.text = types[indexPath.row]
-            cell.infoTextView.text = contacts[indexPath.row]
-            cell.typeLabel.textColor = Color.primary2
+            cell.topLabel.text = types[indexPath.row]
+            cell.bottomLabel.text = contacts[indexPath.row]
+            cell.topLabel.textColor = Color.primary2
+            cell.layoutMargins = UIEdgeInsetsZero
 
             return cell
 
@@ -93,6 +147,8 @@ class AboutViewController: DMMainViewController, UITableViewDelegate {
             let cell = tableView.dequeueReusableCellWithIdentifier("FactsCellID", forIndexPath: indexPath) as! FactsCell
             cell.topLabel.text = paragraphTitle
             cell.bottomLabel.text = paragraph
+            cell.topLabel.textColor = Color.primary1
+            cell.layoutMargins = UIEdgeInsetsZero
             
             return cell
         }
@@ -103,5 +159,29 @@ class AboutViewController: DMMainViewController, UITableViewDelegate {
 
         tableView.reloadData()
         tableView.setNeedsDisplay()
+    }
+    
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 160.0
+    }
+    
+    func configureButtonViews() {
+        faqButtonView.layer.borderColor = Color.primary1.CGColor
+        faqButtonView.backgroundColor = Color.primary1
+        faqButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        contactUsButtonView.layer.borderColor = Color.primary1.CGColor
+        contactUsButton.setTitleColor(Color.primary1, forState: .Normal)
+        shandsButtonView.layer.borderColor = Color.primary1.CGColor
+        shandsButton.setTitleColor(Color.primary1, forState: .Normal)
+    }
+    
+    func resetButtons() {
+        faqButtonView.backgroundColor = UIColor.whiteColor()
+        faqButton.setTitleColor(Color.primary1, forState: .Normal)
+        contactUsButtonView.backgroundColor = UIColor.whiteColor()
+        contactUsButton.setTitleColor(Color.primary1, forState: .Normal)
+        shandsButtonView.backgroundColor = UIColor.whiteColor()
+        shandsButton.setTitleColor(Color.primary1, forState: .Normal)
     }
 }
