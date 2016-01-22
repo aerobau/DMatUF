@@ -801,25 +801,6 @@
             </objects>
             <point key="canvasLocation" x="-1008" y="2576"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Guf-Y2-omO">
-            <objects>
-                <viewController id="kxL-tV-E9b" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vIH-eY-NLP"/>
-                        <viewControllerLayoutGuide type="bottom" id="29q-ai-x81"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6w0-iD-eMC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1yq-ub-YoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1032" y="1117"/>
-        </scene>
         <!--About-->
         <scene sceneID="GsS-8x-AeT">
             <objects>
