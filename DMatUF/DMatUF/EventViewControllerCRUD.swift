@@ -10,29 +10,31 @@
 import Foundation
 import UIKit
 import CoreData
+import CloudKit
 
 extension EventViewController {
     
     
     // Create
-    func createEvent(eventDict: Dictionary<String, AnyObject>) {
+    func createEvent(eventRecord: CKRecord) {
 
-        if getDate(eventDict["endDate"]).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
+        if (eventRecord["endDate"] as! NSDate).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
             
            let newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
-            let id = getInt(eventDict["id"])
-            newEvent.id = id
-            newEvent.title = getString(eventDict["title"])
-            newEvent.location = getString(eventDict["location"])
-            newEvent.moreInfo = getString(eventDict["description"])
-            newEvent.startDate = getDate(eventDict["startDate"])
-            newEvent.endDate = getDate(eventDict["endDate"])
-            newEvent.imageName = getString(eventDict["imageName"])
-            newEvent.category = fetchOrCreateCategory(getString(eventDict["category"]))
+            newEvent.id = eventRecord.recordID
+            newEvent.title = eventRecord["title"] as! String
+            newEvent.location = getString(eventRecord["location"])
+            newEvent.moreInfo = getString(eventRecord["description"])
+            newEvent.startDate = getDate(eventRecord["startDate"])
+            newEvent.endDate = getDate(eventRecord["endDate"])
+            newEvent.imageName = getString(eventRecord["imageName"])
+            newEvent.category = fetchOrCreateCategory(getString(eventRecord["category"]))
             
+            /*
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                self.saveImageForEvent(self.getString(eventDict["imageName"]), url: self.getString(eventDict["imageURL"]))
+                self.saveImageForEvent(self.getString(eventRecord["imageName"]), url: self.getString(eventRecord["imageURL"]))
             }
+            */
             
         }
 
@@ -137,7 +139,7 @@ extension EventViewController {
         return try! managedObjectContext.executeFetchRequest(fetchRequest) as! [Category]
     }
 
-    func fetchEvent(eventID: Int) -> Event? {
+    func fetchEvent(eventID: CKRecordID) -> Event? {
         
         // Define fetch request/predicate
         let fetchRequest = NSFetchRequest(entityName: "Event")
@@ -160,20 +162,20 @@ extension EventViewController {
         return nil
     }
     
-    // Update
-    func updateEvent(eventDict: Dictionary<String, AnyObject>, id: Int) {
-        if let event: Event = fetchEvent(id) {
-
-            event.id = id
-            event.title = getString(eventDict["title"])
-            event.location = getString(eventDict["location"])
-            event.moreInfo = getString(eventDict["description"])
-            event.startDate = getDate(eventDict["startDate"])
-            event.endDate = getDate(eventDict["endDate"])
-            event.imageName = getString(eventDict["imageName"])
-            event.category = fetchOrCreateCategory(getString(eventDict["category"]))
-
-            saveImageForEvent(getString(eventDict["imageName"]), url: getString(eventDict["imageURL"]))
+    func updateEvent(eventRecord: CKRecord) {
+        if let event: Event = fetchEvent(eventRecord.recordID) {
+            event.id = eventRecord.recordID
+            event.title = getString(eventRecord["title"])
+            event.location = getString(eventRecord["location"])
+            event.moreInfo = getString(eventRecord["description"])
+            event.startDate = getDate(eventRecord["startDate"])
+            event.endDate = getDate(eventRecord["endDate"])
+            event.imageName = getString(eventRecord["imageName"])
+            event.category = fetchOrCreateCategory(getString(eventRecord["category"]))
+            
+            /*
+            saveImageForEvent(getString(eventRecord["imageName"]), url: getString(eventDict["imageURL"]))
+            */
         }
     }
     
@@ -213,7 +215,7 @@ extension EventViewController {
     }
     
     // Delete
-    func deleteEvent(eventID: Int) {
+    func deleteEvent(eventID: CKRecordID) {
         if let event = fetchEvent(eventID) {
             managedObjectContext.deleteObject(event)
         }

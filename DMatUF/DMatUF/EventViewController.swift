@@ -8,9 +8,11 @@
 import UIKit
 import CoreData
 import CoreGraphics
-
-
+import CloudKit
+ 
 class EventViewController: DMMainViewController, NSFetchedResultsControllerDelegate, DropdownController, UITableViewDelegate {
+    var container: CKContainer!
+    var publicDB: CKDatabase!
     
     let refreshControl = UIRefreshControl()
     @IBOutlet weak var dropdownButton: UIButton!
@@ -29,7 +31,7 @@ class EventViewController: DMMainViewController, NSFetchedResultsControllerDeleg
         super.viewDidLoad()
         
         refreshControl.tintColor = Color.primary2
-        refreshControl.addTarget(self, action: "fetchJSON:", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: "fetchFromICloud", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
         
         // Google Analytics
@@ -43,7 +45,10 @@ class EventViewController: DMMainViewController, NSFetchedResultsControllerDeleg
         fetchedResultsController.delegate = self
         let _ = try? fetchedResultsController.performFetch()
         
-        fetchJSON(nil)
+        // Pull from cloud
+        container = CKContainer.defaultContainer()
+        publicDB = container.publicCloudDatabase
+        fetchFromICloud()
         
         dropDownTableView.dropdownDelegate = self
         dropdownButton.setTitleColor(Color.primary1, forState: .Normal)

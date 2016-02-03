@@ -34,7 +34,7 @@ class AboutViewController: DMMainViewController, UITableViewDelegate, UITableVie
         if selectedButton != .FAQ {
             selectedButton = .FAQ
             resetButtons()
-            faqButtonView.backgroundColor = Color.primary1
+            faqButtonView.backgroundColor = Color.secondary1
             faqButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
             tableView.reloadData()
             tableView.setNeedsDisplay()
@@ -45,7 +45,7 @@ class AboutViewController: DMMainViewController, UITableViewDelegate, UITableVie
         if selectedButton != .contactUs {
             selectedButton = .contactUs
             resetButtons()
-            contactUsButtonView.backgroundColor = Color.primary1
+            contactUsButtonView.backgroundColor = Color.secondary1
             contactUsButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
             tableView.reloadData()
             tableView.setNeedsDisplay()
@@ -55,7 +55,7 @@ class AboutViewController: DMMainViewController, UITableViewDelegate, UITableVie
         if selectedButton != .shands {
             selectedButton = .shands
             resetButtons()
-            shandsButtonView.backgroundColor = Color.primary1
+            shandsButtonView.backgroundColor = Color.secondary1
             shandsButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
             tableView.reloadData()
             tableView.setNeedsDisplay()
@@ -138,7 +138,7 @@ class AboutViewController: DMMainViewController, UITableViewDelegate, UITableVie
             
             cell.topLabel.text = types[indexPath.row]
             cell.bottomLabel.text = contacts[indexPath.row]
-            cell.topLabel.textColor = Color.primary2
+            cell.topLabel.textColor = Color.primary1
             cell.layoutMargins = UIEdgeInsetsZero
 
             return cell
@@ -167,21 +167,21 @@ class AboutViewController: DMMainViewController, UITableViewDelegate, UITableVie
     }
     
     func configureButtonViews() {
-        faqButtonView.layer.borderColor = Color.primary1.CGColor
-        faqButtonView.backgroundColor = Color.primary1
+        faqButtonView.layer.borderColor = Color.secondary1.CGColor
+        faqButtonView.backgroundColor = Color.secondary1
         faqButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        contactUsButtonView.layer.borderColor = Color.primary1.CGColor
-        contactUsButton.setTitleColor(Color.primary1, forState: .Normal)
-        shandsButtonView.layer.borderColor = Color.primary1.CGColor
-        shandsButton.setTitleColor(Color.primary1, forState: .Normal)
+        contactUsButtonView.layer.borderColor = Color.secondary1.CGColor
+        contactUsButton.setTitleColor(Color.secondary1, forState: .Normal)
+        shandsButtonView.layer.borderColor = Color.secondary1.CGColor
+        shandsButton.setTitleColor(Color.secondary1, forState: .Normal)
     }
     
     func resetButtons() {
         faqButtonView.backgroundColor = UIColor.whiteColor()
-        faqButton.setTitleColor(Color.primary1, forState: .Normal)
+        faqButton.setTitleColor(Color.secondary1, forState: .Normal)
         contactUsButtonView.backgroundColor = UIColor.whiteColor()
-        contactUsButton.setTitleColor(Color.primary1, forState: .Normal)
+        contactUsButton.setTitleColor(Color.secondary1, forState: .Normal)
         shandsButtonView.backgroundColor = UIColor.whiteColor()
-        shandsButton.setTitleColor(Color.primary1, forState: .Normal)
+        shandsButton.setTitleColor(Color.secondary1, forState: .Normal)
     }
 }

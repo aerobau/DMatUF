@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Implement Theme
         let _ = Theme()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         return true
     }

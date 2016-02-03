@@ -9,9 +9,34 @@
 import Foundation
 import UIKit
 import CoreData
+import CloudKit
 
 extension EventViewController {
+    func fetchFromICloud() {
+        let query = CKQuery(recordType: "Event", predicate: NSPredicate(value: true))
+        
+        publicDB.performQuery(query, inZoneWithID: nil) {
+            results, error in
+            print(error?.localizedDescription)
+            var ids : [CKRecordID] = []
+            for record in results! {
+                ids.append(record.recordID)
+                if let _ = self.fetchEvent(record.recordID) {
+                    self.updateEvent(record)
+                } else {
+                    self.createEvent(record)
+                }
+            }
+            for event in self.fetchedResultsController.fetchedObjects as! [Event] {
+                if ids.indexOf(event.id) == nil {
+                    self.deleteEvent(event.id)
+                }
+            }
+            self.update()
+        }
+    }
     
+    /*
     func fetchJSON(sender: AnyObject?) {
 
         let session = NSURLSession.sharedSession()
@@ -54,5 +79,5 @@ extension EventViewController {
             }
         }.resume()
     }
-    
+    */
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15C50" minimumToolsVersion="Xcode 4.3">
     <entity name="Announcement" representedClassName="DMatUF.Announcement" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -11,7 +11,7 @@
     </entity>
     <entity name="Event" representedClassName="DMatUF.Event" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="-1" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="moreInfo" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,8 +28,8 @@
     </entity>
     <elements>
         <element name="Announcement" positionX="-63" positionY="45" width="128" height="90"/>
-        <element name="Event" positionX="-254" positionY="45" width="128" height="163"/>
-        <element name="Kid" positionX="-171" positionY="-100" width="128" height="118"/>
         <element name="Category" positionX="-252" positionY="242" width="128" height="73"/>
+        <element name="Event" positionX="-254" positionY="45" width="128" height="165"/>
+        <element name="Kid" positionX="-171" positionY="-100" width="128" height="118"/>
     </elements>
 </model>

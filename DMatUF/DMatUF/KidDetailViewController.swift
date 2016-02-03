@@ -31,7 +31,6 @@ class KidDetailViewController: UIViewController {
         view.backgroundColor = Color.tvcEven
 
         nameLabel.textColor = Color.primary2
-        nameLabel.font = Font.header
 
         storyView.font = Font.body1
         

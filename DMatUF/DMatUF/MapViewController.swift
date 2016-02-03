@@ -124,6 +124,7 @@ class MapViewController: DMMainViewController {
         scrollView.maximumZoomScale = 3.375
         scrollView.contentSize = image.size
         scrollView.sizeToFit()
+        scrollView.backgroundColor = UIColor.whiteColor()
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -19,6 +19,15 @@ class DMSidePanelTableViewController: UITableViewController {
     // selected by the user
     var panelDelegate: DMPanelDelegate?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.darkGrayColor()
+        navigationController?.navigationBarHidden
+        navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor()
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+    }
     
     // MARK: TABLE VIEW HANDLING //
     
@@ -45,8 +54,11 @@ class DMSidePanelTableViewController: UITableViewController {
         // Configuring the cell to contain the correct label value
         cell.label.text = options[indexPath.row].rawValue
         let iconName = options[indexPath.row].iconName
-        cell.iconView.image = UIImage(named: iconName)
-        
+        cell.label.textColor = UIColor.whiteColor()
+        cell.iconView.image = UIImage(named: iconName)?.imageWithColor(UIColor.whiteColor())
+        cell.backgroundColor = UIColor.clearColor()
+        cell.selectedBackgroundView = UIView(frame: cell.frame)
+        cell.selectedBackgroundView?.backgroundColor = Color.secondary1
         return cell
     }
     

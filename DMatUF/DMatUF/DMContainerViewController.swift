@@ -122,6 +122,7 @@ class DMContainerViewController: UIViewController, DMMainDelegate, DMPanelDelega
             CGRectGetWidth(currentMainNavigationController.view.frame) - panelExpandedOffset
         self.view.addSubview(self.currentMainNavigationController.view)
         self.addChildViewController(self.currentMainNavigationController)
+        self.mainViewController.dimView()
         togglePanel()
     }
     
@@ -187,9 +188,17 @@ class DMContainerViewController: UIViewController, DMMainDelegate, DMPanelDelega
     // Function that performs the actual animation, with all of the specifics of the animation
     func animateCenterPanelXPosition(targetPosition targetPosition: CGFloat,
         completion: ((Bool) -> Void)! = nil) {
+            if (targetPosition == 0) {
+                self.mainViewController.dimView()  // Insure that the new view controller is dim
+            }
             UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8,
                 initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
                     self.currentMainNavigationController.view.frame.origin.x = targetPosition
+                    if (targetPosition == 0) {
+                        self.mainViewController.undimView()
+                    } else {
+                        self.mainViewController.dimView()
+                    }
                 }, completion: completion)
     }
 }

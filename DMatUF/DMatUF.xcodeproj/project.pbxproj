@@ -11,6 +11,7 @@
 		D60D9E051BCB144800DA186A /* DMMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60D9E021BCB144800DA186A /* DMMainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D60D9E061BCB144800DA186A /* DMContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60D9E031BCB144800DA186A /* DMContainerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D60D9E081BCB157E00DA186A /* DMSidePanelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60D9E071BCB157E00DA186A /* DMSidePanelTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D638DE8E1C52B845008A2104 /* DMNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638DE8D1C52B845008A2104 /* DMNetworkManager.swift */; settings = {ASSET_TAGS = (); }; };
 		EA06890B1A34D53C006CD2E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890A1A34D53C006CD2E0 /* TabBarController.swift */; };
 		EA06890D1A34E793006CD2E0 /* KinteraHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */; };
 		EA06890F1A34E7BA006CD2E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */; };
@@ -122,6 +123,7 @@
 		D60D9E021BCB144800DA186A /* DMMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMMainViewController.swift; sourceTree = "<group>"; };
 		D60D9E031BCB144800DA186A /* DMContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContainerViewController.swift; sourceTree = "<group>"; };
 		D60D9E071BCB157E00DA186A /* DMSidePanelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSidePanelTableViewCell.swift; sourceTree = "<group>"; };
+		D638DE8D1C52B845008A2104 /* DMNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMNetworkManager.swift; sourceTree = "<group>"; };
 		EA06890A1A34D53C006CD2E0 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EA06890C1A34E793006CD2E0 /* KinteraHubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinteraHubView.swift; sourceTree = "<group>"; };
 		EA06890E1A34E7BA006CD2E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -432,6 +434,7 @@
 				D60D9E011BCB144800DA186A /* DMSidePanelTableViewController.swift */,
 				D60D9E021BCB144800DA186A /* DMMainViewController.swift */,
 				D60D9E031BCB144800DA186A /* DMContainerViewController.swift */,
+				D638DE8D1C52B845008A2104 /* DMNetworkManager.swift */,
 				EA6B1DBD1AA0EBFD00778F77 /* DMatUF.entitlements */,
 				EAC85D5919FA92BC006840A0 /* Supporting Files */,
 				EAC85D9519FAA766006840A0 /* Extensions */,
@@ -681,6 +684,7 @@
 				EAC85D9219FA96E4006840A0 /* Event.swift in Sources */,
 				EA6B0E1619FBEBB9006CC2F2 /* KidDetailViewController.swift in Sources */,
 				EAA041DC1A43A2410028C062 /* EventViewControllerFunctions.swift in Sources */,
+				D638DE8E1C52B845008A2104 /* DMNetworkManager.swift in Sources */,
 				EAC85D8B19FA9446006840A0 /* EventViewController.swift in Sources */,
 				EAC85D9419FA9DC8006840A0 /* EventCell.swift in Sources */,
 				EAD6E7191A529C48001187E6 /* FundraiseViewController.swift in Sources */,
@@ -860,8 +864,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DMatUF/DMatUF.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DMatUF/Info.plist;

@@ -8,10 +8,11 @@
 
 import Foundation
 import CoreData
+import CloudKit
 
 class Event: NSManagedObject {
 
-    @NSManaged var id: NSNumber
+    @NSManaged var id: CKRecordID
     @NSManaged var title: String
     @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate

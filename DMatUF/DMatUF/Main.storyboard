@@ -11,8 +11,10 @@
         <mutableArray key="AvenirLTStd-Black.otf">
             <string>AvenirLTStd-Black</string>
         </mutableArray>
+        <mutableArray key="Pacifico.ttf">
+            <string>Pacifico-Regular</string>
+        </mutableArray>
         <mutableArray key="agbookrounded-medium.otf">
-            <string>AGBookRounded-Medium</string>
             <string>AGBookRounded-Medium</string>
         </mutableArray>
     </customFonts>
@@ -198,7 +200,7 @@
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="panelCellReuse" id="khp-zj-62f" customClass="DMSidePanelTableViewCell" customModule="DMatUF" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="khp-zj-62f" id="2cr-2D-qi6">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -889,7 +891,7 @@
             </objects>
             <point key="canvasLocation" x="-1788" y="-1080"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="CfQ-gA-6DU">
             <objects>
                 <viewController storyboardIdentifier="DMHomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="enI-aY-D12" customClass="HomeViewController" customModule="DMatUF" customModuleProvider="target" sceneMemberID="viewController">
@@ -1065,28 +1067,15 @@ at the O’Connell Center at UF</string>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="1Zc-0K-LSZ">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Home" id="1Zc-0K-LSZ">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="nBK-NM-4na">
                             <connections>
                                 <action selector="menuButtonPressed:" destination="enI-aY-D12" id="92B-n4-1QT"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sW1-KH-kKP">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="Follow Us">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
+                        <barButtonItem key="rightBarButtonItem" title="Follow Us" id="RQp-ab-sLH">
                             <connections>
-                                <action selector="followButtonPressed:" destination="enI-aY-D12" eventType="touchUpInside" id="ZEN-Dk-gxO"/>
-                            </connections>
-                        </button>
-                        <barButtonItem key="rightBarButtonItem" title="My Kintera" id="BeW-Gz-Eoj">
-                            <connections>
-                                <action selector="kinteraButtonPressed:" destination="enI-aY-D12" id="a2C-zD-v45"/>
+                                <action selector="followButtonPressed:" destination="enI-aY-D12" id="Uzo-fo-vwq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1556,16 +1545,6 @@ at the O’Connell Center at UF</string>
                                     <constraint firstAttribute="width" constant="150" id="eXo-0H-R8X"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="568" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-Zn-Yhg">
-                                <rect key="frame" x="16" y="72" width="568" height="38"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="MZ5-pz-HcA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AGBookRounded-Medium" family="AG Book Rounded" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X00-U2-Tsm">
                                 <rect key="frame" x="16" y="276" width="568" height="22"/>
                                 <animations/>
@@ -1579,6 +1558,16 @@ at the O’Connell Center at UF</string>
                                     <action selector="milestoneButtonPressed:" destination="b6o-Ej-9If" eventType="touchUpInside" id="8cC-Mb-ffg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="568" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-Zn-Yhg">
+                                <rect key="frame" x="16" y="72" width="568" height="38"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="MZ5-pz-HcA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pacifico-Regular" family="Pacifico" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1634,25 +1623,6 @@ at the O’Connell Center at UF</string>
             </objects>
             <point key="canvasLocation" x="-1788" y="-356"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Vup-ac-EGn">
-            <objects>
-                <navigationController storyboardIdentifier="DMSidePanelNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mbh-lm-jBI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rKY-Io-Vue">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ewK-PD-QWi" kind="relationship" relationship="rootViewController" id="kof-ME-azo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q0q-3R-cDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2594" y="-3199"/>
-        </scene>
         <!--Container View Controller-->
         <scene sceneID="6KM-2N-xtc">
             <objects>
@@ -1705,6 +1675,6 @@ at the O’Connell Center at UF</string>
         <image name="TabStarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MjB-mX-g7x"/>
+        <segue reference="SPU-yS-yHX"/>
     </inferredMetricsTieBreakers>
 </document>

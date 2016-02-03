@@ -39,16 +39,16 @@ class Theme {
 
     init() {
         
-        customizeNavBar(color: Color.primary1, titleFont: Font.header, buttonFont: Font.body1)
+        customizeNavBar(textColor: UIColor.whiteColor(), barColor: Color.primary2, titleFont: Font.header, buttonFont: Font.body1)
         customizeTabBar(color: Color.primary1, font: Font.body2)
         
     }
     
-    func customizeNavBar(color color: UIColor, titleFont: UIFont, buttonFont: UIFont) {
-        
-        UINavigationBar.appearance().tintColor = color
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: color, NSFontAttributeName: titleFont]
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: color, NSFontAttributeName: buttonFont], forState: UIControlState.Normal)
+    func customizeNavBar(textColor tcolor: UIColor, barColor bcolor: UIColor, titleFont: UIFont, buttonFont: UIFont) {
+        UINavigationBar.appearance().barTintColor = bcolor
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: tcolor, NSFontAttributeName: titleFont]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: tcolor, NSFontAttributeName: buttonFont], forState: UIControlState.Normal)
     }
     
     func customizeTabBar(color color: UIColor, font: UIFont) {
