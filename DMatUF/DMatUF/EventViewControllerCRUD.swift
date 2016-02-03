@@ -18,7 +18,7 @@ extension EventViewController {
     // Create
     func createEvent(eventRecord: CKRecord) {
 
-        if (eventRecord["endDate"] as! NSDate).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
+        if (eventRecord["end"] as! NSDate).timeIntervalSince1970 > NSDate().timeIntervalSince1970 {
             
            let newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
             newEvent.id = eventRecord.recordID
@@ -26,7 +26,7 @@ extension EventViewController {
             newEvent.location = eventRecord["location"] as? String
             newEvent.moreInfo = eventRecord["description"] as? String
             newEvent.startDate = eventRecord["startDate"] as? NSDate
-            newEvent.endDate = eventRecord["endDate"] as? NSDate
+            newEvent.endDate = eventRecord["end"] as? NSDate
             newEvent.imageName = eventRecord["imageName"] as? String
             newEvent.category = fetchOrCreateCategory(getString(eventRecord["category"]))
             
@@ -143,7 +143,7 @@ extension EventViewController {
         
         // Define fetch request/predicate
         let fetchRequest = NSFetchRequest(entityName: "Event")
-        let predicate = NSPredicate(format: "id == \(eventID)")
+        let predicate = NSPredicate(format: "id = %@", eventID)
         
         // Assign fetch request properties
         fetchRequest.predicate = predicate
