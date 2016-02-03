@@ -11,7 +11,7 @@ import Foundation
 extension EventViewController {
     
     func getSecID(event: Event) -> String {
-        return event.startDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 ? "Completed" : "Upcoming"
+        return event.startDate?.timeIntervalSince1970 < NSDate().timeIntervalSince1970 ? "Completed" : "Upcoming"
     }
     
     func getInt(obj: AnyObject?) -> Int {

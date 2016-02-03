@@ -12,12 +12,12 @@ import CloudKit
 
 class Event: NSManagedObject {
 
-    @NSManaged var id: CKRecordID
-    @NSManaged var title: String
-    @NSManaged var startDate: NSDate
-    @NSManaged var endDate: NSDate
-    @NSManaged var moreInfo: String
-    @NSManaged var location: String
-    @NSManaged var imageName: String
-    @NSManaged var category: Category
+    @NSManaged var id: CKRecordID?
+    @NSManaged var title: String?
+    @NSManaged var startDate: NSDate?
+    @NSManaged var endDate: NSDate?
+    @NSManaged var moreInfo: String?
+    @NSManaged var location: String?
+    @NSManaged var imageName: String?
+    @NSManaged var category: Category?
 }

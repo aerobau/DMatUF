@@ -77,10 +77,10 @@ extension EventDetailViewController: EKEventEditViewDelegate {
         print("CREATING NEW EVENT")
 
         let newEvent = EKEvent(eventStore: self.store)
-        newEvent.title = event.title
+        newEvent.title = event.title ?? ""
         newEvent.location = event.location
-        newEvent.startDate = event.startDate
-        newEvent.endDate = event.endDate
+        newEvent.startDate = event.startDate ?? NSDate()
+        newEvent.endDate = event.endDate ?? NSDate()
         newEvent.notes = event.moreInfo
         newEvent.calendar = getCalendar() ?? EKCalendar()
 
@@ -90,10 +90,10 @@ extension EventDetailViewController: EKEventEditViewDelegate {
     func eventExists(event: Event) -> Bool {
         var match = false
         
-        let predicate = store.predicateForEventsWithStartDate(event.startDate, endDate: event.endDate, calendars: nil)
+        let predicate = store.predicateForEventsWithStartDate(event.startDate ?? NSDate(), endDate: event.endDate ?? NSDate(), calendars: nil)
         store.enumerateEventsMatchingPredicate(predicate) { existingEvent, stop in
             
-            if existingEvent.title.lowercaseString == event.title.lowercaseString {
+            if existingEvent.title.lowercaseString == event.title?.lowercaseString {
                 match = true
                 return
             }

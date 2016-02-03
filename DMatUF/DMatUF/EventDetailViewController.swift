@@ -45,11 +45,11 @@ class EventDetailViewController: UIViewController {
     }
 
     func setInfo(){
-        let startDate = selectedEvent?.startDate.toString(format: DateFormat.Custom("EEEE, MMMM d 'at' h:mm a"), timeZone: TimeZone.EST) ?? ""
-        let endDate = selectedEvent?.endDate.toString(format: DateFormat.Custom("EEEE, MMMM d 'at' h:mm a"), timeZone: TimeZone.EST)
+        let startDate = selectedEvent?.startDate?.toString(format: DateFormat.Custom("EEEE, MMMM d 'at' h:mm a"), timeZone: TimeZone.EST) ?? ""
+        let endDate = selectedEvent?.endDate?.toString(format: DateFormat.Custom("EEEE, MMMM d 'at' h:mm a"), timeZone: TimeZone.EST)
         
         titleLabel.text = selectedEvent?.title ?? ""
-        dateLabel.text = startDate + (endDate != nil && selectedEvent?.startDate.timeIntervalSince1970 < selectedEvent?.endDate.timeIntervalSince1970 ? " -\n" + endDate! : "")
+        dateLabel.text = startDate + (endDate != nil && selectedEvent?.startDate?.timeIntervalSince1970 < selectedEvent?.endDate?.timeIntervalSince1970 ? " -\n" + endDate! : "")
         locationLabel.text = selectedEvent?.location ?? ""
         descriptionTextView.text = selectedEvent?.moreInfo ?? ""
     }

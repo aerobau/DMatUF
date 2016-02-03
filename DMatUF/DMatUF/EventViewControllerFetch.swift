@@ -28,8 +28,9 @@ extension EventViewController {
                 }
             }
             for event in self.fetchedResultsController.fetchedObjects as! [Event] {
-                if ids.indexOf(event.id) == nil {
-                    self.deleteEvent(event.id)
+                guard let id = event.id else { continue }
+                if ids.indexOf(id) == nil {
+                    self.deleteEvent(id)
                 }
             }
             self.update()

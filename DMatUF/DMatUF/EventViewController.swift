@@ -113,9 +113,9 @@ class EventViewController: DMMainViewController, NSFetchedResultsControllerDeleg
         }
   
         cell.titleLabel.text = cellEvent.title
-        cell.timeLabel.text =  dateLabelText(cellEvent.startDate, end: cellEvent.endDate)
+        cell.timeLabel.text =  dateLabelText(cellEvent.startDate ?? NSDate(), end: cellEvent.endDate ?? NSDate())
         
-        if let image = UIImage(fileName: cellEvent.imageName, type: "png") {
+        if let image = UIImage(fileName: cellEvent.imageName ?? "", type: "png") {
             cell.calendarImageView.image = image
             cell.dayLabel.text = nil
             cell.monthLabel.text = nil
@@ -123,8 +123,8 @@ class EventViewController: DMMainViewController, NSFetchedResultsControllerDeleg
 
         } else {
             cell.calendarImageView.image = UIImage(named: "Calendar")
-            cell.dayLabel.text = "\(cellEvent.startDate.day())"
-            cell.monthLabel.text = cellEvent.startDate.shortMonthToString()
+            cell.dayLabel.text = "\(cellEvent.startDate?.day())"
+            cell.monthLabel.text = cellEvent.startDate?.shortMonthToString()
         }
         return cell
     }

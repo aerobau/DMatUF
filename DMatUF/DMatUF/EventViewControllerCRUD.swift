@@ -22,12 +22,12 @@ extension EventViewController {
             
            let newEvent: Event = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: self.managedObjectContext) as! Event
             newEvent.id = eventRecord.recordID
-            newEvent.title = eventRecord["title"] as! String
-            newEvent.location = getString(eventRecord["location"])
-            newEvent.moreInfo = getString(eventRecord["description"])
-            newEvent.startDate = getDate(eventRecord["startDate"])
-            newEvent.endDate = getDate(eventRecord["endDate"])
-            newEvent.imageName = getString(eventRecord["imageName"])
+            newEvent.title = eventRecord["title"] as? String
+            newEvent.location = eventRecord["location"] as? String
+            newEvent.moreInfo = eventRecord["description"] as? String
+            newEvent.startDate = eventRecord["startDate"] as? NSDate
+            newEvent.endDate = eventRecord["endDate"] as? NSDate
+            newEvent.imageName = eventRecord["imageName"] as? String
             newEvent.category = fetchOrCreateCategory(getString(eventRecord["category"]))
             
             /*
@@ -165,12 +165,12 @@ extension EventViewController {
     func updateEvent(eventRecord: CKRecord) {
         if let event: Event = fetchEvent(eventRecord.recordID) {
             event.id = eventRecord.recordID
-            event.title = getString(eventRecord["title"])
-            event.location = getString(eventRecord["location"])
-            event.moreInfo = getString(eventRecord["description"])
-            event.startDate = getDate(eventRecord["startDate"])
-            event.endDate = getDate(eventRecord["endDate"])
-            event.imageName = getString(eventRecord["imageName"])
+            event.title = eventRecord["title"] as! String
+            event.location = eventRecord["location"] as! String
+            event.moreInfo = eventRecord["description"] as! String
+            event.startDate = eventRecord["startDate"] as! NSDate
+            event.endDate = eventRecord["endDate"] as! NSDate
+            event.imageName = eventRecord["imageName"] as! String
             event.category = fetchOrCreateCategory(getString(eventRecord["category"]))
             
             /*
